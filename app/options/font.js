@@ -1,26 +1,12 @@
 import { useContext } from 'react'
 import { AppContext } from 'context'
-
-const fonts = [
-  {
-    label: 'Inter & ',
-    value: 'inter',
-  },
-  {
-    label: 'Open Sans & ',
-    value: 'open-sans',
-  },
-  {
-    label: 'Noto Sans JP & ',
-    value: 'noto-sans-jp',
-  },
-]
+import { fonts } from 'data'
 
 const Font = () => {
   const { font: selectedFont, setFont } = useContext(AppContext)
 
   return (
-    <div className="flex flex-col py-4 border-b">
+    <div className="flex flex-col pb-5 pt-1 px-4 border-b">
       {fonts.map((font) => (
         <div key={font.value} onClick={() => setFont(font.value)}>
           <input

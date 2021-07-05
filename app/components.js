@@ -55,15 +55,25 @@ export default () => {
   )
 }
 
-const Component = ({ children: label, active, onClick }) => (
-  <li
-    className={`py-6 flex hover:bg-gray-50 cursor-pointer ${
-      active ? 'bg-gray-50' : ''
-    }`}
-    onClick={onClick}
-  >
-    <div className="ml-6">
-      <p className="text-sm font-medium text-gray-900">{label}</p>
-    </div>
-  </li>
-)
+const Component = ({ children: label, active, onClick }) => {
+  const {
+    color,
+    selectedSection,
+    selectedComponent,
+    setComponent,
+  } = useContext(AppContext)
+
+  return (
+    <li
+      className={`py-4 flex justify-between items-center hover:bg-gray-50 cursor-pointer ${
+        active ? 'bg-gray-50' : ''
+      }`}
+      onClick={onClick}
+    >
+      <div className="ml-6">
+        <p className="text-sm font-medium text-gray-700">{label}</p>
+      </div>
+    </li>
+  )
+}
+// {active && <div className={`w-2 h-2 bg-${color}-500 rounded-full`} />}

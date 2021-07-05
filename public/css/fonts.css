@@ -1,0 +1,49 @@
+/* @import 'https://rsms.me/inter/inter.css'; */
+
+@font-face {
+  font-family: 'Futura';
+  src: url('/fonts/futura/FTN75__W.woff2') format('woff2');
+  /* src: url('/fonts/futura/FTN96__W.woff2') format('woff2'); */
+  /* src: url('/fonts/futura/FTN96__W.woff2') format('woff2'); */
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Eesti';
+  src: url('/fonts/eesti/GT-Eesti-Pro-Display-Regular.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Euclid';
+  src: url('/fonts/euclid/EuclidCircularB-Regular.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ProductSans';
+  src: url('/fonts/google-sans/ProductSans-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/roboto/KFOmCnqEu92Fr1Mu4mxKKTU1Kg.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Interstate';
+  src: url('/fonts/interstate/interstate1.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Spotify Circular';
+  src: url('/fonts/spotify-circular/CircularSpUIv3T-Book.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Neue Montreal';
+  src: url('/fonts/neue-montreal/neue-montreal-medium.woff2') format('woff2');
+}
