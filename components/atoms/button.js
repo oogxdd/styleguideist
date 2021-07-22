@@ -31,32 +31,24 @@ export const Button = (props) => {
     <>
       <button
         className={`
-          flex
-          items-center
-          justify-center
           border
           border-transparent
-          text-white
-          font-${spacing === '3' || spacing === '0.5' ? 'medium' : 'medium'}
-          text-${spacingToFont[spacing]}
-          md:text-${spacingToFont[spacing]}
+
+          text-primary
+          tracking-default
+          leading-default
+          h-button-big
+          p-button-big
+          rounded-button-big
+          text-button-big
 
           ${uppercase ? 'uppercase' : ''}
 
-          bg-${color}-600
+          bg-${color ? color + '-500' : 'primary'}
           hover:bg-${color}-700
 
-          px-${spacing * 4}
-          py-${(spacing * 3) / 2}
 
-          rounded${radius ? `-${radius}` : ''}
-
-          md:py-${spacing * 2}
-          md:px-${spacing * 5}
         `}
-        style={{
-          letterSpacing,
-        }}
       >
         {name}
       </button>

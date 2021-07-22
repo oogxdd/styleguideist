@@ -1,2 +1,7 @@
 @import './fonts.css';
 @import './logos.css';
+
+button {
+  /* transition: background 0.2s, border-radius 0.2s, height 0.2s, color 0.2s, */
+  /*   height 0.2s; */
+}

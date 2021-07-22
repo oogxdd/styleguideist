@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --button-padding-small: 8px;
+    --button-padding-big: 8px;
+  }
+  .soundcloud {
+    --primary-color: #f50;
+    --primary-text-color: white;
+
+    --line-height: 15px;
+    --letter-spacing: 0px;
+
+    --button-padding-small: 2px 11px 2px 10px;
+    --button-padding-big: 10px 21px;
+    --button-height-big: 40px;
+    --button-font-size-small: 14px;
+    --button-font-size-big: 16px;
+    --button-border-radius-small: 3px;
+    --button-border-radius-big: 2px;
+  }
+  .superpeer {
+    --primary-color: #0967d2;
+    --primary-text-color: white;
+
+    --line-height: 16px;
+    --letter-spacing: normal;
+
+    --button-padding-big: 8px 24px;
+    --button-height-big: 40px;
+    --button-font-size-big: 16px;
+    --button-border-radius-big: 8px;
+  }
+  .blablacar {
+    --primary-color: rgb(0, 175, 245);
+    --primary-text-color: white;
+    --button-height-big: 46px;
+    --button-font-size-big: 16px;
+    --button-padding-big: 0 24px;
+  }
+  .spotify {
+    --primary-color: rgb(30, 215, 96);
+    --primary-text-color: rgb(41, 65, 171);
+
+    --line-height: 20px;
+    --button-height-big: 48px;
+    --button-font-size-big: 14px;
+    --button-border-radius-big: 500px;
+
+    --button-padding-big: 0px 32px;
+  }
+  .vercel {
+    --primary-color: black;
+    --primary-text-color: white;
+    --line-height: 38px;
+    --letter-spacing: 0px;
+    --button-padding-big: 0 25px;
+    --button-font-size-big: 14px;
+    --button-border-radius-big: 4px;
+    --button-height-big: 40px;
+  }
+  .upwork {
+    --primary-color: rgb(20, 168, 0);
+    --primary-text-color: white;
+
+    --line-height: 15px;
+    --letter-spacing: 0.6px;
+
+    --button-padding-big: 12px 18px;
+    --button-font-size-big: 15px;
+    --button-height-big: 40px;
+    --button-border-radius-small: 20px;
+    --button-border-radius-big: 20px;
+  }
+  .github {
+    --primary-color: rgb(35, 134, 54);
+    --primary-text-color: white;
+
+    --letter-spacing: 0px;
+  }
+  .youtube {
+    --primary-color: rgb(204, 0, 0);
+    --primary-text-color: white;
+
+    --letter-spacing: 0px;
+  }
+  .asos {
+    --primary-color: black;
+    --primary-text-color: white;
+
+    --letter-spacing: 0px;
+  }
+  .twitter {
+    --primary-color: rgb(29, 161, 242);
+    --primary-text-color: white;
+  }
+}

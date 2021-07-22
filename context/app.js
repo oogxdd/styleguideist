@@ -4,17 +4,17 @@ import { atoms, molecules, organisms, templates } from 'data'
 const AppContext = createContext()
 
 const AppProvider = ({ children }) => {
-  const [component, setComponent] = useState('button')
-  const [section, setSection] = useState('atoms')
+  const [selectedSection, setSection] = useState('atoms')
+  const [selectedComponent, setComponent] = useState('button')
+  const [selectedComponentVariant, setComponentVariant] = useState('default')
 
   const [bg, setBg] = useState('black')
   const [border, setBorder] = useState('1px solid transparent')
-  // letter-spacing
   const [letterSpacing, setLetterSpacing] = useState('normal')
   const [uppercase, setUppercase] = useState(false)
 
   const [preset, setPreset] = useState('default')
-  const [color, setColor] = useState('green')
+  const [color, setColor] = useState('')
   const [spacing, setSpacing] = useState('1')
   const [radius, setRadius] = useState('md')
   const [font, setFont] = useState('inter')
@@ -28,9 +28,6 @@ const AppProvider = ({ children }) => {
     }
 
     if (preset === 'asos') {
-      // setColor('black')
-      // setBg('white')
-      // setBorder('transparent')
       setLetterSpacing('2px')
       setUppercase(true)
       setFont('futura')
@@ -55,11 +52,11 @@ const AppProvider = ({ children }) => {
       setUppercase(false)
       setFont('euclid')
       setRadius('lg')
-      setColor('blue')
+      // setColor('blue')
     }
 
     if (preset === 'youtube') {
-      setColor('red')
+      // setColor('red')
       setLetterSpacing('0.5px')
       setUppercase(true)
       setFont('roboto')
@@ -67,7 +64,7 @@ const AppProvider = ({ children }) => {
     }
 
     if (preset === 'soundcloud') {
-      // setColor('red')
+      // setColor('soundcloud-orange')
       setLetterSpacing('0.5px')
       setUppercase(false)
       setFont('interstate')
@@ -75,7 +72,7 @@ const AppProvider = ({ children }) => {
     }
 
     if (preset === 'spotify') {
-      setColor('green')
+      // setColor('green')
       setLetterSpacing('normal')
       setUppercase(true)
       setFont('spotify')
@@ -83,7 +80,7 @@ const AppProvider = ({ children }) => {
     }
 
     if (preset === 'upwork') {
-      setColor('green')
+      // setColor('green')
       setLetterSpacing('0.6px')
       setUppercase(false)
       setFont('neue-montreal')
@@ -91,7 +88,7 @@ const AppProvider = ({ children }) => {
     }
 
     if (preset === 'producthunt') {
-      setColor('red')
+      // setColor('red')
       setFont('system-ui')
       setRadius('md')
     }
@@ -102,26 +99,32 @@ const AppProvider = ({ children }) => {
     }
 
     if (preset === 'github') {
-      setColor('green')
+      // setColor('green')
       setFont('system-ui')
       setRadius('lg')
     }
   }, [preset])
 
+  // when changing section, select the first component of the section
   useEffect(() => {
-    if (section === 'atoms') {
+    if (selectedSection === 'atoms') {
       setComponent(atoms[0].value)
     }
-    if (section === 'molecules') {
+    if (selectedSection === 'molecules') {
       setComponent(molecules[0].value)
     }
-    if (section === 'organisms') {
+    if (selectedSection === 'organisms') {
       setComponent(organisms[0].value)
     }
-    if (section === 'templates') {
+    if (selectedSection === 'templates') {
       setComponent(templates[0].value)
     }
-  }, [section])
+  }, [selectedSection])
+
+  // when changing component, set variant to default
+  useEffect(() => {
+    setComponentVariant('default')
+  }, [selectedComponent])
 
   return (
     <AppContext.Provider
@@ -145,13 +148,15 @@ const AppProvider = ({ children }) => {
         setUppercase,
 
         // navigation
-        selectedComponent: component,
-        selectedSection: section,
-        setComponent,
+        selectedSection,
+        selectedComponent,
+        selectedComponentVariant,
         setSection,
+        setComponent,
+        setComponentVariant,
       }}
     >
-      {children}
+      <div className={preset}>{children}</div>
     </AppContext.Provider>
   )
 }
@@ -162,16 +167,5 @@ const AppProvider = ({ children }) => {
 // `,
 //   }}
 // />
-
-const fonts = [
-  {
-    label: 'Inter',
-    value: 'inter',
-  },
-  {
-    label: 'Futura',
-    value: 'futura',
-  },
-]
 
 export { AppProvider, AppContext }
