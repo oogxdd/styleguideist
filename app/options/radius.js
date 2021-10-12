@@ -7,7 +7,7 @@ const Radius = () => {
   const { radius, setRadius } = useContext(AppContext)
 
   return (
-    <div className="flex flex-col pb-5 pt-1 px-4 border-b">
+    <div className="flex flex-col pb-5 pt-1 px-4">
       <input
         type="range"
         min="0"

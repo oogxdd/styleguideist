@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import { AppContext } from 'context'
-import { atoms, molecules, organisms, templates } from 'data'
+import { atoms, molecules, organisms, pages, templates } from 'data'
 
 export default () => {
   const { selectedSection, selectedComponent, setComponent } = useContext(
@@ -32,6 +32,16 @@ export default () => {
           ))}
         {selectedSection === 'organisms' &&
           organisms.map((component) => (
+            <Component
+              active={component.value === selectedComponent}
+              onClick={() => setComponent(component.value)}
+              key={component.value}
+            >
+              {component.label}
+            </Component>
+          ))}
+        {selectedSection === 'pages' &&
+          pages.map((component) => (
             <Component
               active={component.value === selectedComponent}
               onClick={() => setComponent(component.value)}

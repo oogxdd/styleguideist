@@ -4,65 +4,91 @@ import { CheckboxGroup } from '../molecules/checkbox-group.js'
 import { RadioGroup } from '../molecules/radio-group.js'
 import { Button } from '../atoms/button.js'
 import { Input } from '../atoms/input.js'
-import {Textarea} from '../atoms/textarea.js'
-import {Select} from '../atoms/select.js'
+import { Textarea } from '../atoms/textarea.js'
+import { Select } from '../atoms/select.js'
 
 export const Form = () => {
   const { color, spacing, radius, style } = useContext(AppContext)
 
+  return <div>Form</div>
   return (
     <form className="space-y-8 divide-y divide-gray-200 h-screen py-10">
       <div className="space-y-8 divide-y divide-gray-200">
         <div>
           <div>
-            <h3 className="text-lg leading-6 font-medium text-gray-900">Profile</h3>
+            <h3 className="text-lg leading-6 font-medium text-gray-900">
+              Profile
+            </h3>
             <p className="mt-1 text-sm text-gray-500">
-              This information will be displayed publicly so be careful what you share.
+              This information will be displayed publicly so be careful what you
+              share.
             </p>
           </div>
 
           <div className="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
             <div className="sm:col-span-4">
-              <label htmlFor="username" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="username"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Username
               </label>
               <div className={`mt-1 flex rounded-${radius} shadow-sm`}>
-                <span className={`inline-flex items-center px-3 rounded-l-${radius} border border-r-0 border-gray-300 bg-gray-50 text-gray-500 sm:text-sm`}>
+                <span
+                  className={`inline-flex items-center px-3 rounded-l-${radius} border border-r-0 border-gray-300 bg-gray-50 text-gray-500 sm:text-sm`}
+                >
                   workcation.com/
                 </span>
-                <Input className={`rounded-r-${radius}`}/>
+                <Input className={`rounded-r-${radius}`} />
               </div>
             </div>
 
             <div className="sm:col-span-6">
-              <label htmlFor="about" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="about"
+                className="block text-sm font-medium text-gray-700"
+              >
                 About
               </label>
               <div className="mt-1">
                 <Textarea />
               </div>
-              <p className="mt-2 text-sm text-gray-500">Write a few sentences about yourself.</p>
+              <p className="mt-2 text-sm text-gray-500">
+                Write a few sentences about yourself.
+              </p>
             </div>
 
             <div className="sm:col-span-6">
-              <label htmlFor="photo" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="photo"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Photo
               </label>
               <div className="mt-1 flex items-center">
                 <span className="h-12 w-12 rounded-full overflow-hidden bg-gray-100 mr-5">
-                  <svg className="h-full w-full text-gray-300" fill="currentColor" viewBox="0 0 24 24">
+                  <svg
+                    className="h-full w-full text-gray-300"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
                     <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
                   </svg>
                 </span>
-                <Button name="Change"/>
+                <Button name="Change" />
               </div>
             </div>
 
             <div className="sm:col-span-6">
-              <label htmlFor="cover_photo" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="cover_photo"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Cover photo
               </label>
-              <div className={`mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-${radius}`}>
+              <div
+                className={`mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-${radius}`}
+              >
                 <div className="space-y-1 text-center">
                   <svg
                     className="mx-auto h-12 w-12 text-gray-400"
@@ -84,11 +110,18 @@ export const Form = () => {
                       className={`relative cursor-pointer bg-white rounded-${radius} font-medium text-${color}-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500`}
                     >
                       <span>Upload a file</span>
-                      <input id="file-upload" name="file-upload" type="file" className="sr-only" />
+                      <input
+                        id="file-upload"
+                        name="file-upload"
+                        type="file"
+                        className="sr-only"
+                      />
                     </label>
                     <p className="pl-1">or drag and drop</p>
                   </div>
-                  <p className="text-xs text-gray-500">PNG, JPG, GIF up to 10MB</p>
+                  <p className="text-xs text-gray-500">
+                    PNG, JPG, GIF up to 10MB
+                  </p>
                 </div>
               </div>
             </div>
@@ -97,12 +130,19 @@ export const Form = () => {
 
         <div className="pt-8">
           <div>
-            <h3 className="text-lg leading-6 font-medium text-gray-900">Personal Information</h3>
-            <p className="mt-1 text-sm text-gray-500">Use a permanent address where you can receive mail.</p>
+            <h3 className="text-lg leading-6 font-medium text-gray-900">
+              Personal Information
+            </h3>
+            <p className="mt-1 text-sm text-gray-500">
+              Use a permanent address where you can receive mail.
+            </p>
           </div>
           <div className="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
             <div className="sm:col-span-3">
-              <label htmlFor="first_name" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="first_name"
+                className="block text-sm font-medium text-gray-700"
+              >
                 First name
               </label>
               <div className="mt-1">
@@ -111,7 +151,10 @@ export const Form = () => {
             </div>
 
             <div className="sm:col-span-3">
-              <label htmlFor="last_name" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="last_name"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Last name
               </label>
               <div className="mt-1">
@@ -120,7 +163,10 @@ export const Form = () => {
             </div>
 
             <div className="sm:col-span-4">
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Email address
               </label>
               <div className="mt-1">
@@ -131,7 +177,10 @@ export const Form = () => {
             <Select />
 
             <div className="sm:col-span-6">
-              <label htmlFor="street_address" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="street_address"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Street address
               </label>
               <div className="mt-1">
@@ -140,7 +189,10 @@ export const Form = () => {
             </div>
 
             <div className="sm:col-span-2">
-              <label htmlFor="city" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="city"
+                className="block text-sm font-medium text-gray-700"
+              >
                 City
               </label>
               <div className="mt-1">
@@ -149,7 +201,10 @@ export const Form = () => {
             </div>
 
             <div className="sm:col-span-2">
-              <label htmlFor="state" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="state"
+                className="block text-sm font-medium text-gray-700"
+              >
                 State / Province
               </label>
               <div className="mt-1">
@@ -158,7 +213,10 @@ export const Form = () => {
             </div>
 
             <div className="sm:col-span-2">
-              <label htmlFor="zip" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="zip"
+                className="block text-sm font-medium text-gray-700"
+              >
                 ZIP / Postal
               </label>
               <div className="mt-1">
@@ -170,9 +228,12 @@ export const Form = () => {
 
         <div className="pt-8">
           <div>
-            <h3 className="text-lg leading-6 font-medium text-gray-900">Notifications</h3>
+            <h3 className="text-lg leading-6 font-medium text-gray-900">
+              Notifications
+            </h3>
             <p className="mt-1 text-sm text-gray-500">
-              We'll always let you know about important changes, but you pick what else you want to hear about.
+              We'll always let you know about important changes, but you pick
+              what else you want to hear about.
             </p>
           </div>
           <div className="mt-6">

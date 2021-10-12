@@ -5,6 +5,7 @@ import Spacing from './spacing'
 import Radius from './radius'
 import Presets from './presets'
 import Font from './font'
+import Shadow from './shadow'
 
 // preset - ? icon
 // radius - radius icon
@@ -22,21 +23,23 @@ export default () => {
           <div className="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
             <nav className="mt-0 flex-1" aria-label="Sidebar">
               <div className="space-y-2">
-                <Item label="Presets">
-                  <Presets />
-                </Item>
                 <Item label="Color">
                   <Color />
-                </Item>
-                <Item label="Radius">
-                  <Radius />
                 </Item>
                 <Item label="Font">
                   <Font />
                 </Item>
+                <Item label="Border">
+                  <Radius />
+                </Item>
+                <Item label="Shadow">
+                  <Shadow />
+                </Item>
+                <Item label="Presets">
+                  <Presets />
+                </Item>
                 {/*
-              <Item label="Shadow"></Item>
-               */}
+                 */}
                 {/*
               <Item label="Spacing">
                 <Spacing />
@@ -52,12 +55,12 @@ export default () => {
 }
 
 const Item = ({ label, children }) => {
-  const [opened, setOpened] = useState(true)
+  const [opened, setOpened] = useState(false)
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col border-b">
       <a
-        className="text-gray-500 hover:bg-gray-50 hover:text-gray-900 group flex items-center py-4 text-xs font-bold rounded-md px-4 cursor-pointer uppercase"
+        className="text-gray-500 hover:bg-gray-50 hover:text-gray-900 group flex items-center py-4 text-xs font-bold px-4 cursor-pointer uppercase"
         onClick={() => setOpened(!opened)}
       >
         {/*

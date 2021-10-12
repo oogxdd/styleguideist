@@ -15,6 +15,10 @@ const tabs = [
     value: 'organisms',
   },
   {
+    label: 'Pages',
+    value: 'pages',
+  },
+  {
     label: 'Templates',
     value: 'templates',
   },

@@ -18,7 +18,7 @@ const Presets = () => {
   const { color, preset: selectedPreset, setPreset } = useContext(AppContext)
 
   return (
-    <div className="flex flex-col pb-5 pt-1 px-4 border-b">
+    <div className="flex flex-col pb-5 pt-1 px-4">
       {presets.map((preset) => (
         <div
           key={preset.value}

@@ -5,7 +5,7 @@ export const templates = [
   },
   {
     label: 'Landing page',
-    value: 'landing page',
+    value: 'landing',
   },
   {
     label: 'Dashboard',

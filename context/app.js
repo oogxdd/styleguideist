@@ -17,6 +17,7 @@ const AppProvider = ({ children }) => {
   const [color, setColor] = useState('')
   const [spacing, setSpacing] = useState('1')
   const [radius, setRadius] = useState('md')
+  const [shadow, setShadow] = useState('none')
   const [font, setFont] = useState('inter')
 
   useEffect(() => {
@@ -136,6 +137,7 @@ const AppProvider = ({ children }) => {
         preset,
         font,
         letterSpacing,
+        shadow,
         uppercase,
 
         // methods
@@ -146,6 +148,7 @@ const AppProvider = ({ children }) => {
         setFont,
         setLetterSpacing,
         setUppercase,
+        setShadow,
 
         // navigation
         selectedSection,

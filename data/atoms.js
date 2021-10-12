@@ -35,4 +35,32 @@ export const atoms = [
   //   label: 'Logo',
   //   value: 'logo',
   // },
+  {
+    label: 'Card',
+    value: 'card',
+  },
+  {
+    label: 'Avatar',
+    value: 'avatar',
+  },
+  {
+    label: 'Label',
+    value: 'label',
+  },
+  {
+    label: 'Link',
+    value: 'link',
+  },
+  {
+    label: 'Icon',
+    value: 'icon',
+  },
+  {
+    label: 'Breadcrumb',
+    value: 'breadcrumb',
+  },
+  {
+    label: 'Regular text',
+    value: 'text',
+  },
 ]

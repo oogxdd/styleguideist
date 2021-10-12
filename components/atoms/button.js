@@ -19,6 +19,7 @@ export const Button = (props) => {
     letterSpacing,
     border,
     uppercase,
+    shadow,
   } = useContext(AppContext)
 
   const name = props.name || 'View All'
@@ -26,6 +27,7 @@ export const Button = (props) => {
   if (style === 'big-sur') {
     return <button>Button (Big Sur)</button>
   }
+  console.log(shadow)
 
   return (
     <>
@@ -47,6 +49,7 @@ export const Button = (props) => {
           bg-${color ? color + '-500' : 'primary'}
           hover:bg-${color}-700
 
+          shadow-${shadow}
 
         `}
       >

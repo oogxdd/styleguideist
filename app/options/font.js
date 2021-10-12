@@ -6,7 +6,7 @@ const Font = () => {
   const { font: selectedFont, setFont } = useContext(AppContext)
 
   return (
-    <div className="flex flex-col pb-5 pt-1 px-4 border-b">
+    <div className="flex flex-col pb-5 pt-1 px-4">
       {fonts.map((font) => (
         <div key={font.value} onClick={() => setFont(font.value)}>
           <input

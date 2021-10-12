@@ -3,14 +3,14 @@ export const presets = [
     label: 'Default',
     value: 'default',
   },
-  // {
-  //   label: 'ASOS',
-  //   value: 'asos',
-  // },
-  // {
-  //   label: 'Blablacar',
-  //   value: 'blablacar',
-  // },
+  {
+    label: 'ASOS',
+    value: 'asos',
+  },
+  {
+    label: 'Blablacar',
+    value: 'blablacar',
+  },
   {
     label: 'Superpeer',
     value: 'superpeer',
@@ -19,14 +19,14 @@ export const presets = [
     label: 'Soundcloud',
     value: 'soundcloud',
   },
-  // {
-  //   label: 'Spotify',
-  //   value: 'spotify',
-  // },
-  // {
-  //   label: 'Youtube',
-  //   value: 'youtube',
-  // },
+  {
+    label: 'Spotify',
+    value: 'spotify',
+  },
+  {
+    label: 'Youtube',
+    value: 'youtube',
+  },
   {
     label: 'Vercel',
     value: 'vercel',

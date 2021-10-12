@@ -7,7 +7,7 @@ const Colors = () => {
   const { color: selectedColor, setColor } = useContext(AppContext)
 
   return (
-    <div className="flex flex-col pb-5 pt-1 px-4 border-b">
+    <div className="flex flex-col pb-5 pt-1 px-4 ">
       <div className="flex mt-1">
         {colors.map((color) => (
           <Color
