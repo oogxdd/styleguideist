@@ -1,1 +1,1 @@
-export const FieldValue = () => <div>FieldValue</div>
+export const Text = () => <div>Text</div>

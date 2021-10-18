@@ -1,4 +1,4 @@
-import { Avatar } from 'components/atoms'
+import { Avatar, Button } from 'components/atoms'
 
 export const UserBlock = () => (
   <div className="max-w-3xl mx-auto px-4 sm:px-6 md:flex md:items-center md:justify-between md:space-x-5 lg:max-w-7xl lg:px-8">
@@ -28,18 +28,8 @@ export const UserBlock = () => (
       </div>
     </div>
     <div className="mt-6 flex flex-col-reverse justify-stretch space-y-4 space-y-reverse sm:flex-row-reverse sm:justify-end sm:space-x-reverse sm:space-y-0 sm:space-x-3 md:mt-0 md:flex-row md:space-x-3">
-      <button
-        type="button"
-        className="inline-flex items-center justify-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-blue-500"
-      >
-        Disqualify
-      </button>
-      <button
-        type="button"
-        className="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-blue-500"
-      >
-        Advance to offer
-      </button>
+      <Button secondary>Disqualify</Button>
+      <Button primary>Advance to offer</Button>
     </div>
   </div>
 )

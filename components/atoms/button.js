@@ -9,7 +9,7 @@ const spacingToFont = {
   '3': '2xl',
 }
 
-export const Button = (props) => {
+export const Button = ({ children, primary = false, secondary = false }) => {
   const {
     color,
     spacing,
@@ -22,12 +22,31 @@ export const Button = (props) => {
     shadow,
   } = useContext(AppContext)
 
-  const name = props.name || 'View All'
-
   if (style === 'big-sur') {
     return <button>Button (Big Sur)</button>
   }
-  console.log(shadow)
+
+  if (primary) {
+    return (
+      <button
+        type="button"
+        className="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-blue-500"
+      >
+        {children}
+      </button>
+    )
+  }
+
+  if (secondary) {
+    return (
+      <button
+        type="button"
+        className="inline-flex items-center justify-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-blue-500"
+      >
+        {children}
+      </button>
+    )
+  }
 
   return (
     <>
@@ -53,7 +72,7 @@ export const Button = (props) => {
 
         `}
       >
-        {name}
+        {children || 'View All'}
       </button>
       <style
         dangerouslySetInnerHTML={{

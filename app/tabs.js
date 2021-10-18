@@ -14,10 +14,10 @@ const tabs = [
     label: 'Organisms',
     value: 'organisms',
   },
-  {
-    label: 'Pages',
-    value: 'pages',
-  },
+  // {
+  //   label: 'Pages',
+  //   value: 'pages',
+  // },
   {
     label: 'Templates',
     value: 'templates',

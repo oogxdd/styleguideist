@@ -1,1 +1,1 @@
-export const FieldLabel = () => <div>FieldLabel</div>
+export const Label = () => <div>Label</div>
