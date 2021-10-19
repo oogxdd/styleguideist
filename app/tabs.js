@@ -1,41 +1,18 @@
 import { useContext } from 'react'
 import { AppContext } from 'context'
-
-const tabs = [
-  {
-    label: 'Atoms',
-    value: 'atoms',
-  },
-  {
-    label: 'Molecules',
-    value: 'molecules',
-  },
-  {
-    label: 'Organisms',
-    value: 'organisms',
-  },
-  {
-    label: 'Pages',
-    value: 'pages',
-  },
-  {
-    label: 'Templates',
-    value: 'templates',
-  },
-]
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
+import { classNames } from 'helpers'
+import { groups } from 'data/components'
 
 export default function Tabs() {
   const { color, radius, selectedSection, setSection } = useContext(AppContext)
+
+  return null
 
   return (
     <div className="flex justify-center items-center h-16 mt-1">
       <div className="block">
         <nav className="flex space-x-4" aria-label="Tabs">
-          {tabs.map((tab) => (
+          {groups.map((tab) => (
             <a
               key={tab.label}
               onClick={() => setSection(tab.value)}

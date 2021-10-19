@@ -1,14 +1,15 @@
 import { useState, useContext } from 'react'
 import { AppContext } from 'context'
+import dynamic from 'next/dynamic'
 import Color from './color'
 import Spacing from './spacing'
-import Radius from './radius'
+import Border from './border'
 import Presets from './presets'
-import Font from './font'
 import Shadow from './shadow'
+const Font = dynamic(() => import('./font'), { ssr: false }) // fonts library only works client-side
 
 // preset - ? icon
-// radius - radius icon
+// border - radius icon
 // spacing - ruler icon
 // color - palette icon
 // font - letter icon
@@ -17,7 +18,7 @@ export default () => {
   // const { color } = useContext(AppContext)
 
   return (
-    <div className="hidden lg:flex lg:flex-shrink-0">
+    <div className="hidden md:flex md:flex-shrink-0">
       <div className="flex flex-col w-72">
         <div className={`flex flex-col h-0 flex-1 border-r border-gray-100`}>
           <div className="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
@@ -30,21 +31,17 @@ export default () => {
                   <Font />
                 </Item>
                 <Item label="Border">
-                  <Radius />
+                  <Border />
                 </Item>
                 <Item label="Shadow">
                   <Shadow />
                 </Item>
+                <Item label="Spacing">
+                  <Spacing />
+                </Item>
                 <Item label="Presets">
                   <Presets />
                 </Item>
-                {/*
-                 */}
-                {/*
-              <Item label="Spacing">
-                <Spacing />
-              </Item>
-               */}
               </div>
             </nav>
           </div>
@@ -55,7 +52,9 @@ export default () => {
 }
 
 const Item = ({ label, children }) => {
-  const [opened, setOpened] = useState(false)
+  const [opened, setOpened] = useState(
+    label === 'color' || label === 'font' || label === 'Presets' ? true : false,
+  )
 
   return (
     <div className="flex flex-col border-b">

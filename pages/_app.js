@@ -1,7 +1,6 @@
-import { AppProvider } from 'context'
 import Head from 'next/head'
+import { AppProvider } from 'context'
 import 'tailwindcss/tailwind.css'
-import 'assets/css/base.css'
 
 function MyApp({ Component, pageProps }) {
   return (

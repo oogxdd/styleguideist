@@ -11,14 +11,22 @@ const spacingToFont = {
 
 export const Button = (props) => {
   const {
+    // font
+    font,
+    fontSize,
+    fontColor,
+    fontWeight,
+    fontLetterSpacing,
+    uppercase,
+
+    // border
+    borderWidth,
+    borderColor,
+    borderRadius,
+
     color,
     spacing,
-    radius,
     style,
-    font,
-    letterSpacing,
-    border,
-    uppercase,
     shadow,
   } = useContext(AppContext)
 
@@ -27,7 +35,18 @@ export const Button = (props) => {
   if (style === 'big-sur') {
     return <button>Button (Big Sur)</button>
   }
-  console.log(shadow)
+
+  return (
+    <div
+      sx={{
+        fontWeight: 'bold',
+        fontSize: 4, // picks up value from `theme.fontSizes[4]`
+        color: 'primary', // picks up value from `theme.colors.primary`
+      }}
+    >
+      Hello
+    </div>
+  )
 
   return (
     <>
@@ -44,14 +63,28 @@ export const Button = (props) => {
           rounded-button-big
           text-button-big
 
-          ${uppercase ? 'uppercase' : ''}
 
           bg-${color ? color + '-500' : 'primary'}
           hover:bg-${color}-700
 
           shadow-${shadow}
 
+          apply-font
         `}
+        style={{
+          background: color,
+
+          // font
+          fontSize: `${fontSize}px`,
+          fontWeight: `${parseInt(fontWeight) * 100}`,
+          letterSpacing: `${parseInt(fontLetterSpacing) / 100}px`,
+          color: fontColor,
+          textTransform: uppercase ? 'uppercase' : 'none',
+
+          // border
+          border: `${borderWidth}px solid ${borderColor}`,
+          borderRadius: `${borderRadius}px`,
+        }}
       >
         {name}
       </button>

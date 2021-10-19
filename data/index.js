@@ -1,8 +1,8 @@
-export * from './atoms'
-export * from './molecules'
-export * from './organisms'
-export * from './pages'
-export * from './templates'
+export * from './components/atoms'
+export * from './components/molecules'
+export * from './components/organisms'
+export * from './components/pages'
+export * from './components/templates'
 
 export * from './fonts'
 export * from './presets'

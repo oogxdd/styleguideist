@@ -7,6 +7,8 @@ export default () => {
     AppContext,
   )
 
+  return null
+
   return (
     <nav className="space-y-1" aria-label="Sidebar">
       <ul className="divide-y divide-gray-200 px-0">

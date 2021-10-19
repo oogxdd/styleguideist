@@ -1,5 +1,6 @@
 import { useContext } from 'react'
 import { AppContext } from 'context'
+import { SketchPicker } from 'react-color'
 
 const colors = ['red', 'yellow', 'green', 'blue', 'indigo', 'purple', 'pink']
 
@@ -17,6 +18,11 @@ const Colors = () => {
           />
         ))}
       </div>
+
+      <SketchPicker
+        color={selectedColor}
+        onChange={(color) => setColor(color.hex)}
+      />
     </div>
   )
 }

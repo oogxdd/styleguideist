@@ -1,108 +1,132 @@
-import { createContext, useState, useEffect } from 'react'
+import { ThemeProvider } from 'theme-ui'
+import { createContext, useState, useEffect, useReducer } from 'react'
 import { atoms, molecules, organisms, templates } from 'data'
+import {
+  defaultConfig,
+  asos,
+  github,
+  blablacar,
+  twitter,
+  superpeer,
+  spotify,
+  youtube,
+  soundcloud,
+  vercel,
+  upwork,
+  producthunt,
+} from 'data/presets'
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case 'setConfig':
+      return { count: state.count + 1 }
+    case 'decrement':
+      return { count: state.count - 1 }
+    default:
+      throw new Error()
+  }
+}
 
 const AppContext = createContext()
 
+const redTheme = {
+  name: 'red',
+  fonts: {
+    body: 'system-ui, sans-serif',
+    heading: '"Avenir Next", sans-serif',
+    monospace: 'Menlo, monospace',
+  },
+  colors: {
+    text: 'red',
+    background: '#fff',
+    primary: '#33e',
+  },
+}
+
+const blueTheme = {
+  name: 'blue',
+  fonts: {
+    body: 'system-ui, sans-serif',
+    heading: '"Avenir Next", sans-serif',
+    monospace: 'Menlo, monospace',
+  },
+  colors: {
+    text: 'blue',
+    background: '#fff',
+    primary: '#33e',
+  },
+}
+
 const AppProvider = ({ children }) => {
+  const [theme, setTheme] = useState(blueTheme)
+
+  const [state, dispatch] = useReducer(
+    reducer,
+    (process.browser && window.localStorage.getItem('config')) || defaultConfig,
+  )
+
+  // navigation
   const [selectedSection, setSection] = useState('atoms')
   const [selectedComponent, setComponent] = useState('button')
   const [selectedComponentVariant, setComponentVariant] = useState('default')
 
-  const [bg, setBg] = useState('black')
-  const [border, setBorder] = useState('1px solid transparent')
-  const [letterSpacing, setLetterSpacing] = useState('normal')
+  // color
+  const [color, setColor] = useState('#FFBEBE')
+
+  // font
+  const [font, setFont] = useState('inter')
+  const [fontSize, setFontSize] = useState('default')
+  const [fontWeight, setFontWeight] = useState('normal')
+  const [fontLetterSpacing, setFontLetterSpacing] = useState('0')
+  const [fontColor, setFontColor] = useState('#000')
   const [uppercase, setUppercase] = useState(false)
 
-  const [preset, setPreset] = useState('default')
-  const [color, setColor] = useState('')
-  const [spacing, setSpacing] = useState('1')
-  const [radius, setRadius] = useState('md')
+  // border
+  const [borderRadius, setBorderRadius] = useState(0)
+  const [borderWidth, setBorderWidth] = useState('1px')
+  const [borderColor, setBorderColor] = useState('#000')
+
+  // shadow
   const [shadow, setShadow] = useState('none')
-  const [font, setFont] = useState('inter')
+
+  // spacing
+  const [spacing, setSpacing] = useState('1')
+
+  // presets
+  const [preset, setPreset] = useState('default')
 
   useEffect(() => {
     if (preset === 'default') {
-      setLetterSpacing('normal')
-      setUppercase(false)
-      setFont('inter')
-      setRadius('md')
     }
 
     if (preset === 'asos') {
-      setLetterSpacing('2px')
-      setUppercase(true)
-      setFont('futura')
-      setRadius('none')
     }
 
     if (preset === 'blablacar') {
-      setLetterSpacing('normal')
-      setUppercase(false)
-      setFont('eesti')
-      setRadius('full')
-      // letter-spacing: normal;
-      // background: rgb(0, 175, 245);
-      // font-size: 16px;
-      // /* line-height: 1; */
-      // padding: 0px 24px;
-      // height: 48px;
     }
 
     if (preset === 'superpeer') {
-      setLetterSpacing('normal')
-      setUppercase(false)
-      setFont('euclid')
-      setRadius('lg')
-      // setColor('blue')
     }
 
     if (preset === 'youtube') {
-      // setColor('red')
-      setLetterSpacing('0.5px')
-      setUppercase(true)
-      setFont('roboto')
-      setRadius('none')
     }
 
     if (preset === 'soundcloud') {
-      // setColor('soundcloud-orange')
-      setLetterSpacing('0.5px')
-      setUppercase(false)
-      setFont('interstate')
-      setRadius('sm')
     }
 
     if (preset === 'spotify') {
-      // setColor('green')
-      setLetterSpacing('normal')
-      setUppercase(true)
-      setFont('spotify')
-      setRadius('full')
     }
 
     if (preset === 'upwork') {
-      // setColor('green')
-      setLetterSpacing('0.6px')
-      setUppercase(false)
-      setFont('neue-montreal')
-      setRadius('full')
     }
 
     if (preset === 'producthunt') {
-      // setColor('red')
-      setFont('system-ui')
-      setRadius('md')
     }
 
     if (preset === 'vercel') {
-      setFont('inter')
-      setRadius('md')
     }
 
     if (preset === 'github') {
-      // setColor('green')
-      setFont('system-ui')
-      setRadius('lg')
     }
   }, [preset])
 
@@ -130,25 +154,9 @@ const AppProvider = ({ children }) => {
   return (
     <AppContext.Provider
       value={{
-        // properties
+        // color
         color,
-        spacing,
-        radius,
-        preset,
-        font,
-        letterSpacing,
-        shadow,
-        uppercase,
-
-        // methods
         setColor,
-        setSpacing,
-        setRadius,
-        setPreset,
-        setFont,
-        setLetterSpacing,
-        setUppercase,
-        setShadow,
 
         // navigation
         selectedSection,
@@ -157,9 +165,52 @@ const AppProvider = ({ children }) => {
         setSection,
         setComponent,
         setComponentVariant,
+
+        // font
+        font,
+        fontSize,
+        fontColor,
+        fontWeight,
+        fontLetterSpacing,
+        uppercase,
+        setFont,
+        setFontSize,
+        setFontColor,
+        setFontWeight,
+        setFontLetterSpacing,
+        setUppercase,
+
+        // border
+        borderRadius,
+        borderWidth,
+        borderColor,
+        setBorderRadius,
+        setBorderWidth,
+        setBorderColor,
+
+        // shadow
+        shadow,
+        setShadow,
+
+        // spacing
+        spacing,
+        setSpacing,
+
+        // presets
+        preset,
+        setPreset,
       }}
     >
-      <div className={preset}>{children}</div>
+      <ThemeProvider theme={theme}>
+        {/*
+        <button
+          onClick={() => setTheme(theme.name === 'blue' ? redTheme : blueTheme)}
+        >
+          change
+        </button>
+        */}
+        <div className={preset}>{children}</div>
+      </ThemeProvider>
     </AppContext.Provider>
   )
 }

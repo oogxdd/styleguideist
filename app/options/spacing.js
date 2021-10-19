@@ -1,3 +1,5 @@
+// 1) vertical
+// 2) horizontal
 import { useContext } from 'react'
 import { AppContext } from 'context'
 
