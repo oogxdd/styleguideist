@@ -2,10 +2,10 @@ import { useState, useContext } from 'react'
 import { AppContext } from 'context'
 import dynamic from 'next/dynamic'
 import Color from './color'
-import Spacing from './spacing'
 import Border from './border'
-import Presets from './presets'
+import Spacing from './spacing'
 import Shadow from './shadow'
+import Presets from './presets'
 const Font = dynamic(() => import('./font'), { ssr: false }) // fonts library only works client-side
 
 // preset - ? icon
@@ -33,11 +33,11 @@ export default () => {
                 <Item label="Border">
                   <Border />
                 </Item>
-                <Item label="Shadow">
-                  <Shadow />
-                </Item>
                 <Item label="Spacing">
                   <Spacing />
+                </Item>
+                <Item label="Shadow">
+                  <Shadow />
                 </Item>
                 <Item label="Presets">
                   <Presets />
@@ -53,7 +53,12 @@ export default () => {
 
 const Item = ({ label, children }) => {
   const [opened, setOpened] = useState(
-    label === 'color' || label === 'font' || label === 'Presets' ? true : false,
+    label === 'color' ||
+      label === 'font' ||
+      label === 'shadow' ||
+      label === 'Presets'
+      ? true
+      : false,
   )
 
   return (

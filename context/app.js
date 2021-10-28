@@ -1,134 +1,47 @@
 import { ThemeProvider } from 'theme-ui'
 import { createContext, useState, useEffect, useReducer } from 'react'
 import { atoms, molecules, organisms, templates } from 'data'
-import {
-  defaultConfig,
-  asos,
-  github,
-  blablacar,
-  twitter,
-  superpeer,
-  spotify,
-  youtube,
-  soundcloud,
-  vercel,
-  upwork,
-  producthunt,
-} from 'data/presets'
+import { defaultPreset } from 'data/presets'
+// import {
+//   defaultConfig,
+//   asos,
+//   github,
+//   blablacar,
+//   twitter,
+//   superpeer,
+//   spotify,
+//   youtube,
+//   soundcloud,
+//   vercel,
+//   upwork,
+//   producthunt,
+// } from 'data/presets'
 
-const reducer = (state, action) => {
-  switch (action.type) {
-    case 'setConfig':
-      return { count: state.count + 1 }
-    case 'decrement':
-      return { count: state.count - 1 }
-    default:
-      throw new Error()
-  }
-}
+// const reducer = (state, action) => {
+//   switch (action.type) {
+//     case 'setConfig':
+//       return { count: state.count + 1 }
+//     case 'decrement':
+//       return { count: state.count - 1 }
+//     default:
+//       throw new Error()
+//   }
+// }
+
+// const [state, dispatch] = useReducer(
+//   reducer,
+//   (process.browser && window.localStorage.getItem('config')) || defaultConfig,
+// )
 
 const AppContext = createContext()
 
-const redTheme = {
-  name: 'red',
-  fonts: {
-    body: 'system-ui, sans-serif',
-    heading: '"Avenir Next", sans-serif',
-    monospace: 'Menlo, monospace',
-  },
-  colors: {
-    text: 'red',
-    background: '#fff',
-    primary: '#33e',
-  },
-}
-
-const blueTheme = {
-  name: 'blue',
-  fonts: {
-    body: 'system-ui, sans-serif',
-    heading: '"Avenir Next", sans-serif',
-    monospace: 'Menlo, monospace',
-  },
-  colors: {
-    text: 'blue',
-    background: '#fff',
-    primary: '#33e',
-  },
-}
-
 const AppProvider = ({ children }) => {
-  const [theme, setTheme] = useState(blueTheme)
-
-  const [state, dispatch] = useReducer(
-    reducer,
-    (process.browser && window.localStorage.getItem('config')) || defaultConfig,
-  )
+  const [theme, setTheme] = useState(defaultPreset)
 
   // navigation
   const [selectedSection, setSection] = useState('atoms')
   const [selectedComponent, setComponent] = useState('button')
   const [selectedComponentVariant, setComponentVariant] = useState('default')
-
-  // color
-  const [color, setColor] = useState('#FFBEBE')
-
-  // font
-  const [font, setFont] = useState('inter')
-  const [fontSize, setFontSize] = useState('default')
-  const [fontWeight, setFontWeight] = useState('normal')
-  const [fontLetterSpacing, setFontLetterSpacing] = useState('0')
-  const [fontColor, setFontColor] = useState('#000')
-  const [uppercase, setUppercase] = useState(false)
-
-  // border
-  const [borderRadius, setBorderRadius] = useState(0)
-  const [borderWidth, setBorderWidth] = useState('1px')
-  const [borderColor, setBorderColor] = useState('#000')
-
-  // shadow
-  const [shadow, setShadow] = useState('none')
-
-  // spacing
-  const [spacing, setSpacing] = useState('1')
-
-  // presets
-  const [preset, setPreset] = useState('default')
-
-  useEffect(() => {
-    if (preset === 'default') {
-    }
-
-    if (preset === 'asos') {
-    }
-
-    if (preset === 'blablacar') {
-    }
-
-    if (preset === 'superpeer') {
-    }
-
-    if (preset === 'youtube') {
-    }
-
-    if (preset === 'soundcloud') {
-    }
-
-    if (preset === 'spotify') {
-    }
-
-    if (preset === 'upwork') {
-    }
-
-    if (preset === 'producthunt') {
-    }
-
-    if (preset === 'vercel') {
-    }
-
-    if (preset === 'github') {
-    }
-  }, [preset])
 
   // when changing section, select the first component of the section
   useEffect(() => {
@@ -151,12 +64,59 @@ const AppProvider = ({ children }) => {
     setComponentVariant('default')
   }, [selectedComponent])
 
+  // set button spacing
+  const setSpacing = (type, value) => {
+    if (type === 'vertical') {
+      setTheme((theme) => ({
+        ...theme,
+        buttons: {
+          ...theme.buttons,
+          primary: {
+            ...theme.buttons.primary,
+            paddingBlock: value,
+          },
+        },
+      }))
+    }
+    if (type === 'horizontal') {
+      setTheme((theme) => ({
+        ...theme,
+        buttons: {
+          ...theme.buttons,
+          primary: {
+            ...theme.buttons.primary,
+            paddingInline: value,
+          },
+        },
+      }))
+    }
+  }
+
+  // set button shadow
+  const setShadow = (index) => {
+    setTheme((theme) => ({
+      ...theme,
+      buttons: {
+        ...theme.buttons,
+        primary: { ...theme.buttons.primary, boxShadow: index },
+      },
+    }))
+  }
+
   return (
     <AppContext.Provider
       value={{
-        // color
-        color,
-        setColor,
+        theme,
+        setTheme,
+
+        // setColor,
+        setSpacing,
+        setShadow,
+        // setRadius,
+        // setPreset,
+        // setFont,
+        // setLetterSpacing,
+        // setUppercase,
 
         // navigation
         selectedSection,
@@ -165,52 +125,9 @@ const AppProvider = ({ children }) => {
         setSection,
         setComponent,
         setComponentVariant,
-
-        // font
-        font,
-        fontSize,
-        fontColor,
-        fontWeight,
-        fontLetterSpacing,
-        uppercase,
-        setFont,
-        setFontSize,
-        setFontColor,
-        setFontWeight,
-        setFontLetterSpacing,
-        setUppercase,
-
-        // border
-        borderRadius,
-        borderWidth,
-        borderColor,
-        setBorderRadius,
-        setBorderWidth,
-        setBorderColor,
-
-        // shadow
-        shadow,
-        setShadow,
-
-        // spacing
-        spacing,
-        setSpacing,
-
-        // presets
-        preset,
-        setPreset,
       }}
     >
-      <ThemeProvider theme={theme}>
-        {/*
-        <button
-          onClick={() => setTheme(theme.name === 'blue' ? redTheme : blueTheme)}
-        >
-          change
-        </button>
-        */}
-        <div className={preset}>{children}</div>
-      </ThemeProvider>
+      <ThemeProvider theme={theme}>{children}</ThemeProvider>
     </AppContext.Provider>
   )
 }

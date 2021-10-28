@@ -1,5 +1,7 @@
+/** @jsxImportSource theme-ui */
 import { useContext } from 'react'
 import { AppContext } from 'context'
+import { Themed } from 'theme-ui'
 
 import {
   Button,
@@ -32,7 +34,14 @@ const Preview = () => {
   const { selectedComponent } = useContext(AppContext)
 
   return (
-    <div className="flex items-center justify-center w-full h-full">
+    <div
+      className="flex items-center justify-center w-full h-full"
+      sx={{
+        bg: 'background',
+
+        // bg: 'green',
+      }}
+    >
       {/* atoms */}
       {selectedComponent === 'button' && <Button />}
       {selectedComponent === 'card' && <Card />}

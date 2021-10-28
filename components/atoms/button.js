@@ -1,5 +1,6 @@
 import { useContext } from 'react'
 import { AppContext } from 'context'
+import { Button as ButtonComponent } from 'theme-ui'
 import { fonts } from 'data'
 
 const spacingToFont = {
@@ -32,9 +33,8 @@ export const Button = (props) => {
 
   const name = props.name || 'View All'
 
-  if (style === 'big-sur') {
-    return <button>Button (Big Sur)</button>
-  }
+  // sx={{ textTransform: 'uppercase' }}
+  return <ButtonComponent>Submit</ButtonComponent>
 
   return (
     <div
