@@ -28,7 +28,7 @@ export const Checkbox = ({
         onChange={(e) => onChange(e.target.value)}
       />
       <div
-        className="bg-white border-2 rounded-md border-gray-300 w-6 h-6 flex flex-shrink-0 justify-center items-center focus-within:border-indigo-500"
+        className="border rounded border-gray-300 w-6 h-6 flex flex-shrink-0 justify-center items-center focus-within:border-indigo-500"
         onClick={() => onChange(!value)}
       >
         <svg

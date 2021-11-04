@@ -17,7 +17,7 @@ export const Select = () => {
   return (
     <Listbox value={selected} onChange={setSelected}>
       <div className="relative mb-6">
-        <Listbox.Button className="bg-white relative w-full border border-gray-300 rounded-md pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+        <Listbox.Button className="relative w-full border border-gray-300 rounded-md pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
           <span className="block truncate">{selected.name}</span>
           {/*
            */}
@@ -34,7 +34,12 @@ export const Select = () => {
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <Listbox.Options className="absolute w-full py-1 mt-1 overflow-auto text-base bg-white rounded-md shadow-lg max-h-60 ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+          <Listbox.Options
+            className="absolute w-full py-1 mt-1 overflow-auto text-base rounded-md shadow-lg max-h-60 ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm"
+            sx={{
+              bg: 'background',
+            }}
+          >
             {people.map((person, personIdx) => (
               <Listbox.Option
                 key={person.id}
