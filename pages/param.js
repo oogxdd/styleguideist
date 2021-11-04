@@ -19,12 +19,19 @@ const Params = () => (
   <div
     className="grid grid-cols-1 gap-x-8 gap-y-10 ml-6 mt-2"
     style={{
-      maxWidth: '16rem',
+      // maxWidth: '16rem',
+      maxWidth: 'calc(16rem + 30px)',
       transform: 'scale(0.8)',
       transformOrigin: 'top left',
     }}
   >
-    <form className="block" style={{}}>
+    <form
+      className="block"
+      style={{
+        paddingRight: '30px',
+        borderRight: '1px solid rgb(229, 231, 235)',
+      }}
+    >
       <Color open={false} />
       <Shadow open={false} />
       <Border open={false} />
@@ -317,7 +324,7 @@ const Font = ({ open = true }) => {
             <div className="space-y-2">
               <Listbox value={selected} onChange={setSelected}>
                 <div className="relative mb-6">
-                  <Listbox.Button className="bg-white relative w-full border border-gray-300 rounded-md pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                  <Listbox.Button className="bg-white relative w-full border border-gray-300 rounded-md pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm z -z-10">
                     <span className="block truncate">{selected.name}</span>
                     {/*
                      */}
