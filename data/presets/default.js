@@ -1,8 +1,16 @@
+// 1. colors
+// 2. fonts
+// 3. shadows
+// 4. borders
+// 5. spacing
+//
+//
+// component-specific props
 export const defaultPreset = {
-  borderRadius: '20px',
   name: 'default',
   fonts: {
-    body: '"Spotify Circular", sans-serif',
+    body: 'system-ui',
+    // body: '"Spotify Circular", sans-serif',
     heading: '"Spotify Circular", sans-serif',
     monospace: 'Menlo, monospace',
   },
@@ -11,18 +19,31 @@ export const defaultPreset = {
     background: '#fff',
     primary: 'red',
     secondary: 'green',
-    borderColor: 'red',
+    borderColor: 'rgb(229, 231, 235)',
   },
-  radii: {
-    default: '0px',
-  },
-  borderStyles: {
-    borderWidth: 2,
-    borderStyle: 'solid',
-  },
+  radii: ['0px', '4px', '8px', '10px', '100px'],
+  // borderStyles: [
+  //   {
+  //     borderWidth: 2,
+  //     borderStyle: 'solid',
+  //     borderRadius: '0px',
+  //   },
+  //   {
+  //     borderWidth: 2,
+  //     borderStyle: 'solid',
+  //     borderRadius: '10px',
+  //   },
+  //   {
+  //     borderWidth: 2,
+  //     borderStyle: 'solid',
+  //     borderRadius: '100px',
+  //   },
+  // ],
   borders: {
-    border: '0px solid transparent',
+    border: '0px solid borderColor',
   },
+  // borderRadius: ['0px', '100px', '100px'],
+
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64],
   letterSpacings: ['0px', '10px'],
   lineHeights: ['100%', '125%', '150%', '175%', '200%'],
@@ -35,9 +56,6 @@ export const defaultPreset = {
   },
 
   space: [2, 4, 8, 16, 32, 48, 64],
-  // space: {
-  //   default: '8px',
-  // },
 
   shadows: [
     'none',
@@ -60,7 +78,7 @@ export const defaultPreset = {
       fontWeight: 'bold',
       letterSpacing: 0,
       border: 'border',
-      borderRadius: 'default',
+      borderRadius: 2,
       borderWidth: 'borderWidth',
       borderColor: 'borderColor',
       py: 2,

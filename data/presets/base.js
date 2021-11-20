@@ -1,4 +1,12 @@
 export const base = {
+  colors: {
+    text: 'black',
+    background: '#fff',
+    primary: 'red',
+    secondary: 'green',
+    borderColor: 'red',
+  },
+
   shadows: [
     'none',
     '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)',
@@ -15,8 +23,10 @@ export const base = {
   },
 
   borders: {
-    border: '0px solid black',
+    border: '100px solid black',
   },
+
+  borderRadius: ['0px', '10px', '100px'],
 
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64],
   letterSpacings: ['0px'],
@@ -50,7 +60,7 @@ export const base = {
       fontWeight: 'bold',
       letterSpacing: 0,
       border: 'border',
-      borderRadius: 'default',
+      borderRadius: 2,
       borderWidth: 'borderWidth',
       borderColor: 'borderColor',
       py: 2,

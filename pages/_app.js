@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { AppProvider } from 'context'
 import 'tailwindcss/tailwind.css'
+import { parseShadow, stringifyShadow } from 'helpers'
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -32,13 +33,42 @@ function MyApp({ Component, pageProps }) {
           transform-origin: top left;
         }
 
-        .parameters > form {
-          padding-right: 30px;
-          border-right: 1px solid rgb(229, 231, 235);
+        .parameters_right {
+          min-width: calc(16rem + 30px);
+          max-width: calc(16rem + 30px);
+          transform: scale(0.8);
+          transform-origin: top right;
+        }
+
+        .strike:before,
+        .strike:after {
+          content: '';
+          height: 1px;
+          background: var(--theme-ui-colors-borderColor);
+          width: 100%;
+          opacity: 0.75;
+        }
+
+        .strike:before {
+          right: 100%;
+          margin-right: 15px;
+        }
+
+        .strike:after {
+          left: 100%;
+          margin-left: 15px;
+        }
+
+        body {
+          overflow: hidden;
         }
       `}</style>
     </>
   )
 }
+
+// input[type='range'] {
+//   -webkit-appearance: none;
+// }
 
 export default MyApp

@@ -1,42 +1,13 @@
 import { ThemeProvider } from 'theme-ui'
-import { createContext, useState, useEffect, useReducer } from 'react'
-import { atoms, molecules, organisms, templates } from 'data'
-import { defaultPreset } from 'data/presets'
-// import {
-//   defaultConfig,
-//   asos,
-//   github,
-//   blablacar,
-//   twitter,
-//   superpeer,
-//   spotify,
-//   youtube,
-//   soundcloud,
-//   vercel,
-//   upwork,
-//   producthunt,
-// } from 'data/presets'
-
-// const reducer = (state, action) => {
-//   switch (action.type) {
-//     case 'setConfig':
-//       return { count: state.count + 1 }
-//     case 'decrement':
-//       return { count: state.count - 1 }
-//     default:
-//       throw new Error()
-//   }
-// }
-
-// const [state, dispatch] = useReducer(
-//   reducer,
-//   (process.browser && window.localStorage.getItem('config')) || defaultConfig,
-// )
+import { createContext, useState, useEffect } from 'react'
+import { atoms, molecules, organisms, templates, fonts } from 'data'
+import { defaultPreset, one, another, anan, greenPurple } from 'data/presets'
+import { useImmer } from 'use-immer'
 
 const AppContext = createContext()
 
 const AppProvider = ({ children }) => {
-  const [theme, setTheme] = useState(defaultPreset)
+  const [theme, setTheme] = useImmer(greenPurple)
 
   // navigation
   const [selectedSection, setSection] = useState('atoms')
@@ -73,7 +44,7 @@ const AppProvider = ({ children }) => {
           ...theme.buttons,
           primary: {
             ...theme.buttons.primary,
-            paddingBlock: value,
+            py: value,
           },
         },
       }))
@@ -85,14 +56,20 @@ const AppProvider = ({ children }) => {
           ...theme.buttons,
           primary: {
             ...theme.buttons.primary,
-            paddingInline: value,
+            px: value,
           },
         },
       }))
     }
   }
 
-  // set button shadow
+  const setColor = (color, value) => {
+    setTheme((theme) => ({
+      ...theme,
+      colors: { ...theme.colors, [color]: value },
+    }))
+  }
+
   const setShadow = (index) => {
     setTheme((theme) => ({
       ...theme,
@@ -103,20 +80,26 @@ const AppProvider = ({ children }) => {
     }))
   }
 
+  const setBorder = (index) => {
+    setTheme((theme) => ({
+      ...theme,
+      buttons: {
+        ...theme.buttons,
+        primary: { ...theme.buttons.primary, borderRadius: index },
+      },
+    }))
+  }
+
   return (
     <AppContext.Provider
       value={{
         theme,
         setTheme,
 
-        // setColor,
+        setColor,
         setSpacing,
         setShadow,
-        // setRadius,
-        // setPreset,
-        // setFont,
-        // setLetterSpacing,
-        // setUppercase,
+        setBorder,
 
         // navigation
         selectedSection,
@@ -128,14 +111,26 @@ const AppProvider = ({ children }) => {
       }}
     >
       <ThemeProvider theme={theme}>{children}</ThemeProvider>
+
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
+      * { font-family: '${
+        fonts.find((f) => f.label === theme.fonts.body).label
+      }' !important; }
+    `,
+        }}
+      />
     </AppContext.Provider>
   )
 }
 // <style
 //   dangerouslySetInnerHTML={{
 //     __html: `
-// * { font-family: '${fonts.find((f) => f.value === font).label}' !important; }
-// `,
+//       * { font-family: '${
+//         fonts.find((f) => f.label === theme.fonts.body).label
+//       }' !important; }
+//     `,
 //   }}
 // />
 

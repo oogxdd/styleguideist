@@ -1,9 +1,8 @@
-export const pxToNum = (string) => {
-  console.log('pxToNum')
-  console.log(string)
+export const pxToNum = (string = '') => {
+  if (!string) return
+  if (typeof string === 'number') return string
 
-  return 2
-  // return parseInt((string).substring(0, string.length - 2))
+  return parseInt(string.substring(0, string.length - 2))
 }
 
 // '2px' -> 2

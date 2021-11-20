@@ -1,12 +1,14 @@
-// twitter
-// vercel
-// superpeer
-// spotify
-// soundcloud
-
 import { defaultPreset } from './default'
 import { superpeer } from './superpeer'
 import { base } from './base'
+import { vercel } from './vercel'
+import { spotify } from './spotify'
+import { twitter } from './twitter'
+import { redWhite } from './custom/red-white'
+import { blueRed } from './custom/blue-white'
+import { one } from './one'
+import { another } from './another'
+import { greenPurple } from './green-purple'
 import {
   // base,
   system,
@@ -23,85 +25,84 @@ import {
   sketchy,
 } from '@theme-ui/presets'
 
-export { defaultPreset, base }
+export {
+  defaultPreset,
+  base,
+  twitter,
+  vercel,
+  spotify,
+  redWhite,
+  blueRed,
+  one,
+  another,
+  anan,
+  greenPurple,
+}
 
-export const presets = [
-  {
-    label: 'Default',
-    value: 'default',
-    theme: defaultPreset,
+const anan = {
+  name: 'default',
+  fonts: {
+    body: 'Eesti',
+    heading: '"Spotify Circular", sans-serif',
+    monospace: 'Menlo, monospace',
   },
-  {
-    label: 'Superpeer',
-    value: 'superpeer',
-    theme: superpeer,
+  colors: {
+    text: '#888b83',
+    background: '#071620',
+    primary: '#93a0a0',
+    secondary: 'green',
+    borderColor: '#59712d',
   },
-  {
-    label: 'base',
-    value: 'base',
-    theme: base,
+  radii: ['0px', '4px', '8px', '10px', '100px'],
+  borders: { border: '0px solid borderColor' },
+  fontSizes: [38, 40, 42, 46, 50, 68, 84, 90],
+  letterSpacings: [
+    '3.9px',
+    '5.9px',
+    '7.9px',
+    '11.9px',
+    '15.9px',
+    '33.9px',
+    '49.9px',
+    '55.9px',
+  ],
+  lineHeights: ['280%'],
+  fontWeights: { body: 400, heading: 700, bold: 900 },
+  space: [2, 4, 8, 16, 32, 48, 64],
+  shadows: [
+    'none',
+    '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)',
+    '0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)',
+    '0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)',
+    '0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)',
+    '0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)',
+  ],
+  buttons: {
+    primary: {
+      bg: 'primary',
+      color: 'background',
+      fontFamily: 'body',
+      fontSize: 3,
+      fontWeight: 'bold',
+      letterSpacing: 0,
+      border: 'border',
+      borderRadius: 4,
+      borderWidth: 'borderWidth',
+      borderColor: 'borderColor',
+      py: '24px',
+      px: '39px',
+      boxShadow: 3,
+      lineHeight: 0,
+    },
+    secondary: { color: 'background', bg: 'secondary' },
   },
-  {
-    label: 'system',
-    value: 'system',
-    theme: system,
-  },
-  {
-    label: 'funk',
-    value: 'funk',
-    theme: funk,
-  },
-  {
-    label: 'future',
-    value: 'future',
-    theme: future,
-  },
-  {
-    label: 'roboto',
-    value: 'roboto',
-    theme: roboto,
-  },
-  {
-    label: 'dark',
-    value: 'dark',
-    theme: dark,
-  },
-  {
-    label: 'deep',
-    value: 'deep',
-    theme: deep,
-  },
-  {
-    label: 'swiss',
-    value: 'swiss',
-    theme: swiss,
-  },
-  {
-    label: 'tosh',
-    value: 'tosh',
-    theme: tosh,
-  },
-  {
-    label: 'bootstrap',
-    value: 'bootstrap',
-    theme: bootstrap,
-  },
-  {
-    label: 'bulma',
-    value: 'bulma',
-    theme: bulma,
-  },
-  {
-    label: 'tailwind',
-    value: 'tailwind',
-    theme: tailwind,
-  },
-  {
-    label: 'sketchy',
-    value: 'sketchy',
-    theme: sketchy,
-  },
-]
+}
+
+// twitter
+// vercel
+// superpeer
+// spotify
+// soundcloud
 
 // Twitter, Slack, Uber, Github, Airbnb, Stripe, Vercel, Spotify
 //

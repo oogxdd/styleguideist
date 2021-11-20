@@ -1,66 +1,83 @@
+import {
+  Button,
+  Input,
+  Select,
+  Textarea,
+  RadioGroup,
+  Checkbox,
+  Toggle,
+  Avatar,
+  Badge,
+  Heading,
+  Paragraph,
+  Label,
+} from 'components'
+
 export const atoms = [
   {
     label: 'Button',
     value: 'button',
+    component: Button,
+    enabled: true,
   },
-  // {
-  //   label: 'Input',
-  //   value: 'input',
-  // },
-  // {
-  //   label: 'Checkbox',
-  //   value: 'checkbox',
-  // },
-  // {
-  //   label: 'Slider',
-  //   value: 'slider',
-  // },
-  // {
-  //   label: 'Textarea',
-  //   value: 'textarea',
-  // },
-  // {
-  //   label: 'Radio',
-  //   value: 'radio',
-  // },
-  // {
-  //   label: 'Select',
-  //   value: 'select',
-  // },
-  // {
-  //   label: 'Video',
-  //   value: 'video',
-  // },
-  // {
-  //   label: 'Logo',
-  //   value: 'logo',
-  // },
   {
-    label: 'Card',
-    value: 'card',
+    label: 'Input',
+    value: 'input',
+    component: Input,
+    enabled: true,
+  },
+  {
+    label: 'Select',
+    value: 'select',
+    component: Select,
+    // enabled: true,
+  },
+  {
+    label: 'Textarea',
+    value: 'textarea',
+    component: Textarea,
+    // enabled: true,
+  },
+  {
+    label: 'Radio group',
+    value: 'radio-group',
+    component: RadioGroup,
+    // enabled: true,
+  },
+  {
+    label: 'Checkbox',
+    value: 'checkbox',
+    component: Checkbox,
+    // enabled: true,
+  },
+  {
+    label: 'Toggle',
+    value: 'toggle',
+    component: Toggle,
   },
   {
     label: 'Avatar',
     value: 'avatar',
+    component: Avatar,
+  },
+  {
+    label: 'Badge',
+    value: 'badge',
+    component: Badge,
+  },
+  {
+    label: 'Heading',
+    value: 'heading',
+    component: Heading,
+  },
+  {
+    label: 'Paragraph',
+    value: 'paragraph',
+    component: Paragraph,
   },
   {
     label: 'Label',
     value: 'label',
-  },
-  {
-    label: 'Link',
-    value: 'link',
-  },
-  {
-    label: 'Icon',
-    value: 'icon',
-  },
-  {
-    label: 'Breadcrumb',
-    value: 'breadcrumb',
-  },
-  {
-    label: 'Regular text',
-    value: 'text',
+    component: Label,
   },
 ]
