@@ -12,14 +12,7 @@ const Component = ({ component }) => {
   const isSelected = selectedComponent === component.value
 
   return (
-    <div
-      className="flex items-center group cursor-pointer"
-      sx={{
-        opacity: component.enabled ? '1' : '0.3',
-        color: isSelected ? 'primary' : 'text',
-        ':hover': { color: 'primary' },
-      }}
-    >
+    <div className="flex items-center">
       <a
         href={component.link}
         target="_blank"
@@ -30,17 +23,20 @@ const Component = ({ component }) => {
             setShowNavigation(false)
           }
         }}
+        className="flex items-center group cursor-pointer"
+        sx={{
+          opacity: component.enabled ? '1' : '0.4',
+          color: isSelected ? 'primary' : 'text',
+          ':hover': { color: 'primary' },
+        }}
       >
         {component.label}
+        <LinkIcon
+          className={`h-4 w-4 ml-1 hidden ${
+            !component.enabled ? 'group-hover:block' : ''
+          }`}
+        />
       </a>
-      {component.enabled}
-      <LinkIcon
-        className={`h-4 w-4 ml-1 hidden ${
-          !component.enabled ? 'group-hover:block' : ''
-        }`}
-      />
-      {/*
-       */}
     </div>
   )
   return

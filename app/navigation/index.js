@@ -105,11 +105,12 @@ const Expanded = () => {
 
   return (
     <div
-      className="h-screen absolute top-0 right-0 flex flex-col w-full pt-10 px-12 overflow-auto select-none"
+      className="h-screen absolute top-0 right-0 flex flex-col w-full pt-6 px-12 overflow-auto select-none"
       sx={{
         bg: 'background',
         width: '82vw',
-        fontSize: '14px',
+        // fontSize: '14px',
+        fontSize: '15px',
       }}
     >
       <Header />

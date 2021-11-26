@@ -10,7 +10,7 @@ import CloseIcon from './icons/close.svg'
 // )
 
 const Header = () => (
-  <div className="flex justify-between mb-10">
+  <div className="flex justify-between mb-9">
     {/*
      */}
     <Search />
