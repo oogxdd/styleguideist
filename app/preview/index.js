@@ -15,7 +15,13 @@ const Preview = () => {
       sx={{ bg: 'background' }}
     >
       <div className="flex items-center justify-center w-full h-full relative">
-        <div sx={previewComponent ? { zIndex: 1 } : {}}>
+        <div
+          sx={
+            previewComponent
+              ? { zIndex: 1, bg: 'background' }
+              : { bg: 'background' }
+          }
+        >
           {atoms.map((atom) => {
             if (previewComponent === atom.value) {
               return <atom.component />
