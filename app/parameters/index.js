@@ -8,15 +8,21 @@ import { Presets } from './presets'
 
 const Parameters = () => (
   <div
-    className="max-h-screen overflow-auto"
+    className="max-h-screen overflow-hidden"
     style={{ width: 'calc(20rem - 6px)', minWidth: 'calc(20rem - 6px)' }}
   >
-    <div className="parameters grid grid-cols-1 gap-x-8 gap-y-10 ml-6 mt-2 min-h-screen">
+    <div
+      className="parameters grid grid-cols-1 gap-x-8 gap-y-10 ml-6 pt-0 min-h-screen overflow-scroll"
+      style={{
+        maxHeight: '125vh',
+      }}
+    >
       <form
-        className="block border-r"
+        className="block border-r pt-2 pb-6"
         sx={{
           borderColor: 'borderColor',
           paddingRight: 30,
+          minHeight: '125vh',
         }}
       >
         <Color open />

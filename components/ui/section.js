@@ -12,13 +12,14 @@ export const Section = ({
   customOptions,
   showCustom,
   showPlus = false,
+  withoutBottomBorder = false,
 }) => {
   const [show, setShow] = useState(showCustom)
 
   return (
     <Disclosure
       as="div"
-      className="border-b py-6"
+      className={`${withoutBottomBorder ? '' : 'border-b'} py-6`}
       defaultOpen={open}
       sx={{
         borderColor: 'borderColor',

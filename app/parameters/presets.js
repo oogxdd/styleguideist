@@ -12,7 +12,7 @@ export const Presets = ({ open = false }) => {
   const { theme, setTheme, setSpacing } = useContext(AppContext)
 
   return (
-    <Section name="Presets" open={open}>
+    <Section name="Presets" open={open} withoutBottomBorder>
       <PresetPicker type="themes" />
     </Section>
   )

@@ -1,112 +1,132 @@
 /** @jsxImportSource theme-ui */
-import { useContext } from 'react'
+import { useContext, useEffect, useCallback, useRef } from 'react'
 import { AppContext } from 'context'
-import { Section } from 'components/ui'
+
+import Header from './header'
+import Section from './section'
+
+import MenuIcon from './icons/menu.svg'
 
 import { atoms, molecules, organisms, templates } from 'data'
 
-const Navigation = () => (
-  <div
-    className="max-h-screen overflow-auto"
-    style={{ width: 'calc(20rem - 6px)', minWidth: 'calc(20rem - 6px)' }}
-  >
-    <div className="parameters_right grid grid-cols-1 gap-x-8 gap-y-10 mr-6 mt-2 min-h-screen">
-      <form
-        className="block border-l"
-        sx={{
-          borderColor: 'borderColor',
-          paddingLeft: 30,
-        }}
-      >
-        <Section name="Atoms" open>
-          {atoms.map((atom) => (
-            <Component component={atom} />
-          ))}
-        </Section>
-        <Section name="Molecules" open>
-          {molecules.map((atom) => (
-            <Component component={atom} />
-          ))}
-        </Section>
-        <Section name="Organisms">
-          {organisms.map((atom) => (
-            <Component component={atom} />
-          ))}
-        </Section>
-        <Section name="Templates">
-          {templates.map((atom) => (
-            <Template component={atom} />
-          ))}
-        </Section>
-      </form>
-    </div>
-  </div>
-)
+const Navigation = () => {
+  const {
+    showNavigation,
+    setShowNavigation,
+    navigationFilter,
+    setNavigationFilter,
+  } = useContext(AppContext)
 
-const Component = ({ component }) => {
-  const { selectedComponent, setComponent } = useContext(AppContext)
+  // https://stackoverflow.com/questions/56954641/how-to-use-state-variable-usestate-in-an-eventhandler
+  const navFilter = useRef() // will be same object each render
+  navFilter.current = navigationFilter // assign new num value each render
 
-  const isSelected = selectedComponent === component.value
+  // later: build hook https://www.caktusgroup.com/blog/2020/07/01/usekeypress-hook-react/
+  useEffect(() => {
+    const onEscape = (e) => {
+      if (e.key === 'Escape') {
+        if (navFilter.current !== '') {
+          setNavigationFilter('')
+        } else {
+          setShowNavigation((prev) => !prev)
+        }
+      }
+    }
 
-  // if (!component.enabled) return null
-  return (
-    <div className="flex flex-col">
-      <label
-        className="mr-3 text-sm cursor-pointer"
-        key={component.value}
-        sx={{
-          color: isSelected ? 'primary' : 'text',
-          display: component.enabled ? 'block' : 'hidden',
-          ':hover': { color: 'primary' },
-        }}
-        onClick={() => setComponent(component.value)}
-      >
-        {component.label}
-      </label>
-      {component.pages && (
-        <ul className="list-disc mt-4 space-y-1.5 mb-4">
-          {component.pages.map((page) => (
-            <li className="mr-3 text-sm" key={component.value}>
-              {page.label}
-            </li>
-          ))}
-        </ul>
-      )}
-    </div>
-  )
-  return
+    window.addEventListener('keyup', onEscape)
+    return () => window.removeEventListener('keyup', onEscape)
+  }, [])
+
+  if (!showNavigation) {
+    return <Collapsed />
+  }
+
+  return <Expanded />
 }
 
-const Template = ({ component }) => {
-  const { selectedComponent, setComponent } = useContext(AppContext)
+const Collapsed = () => {
+  const { showNavigation, setShowNavigation, navigationFilter } = useContext(
+    AppContext,
+  )
 
-  // if (!component.enabled) return null
   return (
-    <div className="flex flex-col">
-      <label className="mr-3 text-sm underline" key={component.value}>
-        {component.label}
-      </label>
-      {component.pages && (
-        <ul className="list-disc mt-4 space-y-1.5 mb-4">
-          {component.pages.map((page) => (
-            <li
-              className="mr-3 text-sm cursor-pointer"
-              key={component.value}
-              onClick={() => setComponent(page.value)}
-              sx={
-                selectedComponent === page.value
-                  ? { color: 'primary', ':hover': { color: 'primary' } }
-                  : { ':hover': { color: 'primary' } }
-              }
-            >
-              {page.label}
-            </li>
-          ))}
-        </ul>
+    <MenuIcon
+      className="w-6 h-6 fixed top-8 right-8 cursor-pointer"
+      onClick={() => setShowNavigation(true)}
+      sx={{
+        fill: 'text',
+        filter: 'grayscale(100%)',
+        opacity: '0.3',
+        ':hover': {
+          opacity: '1',
+        },
+      }}
+    />
+  )
+}
+
+const Expanded = () => {
+  const {
+    showNavigation,
+    setShowNavigation,
+    navigationFilter,
+    setComponent,
+  } = useContext(AppContext)
+
+  const allFilteredComponents = [
+    ...atoms,
+    ...molecules,
+    ...organisms,
+    ...templates,
+  ].filter((c) =>
+    c.label.toLowerCase().includes(navigationFilter.toLowerCase()),
+  )
+
+  const navFilter = useRef()
+  navFilter.current = navigationFilter
+
+  const filteredComps = useRef()
+  filteredComps.current = allFilteredComponents
+
+  // later: build hook https://www.caktusgroup.com/blog/2020/07/01/usekeypress-hook-react/
+  useEffect(() => {
+    const onEnter = (e) => {
+      if (e.key === 'Enter') {
+        if (navFilter.current !== '' && filteredComps.current.length !== 0) {
+          setComponent(filteredComps.current[0].value)
+          setShowNavigation(false)
+        }
+      }
+    }
+
+    window.addEventListener('keyup', onEnter)
+    return () => window.removeEventListener('keyup', onEnter)
+  }, [])
+
+  return (
+    <div
+      className="h-screen absolute top-0 right-0 flex flex-col w-full pt-10 px-12 overflow-auto select-none"
+      sx={{
+        bg: 'background',
+        width: '82vw',
+        fontSize: '14px',
+      }}
+    >
+      <Header />
+      {allFilteredComponents.length !== 0 ? (
+        <>
+          <Section components={atoms} label="Atoms" />
+          <Section components={molecules} label="Molecules" />
+          <Section components={organisms} label="Organisms" />
+          <Section components={templates} label="Templates" />
+        </>
+      ) : (
+        <div className="w-full h-full flex items-center justify-center text-2xl -mt-14">
+          Nothing found
+        </div>
       )}
     </div>
   )
-  return
 }
 
 export default Navigation

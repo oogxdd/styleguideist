@@ -13,8 +13,12 @@ export const greenPurple = merge(base, {
   lineHeights: ['280%'],
   colors: {
     text: '#7fc900',
+    // text: '#B6F34F',
+
     background: '#071620',
     primary: '#5754ff',
+    // primary: '#FFDA9C',
+
     secondary: 'green',
     muted: '#f6f6f6',
     borderColor: '#2c4207',

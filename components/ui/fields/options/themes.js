@@ -67,6 +67,7 @@ const presets = [
     preset: anan,
   },
   {
+    name: 'Green+Purple',
     value: 'green',
     preset: greenPurple,
   },
@@ -117,6 +118,7 @@ export const ThemesPresets = ({ type }) => {
               setTheme(preset.preset)
               setPreset(index + 1)
             }}
+            title={preset.name}
             key={preset}
             sx={{
               ':hover': {

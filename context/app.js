@@ -10,6 +10,9 @@ const AppProvider = ({ children }) => {
   const [theme, setTheme] = useImmer(greenPurple)
 
   // navigation
+  const [showNavigation, setShowNavigation] = useState(false)
+  const [navigationFilter, setNavigationFilter] = useState('')
+
   const [selectedSection, setSection] = useState('atoms')
   const [selectedComponent, setComponent] = useState('button')
   const [selectedComponentVariant, setComponentVariant] = useState('default')
@@ -34,6 +37,13 @@ const AppProvider = ({ children }) => {
   useEffect(() => {
     setComponentVariant('default')
   }, [selectedComponent])
+
+  // when closing navigation - clear navigation filter
+  useEffect(() => {
+    if (showNavigation === false) {
+      setNavigationFilter('')
+    }
+  }, [showNavigation])
 
   // set button spacing
   const setSpacing = (type, value) => {
@@ -102,6 +112,12 @@ const AppProvider = ({ children }) => {
         setBorder,
 
         // navigation
+        showNavigation,
+        setShowNavigation,
+
+        navigationFilter,
+        setNavigationFilter,
+
         selectedSection,
         selectedComponent,
         selectedComponentVariant,

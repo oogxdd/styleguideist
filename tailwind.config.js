@@ -7,6 +7,11 @@ module.exports = {
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    extend: {
+      colors: {
+        // primary: 'var(--theme-ui-colors-primary)',
+      },
+    },
     // extend: {
     //   colors: {
     //     primary: 'var(--primary-color)',
@@ -40,7 +45,9 @@ module.exports = {
     // },
   },
   variants: {
-    extend: {},
+    extend: {
+      display: ['group-hover'],
+    },
   },
   plugins: [
     require('@tailwindcss/forms'),
