@@ -71,6 +71,7 @@ const Expanded = () => {
     setShowNavigation,
     navigationFilter,
     setComponent,
+    previewComponent,
   } = useContext(AppContext)
 
   const allFilteredComponents = [
@@ -105,11 +106,13 @@ const Expanded = () => {
 
   return (
     <div
-      className="h-screen absolute top-0 right-0 flex flex-col w-full pt-10 px-12 overflow-auto select-none"
+      className="h-screen absolute top-0 right-0 flex flex-col w-full pt-10 px-12 overflow-auto select-none "
       sx={{
         bg: 'background',
         width: '82vw',
         fontSize: '14px',
+        opacity: previewComponent ? '0.9' : '1',
+        filter: previewComponent ? 'blur(1px)' : 'blur(0)',
       }}
     >
       <Header />
