@@ -72,4 +72,9 @@ export const base = {
       bg: 'secondary',
     },
   },
+  styles: {
+    progress: {
+      color: 'red',
+    },
+  },
 }

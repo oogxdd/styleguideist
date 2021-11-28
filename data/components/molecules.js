@@ -12,7 +12,7 @@ import {
   Banner,
   Alert,
   ActionForm,
-  Form,
+  Field,
   SignUpForm,
   DataTable,
   DataList,
@@ -26,9 +26,9 @@ import {
 
 export const molecules = [
   {
-    label: 'Form',
-    value: 'form',
-    component: Form,
+    label: 'Field',
+    value: 'field',
+    component: Field,
     enabled: true,
     link: 'https://tailwindui.com/components/application-ui/forms/form-layouts',
   },
@@ -114,6 +114,7 @@ export const molecules = [
     value: 'alert',
     component: Alert,
     link: 'https://tailwindui.com/components/application-ui/feedback/alerts',
+    enabled: true,
   },
 
   {

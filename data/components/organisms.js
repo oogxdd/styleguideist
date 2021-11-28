@@ -11,6 +11,7 @@ import {
   CTASection,
   FeaturesSection,
   HeroSection,
+  Form,
 } from 'components/organisms'
 
 export const organisms = [
@@ -87,5 +88,12 @@ export const organisms = [
     value: 'stats',
     component: Stats,
     link: 'https://tailwindui.com/components/marketing/sections/stats-sections',
+  },
+  {
+    label: 'Form',
+    value: 'form',
+    component: Form,
+    enabled: true,
+    link: 'https://tailwindui.com/components/application-ui/forms/form-layouts',
   },
 ]

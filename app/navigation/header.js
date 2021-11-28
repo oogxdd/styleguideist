@@ -10,7 +10,7 @@ import CloseIcon from './icons/close.svg'
 // )
 
 const Header = () => (
-  <div className="flex justify-between mb-9">
+  <div className="flex justify-between mb-8">
     {/*
      */}
     <Search />
@@ -31,7 +31,7 @@ const Search = () => {
       autoFocus
       sx={{
         color: 'text',
-        opacity: '0.3',
+        opacity: '0.5',
         fontSize: '15px',
         ':hover': {
           opacity: '1',

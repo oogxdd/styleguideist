@@ -49,9 +49,15 @@ const Section = ({ components, label }) => {
       </span>
 
       <div className="grid grid-cols-4 gap-y-1.5">
-        {filteredComponents.map((component) => (
-          <Component component={component} />
-        ))}
+        {filteredComponents
+          .sort((a, b) => {
+            if (a.enabled === true && b.enabled === true) return 0
+            if (a.enabled === true) return -1
+            return 1
+          })
+          .map((component) => (
+            <Component component={component} />
+          ))}
       </div>
     </div>
   )
