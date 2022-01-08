@@ -6,7 +6,7 @@ import { CheckIcon, SelectorIcon } from '@heroicons/react/solid'
 import { classNames } from 'helpers'
 import { fonts as defaultFonts } from 'data'
 import { googleFonts } from 'data/fonts/google'
-import { allGoogleFonts } from 'data/fonts/allGoogleFonts'
+import { allGoogleFonts } from 'data/fonts/all-google-fonts'
 import axios from 'axios'
 
 const GOOGLE_FONTS_API_KEY = 'AIzaSyCOzhRqd9pr-kJcQimmRO38qdfV2su6yVQ'
