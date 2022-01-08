@@ -1,23 +1,36 @@
-export const one = {
+import { base } from '@theme-ui/presets'
+import { merge } from 'theme-ui'
+
+export const theme2 = merge(base, {
   name: 'default',
   fonts: {
-    body: 'system-ui',
+    body: 'Eesti',
+    // body: 'system-ui',
     heading: '"Spotify Circular", sans-serif',
     monospace: 'Menlo, monospace',
   },
   colors: {
-    text: '#b6ccff',
-    background: '#422121',
-    primary: '#803d3d',
+    text: '#888b83',
+    background: '#071620',
+    primary: '#4ef7ff',
     secondary: 'green',
-    borderColor: '#b6ccff',
+    borderColor: '#888b83',
   },
   radii: ['0px', '4px', '8px', '10px', '100px'],
   borders: { border: '0px solid borderColor' },
   fontSizes: [38, 40, 42, 46, 50, 68, 84, 90],
-  letterSpacings: ['0px', '10px'],
-  lineHeights: ['100%', '125%', '150%', '175%', '200%'],
-  fontWeights: { body: 400, heading: 700, bold: 500 },
+  letterSpacings: [
+    '3.9px',
+    '5.9px',
+    '7.9px',
+    '11.9px',
+    '15.9px',
+    '33.9px',
+    '49.9px',
+    '55.9px',
+  ],
+  lineHeights: ['280%'],
+  fontWeights: { body: 400, heading: 700, bold: 900 },
   space: [2, 4, 8, 16, 32, 48, 64],
   shadows: [
     'none',
@@ -41,9 +54,9 @@ export const one = {
       borderColor: 'borderColor',
       py: '24px',
       px: '39px',
-      boxShadow: 0,
+      boxShadow: 3,
       lineHeight: 0,
     },
     secondary: { color: 'background', bg: 'secondary' },
   },
-}
+})

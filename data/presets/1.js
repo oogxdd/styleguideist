@@ -1,20 +1,16 @@
-import { base } from '@theme-ui/presets'
-import { merge } from 'theme-ui'
-
-export const another = merge(base, {
-  name: 'default',
+export const theme1 = {
+  name: 'anan',
   fonts: {
     body: 'Eesti',
-    // body: 'system-ui',
     heading: '"Spotify Circular", sans-serif',
     monospace: 'Menlo, monospace',
   },
   colors: {
     text: '#888b83',
     background: '#071620',
-    primary: '#4ef7ff',
+    primary: '#93a0a0',
     secondary: 'green',
-    borderColor: '#888b83',
+    borderColor: '#59712d',
   },
   radii: ['0px', '4px', '8px', '10px', '100px'],
   borders: { border: '0px solid borderColor' },
@@ -59,4 +55,4 @@ export const another = merge(base, {
     },
     secondary: { color: 'background', bg: 'secondary' },
   },
-})
+}

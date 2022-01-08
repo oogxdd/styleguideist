@@ -1,4 +1,5 @@
-export const weirdTheme = {
+export const weird = {
+  name: 'weird',
   space: [2, 4, 8, 16, 32, 48, 64],
   fonts: {
     body: 'Aclonica',

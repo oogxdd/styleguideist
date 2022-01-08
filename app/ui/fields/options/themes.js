@@ -3,21 +3,7 @@ import { useContext, useState } from 'react'
 import { AppContext } from 'context'
 import { downloadFile } from 'helpers'
 
-import {
-  defaultPreset,
-  vercel,
-  spotify,
-  twitter,
-  redWhite,
-  blueRed,
-  one,
-  another,
-  anan,
-  greenPurple,
-  hackClubTheme,
-} from 'data/presets'
-
-const presets = [defaultPreset, one, another, anan, greenPurple]
+import { presets } from 'data'
 
 const sd = ['none', 'md', 'lg', 'xl', 'full']
 

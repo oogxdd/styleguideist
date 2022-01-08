@@ -1,7 +1,8 @@
 import { ThemeProvider } from 'theme-ui'
 import { createContext, useState, useEffect } from 'react'
-import { atoms, molecules, organisms, templates, fonts } from 'data'
-import { defaultPreset, one, another, anan, greenPurple } from 'data/presets'
+import { atoms, molecules, organisms, templates } from 'data/components'
+import { fonts } from 'data/fonts'
+import { greenPurple } from 'data/presets'
 import { useImmer } from 'use-immer'
 
 const AppContext = createContext()
