@@ -2,5 +2,5 @@
 import { Heading as ThemeUIHeading } from 'theme-ui'
 
 export const Heading = ({ children = 'Heading' }) => (
-  <ThemeUIHeading>{children}</ThemeUIHeading>
+  <ThemeUIHeading className="text-3xl text-bold">{children}</ThemeUIHeading>
 )

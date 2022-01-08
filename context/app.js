@@ -8,31 +8,32 @@ const AppContext = createContext()
 
 const AppProvider = ({ children }) => {
   const [theme, setTheme] = useImmer(greenPurple)
+  const [gfont, setGfont] = useState('system-ui')
 
   // navigation
   const [showNavigation, setShowNavigation] = useState(false)
   const [navigationFilter, setNavigationFilter] = useState('')
 
   const [selectedSection, setSection] = useState('atoms')
-  const [selectedComponent, setComponent] = useState('button')
+  const [selectedComponent, setComponent] = useState('sign-up-form')
   const [previewComponent, setPreviewComponent] = useState(null)
   const [selectedComponentVariant, setComponentVariant] = useState('default')
 
   // when changing section, select the first component of the section
-  useEffect(() => {
-    if (selectedSection === 'atoms') {
-      setComponent(atoms[0].value)
-    }
-    if (selectedSection === 'molecules') {
-      setComponent(molecules[0].value)
-    }
-    if (selectedSection === 'organisms') {
-      setComponent(organisms[0].value)
-    }
-    if (selectedSection === 'templates') {
-      setComponent(templates[0].value)
-    }
-  }, [selectedSection])
+  // useEffect(() => {
+  //   if (selectedSection === 'atoms') {
+  //     setComponent(atoms[0].value)
+  //   }
+  //   if (selectedSection === 'molecules') {
+  //     setComponent(molecules[0].value)
+  //   }
+  //   if (selectedSection === 'organisms') {
+  //     setComponent(organisms[0].value)
+  //   }
+  //   if (selectedSection === 'templates') {
+  //     setComponent(templates[0].value)
+  //   }
+  // }, [selectedSection])
 
   // when changing component, set variant to default
   useEffect(() => {
@@ -127,22 +128,32 @@ const AppProvider = ({ children }) => {
         setPreviewComponent,
         selectedComponentVariant,
         setComponentVariant,
+
+        setGfont,
+        gfont,
       }}
     >
       <ThemeProvider theme={theme}>{children}</ThemeProvider>
-
       <style
         dangerouslySetInnerHTML={{
           __html: `
-      * { font-family: '${
-        fonts.find((f) => f.label === theme.fonts.body).label
-      }' !important; }
-    `,
+        * { font-family: '${gfont}' }
+`,
         }}
       />
     </AppContext.Provider>
   )
 }
+// <style
+//   dangerouslySetInnerHTML={{
+//     __html: `
+// * { font-family: '${
+//   fonts.find((f) => f.label === theme.fonts.body).label
+// }' !important; }
+// `,
+//   }}
+// />
+
 // <style
 //   dangerouslySetInnerHTML={{
 //     __html: `

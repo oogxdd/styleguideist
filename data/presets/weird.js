@@ -1,28 +1,20 @@
-import { base } from '@theme-ui/presets'
-import { merge } from 'theme-ui'
-
-export const greenPurple = merge(base, {
-  name: 'Green+Purple',
+export const weirdTheme = {
   space: [2, 4, 8, 16, 32, 48, 64],
   fonts: {
-    body: 'Eesti',
-    heading: '"Spotify Circular", sans-serif',
+    body: 'Aclonica',
+    heading: 'Aclonica',
     monospace: 'Menlo, monospace',
   },
   fontSizes: [23, 25, 27, 31, 35, 53, 69, 75],
   fontWeights: { body: 400, heading: 700, bold: 900 },
   lineHeights: ['280%'],
   colors: {
-    text: '#7fc900',
-    // text: '#B6F34F',
-
-    background: '#071620',
-    primary: '#5754ff',
-    // primary: '#FFDA9C',
-
+    text: '#cfd4c5',
+    background: '#005891',
+    primary: '#171652',
     secondary: 'green',
     muted: '#f6f6f6',
-    borderColor: '#2c4207',
+    borderColor: '#e0feac',
   },
   styles: {
     root: { fontFamily: 'body', lineHeight: 'body', fontWeight: 'body' },
@@ -121,7 +113,7 @@ export const greenPurple = merge(base, {
       borderColor: 'borderColor',
       py: '24px',
       px: '39px',
-      boxShadow: 3,
+      boxShadow: 0,
       lineHeight: 0,
     },
     secondary: { color: 'background', bg: 'secondary' },
@@ -131,14 +123,11 @@ export const greenPurple = merge(base, {
       bg: 'primary',
       border: 'border',
       borderRadius: 4,
-      bg: 'primary',
       color: 'background',
       fontFamily: 'body',
       fontSize: 3,
       fontWeight: 'bold',
       letterSpacing: 0,
-      border: 'border',
-      borderRadius: 4,
       borderWidth: 'borderWidth',
       borderColor: 'borderColor',
       py: 2,
@@ -147,4 +136,4 @@ export const greenPurple = merge(base, {
       lineHeight: 0,
     },
   },
-})
+}

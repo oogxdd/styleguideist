@@ -1,7 +1,7 @@
 /** @jsxImportSource theme-ui */
 import { useState, useContext } from 'react'
 import { AppContext } from 'context'
-import { Section, ColorPicker, Slider, Presets, Checkbox } from 'components/ui'
+import { Section, ColorPicker, Slider, Presets, Checkbox } from 'app/ui'
 import { shadowToObj, shadowToStr } from 'helpers'
 
 export const Shadow = ({ open = false }) => {

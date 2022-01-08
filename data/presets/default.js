@@ -8,6 +8,7 @@
 // component-specific props
 export const defaultPreset = {
   name: 'default',
+  label: 'DE',
   fonts: {
     body: 'system-ui',
     // body: '"Spotify Circular", sans-serif',

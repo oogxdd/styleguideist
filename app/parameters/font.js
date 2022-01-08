@@ -1,13 +1,6 @@
 import { useContext } from 'react'
 import { AppContext } from 'context'
-import {
-  Section,
-  ColorPicker,
-  Slider,
-  Presets,
-  Select,
-  Checkbox,
-} from 'components/ui'
+import { Section, ColorPicker, Slider, Presets, Select, Checkbox } from 'app/ui'
 import { percentToNum, pxToNum } from 'helpers'
 
 export const Font = ({ open = false }) => {

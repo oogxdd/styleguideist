@@ -26,10 +26,24 @@ import {
 
 export const molecules = [
   {
+    label: 'Sign up form',
+    value: 'sign-up-form',
+    component: SignUpForm,
+    enabled: true,
+    link: 'https://tailwindui.com/components/application-ui/forms/form-layouts',
+  },
+  {
     label: 'Field',
     value: 'field',
     component: Field,
-    enabled: true,
+    // enabled: true,
+    link: 'https://tailwindui.com/components/application-ui/forms/form-layouts',
+  },
+  {
+    label: 'Field',
+    value: 'field',
+    component: Field,
+    // enabled: true,
     link: 'https://tailwindui.com/components/application-ui/forms/form-layouts',
   },
 
@@ -95,13 +109,13 @@ export const molecules = [
     link: 'https://tailwindui.com/components/application-ui/lists/tables',
   },
 
-  {
-    label: 'Sign up form',
-    value: 'sign-up-form',
-    component: SignUpForm,
-    link:
-      'https://tailwindui.com/components/application-ui/forms/sign-in-forms',
-  },
+  // {
+  //   label: 'Sign up form',
+  //   value: 'sign-up-form',
+  //   component: SignUpForm,
+  //   link:
+  //     'https://tailwindui.com/components/application-ui/forms/sign-in-forms',
+  // },
 
   {
     label: 'Action form',
@@ -116,7 +130,7 @@ export const molecules = [
     value: 'alert',
     component: Alert,
     link: 'https://tailwindui.com/components/application-ui/feedback/alerts',
-    enabled: true,
+    // enabled: true,
   },
 
   {

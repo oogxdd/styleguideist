@@ -1,25 +1,83 @@
 /** @jsxImportSource theme-ui */
-import { useState, useContext, Fragment } from 'react'
+import { useState, useContext, Fragment, useEffect } from 'react'
 import { AppContext } from 'context'
 import { Listbox, Transition } from '@headlessui/react'
 import { CheckIcon, SelectorIcon } from '@heroicons/react/solid'
 import { classNames } from 'helpers'
-import { fonts } from 'data'
+import { fonts as defaultFonts } from 'data'
+import { googleFonts } from 'data/fonts/google'
+import { allGoogleFonts } from 'data/fonts/allGoogleFonts'
+import axios from 'axios'
+
+const GOOGLE_FONTS_API_KEY = 'AIzaSyCOzhRqd9pr-kJcQimmRO38qdfV2su6yVQ'
 
 export const Select = () => {
-  const { theme, setTheme } = useContext(AppContext)
+  const { theme, setTheme, setGfont } = useContext(AppContext)
   const [selected, setSelected] = useState(
-    fonts.find((f) => f.label === theme.fonts.body),
+    defaultFonts.find((f) => f.label === theme.fonts.body),
   )
+  const [fonts, setFonts] = useState([])
+  // const [fonts, setFonts] = useState(defaultFonts)
+
+  console.log('with values more than 2')
+  console.log(
+    allGoogleFonts
+      .filter((f) => Object.values(f.files).length > 3)
+      .filter((f) => !f.variants.includes('italic')),
+  )
+
+  useEffect(() => {
+    axios
+      .get(
+        `https://www.googleapis.com/webfonts/v1/webfonts?key=${GOOGLE_FONTS_API_KEY}`,
+      )
+      .then((r) => {
+        console.log(r.data.items)
+        setFonts(r.data.items)
+      })
+  }, [])
+
+  useEffect(() => {
+    let fontStyles = document.createElement('style')
+    googleFonts.map((font) => {
+      if (Object.keys(font.files).length > 0) {
+        for (const [key, value] of Object.entries(font.files)) {
+          // console.log(`${key}: ${value}`);
+          fontStyles.appendChild(
+            document.createTextNode(`
+              @font-face {
+                font-family: "${font.family}";
+                src: url("${value}");
+                font-weight: ${key};
+              }
+            `),
+          )
+        }
+      } else {
+        fontStyles.appendChild(
+          document.createTextNode(`
+          @font-face {
+            font-family: "${font.family}";
+            src: url("${font.files[Object.keys(font.files)[0]]}");
+          }
+        `),
+        )
+      }
+    })
+    document.head.appendChild(fontStyles)
+  }, [])
 
   return (
     <Listbox
       value={selected}
       onChange={(font) => {
-        setSelected(font)
+        console.log(font)
+        setGfont(font.family)
+        // document.body.style.fontFamily = font.family
+        // setSelected(font)
         setTheme((theme) => ({
           ...theme,
-          fonts: { ...theme.fonts, body: font.label },
+          fonts: { ...theme.fonts, body: font.family, heading: font.family },
         }))
       }}
     >
@@ -57,9 +115,9 @@ export const Select = () => {
               borderColor: 'borderColor',
             }}
           >
-            {fonts.map((font, index) => (
+            {googleFonts.map((font, index) => (
               <Listbox.Option
-                key={font.value}
+                key={font.family}
                 className={({ active }) =>
                   classNames(
                     active ? '' : '',
@@ -75,9 +133,9 @@ export const Select = () => {
                         selected ? 'font-semibold' : 'font-normal',
                         'block truncate',
                       )}
-                      style={{ fontFamily: font.label }}
+                      style={{ fontFamily: font.family }}
                     >
-                      {font.label}
+                      {font.family}
                     </span>
 
                     {selected ? (
@@ -105,3 +163,18 @@ export const Select = () => {
     </Listbox>
   )
 }
+
+// <style global jsx>{`
+//   ${googleFonts.map(
+//     (font) => `
+//     @font-face {
+//       font-family: '${font.family}';
+//       src: url("${font.files[Object.keys(font.files)[0]]}");
+//     }
+//   `,
+//   )}
+// `}</style>
+
+// * { font-family: '${
+//   fonts.find((f) => f.label === theme.fonts.body).label
+// }' !important; }

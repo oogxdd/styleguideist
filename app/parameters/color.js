@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import { AppContext } from 'context'
-import { ColorPicker as Colorpicker, Section } from 'components/ui'
+import { ColorPicker as Colorpicker, Section } from 'app/ui'
 
 export const Color = ({ open = false }) => {
   const { theme, setColor } = useContext(AppContext)

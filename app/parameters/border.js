@@ -5,7 +5,7 @@
 // one of options: custom or preset
 import { useContext } from 'react'
 import { AppContext } from 'context'
-import { Section, ColorPicker, Slider, Presets, Checkbox } from 'components/ui'
+import { Section, ColorPicker, Slider, Presets, Checkbox } from 'app/ui'
 
 export const Border = ({ open = false }) => {
   const { theme, setTheme } = useContext(AppContext)

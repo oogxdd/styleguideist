@@ -1,7 +1,6 @@
 import { AppProvider } from 'context'
 import Head from 'next/head'
 import 'tailwindcss/tailwind.css'
-// import 'nextra-theme-docs/style.css'
 
 const App = ({ Component, pageProps }) => (
   <>

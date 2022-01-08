@@ -93,7 +93,7 @@ export const organisms = [
     label: 'Form',
     value: 'form',
     component: Form,
-    enabled: true,
+    // enabled: true,
     link: 'https://tailwindui.com/components/application-ui/forms/form-layouts',
   },
 ]

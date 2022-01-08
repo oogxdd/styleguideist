@@ -8,9 +8,11 @@ import Template from './template'
 const Section = ({ components, label }) => {
   const { navigationFilter, setNavigationFilter } = useContext(AppContext)
 
-  const filteredComponents = components.filter((c) =>
-    c.label.toLowerCase().includes(navigationFilter.toLowerCase()),
-  )
+  const filteredComponents = components
+    .filter((c) =>
+      c.label.toLowerCase().includes(navigationFilter.toLowerCase()),
+    )
+    .filter((c) => c.enabled)
 
   if (filteredComponents.length === 0) return null
 
