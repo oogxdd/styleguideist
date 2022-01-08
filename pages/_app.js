@@ -1,6 +1,7 @@
 import { AppProvider } from 'context'
 import Head from 'next/head'
 import 'tailwindcss/tailwind.css'
+// import 'nextra-theme-docs/style.css'
 
 const App = ({ Component, pageProps }) => (
   <>
@@ -8,6 +9,7 @@ const App = ({ Component, pageProps }) => (
       <title>Styleguideist</title>
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       <link href="/css/index.css" rel="stylesheet" />
+      <link href="/css/blog.css" rel="stylesheet" />
     </Head>
     <AppProvider>
       <Component {...pageProps} />
@@ -60,6 +62,14 @@ const App = ({ Component, pageProps }) => (
       body {
         overflow: hidden;
         margin: 0px 2px 0px 2px !important;
+      }
+
+      .prose ul {
+        list-style: inside !important;
+      }
+
+      .prose ul > li {
+        list-style: inside !important;
       }
     `}</style>
   </>

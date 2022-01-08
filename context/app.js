@@ -15,6 +15,7 @@ const AppProvider = ({ children }) => {
 
   const [selectedSection, setSection] = useState('atoms')
   const [selectedComponent, setComponent] = useState('button')
+  const [previewComponent, setPreviewComponent] = useState(null)
   const [selectedComponentVariant, setComponentVariant] = useState('default')
 
   // when changing section, select the first component of the section
@@ -119,10 +120,12 @@ const AppProvider = ({ children }) => {
         setNavigationFilter,
 
         selectedSection,
-        selectedComponent,
-        selectedComponentVariant,
         setSection,
+        selectedComponent,
         setComponent,
+        previewComponent,
+        setPreviewComponent,
+        selectedComponentVariant,
         setComponentVariant,
       }}
     >

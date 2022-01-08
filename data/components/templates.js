@@ -141,13 +141,14 @@ export const templates = [
         value: 'article-page',
         component: ArticlePage,
         link: 'https://demo.vercel.blog/posts/pages',
+        enabled: true,
       },
-      {
-        label: 'About page',
-        value: 'blog-about-page',
-        component: BlogHomePage,
-        link: 'https://demo.vercel.blog/',
-      },
+      // {
+      //   label: 'About page',
+      //   value: 'blog-about-page',
+      //   component: BlogAboutPage,
+      //   link: 'https://demo.vercel.blog/',
+      // },
     ],
   },
 ]

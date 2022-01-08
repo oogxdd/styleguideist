@@ -13,6 +13,7 @@ import {
   another,
   anan,
   greenPurple,
+  hackClubTheme,
 } from 'data/presets'
 
 const presets = [
@@ -71,6 +72,10 @@ const presets = [
     value: 'green',
     preset: greenPurple,
   },
+  // {
+  //   value: 'hack-club',
+  //   preset: hackClubTheme,
+  // },
 ]
 
 const sd = ['none', 'md', 'lg', 'xl', 'full']

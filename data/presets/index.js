@@ -9,6 +9,7 @@ import { blueRed } from './custom/blue-white'
 import { one } from './one'
 import { another } from './another'
 import { greenPurple } from './green-purple'
+import { hackClubTheme } from './hack-club'
 import {
   // base,
   system,
@@ -37,6 +38,7 @@ export {
   another,
   anan,
   greenPurple,
+  hackClubTheme,
 }
 
 const anan = {

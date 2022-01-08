@@ -38,6 +38,7 @@ export const molecules = [
     value: 'header',
     component: Header,
     link: 'https://tailwindui.com/components/marketing/elements/headers',
+    // enabled: true,
   },
 
   {
@@ -45,6 +46,7 @@ export const molecules = [
     value: 'footer',
     component: Footer,
     link: 'https://tailwindui.com/components/marketing/sections/footers',
+    // enabled: true,
   },
 
   {
