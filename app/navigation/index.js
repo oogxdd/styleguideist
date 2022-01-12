@@ -110,7 +110,7 @@ const Expanded = () => {
       className="h-screen absolute top-0 right-0 flex flex-col w-full pt-8 px-12 overflow-auto select-none "
       sx={{
         bg: 'background',
-        width: '82vw',
+        width: 'calc(100vw - 18rem + 30px)',
         fontSize: '14px',
         opacity: previewComponent ? '0.9' : '1',
         filter: previewComponent ? 'blur(1px)' : 'blur(0)',

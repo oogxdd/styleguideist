@@ -102,6 +102,7 @@ export const templates = [
   {
     label: 'Dashboard',
     value: 'dashboard',
+    // enabled: true,
     pages: [
       {
         label: 'Home page',
@@ -121,6 +122,7 @@ export const templates = [
         label: 'Settings page',
         value: 'settings-page',
         component: SettingsPage,
+        // enabled: true,
         link:
           'https://tailwindui.com/components/application-ui/page-examples/settings-screens',
       },

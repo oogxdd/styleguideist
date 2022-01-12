@@ -23,7 +23,7 @@ const Template = ({ template }) => {
       </span>
       <div className="flex flex-col">
         {template.pages.map((page) => (
-          <Component component={page} />
+          <Component component={page} key={page.value} />
         ))}
       </div>
     </div>

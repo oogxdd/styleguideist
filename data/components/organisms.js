@@ -12,9 +12,30 @@ import {
   FeaturesSection,
   HeroSection,
   Form,
+  ProfileSettings,
 } from 'components/organisms'
 
 export const organisms = [
+  {
+    label: 'Profile settings',
+    value: 'profile-settings',
+    enabled: true,
+    component: ProfileSettings,
+  },
+  {
+    label: 'Blog list',
+    value: 'blog-list',
+    component: BlogList,
+    enabled: true,
+    link: 'https://tailwindui.com/components/marketing/sections/blog-sections',
+  },
+  {
+    label: 'Feed',
+    value: 'feed',
+    component: Feed,
+    enabled: true,
+    link: 'https://tailwindui.com/components/application-ui/lists/feeds',
+  },
   {
     label: 'Hero section',
     value: 'hero-section',
@@ -47,12 +68,6 @@ export const organisms = [
     link: 'https://tailwindui.com/components/marketing/sections/testimonials',
   },
   {
-    label: 'Blog list',
-    value: 'blog-list',
-    component: BlogList,
-    link: 'https://tailwindui.com/components/marketing/sections/blog-sections',
-  },
-  {
     label: 'Contact section',
     value: 'contact-section',
     component: ContactSection,
@@ -70,12 +85,6 @@ export const organisms = [
     value: 'grid',
     component: Grid,
     link: 'https://tailwindui.com/components/application-ui/lists/grid-lists',
-  },
-  {
-    label: 'Feed',
-    value: 'feed',
-    component: Feed,
-    link: 'https://tailwindui.com/components/application-ui/lists/feeds',
   },
   {
     label: 'FAQ',

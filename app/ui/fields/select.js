@@ -19,23 +19,23 @@ export const Select = () => {
   const [fonts, setFonts] = useState([])
   // const [fonts, setFonts] = useState(defaultFonts)
 
-  console.log('with values more than 2')
-  console.log(
-    allGoogleFonts
-      .filter((f) => Object.values(f.files).length > 3)
-      .filter((f) => !f.variants.includes('italic')),
-  )
+  // console.log('with values more than 2')
+  // console.log(
+  //   allGoogleFonts
+  //     .filter((f) => Object.values(f.files).length > 3)
+  //     .filter((f) => !f.variants.includes('italic')),
+  // )
 
-  useEffect(() => {
-    axios
-      .get(
-        `https://www.googleapis.com/webfonts/v1/webfonts?key=${GOOGLE_FONTS_API_KEY}`,
-      )
-      .then((r) => {
-        console.log(r.data.items)
-        setFonts(r.data.items)
-      })
-  }, [])
+  // useEffect(() => {
+  //   axios
+  //     .get(
+  //       `https://www.googleapis.com/webfonts/v1/webfonts?key=${GOOGLE_FONTS_API_KEY}`,
+  //     )
+  //     .then((r) => {
+  //       // console.log(r.data.items)
+  //       setFonts(r.data.items)
+  //     })
+  // }, [])
 
   useEffect(() => {
     let fontStyles = document.createElement('style')

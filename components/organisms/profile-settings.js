@@ -1,4 +1,6 @@
 /** @jsxImportSource theme-ui */
+import { useContext } from 'react'
+import { AppContext } from 'context'
 import { Fragment, useState } from 'react'
 import { Disclosure, Menu, Switch, Transition } from '@headlessui/react'
 import { SearchIcon } from '@heroicons/react/solid'
@@ -12,6 +14,9 @@ import {
   ViewGridAddIcon,
   XIcon,
 } from '@heroicons/react/outline'
+import { Card } from 'components/atoms'
+import Values from 'values.js'
+import { tint, shade } from 'tint-shade-color'
 
 const user = {
   name: 'Debbie Lewis',
@@ -44,16 +49,23 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export const SettingsPage = () => {
+export const ProfileSettings = () => {
   const [availableToHire, setAvailableToHire] = useState(true)
   const [privateAccount, setPrivateAccount] = useState(false)
   const [allowCommenting, setAllowCommenting] = useState(true)
   const [allowMentions, setAllowMentions] = useState(true)
 
+  const { theme } = useContext(AppContext)
+
+  console.log(theme)
+  // const color = new Values(theme.colors.primary)
+  const color = new Values('hsl(204deg 100% 50% / 1)')
+  console.log(color)
+
   return (
-    <main className="relative mt-16 w-4/5" sx={{ color: 'text2' }}>
+    <main className="relative mt-16 w-4/5 self-start">
       <div className="mx-auto pb-6 px-4 sm:px-6 lg:pb-16 lg:px-8 w-full">
-        <div
+        <Card
           className="bg-white rounded-lg shadow overflow-hidden"
           sx={{ bg: 'card' }}
         >
@@ -66,22 +78,37 @@ export const SettingsPage = () => {
                     href={item.href}
                     className={classNames(
                       item.current
-                        ? 'bg-teal-50 border-teal-500 text-teal-700 hover:bg-teal-50 hover:text-teal-700'
+                        ? 'bg-teal-50 border-teal-500'
                         : 'border-transparent text-gray-900 hover:bg-gray-50 hover:text-gray-900',
                       'group border-l-4 px-3 py-2 flex items-center text-sm font-medium',
                     )}
+                    sx={
+                      item.current
+                        ? {
+                            borderColor: 'primary',
+                            color: 'primary',
+                            background: tint(theme.colors.primary, 0.8),
+                          }
+                        : {}
+                    }
                     aria-current={item.current ? 'page' : undefined}
                   >
                     <item.icon
                       className={classNames(
                         item.current
-                          ? 'text-teal-500 group-hover:text-teal-500'
+                          ? 'text-teal-500'
                           : 'text-gray-400 group-hover:text-gray-500',
                         'flex-shrink-0 -ml-1 mr-3 h-6 w-6',
                       )}
+                      sx={item.current ? { color: 'primary' } : {}}
                       aria-hidden="true"
                     />
-                    <span className="truncate">{item.name}</span>
+                    <span
+                      className="truncate"
+                      sx={item.current ? { color: 'primary' } : {}}
+                    >
+                      {item.name}
+                    </span>
                   </a>
                 ))}
               </nav>
@@ -319,6 +346,7 @@ export const SettingsPage = () => {
                           availableToHire ? 'bg-teal-500' : 'bg-gray-200',
                           'ml-4 relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500',
                         )}
+                        sx={availableToHire ? { background: 'primary' } : {}}
                       >
                         <span
                           aria-hidden="true"
@@ -326,6 +354,7 @@ export const SettingsPage = () => {
                             availableToHire ? 'translate-x-5' : 'translate-x-0',
                             'inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200',
                           )}
+                          sx={availableToHire ? { background: 'primary' } : {}}
                         />
                       </Switch>
                     </Switch.Group>
@@ -350,7 +379,7 @@ export const SettingsPage = () => {
                         checked={privateAccount}
                         onChange={setPrivateAccount}
                         className={classNames(
-                          privateAccount ? 'bg-teal-500' : 'bg-gray-200',
+                          privateAccount ? '' : 'bg-gray-200',
                           'ml-4 relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500',
                         )}
                       >
@@ -384,9 +413,10 @@ export const SettingsPage = () => {
                         checked={allowCommenting}
                         onChange={setAllowCommenting}
                         className={classNames(
-                          allowCommenting ? 'bg-teal-500' : 'bg-gray-200',
+                          allowCommenting ? '' : 'bg-gray-200',
                           'ml-4 relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500',
                         )}
+                        sx={availableToHire ? { bg: 'primary' } : {}}
                       >
                         <span
                           aria-hidden="true"
@@ -442,7 +472,8 @@ export const SettingsPage = () => {
                   </button>
                   <button
                     type="submit"
-                    className="ml-5 bg-sky-700 border border-transparent rounded-md shadow-sm py-2 px-4 inline-flex justify-center text-sm font-medium text-white hover:bg-sky-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500"
+                    className="ml-5 border border-transparent rounded-md shadow-sm py-2 px-4 inline-flex justify-center text-sm font-medium text-white-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500"
+                    sx={{ bg: 'primary', color: 'white' }}
                   >
                     Save
                   </button>
@@ -450,7 +481,7 @@ export const SettingsPage = () => {
               </div>
             </form>
           </div>
-        </div>
+        </Card>
       </div>
     </main>
   )

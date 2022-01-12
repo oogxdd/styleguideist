@@ -9,10 +9,16 @@ import { Presets } from './presets'
 const Parameters = () => (
   <div
     className="max-h-screen overflow-hidden"
-    style={{ width: 'calc(20rem - 6px)', minWidth: 'calc(20rem - 6px)' }}
+    style={{
+      // width: 'calc(20rem - 6px)',
+      // minWidth: 'calc(20rem - 6px)'
+      width: 'calc(18rem - 0px)',
+      // minWidth: 'calc(16rem - 0px)',
+      minWidth: 'calc(18rem - 0px)',
+    }}
   >
     <div
-      className="parameters grid grid-cols-1 gap-x-8 gap-y-10 ml-6 pt-0 min-h-screen overflow-scroll"
+      className="parameters grid grid-cols-1 gap-x-8 gap-y-10 pt-0 min-h-screen overflow-scroll"
       style={{
         maxHeight: '125vh',
       }}
@@ -21,15 +27,15 @@ const Parameters = () => (
         className="block border-r pt-2 pb-6"
         sx={{
           borderColor: 'borderColor',
-          paddingRight: 30,
+          // paddingRight: 30,
           minHeight: '125vh',
         }}
       >
         <Color open />
+        <Font />
         <Border />
-        <Shadow open />
+        <Shadow />
         <Spacing />
-        <Font open />
         <Presets open />
       </form>
     </div>

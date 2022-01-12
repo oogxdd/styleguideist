@@ -31,7 +31,7 @@ const Section = ({ components, label }) => {
 
         <div className="grid grid-cols-4 grid-rows-1">
           {filteredComponents.map((component) => (
-            <Template template={component} />
+            <Template template={component} key={component.value} />
           ))}
         </div>
       </div>
@@ -58,7 +58,7 @@ const Section = ({ components, label }) => {
             return 1
           })
           .map((component) => (
-            <Component component={component} />
+            <Component component={component} key={component.value} />
           ))}
       </div>
     </div>

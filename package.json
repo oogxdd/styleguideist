@@ -31,7 +31,9 @@
     "react-select": "^5.2.1",
     "react-window": "^1.8.6",
     "theme-ui": "^0.11.3",
-    "use-immer": "^0.6.0"
+    "tint-shade-color": "^1.0.0",
+    "use-immer": "^0.6.0",
+    "values.js": "^2.0.0"
   },
   "devDependencies": {
     "@svgr/webpack": "^5.5.0",

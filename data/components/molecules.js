@@ -16,15 +16,22 @@ import {
   SignUpForm,
   DataTable,
   DataList,
-  Card,
   SectionHeading,
   PageHeading,
   Sidebar,
   Footer,
   Header,
+  BlogPost,
 } from 'components/molecules'
 
 export const molecules = [
+  {
+    label: 'Blog post',
+    value: 'blog-post',
+    component: BlogPost,
+    className: 'max-w-xl',
+    enabled: true,
+  },
   {
     label: 'Sign up form',
     value: 'sign-up-form',
@@ -85,13 +92,6 @@ export const molecules = [
     component: SectionHeading,
     link:
       'https://tailwindui.com/components/application-ui/headings/section-headings',
-  },
-
-  {
-    label: 'Card',
-    value: 'card',
-    component: Card,
-    link: '',
   },
 
   {

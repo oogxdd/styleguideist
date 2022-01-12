@@ -91,7 +91,6 @@ export const Font = ({ open = false }) => {
       />
       {/*
       <Checkbox label="Uppercase" />
-      */}
       <ColorPicker
         label="Color"
         value={
@@ -112,6 +111,7 @@ export const Font = ({ open = false }) => {
           }))
         }
       />
+      */}
     </Section>
   )
 }

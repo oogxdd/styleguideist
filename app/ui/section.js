@@ -19,7 +19,7 @@ export const Section = ({
   return (
     <Disclosure
       as="div"
-      className={`${withoutBottomBorder ? '' : 'border-b'} py-6`}
+      className={`${withoutBottomBorder ? '' : 'border-b'} py-6 px-6`}
       defaultOpen={open}
       sx={{
         borderColor: 'borderColor',

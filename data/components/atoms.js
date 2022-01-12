@@ -108,14 +108,14 @@ export const atoms = [
     value: 'heading',
     component: Heading,
     link: '',
-    // enabled: true,
+    enabled: true,
   },
   {
     label: 'Paragraph',
     value: 'paragraph',
     component: Paragraph,
     link: '',
-    // enabled: true,
+    enabled: true,
   },
   {
     label: 'Label',

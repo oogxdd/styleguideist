@@ -1,3 +1,5 @@
+const colors = require('tailwindcss/colors')
+
 module.exports = {
   // mode: 'jit',
   purge: [
@@ -9,7 +11,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // primary: 'var(--theme-ui-colors-primary)',
+        sky: colors.sky,
+        teal: colors.teal,
+        rose: colors.rose,
       },
     },
   },

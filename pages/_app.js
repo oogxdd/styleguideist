@@ -8,7 +8,6 @@ const App = ({ Component, pageProps }) => (
       <title>Styleguideist</title>
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       <link href="/css/index.css" rel="stylesheet" />
-      <link href="/css/blog.css" rel="stylesheet" />
     </Head>
     <AppProvider>
       <Component {...pageProps} />
@@ -26,8 +25,8 @@ const App = ({ Component, pageProps }) => (
       }
 
       .parameters {
-        min-width: calc(16rem + 30px);
-        max-width: calc(16rem + 30px);
+        min-width: calc(18rem + 30px);
+        max-width: calc(18rem + 30px);
         transform: scale(0.8);
         transform-origin: top left;
 

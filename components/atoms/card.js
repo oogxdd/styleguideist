@@ -1,12 +1,16 @@
 /** @jsxImportSource theme-ui */
-import { Card as ThemeUICard, Text, Image } from 'theme-ui'
 
-export const Card = () => (
-  <ThemeUICard
+export const Card = ({ children, className = '' }) => (
+  <div
     sx={{
-      maxWidth: 256,
+      bg: 'card',
+      border: 'border',
+      borderColor: 'borderColor',
+      borderRadius: 1,
+      boxShadow: 3,
     }}
+    className={`${!children && 'w-52 h-52'} ${className}`}
   >
-    <Image src="https://images.unsplash.com/photo-1446776899648-aa78eefe8ed0?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9" />
-  </ThemeUICard>
+    {children}
+  </div>
 )

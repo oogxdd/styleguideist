@@ -58,29 +58,25 @@ export const Border = ({ open = false }) => {
   }
 
   return (
-    <Section
-      name="Border"
-      customOptions={
-        <>
-          <Slider
-            label="Radius"
-            value={borderRadius}
-            onChange={(value) => setBorderRadius(value)}
-          />
-          <Slider
-            label="Width"
-            value={borderWidth}
-            onChange={(value) => setBorderWidth(value)}
-          />
+    <Section name="Border">
+      <Presets type="border" />
+      <Slider
+        label="Radius"
+        value={borderRadius}
+        onChange={(value) => setBorderRadius(value)}
+      />
+      <Slider
+        label="Width"
+        value={borderWidth}
+        onChange={(value) => setBorderWidth(value)}
+      />
+      {/*
           <ColorPicker
             label="Color"
             value={theme.colors.borderColor}
             onChange={(color) => changeColor('borderColor', color.hex)}
           />
-        </>
-      }
-    >
-      <Presets type="border" />
+          */}
     </Section>
   )
 }

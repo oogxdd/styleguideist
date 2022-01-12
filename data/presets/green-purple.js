@@ -14,6 +14,7 @@ export const greenPurple = merge(base, {
   lineHeights: ['280%'],
   colors: {
     text: '#7fc900',
+    card: 'white',
     // text: '#B6F34F',
 
     background: '#071620',

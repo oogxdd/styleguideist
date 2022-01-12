@@ -16,7 +16,7 @@ const AppProvider = ({ children }) => {
   const [navigationFilter, setNavigationFilter] = useState('')
 
   const [selectedSection, setSection] = useState('atoms')
-  const [selectedComponent, setComponent] = useState('sign-up-form')
+  const [selectedComponent, setComponent] = useState('card')
   const [previewComponent, setPreviewComponent] = useState(null)
   const [selectedComponentVariant, setComponentVariant] = useState('default')
 
