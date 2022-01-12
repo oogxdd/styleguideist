@@ -20,6 +20,7 @@
     "@theme-ui/style-guide": "0.11.3",
     "axios": "^0.24.0",
     "font-picker-react": "^3.5.2",
+    "html2canvas": "^1.4.0",
     "immer": "^9.0.6",
     "next": "11.0.1",
     "nextra": "^1.1.0",

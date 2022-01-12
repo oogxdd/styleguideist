@@ -6,17 +6,17 @@ import { Themed } from 'theme-ui'
 import { Button } from 'components/atoms'
 import { atoms, molecules, organisms, templates } from 'data'
 
-// import html2canvas from 'html2canvas'
+import html2canvas from 'html2canvas'
 
 const Preview = () => {
   const { selectedComponent, previewComponent } = useContext(AppContext)
 
-  // useEffect(() => {
-  //   html2canvas(document.body).then((canvas) => {
-  //     document.getElementById('canvas').appendChild(canvas)
-  //     // document.body.appendChild(canvas)
-  //   })
-  // }, [])
+  useEffect(() => {
+    html2canvas(document.body).then((canvas) => {
+      document.getElementById('canvas').appendChild(canvas)
+      // document.body.appendChild(canvas)
+    })
+  }, [])
 
   return (
     <div
