@@ -28,7 +28,7 @@ const App = ({ Component, pageProps }) => (
         min-width: calc(18rem + 30px);
         max-width: calc(18rem + 30px);
         transform: scale(0.8);
-        transform-origin: top left;
+        transform-origin: top right;
 
         -ms-overflow-style: none; /* Internet Explorer 10+ */
         scrollbar-width: none; /* Firefox */
@@ -59,7 +59,7 @@ const App = ({ Component, pageProps }) => (
 
       body {
         overflow: hidden;
-        margin: 0px 2px 0px 2px !important;
+        margin: 0px !important;
       }
 
       .prose ul {

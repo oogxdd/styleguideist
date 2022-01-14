@@ -3,8 +3,8 @@
 export const Card = ({
   children,
   className = '',
-  width = '100%',
-  height = '100%',
+  width = '128px',
+  height = '128px',
   sx = {},
 }) => (
   <div

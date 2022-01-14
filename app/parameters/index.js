@@ -28,10 +28,11 @@ const Parameters = () => {
         className="parameters grid grid-cols-1 gap-x-8 gap-y-10 pt-0 min-h-screen overflow-scroll"
         style={{
           maxHeight: '125vh',
+          marginLeft: '-31px',
         }}
       >
         <form
-          className="block border-r pt-2 pb-6"
+          className="block border-l pt-2 pb-6"
           sx={{
             borderColor: 'borderColor',
             // paddingRight: 30,
