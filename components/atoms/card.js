@@ -1,6 +1,12 @@
 /** @jsxImportSource theme-ui */
 
-export const Card = ({ children, className = '' }) => (
+export const Card = ({
+  children,
+  className = '',
+  width = '100%',
+  height = '100%',
+  sx = {},
+}) => (
   <div
     sx={{
       bg: 'card',
@@ -8,6 +14,12 @@ export const Card = ({ children, className = '' }) => (
       borderColor: 'borderColor',
       borderRadius: 1,
       boxShadow: 3,
+      width,
+      height,
+      ...sx,
+      // variant: 'atoms.card',
+      // width: 'atoms.card.width',
+      // height: 'atoms.card.height',
     }}
     className={`${!children && 'w-52 h-52'} ${className}`}
   >

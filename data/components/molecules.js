@@ -27,14 +27,14 @@ import {
 export const molecules = [
   {
     label: 'Blog post',
-    value: 'blog-post',
+    value: 'blogpost',
     component: BlogPost,
     className: 'max-w-xl',
     enabled: true,
   },
   {
     label: 'Sign up form',
-    value: 'sign-up-form',
+    value: 'signupform',
     component: SignUpForm,
     enabled: true,
     link: 'https://tailwindui.com/components/application-ui/forms/form-layouts',
@@ -80,7 +80,7 @@ export const molecules = [
 
   {
     label: 'Page heading',
-    value: 'page-heading',
+    value: 'pageheading',
     component: PageHeading,
     link:
       'https://tailwindui.com/components/application-ui/headings/page-headings',
@@ -88,7 +88,7 @@ export const molecules = [
 
   {
     label: 'Section heading',
-    value: 'section-heading',
+    value: 'sectionheading',
     component: SectionHeading,
     link:
       'https://tailwindui.com/components/application-ui/headings/section-headings',
@@ -96,7 +96,7 @@ export const molecules = [
 
   {
     label: 'Data list',
-    value: 'data-list',
+    value: 'datalist',
     component: DataList,
     link:
       'https://tailwindui.com/components/application-ui/data-display/description-lists',
@@ -104,14 +104,14 @@ export const molecules = [
 
   {
     label: 'Data table',
-    value: 'data-table',
+    value: 'datatable',
     component: DataTable,
     link: 'https://tailwindui.com/components/application-ui/lists/tables',
   },
 
   // {
   //   label: 'Sign up form',
-  //   value: 'sign-up-form',
+  //   value: 'signup-form',
   //   component: SignUpForm,
   //   link:
   //     'https://tailwindui.com/components/application-ui/forms/sign-in-forms',
@@ -119,7 +119,7 @@ export const molecules = [
 
   {
     label: 'Action form',
-    value: 'action-form',
+    value: 'actionform',
     component: ActionForm,
     link:
       'https://tailwindui.com/components/application-ui/forms/action-panels',
@@ -142,7 +142,7 @@ export const molecules = [
 
   {
     label: 'Dropdown menu',
-    value: 'dropdown-menu',
+    value: 'dropdownmenu',
     component: DropdownMenu,
     link: 'https://tailwindui.com/components/application-ui/elements/dropdowns',
   },
@@ -194,7 +194,7 @@ export const molecules = [
 
   {
     label: 'Slide-over',
-    value: 'slide-over',
+    value: 'slideover',
     component: SlideOver,
     link:
       'https://tailwindui.com/components/application-ui/overlays/slide-overs',

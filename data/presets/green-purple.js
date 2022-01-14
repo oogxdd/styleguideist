@@ -126,6 +126,12 @@ export const greenPurple = merge(base, {
       lineHeight: 0,
     },
     secondary: { color: 'background', bg: 'secondary' },
+    atoms: {
+      card: {
+        width: '100px',
+        height: '100px',
+      },
+    },
   },
   forms: {
     input: {
@@ -146,6 +152,20 @@ export const greenPurple = merge(base, {
       px: 3,
       boxShadow: 3,
       lineHeight: 0,
+    },
+  },
+  atoms: {
+    card: {
+      width: 200,
+      height: 300,
+    },
+  },
+  molecules: {
+    blogpost: {
+      container: {
+        width: 512,
+        width: 252,
+      },
     },
   },
 })
