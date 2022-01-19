@@ -28,23 +28,23 @@ const Preview = () => {
         id="canvas"
       >
         {atoms.map((atom) => {
-          if (selectedComponent === atom.value) {
+          if (selectedComponent.value === atom.value) {
             return <atom.component key={atom.value} />
           }
         })}
         {molecules.map((molecule) => {
-          if (selectedComponent === molecule.value) {
+          if (selectedComponent.value === molecule.value) {
             return <molecule.component key={molecule.value} />
           }
         })}
         {organisms.map((organism) => {
-          if (selectedComponent === organism.value) {
+          if (selectedComponent.value === organism.value) {
             return <organism.component key={organism.value} />
           }
         })}
         {templates.map((template) =>
           template.pages.map((page) => {
-            if (selectedComponent === page.value) {
+            if (selectedComponent.value === page.value) {
               return <page.component key={template.value} />
             }
           }),

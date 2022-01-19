@@ -95,7 +95,7 @@ const Expanded = () => {
     const onEnter = (e) => {
       if (e.key === 'Enter') {
         if (navFilter.current !== '' && filteredComps.current.length !== 0) {
-          setComponent(filteredComps.current[0].value)
+          setComponent(filteredComps.current[0])
           setShowNavigation(false)
         }
       }
@@ -107,7 +107,7 @@ const Expanded = () => {
 
   return (
     <div
-      className="h-screen absolute top-0 right-0 flex flex-col w-full pt-8 px-12 overflow-auto select-none "
+      className="h-screen absolute top-0 right-0 flex flex-col w-full pt-8 px-12 overflow-auto select-none z-20"
       sx={{
         bg: 'background',
         width: 'calc(100vw - 18rem + 30px)',

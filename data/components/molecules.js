@@ -22,13 +22,70 @@ import {
   Footer,
   Header,
   BlogPost,
+  UserCard,
 } from 'components/molecules'
 
+import {
+  // textFields,
+  dimensionFields,
+  marginFields,
+  paddingFields,
+} from '../params'
+
 export const molecules = [
+  {
+    label: 'User card',
+    value: 'usercard',
+    component: UserCard,
+    group: 'molecules',
+    params: [
+      {
+        type: 'color',
+        fields: [
+          {
+            type: 'colorpicker',
+            key: 'background',
+            label: 'Container',
+          },
+        ],
+      },
+      {
+        type: 'border',
+        fields: [
+          {
+            type: 'slider',
+            key: 'borderRadius',
+            label: 'Radius',
+          },
+          {
+            type: 'slider',
+            key: 'borderWidth',
+            label: 'Width',
+          },
+          {
+            type: 'colorpicker',
+            key: 'borderColor',
+            label: 'Color',
+          },
+        ],
+      },
+      {
+        type: 'spacing',
+        fields: [
+          ...dimensionFields,
+          { type: 'separator', label: 'Margin' },
+          ...marginFields,
+          { type: 'separator', label: 'Padding' },
+          ...paddingFields,
+        ],
+      },
+    ],
+  },
   {
     label: 'Blog post',
     value: 'blogpost',
     component: BlogPost,
+    group: 'molecules',
     className: 'max-w-xl',
     enabled: true,
   },
@@ -36,6 +93,7 @@ export const molecules = [
     label: 'Sign up form',
     value: 'signupform',
     component: SignUpForm,
+    group: 'molecules',
     enabled: true,
     link: 'https://tailwindui.com/components/application-ui/forms/form-layouts',
   },
@@ -43,6 +101,7 @@ export const molecules = [
     label: 'Field',
     value: 'field',
     component: Field,
+    group: 'molecules',
     // enabled: true,
     link: 'https://tailwindui.com/components/application-ui/forms/form-layouts',
   },
@@ -50,6 +109,7 @@ export const molecules = [
     label: 'Field',
     value: 'field',
     component: Field,
+    group: 'molecules',
     // enabled: true,
     link: 'https://tailwindui.com/components/application-ui/forms/form-layouts',
   },
@@ -58,6 +118,7 @@ export const molecules = [
     label: 'Header',
     value: 'header',
     component: Header,
+    group: 'molecules',
     link: 'https://tailwindui.com/components/marketing/elements/headers',
     // enabled: true,
   },
@@ -66,6 +127,7 @@ export const molecules = [
     label: 'Footer',
     value: 'footer',
     component: Footer,
+    group: 'molecules',
     link: 'https://tailwindui.com/components/marketing/sections/footers',
     // enabled: true,
   },
@@ -74,6 +136,7 @@ export const molecules = [
     label: 'Sidebar',
     value: 'sidebar',
     component: Sidebar,
+    group: 'molecules',
     link:
       'https://tailwindui.com/components/application-ui/navigation/sidebar-navigation',
   },
@@ -82,6 +145,7 @@ export const molecules = [
     label: 'Page heading',
     value: 'pageheading',
     component: PageHeading,
+    group: 'molecules',
     link:
       'https://tailwindui.com/components/application-ui/headings/page-headings',
   },
@@ -90,6 +154,7 @@ export const molecules = [
     label: 'Section heading',
     value: 'sectionheading',
     component: SectionHeading,
+    group: 'molecules',
     link:
       'https://tailwindui.com/components/application-ui/headings/section-headings',
   },
@@ -98,6 +163,7 @@ export const molecules = [
     label: 'Data list',
     value: 'datalist',
     component: DataList,
+    group: 'molecules',
     link:
       'https://tailwindui.com/components/application-ui/data-display/description-lists',
   },
@@ -106,6 +172,7 @@ export const molecules = [
     label: 'Data table',
     value: 'datatable',
     component: DataTable,
+    group: 'molecules',
     link: 'https://tailwindui.com/components/application-ui/lists/tables',
   },
 
@@ -113,6 +180,7 @@ export const molecules = [
   //   label: 'Sign up form',
   //   value: 'signup-form',
   //   component: SignUpForm,
+  //   group: 'molecules',
   //   link:
   //     'https://tailwindui.com/components/application-ui/forms/sign-in-forms',
   // },
@@ -121,6 +189,7 @@ export const molecules = [
     label: 'Action form',
     value: 'actionform',
     component: ActionForm,
+    group: 'molecules',
     link:
       'https://tailwindui.com/components/application-ui/forms/action-panels',
   },
@@ -129,6 +198,7 @@ export const molecules = [
     label: 'Alert',
     value: 'alert',
     component: Alert,
+    group: 'molecules',
     link: 'https://tailwindui.com/components/application-ui/feedback/alerts',
     // enabled: true,
   },
@@ -137,6 +207,7 @@ export const molecules = [
     label: 'Banner',
     value: 'banner',
     component: Banner,
+    group: 'molecules',
     link: 'https://tailwindui.com/components/marketing/elements/banners',
   },
 
@@ -144,6 +215,7 @@ export const molecules = [
     label: 'Dropdown menu',
     value: 'dropdownmenu',
     component: DropdownMenu,
+    group: 'molecules',
     link: 'https://tailwindui.com/components/application-ui/elements/dropdowns',
   },
 
@@ -151,6 +223,7 @@ export const molecules = [
     label: 'Empty state',
     value: 'empty-state',
     component: EmptyState,
+    group: 'molecules',
     link:
       'https://tailwindui.com/components/application-ui/feedback/empty-states',
   },
@@ -159,6 +232,7 @@ export const molecules = [
     label: 'Pagination',
     value: 'pagination',
     component: Pagination,
+    group: 'molecules',
     link:
       'https://tailwindui.com/components/application-ui/navigation/pagination',
   },
@@ -167,6 +241,7 @@ export const molecules = [
     label: 'Tabs',
     value: 'tabs',
     component: Tabs,
+    group: 'molecules',
     link: 'https://tailwindui.com/components/application-ui/navigation/tabs',
   },
 
@@ -174,6 +249,7 @@ export const molecules = [
     label: 'Breadcrumbs',
     value: 'breadcrumbs',
     component: Breadcrumbs,
+    group: 'molecules',
     link:
       'https://tailwindui.com/components/application-ui/navigation/breadcrumbs',
   },
@@ -182,6 +258,7 @@ export const molecules = [
     label: 'Steps',
     value: 'steps',
     component: Steps,
+    group: 'molecules',
     link: 'https://tailwindui.com/components/application-ui/navigation/steps',
   },
 
@@ -189,6 +266,7 @@ export const molecules = [
     label: 'Modal',
     value: 'modal',
     component: Modal,
+    group: 'molecules',
     link: 'https://tailwindui.com/components/application-ui/overlays/modals',
   },
 
@@ -196,6 +274,7 @@ export const molecules = [
     label: 'Slide-over',
     value: 'slideover',
     component: SlideOver,
+    group: 'molecules',
     link:
       'https://tailwindui.com/components/application-ui/overlays/slide-overs',
   },
@@ -204,6 +283,7 @@ export const molecules = [
     label: 'Notification',
     value: 'notification',
     component: Notification,
+    group: 'molecules',
     link:
       'https://tailwindui.com/components/application-ui/overlays/notifications',
   },
@@ -212,6 +292,7 @@ export const molecules = [
     label: 'Filters',
     value: 'filters',
     component: Filters,
+    group: 'molecules',
     link:
       'https://tailwindui.com/components/ecommerce/components/category-filters',
   },

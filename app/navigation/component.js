@@ -17,7 +17,7 @@ const Component = ({ component }) => {
   } = useContext(AppContext)
 
   const isPreviewed = previewComponent === component.value
-  const isSelected = selectedComponent === component.value
+  const isSelected = selectedComponent.value === component.value
 
   // onMouseOver={() =>
   //   component.enabled && setPreviewComponent(component.value)
@@ -39,7 +39,7 @@ const Component = ({ component }) => {
         onClick={(e) => {
           if (component.enabled) {
             e.preventDefault()
-            setComponent(component.value)
+            setComponent(component)
             setPreviewComponent(null)
             setShowNavigation(false)
           }

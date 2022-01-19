@@ -17,15 +17,83 @@ import {
   Switch,
   Card,
   Image,
+  Name,
+  Caption,
 } from 'components'
 
+import {
+  textFields,
+  marginFields,
+  dimensionFields,
+  paddingFields,
+} from '../params'
+
 export const atoms = [
+  {
+    label: 'Name',
+    value: 'name',
+    component: Name,
+    group: 'atoms',
+    params: [
+      {
+        type: 'color',
+        fields: [
+          {
+            type: 'colorpicker',
+            key: 'color',
+            label: 'Text',
+          },
+        ],
+      },
+      {
+        type: 'font',
+        fields: textFields,
+      },
+      {
+        type: 'spacing',
+        fields: [
+          { type: 'separator', label: 'Margin', first: true },
+          ...marginFields,
+        ],
+      },
+    ],
+  },
+  {
+    label: 'Caption',
+    value: 'caption',
+    component: Caption,
+    group: 'atoms',
+    params: [
+      {
+        type: 'color',
+        fields: [
+          {
+            type: 'colorpicker',
+            key: 'color',
+            label: 'Text',
+          },
+        ],
+      },
+      {
+        type: 'font',
+        fields: textFields,
+      },
+      {
+        type: 'spacing',
+        fields: [
+          { type: 'separator', label: 'Margin', first: true },
+          ...marginFields,
+        ],
+      },
+    ],
+  },
   {
     label: 'Button',
     value: 'button',
     component: Button,
     enabled: true,
     link: 'https://tailwindui.com/components/application-ui/elements/buttons',
+    group: 'atoms',
   },
   {
     label: 'Input',
@@ -33,6 +101,7 @@ export const atoms = [
     component: Input,
     enabled: true,
     link: 'https://tailwindui.com/components/application-ui/forms/input-groups',
+    group: 'atoms',
   },
   {
     label: 'Select',
@@ -40,6 +109,7 @@ export const atoms = [
     component: Select,
     // enabled: true,
     link: 'https://tailwindui.com/components/application-ui/forms/select-menus',
+    group: 'atoms',
   },
   {
     label: 'Textarea',
@@ -47,6 +117,7 @@ export const atoms = [
     component: Textarea,
     // enabled: true,
     link: 'https://tailwindui.com/components/application-ui/forms/textareas',
+    group: 'atoms',
   },
   {
     label: 'Radio group',
@@ -54,6 +125,7 @@ export const atoms = [
     component: RadioGroup,
     // enabled: true,
     link: 'https://tailwindui.com/components/application-ui/forms/radio-groups',
+    group: 'atoms',
   },
   {
     label: 'Checkbox',
@@ -61,12 +133,14 @@ export const atoms = [
     component: Checkbox,
     enabled: true,
     link: 'https://tailwindui.com/components/application-ui/forms/checkboxes',
+    group: 'atoms',
   },
   // {
   //   label: 'Toggle',
   //   value: 'toggle',
   //   component: Toggle,
   //   link: 'https://tailwindui.com/components/application-ui/forms/toggles',
+  // group: 'atoms'
   // },
   {
     label: 'Slider',
@@ -74,6 +148,7 @@ export const atoms = [
     component: Slider,
     link: 'https://tailwindui.com/components/application-ui/forms/toggles',
     // enabled: true,
+    group: 'atoms',
   },
   {
     label: 'Avatar',
@@ -81,6 +156,37 @@ export const atoms = [
     component: Avatar,
     link: 'https://tailwindui.com/components/application-ui/elements/avatars',
     // enabled: true,
+    group: 'atoms',
+    params: [
+      {
+        type: 'border',
+        fields: [
+          {
+            type: 'slider',
+            key: 'borderRadius',
+            label: 'Radius',
+          },
+          {
+            type: 'slider',
+            key: 'borderWidth',
+            label: 'Width',
+          },
+          {
+            type: 'colorpicker',
+            key: 'borderColor',
+            label: 'Color',
+          },
+        ],
+      },
+      {
+        type: 'spacing',
+        fields: [
+          ...dimensionFields,
+          { type: 'separator', label: 'Margin' },
+          ...marginFields,
+        ],
+      },
+    ],
   },
   {
     label: 'Badge',
@@ -88,6 +194,7 @@ export const atoms = [
     component: Badge,
     link: 'https://tailwindui.com/components/application-ui/elements/badges',
     // enabled: true,
+    group: 'atoms',
   },
   {
     label: 'Donut',
@@ -95,6 +202,7 @@ export const atoms = [
     component: Donut,
     link: 'https://tailwindui.com/components/application-ui/elements/avatars',
     // enabled: true,
+    group: 'atoms',
   },
   {
     label: 'Progress',
@@ -102,6 +210,7 @@ export const atoms = [
     component: Progress,
     link: 'https://tailwindui.com/components/application-ui/elements/avatars',
     // enabled: true,
+    group: 'atoms',
   },
   {
     label: 'Heading',
@@ -109,6 +218,31 @@ export const atoms = [
     component: Heading,
     link: '',
     enabled: true,
+    group: 'atoms',
+    // params: ['font', 'color', 'spacing'],
+    params: [
+      {
+        type: 'color',
+        fields: [
+          {
+            type: 'colorpicker',
+            key: 'color',
+            label: 'Text',
+          },
+        ],
+      },
+      {
+        type: 'font',
+        fields: textFields,
+      },
+      {
+        type: 'spacing',
+        fields: [
+          { type: 'separator', label: 'Margin', first: true },
+          ...marginFields,
+        ],
+      },
+    ],
   },
   {
     label: 'Paragraph',
@@ -116,6 +250,30 @@ export const atoms = [
     component: Paragraph,
     link: '',
     enabled: true,
+    group: 'atoms',
+    params: [
+      {
+        type: 'color',
+        fields: [
+          {
+            type: 'colorpicker',
+            key: 'color',
+            label: 'Text',
+          },
+        ],
+      },
+      {
+        type: 'font',
+        fields: textFields,
+      },
+      {
+        type: 'spacing',
+        fields: [
+          { type: 'separator', label: 'Margin', first: true },
+          ...marginFields,
+        ],
+      },
+    ],
   },
   {
     label: 'Label',
@@ -123,6 +281,31 @@ export const atoms = [
     component: Label,
     link: '',
     enabled: true,
+    group: 'atoms',
+    // params: ['font', 'color', 'spacing'],
+    params: [
+      {
+        type: 'color',
+        fields: [
+          {
+            type: 'colorpicker',
+            key: 'color',
+            label: 'Text',
+          },
+        ],
+      },
+      {
+        type: 'font',
+        fields: textFields,
+      },
+      {
+        type: 'spacing',
+        fields: [
+          { type: 'separator', label: 'Margin', first: true },
+          ...marginFields,
+        ],
+      },
+    ],
   },
   {
     label: 'Switch',
@@ -130,6 +313,7 @@ export const atoms = [
     component: Switch,
     link: 'https://tailwindui.com/components/application-ui/forms/toggles',
     // enabled: true,
+    group: 'atoms',
   },
   {
     label: 'Card',
@@ -137,6 +321,48 @@ export const atoms = [
     component: Card,
     link: '',
     enabled: true,
+    group: 'atoms',
+    params: [
+      {
+        type: 'color',
+        fields: [
+          {
+            type: 'colorpicker',
+            key: 'background',
+            label: 'Container',
+          },
+        ],
+      },
+      {
+        type: 'border',
+        fields: [
+          {
+            type: 'slider',
+            key: 'borderRadius',
+            label: 'Radius',
+          },
+          {
+            type: 'slider',
+            key: 'borderWidth',
+            label: 'Width',
+          },
+          {
+            type: 'colorpicker',
+            key: 'borderColor',
+            label: 'Color',
+          },
+        ],
+      },
+      {
+        type: 'spacing',
+        fields: [
+          ...dimensionFields,
+          { type: 'separator', label: 'Padding' },
+          ...paddingFields,
+        ],
+      },
+    ],
+    // params: ['color', 'border', 'shadow', 'spacing'],
   },
   {
     label: 'Image',
@@ -144,5 +370,37 @@ export const atoms = [
     component: Image,
     link: '',
     // enabled: true,
+    group: 'atoms',
+    params: [
+      {
+        type: 'border',
+        fields: [
+          {
+            type: 'slider',
+            key: 'borderRadius',
+            label: 'Radius',
+          },
+          {
+            type: 'slider',
+            key: 'borderWidth',
+            label: 'Width',
+          },
+          {
+            type: 'colorpicker',
+            key: 'borderColor',
+            label: 'Color',
+          },
+        ],
+      },
+      {
+        type: 'spacing',
+        fields: [
+          ...dimensionFields,
+          { type: 'separator', label: 'Margin' },
+          ...marginFields,
+        ],
+      },
+    ],
+    // params: ['border', 'shadow', 'spacing'],
   },
 ]

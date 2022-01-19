@@ -39,9 +39,9 @@ const Template = ({ template }) => {
   //           <li
   //             className="mr-3 text-sm cursor-pointer"
   //             key={component.value}
-  //             onClick={() => setComponent(page.value)}
+  //             onClick={() => setComponent(page)}
   //             sx={
-  //               selectedComponent === page.value
+  //               selectedComponent.value === page.value
   //                 ? { color: 'primary', ':hover': { color: 'primary' } }
   //                 : { ':hover': { color: 'primary' } }
   //             }

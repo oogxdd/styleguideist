@@ -1,8 +1,4 @@
-import { base } from '@theme-ui/presets'
-import { merge } from 'theme-ui'
-
-export const greenPurple = merge(base, {
-  name: 'Green+Purple',
+export const seven = {
   space: [2, 4, 8, 16, 32, 48, 64],
   fonts: {
     body: 'Eesti',
@@ -14,15 +10,11 @@ export const greenPurple = merge(base, {
   lineHeights: ['280%'],
   colors: {
     text: '#7fc900',
-    card: 'white',
-    // text: '#B6F34F',
-
     background: '#071620',
     primary: '#5754ff',
-    // primary: '#FFDA9C',
-
     secondary: 'green',
     muted: '#f6f6f6',
+    card: 'white',
     borderColor: '#2c4207',
   },
   styles: {
@@ -126,26 +118,18 @@ export const greenPurple = merge(base, {
       lineHeight: 0,
     },
     secondary: { color: 'background', bg: 'secondary' },
-    atoms: {
-      card: {
-        width: '100px',
-        height: '100px',
-      },
-    },
+    atoms: { card: { width: '100px', height: '100px' } },
   },
   forms: {
     input: {
       bg: 'primary',
       border: 'border',
       borderRadius: 4,
-      bg: 'primary',
       color: 'background',
       fontFamily: 'body',
       fontSize: 3,
       fontWeight: 'bold',
       letterSpacing: 0,
-      border: 'border',
-      borderRadius: 4,
       borderWidth: 'borderWidth',
       borderColor: 'borderColor',
       py: 2,
@@ -156,61 +140,45 @@ export const greenPurple = merge(base, {
   },
   atoms: {
     card: {
-      width: 200,
-      height: 300,
+      width: 357,
+      height: 618,
+      borderRadius: 61,
+      background:
+        'hsla(249.99999999999963, 8.032193593690922%, 20.817868499999996%, 1)',
+      px: 26,
+      py: 26,
     },
     label: {
-      color: 'pink',
+      color:
+        'hsla(349.5238095238096, 75.65403743216065%, 56.83062449999999%, 1)',
       fontSize: 12,
+      fontWeight: 800,
+      letterSpacing: -0.5,
     },
-    heading: {
-      color: 'black',
-      fontSize: 18,
+    heading: { color: 'hsla(0, 100%, 89.75500000000001%, 1)', fontSize: 18 },
+    paragraph: { color: 'hsla(0, 79.63%, 89.33%, 0.58)', fontSize: 15 },
+    image: {
+      borderRadius: 40,
+      borderWidth: 5,
+      borderColor:
+        'hsla(249.99999999999991, 8.766586904502937%, 38.458502%, 1)',
     },
-    paragraph: {
-      color: 'black',
-      fontSize: 15,
-    },
-    image: {},
+    name: {},
+    caption: {},
+    avatar: {},
   },
   molecules: {
     blogpost: {
       name: 'Blog post',
       value: 'blogpost',
-      container: {
-        width: 512,
-        height: 444,
-      },
-      image: {
-        width: '100%',
-        height: 192,
-      },
+      container: { width: 512, height: 444 },
+      image: { width: '100%', height: 192 },
       children: [
-        {
-          name: 'Card',
-          value: 'card',
-          group: 'atoms',
-        },
-        {
-          name: 'Image',
-          value: 'image',
-          group: 'atoms',
-        },
-        {
-          name: 'Label',
-          value: 'label',
-          group: 'atoms',
-        },
-        {
-          name: 'Heading',
-          value: 'heading',
-          group: 'atoms',
-        },
-        {
-          name: 'Paragraph',
-          value: 'paragraph',
-          group: 'atoms',
-        },
+        { name: 'Card', value: 'card', group: 'atoms' },
+        { name: 'Image', value: 'image', group: 'atoms' },
+        { name: 'Label', value: 'label', group: 'atoms' },
+        { name: 'Heading', value: 'heading', group: 'atoms' },
+        { name: 'Paragraph', value: 'paragraph', group: 'atoms' },
         {
           name: 'User card',
           value: 'usercard',
@@ -235,5 +203,6 @@ export const greenPurple = merge(base, {
         },
       ],
     },
+    usercard: {},
   },
-})
+}

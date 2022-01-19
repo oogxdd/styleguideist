@@ -2,21 +2,45 @@ import { ThemeProvider } from 'theme-ui'
 import { createContext, useState, useEffect } from 'react'
 import { atoms, molecules, organisms, templates } from 'data/components'
 import { fonts } from 'data/fonts'
-import { greenPurple } from 'data/presets'
+import * as presets from 'data/presets'
 import { useImmer } from 'use-immer'
 
 const AppContext = createContext()
 
 const AppProvider = ({ children }) => {
-  const [theme, setTheme] = useImmer(greenPurple)
+  const [theme, setTheme] = useImmer(presets.nine)
   const [gfont, setGfont] = useState('system-ui')
+
+  const [paramsType, setParamsType] = useState('global') // local || global
+
+  // if blog post is selected, subcomponents can be:
+
+  // - blogpost
+  // -- image
+  // -- label
+  // -- heading
+  // -- paragraph
+  // -- user card
+  // -- -- name
+  // -- -- caption
+  const [selectedSubcomponent, setSelectedSubcomponent] = useState('blogpost')
+
+  useEffect(() => {
+    if (selectedSubcomponent !== 'blogpost') {
+      setParamsType('local')
+    } else {
+      setParamsType('global')
+    }
+  }, [selectedSubcomponent])
 
   // navigation
   const [showNavigation, setShowNavigation] = useState(false)
   const [navigationFilter, setNavigationFilter] = useState('')
 
-  const [selectedSection, setSection] = useState('atoms')
-  const [selectedComponent, setComponent] = useState('card')
+  const [selectedSection, setSection] = useState('molecules')
+  const [selectedComponent, setComponent] = useState(
+    molecules.find((m) => m.value === 'blogpost'),
+  )
   const [previewComponent, setPreviewComponent] = useState(null)
   const [selectedComponentVariant, setComponentVariant] = useState('default')
 
@@ -108,6 +132,12 @@ const AppProvider = ({ children }) => {
       value={{
         theme,
         setTheme,
+
+        paramsType,
+        setParamsType,
+
+        selectedSubcomponent,
+        setSelectedSubcomponent,
 
         setColor,
         setSpacing,

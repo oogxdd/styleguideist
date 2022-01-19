@@ -6,6 +6,10 @@ const App = ({ Component, pageProps }) => (
   <>
     <Head>
       <title>Styleguideist</title>
+      <meta
+        name="description"
+        content="Parametric design tool for building UI"
+      />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       <link href="/css/index.css" rel="stylesheet" />
     </Head>
@@ -28,7 +32,7 @@ const App = ({ Component, pageProps }) => (
         min-width: calc(18rem + 30px);
         max-width: calc(18rem + 30px);
         transform: scale(0.8);
-        transform-origin: top right;
+        transform-origin: top left;
 
         -ms-overflow-style: none; /* Internet Explorer 10+ */
         scrollbar-width: none; /* Firefox */

@@ -5,11 +5,10 @@ import NavigationOne from 'app/navigation/one'
 
 const App = () => (
   <div className="flex h-screen items-center">
+    <Parameters />
     <NavigationOne />
     <Preview />
-    <Parameters />
-    {/*
-     */}
+    <Navigation />
   </div>
 )
 
