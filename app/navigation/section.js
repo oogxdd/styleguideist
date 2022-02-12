@@ -8,16 +8,16 @@ import Template from './template'
 const Section = ({ components, label }) => {
   const { navigationFilter, setNavigationFilter } = useContext(AppContext)
 
-  const filteredComponents = components
-    .filter((c) =>
-      c.label.toLowerCase().includes(navigationFilter.toLowerCase()),
-    )
-    .filter((c) => c.enabled)
+  const filteredComponents = components.filter((c) =>
+    c.label.toLowerCase().includes(navigationFilter.toLowerCase()),
+  )
+  // .filter((c) => c.enabled)
 
   if (filteredComponents.length === 0) return null
 
   // templates
   if (label === 'Templates') {
+    return null
     return (
       <div className="flex flex-col space-y-3 mb-16 mt-8">
         <span

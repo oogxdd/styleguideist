@@ -82,8 +82,6 @@ const Expanded = () => {
   ].filter((c) =>
     c.label.toLowerCase().includes(navigationFilter.toLowerCase()),
   )
-  // .filter((c) => c.enabled)
-
   const navFilter = useRef()
   navFilter.current = navigationFilter
 

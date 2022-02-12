@@ -1,86 +1,13 @@
-import {
-  Filters,
-  Notification,
-  SlideOver,
-  Modal,
-  Steps,
-  Breadcrumbs,
-  Tabs,
-  Pagination,
-  EmptyState,
-  DropdownMenu,
-  Banner,
-  Alert,
-  ActionForm,
-  Field,
-  SignUpForm,
-  DataTable,
-  DataList,
-  SectionHeading,
-  PageHeading,
-  Sidebar,
-  Footer,
-  Header,
-  BlogPost,
-  UserCard,
-} from 'components/molecules'
+import { BlogPost, FeedItem, Form } from 'components/molecules'
 
 import {
   // textFields,
   dimensionFields,
   marginFields,
   paddingFields,
-} from '../params'
+} from '../fields'
 
 export const molecules = [
-  {
-    label: 'User card',
-    value: 'usercard',
-    component: UserCard,
-    group: 'molecules',
-    params: [
-      {
-        type: 'color',
-        fields: [
-          {
-            type: 'colorpicker',
-            key: 'background',
-            label: 'Container',
-          },
-        ],
-      },
-      {
-        type: 'border',
-        fields: [
-          {
-            type: 'slider',
-            key: 'borderRadius',
-            label: 'Radius',
-          },
-          {
-            type: 'slider',
-            key: 'borderWidth',
-            label: 'Width',
-          },
-          {
-            type: 'colorpicker',
-            key: 'borderColor',
-            label: 'Color',
-          },
-        ],
-      },
-      {
-        type: 'spacing',
-        fields: [
-          ...dimensionFields,
-          { type: 'separator', label: 'Margin' },
-          ...marginFields,
-          { type: 'separator', label: 'Padding' },
-          ...paddingFields,
-        ],
-      },
-    ],
-  },
   {
     label: 'Blog post',
     value: 'blogpost',
@@ -88,212 +15,97 @@ export const molecules = [
     group: 'molecules',
     className: 'max-w-xl',
     enabled: true,
+    children: [
+      { name: 'Card', value: 'card', group: 'atoms' },
+      { name: 'Image', value: 'image', group: 'atoms' },
+      { name: 'Label', value: 'label', group: 'atoms' },
+      { name: 'Heading', value: 'heading', group: 'atoms' },
+      { name: 'Paragraph', value: 'paragraph', group: 'atoms' },
+      {
+        name: 'User card',
+        value: 'usercard',
+        group: 'molecules',
+        children: [
+          {
+            name: 'Avatar',
+            value: 'avatar',
+            group: 'atoms',
+          },
+          {
+            name: 'Name',
+            value: 'name',
+            group: 'atoms',
+          },
+          {
+            name: 'Caption',
+            value: 'caption',
+            group: 'atoms',
+          },
+        ],
+      },
+    ],
   },
   {
-    label: 'Sign up form',
-    value: 'signupform',
-    component: SignUpForm,
+    label: 'Form',
+    value: 'form',
+    component: Form,
     group: 'molecules',
     enabled: true,
     link: 'https://tailwindui.com/components/application-ui/forms/form-layouts',
+    children: [
+      { name: 'Input', value: 'input', group: 'atoms' },
+      { name: 'Button', value: 'button', group: 'atoms' },
+    ],
   },
   {
-    label: 'Field',
-    value: 'field',
-    component: Field,
+    label: 'Feed item',
+    value: 'feed-item',
+    component: FeedItem,
     group: 'molecules',
-    // enabled: true,
-    link: 'https://tailwindui.com/components/application-ui/forms/form-layouts',
-  },
-  {
-    label: 'Field',
-    value: 'field',
-    component: Field,
-    group: 'molecules',
-    // enabled: true,
-    link: 'https://tailwindui.com/components/application-ui/forms/form-layouts',
-  },
+    enabled: true,
+    children: [
+      {
+        name: 'User card',
+        value: 'usercard',
+        group: 'molecules',
+        children: [
+          {
+            name: 'Avatar',
+            value: 'avatar',
+            group: 'atoms',
+          },
+          {
+            name: 'Name',
+            value: 'name',
+            group: 'atoms',
+          },
+          {
+            name: 'Caption',
+            value: 'caption',
+            group: 'atoms',
+          },
+        ],
+      },
+      { name: 'Heading', value: 'heading', group: 'atoms' },
+      { name: 'Paragraph', value: 'paragraph', group: 'atoms' },
 
-  {
-    label: 'Header',
-    value: 'header',
-    component: Header,
-    group: 'molecules',
-    link: 'https://tailwindui.com/components/marketing/elements/headers',
-    // enabled: true,
-  },
-
-  {
-    label: 'Footer',
-    value: 'footer',
-    component: Footer,
-    group: 'molecules',
-    link: 'https://tailwindui.com/components/marketing/sections/footers',
-    // enabled: true,
-  },
-
-  {
-    label: 'Sidebar',
-    value: 'sidebar',
-    component: Sidebar,
-    group: 'molecules',
-    link:
-      'https://tailwindui.com/components/application-ui/navigation/sidebar-navigation',
-  },
-
-  {
-    label: 'Page heading',
-    value: 'pageheading',
-    component: PageHeading,
-    group: 'molecules',
-    link:
-      'https://tailwindui.com/components/application-ui/headings/page-headings',
-  },
-
-  {
-    label: 'Section heading',
-    value: 'sectionheading',
-    component: SectionHeading,
-    group: 'molecules',
-    link:
-      'https://tailwindui.com/components/application-ui/headings/section-headings',
-  },
-
-  {
-    label: 'Data list',
-    value: 'datalist',
-    component: DataList,
-    group: 'molecules',
-    link:
-      'https://tailwindui.com/components/application-ui/data-display/description-lists',
-  },
-
-  {
-    label: 'Data table',
-    value: 'datatable',
-    component: DataTable,
-    group: 'molecules',
-    link: 'https://tailwindui.com/components/application-ui/lists/tables',
-  },
-
-  // {
-  //   label: 'Sign up form',
-  //   value: 'signup-form',
-  //   component: SignUpForm,
-  //   group: 'molecules',
-  //   link:
-  //     'https://tailwindui.com/components/application-ui/forms/sign-in-forms',
-  // },
-
-  {
-    label: 'Action form',
-    value: 'actionform',
-    component: ActionForm,
-    group: 'molecules',
-    link:
-      'https://tailwindui.com/components/application-ui/forms/action-panels',
-  },
-
-  {
-    label: 'Alert',
-    value: 'alert',
-    component: Alert,
-    group: 'molecules',
-    link: 'https://tailwindui.com/components/application-ui/feedback/alerts',
-    // enabled: true,
-  },
-
-  {
-    label: 'Banner',
-    value: 'banner',
-    component: Banner,
-    group: 'molecules',
-    link: 'https://tailwindui.com/components/marketing/elements/banners',
-  },
-
-  {
-    label: 'Dropdown menu',
-    value: 'dropdownmenu',
-    component: DropdownMenu,
-    group: 'molecules',
-    link: 'https://tailwindui.com/components/application-ui/elements/dropdowns',
-  },
-
-  {
-    label: 'Empty state',
-    value: 'empty-state',
-    component: EmptyState,
-    group: 'molecules',
-    link:
-      'https://tailwindui.com/components/application-ui/feedback/empty-states',
-  },
-
-  {
-    label: 'Pagination',
-    value: 'pagination',
-    component: Pagination,
-    group: 'molecules',
-    link:
-      'https://tailwindui.com/components/application-ui/navigation/pagination',
-  },
-
-  {
-    label: 'Tabs',
-    value: 'tabs',
-    component: Tabs,
-    group: 'molecules',
-    link: 'https://tailwindui.com/components/application-ui/navigation/tabs',
-  },
-
-  {
-    label: 'Breadcrumbs',
-    value: 'breadcrumbs',
-    component: Breadcrumbs,
-    group: 'molecules',
-    link:
-      'https://tailwindui.com/components/application-ui/navigation/breadcrumbs',
-  },
-
-  {
-    label: 'Steps',
-    value: 'steps',
-    component: Steps,
-    group: 'molecules',
-    link: 'https://tailwindui.com/components/application-ui/navigation/steps',
-  },
-
-  {
-    label: 'Modal',
-    value: 'modal',
-    component: Modal,
-    group: 'molecules',
-    link: 'https://tailwindui.com/components/application-ui/overlays/modals',
-  },
-
-  {
-    label: 'Slide-over',
-    value: 'slideover',
-    component: SlideOver,
-    group: 'molecules',
-    link:
-      'https://tailwindui.com/components/application-ui/overlays/slide-overs',
-  },
-
-  {
-    label: 'Notification',
-    value: 'notification',
-    component: Notification,
-    group: 'molecules',
-    link:
-      'https://tailwindui.com/components/application-ui/overlays/notifications',
-  },
-
-  {
-    label: 'Filters',
-    value: 'filters',
-    component: Filters,
-    group: 'molecules',
-    link:
-      'https://tailwindui.com/components/ecommerce/components/category-filters',
+      {
+        name: 'Actions',
+        value: 'actions',
+        group: 'molecules',
+        children: [
+          {
+            name: 'Icon',
+            value: 'icon',
+            group: 'atoms',
+          },
+          {
+            name: 'Text',
+            value: 'text',
+            group: 'atoms',
+          },
+        ],
+      },
+    ],
   },
 ]

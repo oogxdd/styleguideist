@@ -6,6 +6,7 @@ import Component from './component'
 const Template = ({ template }) => {
   const { selectedComponent, setComponent } = useContext(AppContext)
   const isSelected = false
+  return null
 
   // if (!component.enabled) return null
   return (

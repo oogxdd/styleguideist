@@ -1,14 +1,14 @@
 import { ThemeProvider } from 'theme-ui'
 import { createContext, useState, useEffect } from 'react'
-import { atoms, molecules, organisms, templates } from 'data/components'
+import { atoms, molecules, organisms, templates } from 'data'
 import { fonts } from 'data/fonts'
-import * as presets from 'data/presets'
+import * as themes from 'data/themes'
 import { useImmer } from 'use-immer'
 
 const AppContext = createContext()
 
 const AppProvider = ({ children }) => {
-  const [theme, setTheme] = useImmer(presets.nine)
+  const [theme, setTheme] = useImmer(themes.dark)
   const [gfont, setGfont] = useState('system-ui')
 
   const [paramsType, setParamsType] = useState('global') // local || global

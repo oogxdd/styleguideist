@@ -1,96 +1,44 @@
-/** @jsxImportSource theme-ui */
 import { useContext, useEffect } from 'react'
 import { AppContext } from 'context'
-import { Themed } from 'theme-ui'
-
-import { Button } from 'components/atoms'
-import { atoms, molecules, organisms, templates } from 'data'
-
-// import html2canvas from 'html2canvas'
+import { atoms, molecules, organisms, templates } from 'data/components'
 
 const Preview = () => {
-  const { selectedComponent, previewComponent } = useContext(AppContext)
-
-  // useEffect(() => {
-  //   html2canvas(document.body).then((canvas) => {
-  //     document.getElementById('canvas').appendChild(canvas)
-  //     // document.body.appendChild(canvas)
-  //   })
-  // }, [])
+  const { selectedComponent: comp } = useContext(AppContext)
 
   return (
     <div
-      className="flex flex-row items-center w-full h-screen overflow-auto py-0"
+      className="flex flex-row justify-center items-center w-full h-screen overflow-auto py-0"
       sx={{ bg: 'background' }}
     >
       <div
-        className="flex justify-center w-full h-full relative w-full items-center"
-        id="canvas"
+        className="flex items-center justify-center w-full h-full relative"
+        style={{ width: 'max-content' }}
       >
-        {atoms.map((atom) => {
-          if (selectedComponent.value === atom.value) {
-            return <atom.component key={atom.value} />
-          }
-        })}
-        {molecules.map((molecule) => {
-          if (selectedComponent.value === molecule.value) {
-            return <molecule.component key={molecule.value} />
-          }
-        })}
-        {organisms.map((organism) => {
-          if (selectedComponent.value === organism.value) {
-            return <organism.component key={organism.value} />
-          }
-        })}
-        {templates.map((template) =>
-          template.pages.map((page) => {
-            if (selectedComponent.value === page.value) {
-              return <page.component key={template.value} />
-            }
-          }),
+        {atoms.map(
+          (atom) =>
+            comp.value === atom.value && <atom.component key={atom.value} />,
+        )}
+        {molecules.map(
+          (molecule) =>
+            comp.value === molecule.value && (
+              <molecule.component key={molecule.value} />
+            ),
+        )}
+        {organisms.map(
+          (organism) =>
+            comp.value === organism.value && (
+              <organism.component key={organism.value} />
+            ),
+        )}
+        {templates.map(
+          (template) =>
+            comp.value === template.value && (
+              <template.component key={template.value} />
+            ),
         )}
       </div>
     </div>
   )
 }
-
-// return (
-//   <div sx={{ bg: 'background' }} className="w-full">
-//     {atoms.map((atom) => {
-//       // if (previewComponent === atom.value) {
-//       //   return <atom.component />
-//       // }
-//       if (!previewComponent && selectedComponent === atom.value) {
-//         return <atom.component key={atom.value} />
-//       }
-//     })}
-//     {molecules.map((molecule) => {
-//       // if (previewComponent === molecule.value) {
-//       //   return <molecule.component />
-//       // }
-//       if (!previewComponent && selectedComponent === molecule.value) {
-//         return <molecule.component key={molecule.value} />
-//       }
-//     })}
-//     {organisms.map((organism) => {
-//       // if (previewComponent === organism.value) {
-//       //   return <organism.component />
-//       // }
-//       if (!previewComponent && selectedComponent === organism.value) {
-//         return <organism.component key={organism.value} />
-//       }
-//     })}
-//     {templates.map((template) =>
-//       template.pages.map((page) => {
-//         // if (previewComponent === page.value) {
-//         //   return <page.component />
-//         // }
-//         if (!previewComponent && selectedComponent === page.value) {
-//           return <page.component key={template.value} />
-//         }
-//       }),
-//     )}
-//   </div>
-// )
 
 export default Preview

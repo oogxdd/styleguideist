@@ -27,6 +27,7 @@ export const ThemesPresets = ({ type }) => {
         return (
           <div
             className={`
+              text-xs
               h-10 w-10
               max-h-10 max-w-10
               border
@@ -86,7 +87,7 @@ export const ThemesPresets = ({ type }) => {
               }
             }
           >
-            {preset.logo || preset.label || index}
+            {preset.logo || preset.label || index + 1}
           </div>
         )
       })}

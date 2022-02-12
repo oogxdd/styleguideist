@@ -1,7 +1,3 @@
-// 1. onMouseOver
-// 2. onMouseLeave
-
-/** @jsxImportSource theme-ui */
 import { useContext } from 'react'
 import { AppContext } from 'context'
 
@@ -19,15 +15,14 @@ const Component = ({ component }) => {
   const isPreviewed = previewComponent === component.value
   const isSelected = selectedComponent.value === component.value
 
-  // onMouseOver={() =>
-  //   component.enabled && setPreviewComponent(component.value)
-  // }
-  // onMouseLeave={() => component.enabled && setPreviewComponent(null)}
+  // const enabled = component.enabled
+  const enabled = true
+
   return (
     <div className="flex items-center">
       <a
         sx={{
-          opacity: component.enabled ? '1' : '0.3',
+          opacity: enabled ? '1' : '0.3',
           color:
             (isSelected && !previewComponent) || isPreviewed
               ? 'primary'
@@ -37,7 +32,7 @@ const Component = ({ component }) => {
         href={component.link}
         target="_blank"
         onClick={(e) => {
-          if (component.enabled) {
+          if (enabled) {
             e.preventDefault()
             setComponent(component)
             setPreviewComponent(null)
@@ -46,7 +41,7 @@ const Component = ({ component }) => {
         }}
         className="flex items-center group cursor-pointer"
         sx={{
-          opacity: component.enabled ? '1' : '0.4',
+          opacity: enabled ? '1' : '0.4',
           color: isSelected ? 'primary' : 'text',
           ':hover': { color: 'primary' },
         }}
@@ -54,7 +49,7 @@ const Component = ({ component }) => {
         {component.label}
         <LinkIcon
           className={`h-4 w-4 ml-1 hidden ${
-            !component.enabled ? 'group-hover:block' : ''
+            !enabled ? 'group-hover:block' : ''
           }`}
         />
       </a>

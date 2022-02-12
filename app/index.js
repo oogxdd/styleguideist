@@ -1,14 +1,16 @@
 import Parameters from 'app/parameters'
 import Preview from 'app/preview'
 import Navigation from 'app/navigation'
-import NavigationOne from 'app/navigation/one'
+import ComponentTree from 'app/navigation/component-tree'
 
 const App = () => (
   <div className="flex h-screen items-center">
     <Parameters />
-    <NavigationOne />
-    <Preview />
-    <Navigation />
+    <>
+      <ComponentTree />
+      <Preview />
+      <Navigation />
+    </>
   </div>
 )
 

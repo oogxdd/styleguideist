@@ -1,36 +1,31 @@
 import { useContext } from 'react'
 import { AppContext } from 'context'
-import { Section, ColorPicker, Slider, Presets } from 'app/ui'
+import { Section, ColorPicker, Slider, Presets, Separator } from 'app/ui'
 import { percentToNum, pxToNum, numToPx } from 'helpers'
 
-export const Spacing = ({ open = false }) => {
-  const { theme, setTheme, setSpacing } = useContext(AppContext)
+export const Spacing = ({ open = false, fields = [] }) => {
+  const { theme, setTheme } = useContext(AppContext)
 
   return (
     <Section name="Spacing" open={open}>
-      <Presets type="spacing" />
-      <Slider
-        label="Vertical"
-        min={0}
-        max={64}
-        value={
-          typeof theme.buttons.primary.py === 'number'
-            ? pxToNum(theme.space[theme.buttons.primary.py])
-            : pxToNum(theme.buttons.primary.py)
+      {fields.map((field) => {
+        if (field.type === 'slider') {
+          return (
+            <Slider
+              label={field.label}
+              min={field.min}
+              max={field.max}
+              step={field.step || 1}
+              value={field.value}
+              onChange={field.onChange}
+            />
+          )
         }
-        onChange={(value) => setSpacing('vertical', numToPx(value))}
-      />
-      <Slider
-        label="Horizontal"
-        min={0}
-        max={64}
-        value={
-          typeof theme.buttons.primary.px === 'number'
-            ? pxToNum(theme.space[theme.buttons.primary.px])
-            : pxToNum(theme.buttons.primary.px)
+
+        if (field.type === 'separator') {
+          return <Separator first={field.first}>{field.label}</Separator>
         }
-        onChange={(value) => setSpacing('horizontal', numToPx(value))}
-      />
+      })}
     </Section>
   )
 }
