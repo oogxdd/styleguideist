@@ -1,6 +1,5 @@
-/** @jsxImportSource theme-ui */
 import { useContext, useState } from 'react'
-import { AppContext } from 'context'
+import { ThemeContext } from 'context'
 import { downloadFile } from 'helpers'
 
 import { presets } from 'data'
@@ -8,7 +7,7 @@ import { presets } from 'data'
 const sd = ['none', 'md', 'lg', 'xl', 'full']
 
 export const ThemesPresets = ({ type }) => {
-  const { theme, setTheme } = useContext(AppContext)
+  const { theme, setTheme } = useContext(ThemeContext)
   const [selectedPreset, setPreset] = useState(1)
 
   return (

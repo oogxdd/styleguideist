@@ -4,58 +4,18 @@
 //
 // one of options: custom or preset
 import { useContext } from 'react'
-import { AppContext } from 'context'
+import { ThemeContext } from 'context'
 import { Section, ColorPicker, Slider, Presets, Checkbox } from 'app/ui'
 
 export const Border = ({ open = false }) => {
-  const { theme, setTheme } = useContext(AppContext)
-
-  const borderRadius = theme.radii[2].substring(0, theme.radii[2].length - 2)
-  const borderWidth = theme.borders.border
-    .split(' ')[0]
-    .substring(0, theme.borders.border.split(' ')[0].length - 2)
-
-  const setBorderRadius = (value) => {
-    // setTheme((theme) => ({
-    //   ...theme,
-    //   buttons: {
-    //     ...theme.buttons,
-    //     primary: {
-    //       ...theme.buttons.primary,
-    //       borderRadius: value + 'px',
-    //     },
-    //   },
-    // }))
-    const values = [
-      value / 4 + 'px',
-      value / 2 + 'px',
-      value + 'px',
-      value * 2 + 'px',
-      // value * 3 + 'px',
-      value * 4 + 'px',
-      // value * 10 + 'px',
-    ]
-    setTheme((theme) => ({
-      ...theme,
-      radii: values,
-    }))
-  }
-
-  const setBorderWidth = (value) =>
-    setTheme((theme) => ({
-      ...theme,
-      borders: {
-        ...theme.borders,
-        border: `${value}px solid black`,
-      },
-    }))
-
-  const changeColor = (color, value) => {
-    setTheme((theme) => ({
-      ...theme,
-      colors: { ...theme.colors, [color]: value },
-    }))
-  }
+  const {
+    theme,
+    setTheme,
+    borderWidth,
+    borderRadius,
+    setBorderWidth,
+    setBorderRadius,
+  } = useContext(ThemeContext)
 
   return (
     <Section name="Border">

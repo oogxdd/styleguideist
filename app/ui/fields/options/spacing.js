@@ -1,6 +1,5 @@
-/** @jsxImportSource theme-ui */
 import { useContext, useState } from 'react'
-import { AppContext } from 'context'
+import { ThemeContext } from 'context'
 
 const sd = ['none', 'sm', 'md', 'lg', 'xl']
 
@@ -92,7 +91,7 @@ const presets = [
 ]
 
 export const SpacingPresets = () => {
-  const { theme, setTheme } = useContext(AppContext)
+  const { theme, setTheme } = useContext(ThemeContext)
   const [selectedPreset, setPreset] = useState(1)
 
   return (

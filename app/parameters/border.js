@@ -1,9 +1,9 @@
 import { useContext } from 'react'
-import { AppContext } from 'context'
+import { ThemeContext } from 'context'
 import { Section, ColorPicker, Slider, Presets, Checkbox } from 'app/ui'
 
 export const Border = ({ open = false, fields = [] }) => {
-  const { theme, setTheme } = useContext(AppContext)
+  const { theme, setTheme } = useContext(ThemeContext)
 
   return (
     <Section name="Border" open={open}>

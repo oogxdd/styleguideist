@@ -169,6 +169,8 @@ export const dark = {
     name: {},
     caption: {},
     avatar: {},
+    button: {},
+    input: {},
   },
   molecules: {
     blogpost: {
@@ -184,36 +186,10 @@ export const dark = {
         borderWidth: 1,
       },
       image: { width: '100%', height: 192 },
-      children: [
-        { name: 'Card', value: 'card', group: 'atoms' },
-        { name: 'Image', value: 'image', group: 'atoms' },
-        { name: 'Label', value: 'label', group: 'atoms' },
-        { name: 'Heading', value: 'heading', group: 'atoms' },
-        { name: 'Paragraph', value: 'paragraph', group: 'atoms' },
-        {
-          name: 'User card',
-          value: 'usercard',
-          group: 'molecules',
-          children: [
-            {
-              name: 'Avatar',
-              value: 'avatar',
-              group: 'atoms',
-            },
-            {
-              name: 'Name',
-              value: 'name',
-              group: 'atoms',
-            },
-            {
-              name: 'Caption',
-              value: 'caption',
-              group: 'atoms',
-            },
-          ],
-        },
-      ],
     },
     usercard: {},
+    form: {
+      card: {},
+    },
   },
 }

@@ -1,12 +1,11 @@
-/** @jsxImportSource theme-ui */
 import { useState, useContext } from 'react'
-import { AppContext } from 'context'
+import { ThemeContext } from 'context'
 import { Section, ColorPicker, Slider, Presets, Checkbox } from 'app/ui'
 import { shadowToObj, shadowToStr } from 'helpers'
 import { XIcon } from '@heroicons/react/solid'
 
 export const Shadow = ({ open = false }) => {
-  const { theme, setTheme } = useContext(AppContext)
+  const { theme, setTheme } = useContext(ThemeContext)
   const [show, setShow] = useState(false)
 
   // console.log(theme.buttons.primary.boxShadow)

@@ -44,12 +44,22 @@ export const atoms = [
     value: 'button',
     component: Button,
     group: 'atoms',
+    params: [
+      colorParams(),
+      fontParams(),
+      spacingParams({ margins: true, paddings: true, dimensions: true }),
+    ],
   },
   {
     label: 'Input',
     value: 'input',
     component: Input,
     group: 'atoms',
+    params: [
+      colorParams(),
+      fontParams(),
+      spacingParams({ margins: true, paddings: true, dimensions: true }),
+    ],
   },
   {
     label: 'Select',

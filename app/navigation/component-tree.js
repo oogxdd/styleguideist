@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { AppContext } from 'context'
+import { AppContext, ThemeContext } from 'context'
 import { ChevronDownIcon } from '@heroicons/react/solid'
 
 import * as components from 'data/components'
@@ -7,17 +7,17 @@ import * as components from 'data/components'
 export default () => {
   const {
     selectedComponent,
-    selectedSubcomponent,
-    setSelectedSubcomponent,
-    theme,
+    selectedSubComponent,
+    setSelectedSubComponent,
   } = useContext(AppContext)
+  const { theme } = useContext(ThemeContext)
 
   if (selectedComponent && selectedComponent.group === 'atoms') return null
 
   console.log('selectedComponent')
   console.log(selectedComponent)
-  console.log('selectedSubcomponent')
-  console.log(selectedSubcomponent)
+  console.log('selectedSubComponent')
+  console.log(selectedSubComponent)
   const component = theme.molecules.blogpost
 
   return (
@@ -48,9 +48,9 @@ export default () => {
           }}
         >
           <Item
-            underline={selectedSubcomponent.value === selectedComponent.value}
-            onClick={() => setSelectedSubcomponent(selectedComponent)}
-            selectedSubcomponent={selectedSubcomponent}
+            underline={selectedSubComponent.value === selectedComponent.value}
+            onClick={() => setSelectedSubComponent(selectedComponent)}
+            selectedSubComponent={selectedSubComponent}
           >
             {selectedComponent.label}
           </Item>
@@ -60,15 +60,15 @@ export default () => {
               <>
                 <Item
                   level={1}
-                  underline={selectedSubcomponent.value === c1.value}
+                  underline={selectedSubComponent.value === c1.value}
                   onClick={() => {
-                    setSelectedSubcomponent(
+                    setSelectedSubComponent(
                       components[c1.group].find(
                         (component) => component.value === c1.value,
                       ),
                     )
                   }}
-                  selectedSubcomponent={selectedSubcomponent}
+                  selectedSubComponent={selectedSubComponent}
                 >
                   {c1.name}
                 </Item>
@@ -78,15 +78,15 @@ export default () => {
                     return (
                       <Item
                         level={2}
-                        underline={selectedSubcomponent.value === c2.value}
+                        underline={selectedSubComponent.value === c2.value}
                         onClick={() => {
-                          setSelectedSubcomponent(
+                          setSelectedSubComponent(
                             components[c2.group].find(
                               (component) => component.value === c2.value,
                             ),
                           )
                         }}
-                        selectedSubcomponent={selectedSubcomponent}
+                        selectedSubComponent={selectedSubComponent}
                       >
                         {c2.name}
                       </Item>
@@ -106,7 +106,7 @@ const Item = ({
   children,
   underline,
   onClick = () => {},
-  selectedSubcomponent,
+  selectedSubComponent,
 }) => {
   return (
     <span

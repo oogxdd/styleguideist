@@ -1,6 +1,6 @@
 /** @jsxImportSource theme-ui */
 import { useContext } from 'react'
-import { AppContext } from 'context'
+import { ThemeContext } from 'context'
 import { Fragment, useState } from 'react'
 import { Disclosure, Menu, Switch, Transition } from '@headlessui/react'
 import { SearchIcon } from '@heroicons/react/solid'
@@ -55,7 +55,7 @@ export const ProfileSettings = () => {
   const [allowCommenting, setAllowCommenting] = useState(true)
   const [allowMentions, setAllowMentions] = useState(true)
 
-  const { theme } = useContext(AppContext)
+  const { theme } = useContext(ThemeContext)
 
   console.log(theme)
   // const color = new Values(theme.colors.primary)

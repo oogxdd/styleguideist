@@ -71,7 +71,6 @@ const Expanded = () => {
     setShowNavigation,
     navigationFilter,
     setComponent,
-    previewComponent,
   } = useContext(AppContext)
 
   const allFilteredComponents = [
@@ -110,8 +109,6 @@ const Expanded = () => {
         bg: 'background',
         width: 'calc(100vw - 18rem + 30px)',
         fontSize: '14px',
-        opacity: previewComponent ? '0.9' : '1',
-        filter: previewComponent ? 'blur(1px)' : 'blur(0)',
         transition: '0.1s filter linear',
       }}
     >

@@ -1,6 +1,6 @@
 /** @jsxImportSource theme-ui */
 import { useState, useContext, Fragment, useEffect, Component } from 'react'
-import { AppContext } from 'context'
+import { ThemeContext } from 'context'
 import ReactSelect, { components } from 'react-select'
 import { FixedSizeList as List } from 'react-window'
 import { googleFonts } from 'data/fonts/google'
@@ -88,7 +88,7 @@ class MenuList extends Component {
 }
 
 export const Select = () => {
-  const { theme, setTheme, setGfont } = useContext(AppContext)
+  const { theme, setTheme, setGfont } = useContext(ThemeContext)
   useEffect(() => {
     // add all google font styles to the head
     googleFonts.map((font) => {

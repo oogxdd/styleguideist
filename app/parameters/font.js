@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { AppContext } from 'context'
+import { ThemeContext } from 'context'
 import {
   Section,
   ColorPicker,
@@ -11,7 +11,7 @@ import {
 import { percentToNum, pxToNum } from 'helpers'
 
 export const Font = ({ open = false, fields = [] }) => {
-  const { theme, setTheme } = useContext(AppContext)
+  const { theme, setTheme } = useContext(ThemeContext)
 
   const changeColor = (color, value) => {
     setTheme((theme) => ({

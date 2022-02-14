@@ -1,17 +1,10 @@
 import { useContext } from 'react'
-import { AppContext } from 'context'
+import { ThemeContext } from 'context'
 import { Section, ColorPicker, Slider, Presets, Select, Checkbox } from 'app/ui'
 import { percentToNum, pxToNum } from 'helpers'
 
 export const Font = ({ open = false }) => {
-  const { theme, setTheme } = useContext(AppContext)
-
-  const changeColor = (color, value) => {
-    setTheme((theme) => ({
-      ...theme,
-      colors: { ...theme.colors, [color]: value },
-    }))
-  }
+  const { theme, setTheme } = useContext(ThemeContext)
 
   return (
     <Section name="Font" open={open}>

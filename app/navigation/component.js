@@ -4,15 +4,10 @@ import { AppContext } from 'context'
 import { LinkIcon } from '@heroicons/react/solid'
 
 const Component = ({ component }) => {
-  const {
-    selectedComponent,
-    setComponent,
-    setShowNavigation,
-    previewComponent,
-    setPreviewComponent,
-  } = useContext(AppContext)
+  const { selectedComponent, setComponent, setShowNavigation } = useContext(
+    AppContext,
+  )
 
-  const isPreviewed = previewComponent === component.value
   const isSelected = selectedComponent.value === component.value
 
   // const enabled = component.enabled
@@ -23,10 +18,7 @@ const Component = ({ component }) => {
       <a
         sx={{
           opacity: enabled ? '1' : '0.3',
-          color:
-            (isSelected && !previewComponent) || isPreviewed
-              ? 'primary'
-              : 'text',
+          color: isSelected ? 'primary' : 'text',
           ':hover': { color: 'primary' },
         }}
         href={component.link}
@@ -35,7 +27,6 @@ const Component = ({ component }) => {
           if (enabled) {
             e.preventDefault()
             setComponent(component)
-            setPreviewComponent(null)
             setShowNavigation(false)
           }
         }}

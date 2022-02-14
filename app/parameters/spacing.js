@@ -1,10 +1,10 @@
 import { useContext } from 'react'
-import { AppContext } from 'context'
+import { ThemeContext } from 'context'
 import { Section, ColorPicker, Slider, Presets, Separator } from 'app/ui'
 import { percentToNum, pxToNum, numToPx } from 'helpers'
 
 export const Spacing = ({ open = false, fields = [] }) => {
-  const { theme, setTheme } = useContext(AppContext)
+  const { theme, setTheme } = useContext(ThemeContext)
 
   return (
     <Section name="Spacing" open={open}>

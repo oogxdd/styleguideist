@@ -4,4 +4,9 @@ export const Input = ({
   defaultValue = 'Enter text',
   placeholder,
   type = 'text',
-}) => <ThemeUIInput defaultValue={placeholder || defaultValue} />
+}) => (
+  <ThemeUIInput
+    defaultValue={placeholder || defaultValue}
+    sx={{ variant: 'atoms.input' }}
+  />
+)

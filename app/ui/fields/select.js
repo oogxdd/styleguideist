@@ -1,6 +1,6 @@
 /** @jsxImportSource theme-ui */
 import { useState, useContext, Fragment, useEffect } from 'react'
-import { AppContext } from 'context'
+import { ThemeContext } from 'context'
 import { Listbox, Transition } from '@headlessui/react'
 import { CheckIcon, SelectorIcon } from '@heroicons/react/solid'
 import { classNames } from 'helpers'
@@ -12,7 +12,7 @@ import axios from 'axios'
 const GOOGLE_FONTS_API_KEY = 'AIzaSyCOzhRqd9pr-kJcQimmRO38qdfV2su6yVQ'
 
 export const Select = () => {
-  const { theme, setTheme, setGfont } = useContext(AppContext)
+  const { theme, setTheme, setGfont } = useContext(ThemeContext)
   const [selected, setSelected] = useState(
     defaultFonts.find((f) => f.label === theme.fonts.body),
   )

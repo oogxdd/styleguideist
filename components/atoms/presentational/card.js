@@ -1,6 +1,5 @@
-/** @jsxImportSource theme-ui */
 import { useContext } from 'react'
-import { AppContext } from 'context'
+import { ThemeContext } from 'context'
 
 export const Card = ({
   children,
@@ -11,8 +10,8 @@ export const Card = ({
   // height = '128px',
   sx = {},
 }) => {
-  console.log(sx)
-  const { theme, setTheme } = useContext(AppContext)
+  const { theme, setTheme } = useContext(ThemeContext)
+
   return (
     <div
       sx={{

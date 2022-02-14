@@ -1,6 +1,6 @@
 /** @jsxImportSource theme-ui */
 import { useContext, useState } from 'react'
-import { AppContext } from 'context'
+import { ThemeContext } from 'context'
 
 const shadowPresets = [
   {
@@ -15,7 +15,7 @@ export const BorderPresets = ({
   presets = ['none', 'sm', 'md', 'lg', 'full'],
   type,
 }) => {
-  const { theme, setTheme, setBorder } = useContext(AppContext)
+  const { theme, setTheme, setBorder } = useContext(ThemeContext)
   const [selectedPreset, setPreset] = useState(3)
 
   return (

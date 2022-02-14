@@ -1,64 +1,25 @@
-import { ThemeProvider } from 'theme-ui'
 import { createContext, useState, useEffect } from 'react'
-import { atoms, molecules, organisms, templates } from 'data'
-import { fonts } from 'data/fonts'
-import * as themes from 'data/themes'
 import { useImmer } from 'use-immer'
+import { atoms, molecules, organisms, templates } from 'data'
 
 const AppContext = createContext()
 
 const AppProvider = ({ children }) => {
-  const [theme, setTheme] = useImmer(themes.dark)
-  const [gfont, setGfont] = useState('system-ui')
-
   const [paramsType, setParamsType] = useState('global') // local || global
-
-  // if blog post is selected, subcomponents can be:
-
-  // - blogpost
-  // -- image
-  // -- label
-  // -- heading
-  // -- paragraph
-  // -- user card
-  // -- -- name
-  // -- -- caption
-  const [selectedSubcomponent, setSelectedSubcomponent] = useState('blogpost')
-
-  useEffect(() => {
-    if (selectedSubcomponent !== 'blogpost') {
-      setParamsType('local')
-    } else {
-      setParamsType('global')
-    }
-  }, [selectedSubcomponent])
-
-  // navigation
-  const [showNavigation, setShowNavigation] = useState(false)
-  const [navigationFilter, setNavigationFilter] = useState('')
-
   const [selectedSection, setSection] = useState('molecules')
   const [selectedComponent, setComponent] = useState(
     molecules.find((m) => m.value === 'blogpost'),
   )
-  const [previewComponent, setPreviewComponent] = useState(null)
+  const [selectedSubComponent, setSubComponent] = useState('blogpost')
   const [selectedComponentVariant, setComponentVariant] = useState('default')
 
-  // when changing section, select the first component of the section
-  // useEffect(() => {
-  //   if (selectedSection === 'atoms') {
-  //     setComponent(atoms[0].value)
-  //   }
-  //   if (selectedSection === 'molecules') {
-  //     setComponent(molecules[0].value)
-  //   }
-  //   if (selectedSection === 'organisms') {
-  //     setComponent(organisms[0].value)
-  //   }
-  //   if (selectedSection === 'templates') {
-  //     setComponent(templates[0].value)
-  //   }
-  // }, [selectedSection])
+  const [showNavigation, setShowNavigation] = useState(false)
+  const [navigationFilter, setNavigationFilter] = useState('')
+
+  // when changing component, set subcomponent to this component
+  useEffect(() => {
+    setSubComponent(selectedComponent)
+  }, [selectedComponent])
 
   // when changing component, set variant to default
   useEffect(() => {
@@ -72,127 +33,44 @@ const AppProvider = ({ children }) => {
     }
   }, [showNavigation])
 
-  // set button spacing
-  const setSpacing = (type, value) => {
-    if (type === 'vertical') {
-      setTheme((theme) => ({
-        ...theme,
-        buttons: {
-          ...theme.buttons,
-          primary: {
-            ...theme.buttons.primary,
-            py: value,
-          },
-        },
-      }))
+  useEffect(() => {
+    if (selectedSubComponent.value !== selectedComponent.value) {
+      setParamsType('local')
+    } else {
+      setParamsType('global')
     }
-    if (type === 'horizontal') {
-      setTheme((theme) => ({
-        ...theme,
-        buttons: {
-          ...theme.buttons,
-          primary: {
-            ...theme.buttons.primary,
-            px: value,
-          },
-        },
-      }))
-    }
-  }
-
-  const setColor = (color, value) => {
-    setTheme((theme) => ({
-      ...theme,
-      colors: { ...theme.colors, [color]: value },
-    }))
-  }
-
-  const setShadow = (index) => {
-    setTheme((theme) => ({
-      ...theme,
-      buttons: {
-        ...theme.buttons,
-        primary: { ...theme.buttons.primary, boxShadow: index },
-      },
-    }))
-  }
-
-  const setBorder = (index) => {
-    setTheme((theme) => ({
-      ...theme,
-      buttons: {
-        ...theme.buttons,
-        primary: { ...theme.buttons.primary, borderRadius: index },
-      },
-    }))
-  }
+  }, [selectedSubComponent, selectedComponent])
 
   return (
     <AppContext.Provider
       value={{
-        theme,
-        setTheme,
+        selectedSection,
+        selectedComponent,
+        selectedSubComponent,
+        selectedComponentVariant,
+
+        setSection,
+        setSelectedSubComponent: setSubComponent,
+        setComponent,
+        setComponentVariant,
 
         paramsType,
         setParamsType,
 
-        selectedSubcomponent,
-        setSelectedSubcomponent,
-
-        setColor,
-        setSpacing,
-        setShadow,
-        setBorder,
-
-        // navigation
         showNavigation,
-        setShowNavigation,
-
         navigationFilter,
+        setShowNavigation,
         setNavigationFilter,
-
-        selectedSection,
-        setSection,
-        selectedComponent,
-        setComponent,
-        previewComponent,
-        setPreviewComponent,
-        selectedComponentVariant,
-        setComponentVariant,
-
-        setGfont,
-        gfont,
       }}
     >
-      <ThemeProvider theme={theme}>{children}</ThemeProvider>
-      <style
-        dangerouslySetInnerHTML={{
-          __html: `
-        * { font-family: '${gfont}' }
-`,
-        }}
-      />
+      {children}
     </AppContext.Provider>
   )
 }
-// <style
-//   dangerouslySetInnerHTML={{
-//     __html: `
-// * { font-family: '${
-//   fonts.find((f) => f.label === theme.fonts.body).label
-// }' !important; }
-// `,
-//   }}
-// />
 
-// <style
-//   dangerouslySetInnerHTML={{
-//     __html: `
-//       * { font-family: '${
-//         fonts.find((f) => f.label === theme.fonts.body).label
-//       }' !important; }
-//     `,
-//   }}
-// />
+// console.log('selectedComponent')
+// console.log(selectedComponent)
+// console.log('selectedSubComponent')
+// console.log(selectedSubComponent)
 
 export { AppProvider, AppContext }

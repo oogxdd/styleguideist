@@ -1,12 +1,5 @@
 import { BlogPost, FeedItem, Form } from 'components/molecules'
 
-import {
-  // textFields,
-  dimensionFields,
-  marginFields,
-  paddingFields,
-} from '../fields'
-
 export const molecules = [
   {
     label: 'Blog post',
@@ -53,7 +46,16 @@ export const molecules = [
     enabled: true,
     link: 'https://tailwindui.com/components/application-ui/forms/form-layouts',
     children: [
+      {
+        name: 'Card',
+        value: 'card',
+        group: 'atoms',
+        variant: 'molecules.form.card',
+      },
+      { name: 'Title', value: 'title', group: 'atoms' },
+      { name: 'Paragraph', value: 'paragraph', group: 'atoms' },
       { name: 'Input', value: 'input', group: 'atoms' },
+      { name: 'Checkbox', value: 'checkbox', group: 'atoms' },
       { name: 'Button', value: 'button', group: 'atoms' },
     ],
   },

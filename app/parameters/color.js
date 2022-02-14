@@ -1,9 +1,9 @@
 import { useContext } from 'react'
-import { AppContext } from 'context'
+import { ThemeContext } from 'context'
 import { ColorPicker as Colorpicker, Section, Separator } from 'app/ui'
 
 export const Color = ({ open = false, fields = [] }) => {
-  const { theme, setColor } = useContext(AppContext)
+  const { theme, setColor } = useContext(ThemeContext)
 
   return (
     <Section name="Color" open={open}>

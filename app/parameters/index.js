@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { AppContext } from 'context'
+import { AppContext, ThemeContext } from 'context'
 
 import { Color } from './color'
 import { Font } from './font'
@@ -22,13 +22,12 @@ import GlobalParameters from './global'
 // }
 
 const Parameters = () => {
+  const { theme, setTheme } = useContext(ThemeContext)
   const {
-    theme,
-    setTheme,
     paramsType,
     setParamsType,
     selectedComponent,
-    selectedSubcomponent,
+    selectedSubComponent,
   } = useContext(AppContext)
 
   // theme[group][component][field]
@@ -55,23 +54,28 @@ const Parameters = () => {
             setTab={setParamsType}
             tabs={[
               'Global',
-              selectedSubcomponent && selectedSubcomponent.label
-                ? selectedSubcomponent.label
+              selectedSubComponent && selectedSubComponent.label
+                ? selectedSubComponent.label
                 : 'Local',
             ]}
           />
           {paramsType === 'local' ? (
             <>
-              {selectedSubcomponent.params &&
-                selectedSubcomponent.params.map((param) => {
+              {selectedSubComponent.params &&
+                selectedSubComponent.params.map((param) => {
                   if (param.type === 'color') {
                     return (
                       <Color
                         open={true}
                         fields={param.fields.map((field) => {
-                          const group = selectedSubcomponent.group
-                          const component = selectedSubcomponent.value
+                          const group = selectedSubComponent.group
+                          const component = selectedSubComponent.value
 
+                          console.log(theme)
+                          console.log(group)
+                          console.log(theme[group])
+                          console.log(component)
+                          console.log(theme[group][component])
                           return {
                             ...field,
                             value: theme[group][component][field.key],
@@ -95,10 +99,10 @@ const Parameters = () => {
                       <Font
                         open={true}
                         fields={param.fields.map((field) => {
-                          const group = selectedSubcomponent.group
-                          const component = selectedSubcomponent.value
+                          const group = selectedSubComponent.group
+                          const component = selectedSubComponent.value
 
-                          const variant = selectedSubcomponent.variant
+                          const variant = selectedSubComponent.variant
 
                           // theme[group][component][field]
                           // theme.atoms.paragraph.fontSize
@@ -130,8 +134,8 @@ const Parameters = () => {
                       <Border
                         open={true}
                         fields={param.fields.map((field) => {
-                          const group = selectedSubcomponent.group
-                          const component = selectedSubcomponent.value
+                          const group = selectedSubComponent.group
+                          const component = selectedSubComponent.value
 
                           let onChange
 
@@ -170,8 +174,8 @@ const Parameters = () => {
                       <Spacing
                         open={true}
                         fields={param.fields.map((field) => {
-                          const group = selectedSubcomponent.group
-                          const component = selectedSubcomponent.value
+                          const group = selectedSubComponent.group
+                          const component = selectedSubComponent.value
                           // theme[group][component][field]
                           // theme.atoms.paragraph.fontSize
 

@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { AppContext } from 'context'
+import { ThemeContext } from 'context'
 
 import { shadowToObj, shadowToStr } from 'helpers'
 
@@ -7,57 +7,22 @@ import { Font } from './font'
 import { Color } from '../color'
 import { Border } from './border'
 import { Spacing } from './spacing'
-// import { Shadow } from './shadow'
 import { Presets } from './presets'
+// import { Shadow } from './shadow'
 
 const GlobalParameters = ({ open = false }) => {
-  const { theme, setColor: setColorContext } = useContext(AppContext)
-
-  const borderRadius = theme.radii[2].substring(0, theme.radii[2].length - 2)
-  const borderWidth = theme.borders.border
-    .split(' ')[0]
-    .substring(0, theme.borders.border.split(' ')[0].length - 2)
-
-  const setBorderRadius = (value) => {
-    const values = [
-      value / 4 + 'px',
-      value / 2 + 'px',
-      value + 'px',
-      value * 2 + 'px',
-      // value * 3 + 'px',
-      value * 4 + 'px',
-      // value * 10 + 'px',
-    ]
-    setTheme((theme) => ({
-      ...theme,
-      radii: values,
-    }))
-  }
-
-  const setBorderWidth = (value) =>
-    setTheme((theme) => ({
-      ...theme,
-      borders: {
-        ...theme.borders,
-        border: `${value}px solid black`,
-      },
-    }))
-
-  const changeColor = (color, value) => {
-    setTheme((theme) => ({
-      ...theme,
-      colors: { ...theme.colors, [color]: value },
-    }))
-  }
-
-  const shadows =
-    typeof theme.buttons.primary.boxShadow !== 'number'
-      ? shadowToObj(theme.buttons.primary.boxShadow)
-      : shadowToObj(theme.shadows[theme.buttons.primary.boxShadow])
+  const {
+    theme,
+    setColor: setColorContext,
+    borderWidth,
+    borderRadius,
+    setBorderWidth,
+    setBorderRadius,
+  } = useContext(ThemeContext)
 
   const setColor = (key, color) => {
-    setColor(
-      'primary',
+    setContextColor(
+      key,
       `hsla(${color.hsl.h}, ${color.hsl.s * 100}%, ${color.hsl.l * 100}%, ${
         color.hsl.a
       })`,
@@ -67,7 +32,7 @@ const GlobalParameters = ({ open = false }) => {
   return (
     <>
       <Color
-        open
+        open={false}
         fields={[
           {
             type: 'colorpicker',

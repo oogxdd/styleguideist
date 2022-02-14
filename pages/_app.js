@@ -1,4 +1,4 @@
-import { AppProvider } from 'context'
+import { AppProvider, ThemeProvider } from 'context'
 import Head from 'next/head'
 import 'tailwindcss/tailwind.css'
 
@@ -17,9 +17,11 @@ const App = ({ Component, pageProps }) => (
       {/*   rel="stylesheet" */}
       {/* /> */}
     </Head>
-    <AppProvider>
-      <Component {...pageProps} />
-    </AppProvider>
+    <ThemeProvider>
+      <AppProvider>
+        <Component {...pageProps} />
+      </AppProvider>
+    </ThemeProvider>
     <style global jsx>{`
       input:checked + div {
         @apply border-indigo-500;
