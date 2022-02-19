@@ -8,9 +8,9 @@ const AppProvider = ({ children }) => {
   const [paramsType, setParamsType] = useState('global') // local || global
   const [selectedSection, setSection] = useState('molecules')
   const [selectedComponent, setComponent] = useState(
-    molecules.find((m) => m.value === 'blogpost'),
+    atoms.find((m) => m.value === 'button'),
   )
-  const [selectedSubComponent, setSubComponent] = useState('blogpost')
+  const [selectedSubComponent, setSubComponent] = useState('button')
   const [selectedComponentVariant, setComponentVariant] = useState('default')
 
   const [showNavigation, setShowNavigation] = useState(false)

@@ -11,6 +11,7 @@ export const Shadow = ({ open = false }) => {
   // console.log(theme.buttons.primary.boxShadow)
   // console.log(typeof theme.buttons.primary.boxShadow)
   // const shadow = {}
+
   const shadows =
     typeof theme.buttons.primary.boxShadow !== 'number'
       ? shadowToObj(theme.buttons.primary.boxShadow)

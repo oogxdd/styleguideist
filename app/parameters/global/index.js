@@ -8,12 +8,12 @@ import { Color } from '../color'
 import { Border } from './border'
 import { Spacing } from './spacing'
 import { Presets } from './presets'
-// import { Shadow } from './shadow'
+import { Shadow } from './shadow'
 
 const GlobalParameters = ({ open = false }) => {
   const {
     theme,
-    setColor: setColorContext,
+    setColor: setContextColor,
     borderWidth,
     borderRadius,
     setBorderWidth,
@@ -69,9 +69,9 @@ const GlobalParameters = ({ open = false }) => {
           {
             type: 'colorpicker',
             label: 'Border',
-            key: 'border',
-            value: theme.colors.border,
-            onChange: (color) => setColor('border', color),
+            key: 'borderColor',
+            value: theme.colors.borderColor,
+            onChange: (color) => setColor('borderColor', color),
           },
           {
             type: 'separator',
@@ -113,8 +113,8 @@ const GlobalParameters = ({ open = false }) => {
         ]}
       />
       <Spacing fields={[]} />
-      {/* <Shadow /> */}
-      {/* <Presets open /> */}
+      <Shadow open />
+      <Presets open />
     </>
   )
 }

@@ -6,7 +6,7 @@ import * as themes from 'data/themes'
 const ThemeContext = createContext()
 
 const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useImmer(themes.dark)
+  const [theme, setTheme] = useImmer(themes.white)
   const [gfont, setGfont] = useState('system-ui')
 
   // set button spacing
