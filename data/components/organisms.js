@@ -1,10 +1,14 @@
-import { Feed, BlogList, ProfileSettings } from 'components/organisms'
+import {
+  Feed,
+  BlogList,
+  ProfileSettings,
+  FinanceCoinPage,
+} from 'components/organisms'
 
 export const organisms = [
   {
     label: 'Profile settings',
     value: 'profile-settings',
-    // enabled: true,
     component: ProfileSettings,
     enabled: true,
   },
@@ -12,7 +16,6 @@ export const organisms = [
     label: 'Blog list',
     value: 'blog-list',
     component: BlogList,
-    // enabled: true,
     link: 'https://tailwindui.com/components/marketing/sections/blog-sections',
     enabled: true,
   },
@@ -20,8 +23,13 @@ export const organisms = [
     label: 'Feed',
     value: 'feed',
     component: Feed,
-    // enabled: true,
     link: 'https://tailwindui.com/components/application-ui/lists/feeds',
+    enabled: true,
+  },
+  {
+    label: 'FinanceCoinPage',
+    value: 'financecoinpage',
+    component: FinanceCoinPage,
     enabled: true,
   },
 ]

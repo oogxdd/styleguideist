@@ -1,6 +1,8 @@
 export const white = {
   name: 'white',
-  label: 'dark',
+  label: 'white',
+  type: 'light',
+
   space: [2, 4, 8, 16, 32, 48, 64],
   fonts: {
     body: 'Eesti',
@@ -95,15 +97,15 @@ export const white = {
     '49.9px',
     '55.9px',
   ],
-  shadow: '0 1px 3px red, 0 1px 2px red',
-  shadows: [
-    'none',
-    '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)',
-    '0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)',
-    '0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)',
-    '0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)',
-    '0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)',
-  ],
+  shadows: {
+    default: '0 1px 3px red, 0 1px 2px red',
+    0: '0 0px 0px rgba(0,0,0,0.12),',
+    1: '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)',
+    2: '0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)',
+    3: '0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)',
+    4: '0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)',
+    5: '0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)',
+  },
   buttons: {
     primary: {
       bg: 'primary',
@@ -118,7 +120,7 @@ export const white = {
       borderColor: 'borderColor',
       py: '24px',
       px: '39px',
-      boxShadow: 3,
+      boxShadow: 'default',
       lineHeight: 0,
     },
     secondary: { color: 'background', bg: 'secondary' },

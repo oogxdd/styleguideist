@@ -4,3 +4,8 @@ button {
   /* transition: background 0.2s, border-radius 0.2s, height 0.2s, color 0.2s, */
   /*   height 0.2s; */
 }
+
+.container {
+  width: 100% !important;
+  max-width: 1400px !important;
+}

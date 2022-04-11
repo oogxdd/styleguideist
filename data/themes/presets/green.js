@@ -1,6 +1,8 @@
 export const green = {
   name: 'green',
   label: 'green',
+  type: 'light',
+
   space: [2, 4, 8, 16, 32, 48, 64],
   fonts: {
     body: 'Commissioner',

@@ -4,7 +4,7 @@ import { ThemeContext } from 'context'
 import { shadowToObj, shadowToStr } from 'helpers'
 
 import { Font } from './font'
-import { Color } from '../color'
+import { Color } from './color'
 import { Border } from './border'
 import { Spacing } from './spacing'
 import { Presets } from './presets'
@@ -113,8 +113,8 @@ const GlobalParameters = ({ open = false }) => {
         ]}
       />
       <Spacing fields={[]} />
-      <Shadow open />
-      <Presets open />
+      <Shadow open={false} />
+      <Presets open={false} />
     </>
   )
 }

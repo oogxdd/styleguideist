@@ -17,6 +17,8 @@ const Navigation = () => {
     setNavigationFilter,
   } = useContext(AppContext)
 
+  return null
+
   // https://stackoverflow.com/questions/56954641/how-to-use-state-variable-usestate-in-an-eventhandler
   const navFilter = useRef() // will be same object each render
   navFilter.current = navigationFilter // assign new num value each render

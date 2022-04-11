@@ -14,6 +14,8 @@ export default () => {
 
   if (selectedComponent && selectedComponent.group === 'atoms') return null
 
+  return null
+
   console.log('selectedComponent')
   console.log(selectedComponent)
   console.log('selectedSubComponent')

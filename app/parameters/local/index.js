@@ -1,11 +1,11 @@
 import { useContext } from 'react'
 import { AppContext, ThemeContext } from 'context'
 
-import { Color } from '../color'
-import { Font } from '../font'
-import { Border } from '../border'
-import { Spacing } from '../spacing'
-// import { Shadow } from '../shadow'
+import { Color } from './color'
+import { Font } from './font'
+import { Border } from './border'
+import { Spacing } from './spacing'
+// import { Shadow } from './shadow'
 
 const LocalParameters = () => {
   const { theme, setTheme } = useContext(ThemeContext)

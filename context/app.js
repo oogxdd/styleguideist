@@ -7,8 +7,11 @@ const AppContext = createContext()
 const AppProvider = ({ children }) => {
   const [paramsType, setParamsType] = useState('global') // local || global
   const [selectedSection, setSection] = useState('molecules')
+  // const [selectedComponent, setComponent] = useState(
+  //   atoms.find((m) => m.value === 'button'),
+  // )
   const [selectedComponent, setComponent] = useState(
-    atoms.find((m) => m.value === 'button'),
+    molecules.find((m) => m.value === 'blogpost'),
   )
   const [selectedSubComponent, setSubComponent] = useState('button')
   const [selectedComponentVariant, setComponentVariant] = useState('default')

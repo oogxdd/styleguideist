@@ -1,6 +1,7 @@
 export const dark = {
   name: 'dark',
   label: 'dark',
+  type: 'dark',
 
   space: [2, 4, 8, 16, 32, 48, 64],
   fonts: {

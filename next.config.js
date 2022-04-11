@@ -1,8 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
-const withMDX = require('@next/mdx')()
 
-module.exports = withMDX({
+module.exports = {
   webpack(config, options) {
     config.resolve.modules.push(path.resolve('./'))
     config.module.rules.push({
@@ -12,9 +11,12 @@ module.exports = withMDX({
           loader: '@svgr/webpack',
           options: {
             svgoConfig: {
-              plugins: {
-                removeViewBox: false,
-              },
+              plugins: [
+                {
+                  name: 'removeViewBox',
+                  active: false,
+                },
+              ],
             },
           },
         },
@@ -23,4 +25,4 @@ module.exports = withMDX({
 
     return config
   },
-})
+}

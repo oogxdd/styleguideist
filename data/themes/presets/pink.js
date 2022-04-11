@@ -1,6 +1,8 @@
 export const pink = {
   name: 'pink',
   label: 'pink',
+  type: 'light',
+
   space: [2, 4, 8, 16, 32, 48, 64],
   fonts: { body: 'Sora', heading: 'Sora', monospace: 'Menlo, monospace' },
   fontSizes: [23, 25, 27, 31, 35, 53, 69, 75],

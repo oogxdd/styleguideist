@@ -11,7 +11,7 @@ const Preview = () => {
       sx={{ bg: 'background' }}
     >
       <div
-        className="flex items-center justify-center w-full h-full relative"
+        className="flex items-start justify-center items-center w-full h-full relative"
         style={{ width: 'max-content' }}
       >
         {atoms.map(
