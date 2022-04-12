@@ -4,87 +4,33 @@ import { ThemeContext } from 'context'
 import { Listbox, Transition } from '@headlessui/react'
 import { CheckIcon, SelectorIcon } from '@heroicons/react/solid'
 import { classNames } from 'helpers'
-import { fonts as defaultFonts } from 'data'
-import { googleFonts } from 'data/fonts/google'
-import { allGoogleFonts } from 'data/fonts/all-google-fonts'
+import { fonts } from 'data'
 import axios from 'axios'
 
 const GOOGLE_FONTS_API_KEY = 'AIzaSyCOzhRqd9pr-kJcQimmRO38qdfV2su6yVQ'
 
 export const Select = () => {
-  const { theme, setTheme, setGfont } = useContext(ThemeContext)
+  const { theme, setTheme } = useContext(ThemeContext)
   const [selected, setSelected] = useState(
-    defaultFonts.find((f) => f.label === theme.fonts.body),
+    fonts.find((f) => f.label === theme.fonts.body),
   )
-  const [fonts, setFonts] = useState([])
-  // const [fonts, setFonts] = useState(defaultFonts)
-
-  // console.log('with values more than 2')
-  // console.log(
-  //   allGoogleFonts
-  //     .filter((f) => Object.values(f.files).length > 3)
-  //     .filter((f) => !f.variants.includes('italic')),
-  // )
-
-  // useEffect(() => {
-  //   axios
-  //     .get(
-  //       `https://www.googleapis.com/webfonts/v1/webfonts?key=${GOOGLE_FONTS_API_KEY}`,
-  //     )
-  //     .then((r) => {
-  //       // console.log(r.data.items)
-  //       setFonts(r.data.items)
-  //     })
-  // }, [])
-
-  useEffect(() => {
-    let fontStyles = document.createElement('style')
-    googleFonts.map((font) => {
-      if (Object.keys(font.files).length > 0) {
-        for (const [key, value] of Object.entries(font.files)) {
-          // console.log(`${key}: ${value}`);
-          fontStyles.appendChild(
-            document.createTextNode(`
-              @font-face {
-                font-family: "${font.family}";
-                src: url("${value}");
-                font-weight: ${key};
-              }
-            `),
-          )
-        }
-      } else {
-        fontStyles.appendChild(
-          document.createTextNode(`
-          @font-face {
-            font-family: "${font.family}";
-            src: url("${font.files[Object.keys(font.files)[0]]}");
-          }
-        `),
-        )
-      }
-    })
-    document.head.appendChild(fontStyles)
-  }, [])
 
   return (
     <Listbox
       value={selected}
       onChange={(font) => {
-        console.log(font)
-        setGfont(font.family)
-        // document.body.style.fontFamily = font.family
-        // setSelected(font)
+        setSelected(font)
         setTheme((theme) => ({
           ...theme,
-          fonts: { ...theme.fonts, body: font.family, heading: font.family },
+          fonts: { ...theme.fonts, body: font.label, heading: font.label },
         }))
       }}
     >
       <div className="relative mb-6">
         <Listbox.Button
-          className="relative w-full border rounded-md pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 sm:text-sm"
+          className="relative w-full border rounded-md pl-3 pr-10 py-2 text-left focus:outline-none focus:ring-1 sm:text-sm cursor-pointer"
           sx={{
+            border: `1px solid ${theme.colors.borderColor}`,
             borderColor: 'borderColor',
           }}
         >
@@ -115,15 +61,18 @@ export const Select = () => {
               borderColor: 'borderColor',
             }}
           >
-            {googleFonts.map((font, index) => (
+            {fonts.map((font, index) => (
               <Listbox.Option
-                key={font.family}
-                className={({ active }) =>
-                  classNames(
-                    active ? '' : '',
-                    'cursor-default select-none relative py-2 pl-3 pr-9',
-                  )
+                key={font.value}
+                className={
+                  'cursor-pointer select-none relative py-3 pl-3 pr-9 text-md'
                 }
+                sx={{
+                  '&:hover': {
+                    color: 'background',
+                    backgroundColor: 'text',
+                  },
+                }}
                 value={font}
               >
                 {({ selected, active }) => (
@@ -133,9 +82,9 @@ export const Select = () => {
                         selected ? 'font-semibold' : 'font-normal',
                         'block truncate',
                       )}
-                      style={{ fontFamily: font.family }}
+                      style={{ fontFamily: font.label }}
                     >
-                      {font.family}
+                      {font.label}
                     </span>
 
                     {selected ? (

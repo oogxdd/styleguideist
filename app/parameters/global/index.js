@@ -113,7 +113,7 @@ const GlobalParameters = ({ open = false }) => {
         ]}
       />
       <Spacing fields={[]} />
-      <Shadow open={false} />
+      <Shadow open={true} />
       <Presets open={false} />
     </>
   )

@@ -1,8 +1,7 @@
 export const dark = {
-  name: 'dark',
+  name: 'default',
   label: 'dark',
   type: 'dark',
-
   space: [2, 4, 8, 16, 32, 48, 64],
   fonts: {
     body: 'Eesti',
@@ -13,13 +12,15 @@ export const dark = {
   fontWeights: { body: 400, heading: 700, bold: 900 },
   lineHeights: ['280%'],
   colors: {
-    text: '#7fc900',
-    background: '#071620',
-    primary: '#5754ff',
-    secondary: 'green',
+    text: 'hsla(82.08955223880606, 55.62472463556808%, 84.22545000000001%, 1)',
+    text2:
+      'hsla(252.8571428571428, 43.750000000000064%, 93.72549019607843%, 1)',
+    background: 'hsla(204.00000000000003, 43.626570915619396%, 8.3480375%, 1)',
+    primary: 'hsla(241.05263157894723, 100%, 67.44%, 1)',
+    secondary: 'hsla(120, 35.70362328674176%, 35.614377%, 1)',
     muted: '#f6f6f6',
-    card: 'white',
-    borderColor: '#2c4207',
+    card: 'hsla(0, 7.816711590296496%, 12.2059%, 1)',
+    borderColor: 'hsla(82.37288135593231, 34.00335008375209%, 40.5437625%, 1)',
   },
   styles: {
     root: { fontFamily: 'body', lineHeight: 'body', fontWeight: 'body' },
@@ -83,7 +84,6 @@ export const dark = {
     td: { textAlign: 'left', borderBottomStyle: 'solid' },
     img: { maxWidth: '100%' },
   },
-  name: 'default',
   radii: ['0px', '4px', '8px', '10px', '100px'],
   borders: { border: '0px solid borderColor' },
   letterSpacings: [
@@ -96,14 +96,15 @@ export const dark = {
     '49.9px',
     '55.9px',
   ],
-  shadows: [
-    'none',
-    '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)',
-    '0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)',
-    '0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)',
-    '0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)',
-    '0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)',
-  ],
+  shadows: {
+    default: '0 1px 3px red, 0 1px 2px red',
+    0: '0 0px 0px rgba(0,0,0,0.12),',
+    1: '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)',
+    2: '0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)',
+    3: '0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)',
+    4: '0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)',
+    5: '0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)',
+  },
   buttons: {
     primary: {
       bg: 'primary',
@@ -143,33 +144,8 @@ export const dark = {
     },
   },
   atoms: {
-    card: {
-      width: 357,
-      height: 618,
-      borderRadius: 61,
-      background: 'hsla(249.99999999999963, 8.020000000000008%, 20.81%, 0)',
-      px: 26,
-      py: 26,
-      borderWidth: 1,
-    },
-    label: {
-      color:
-        'hsla(349.5238095238096, 75.65403743216065%, 56.83062449999999%, 1)',
-      fontSize: 12,
-      fontWeight: 800,
-      letterSpacing: -0.5,
-    },
-    heading: { color: 'hsla(0, 100%, 89.75500000000001%, 1)', fontSize: 18 },
-    paragraph: { color: 'hsla(0, 79.63%, 89.33%, 0.58)', fontSize: 15 },
-    image: {
-      borderRadius: 40,
-      borderWidth: 5,
-      borderColor:
-        'hsla(249.99999999999991, 8.766586904502937%, 38.458502%, 1)',
-    },
     name: {},
     caption: {},
-    avatar: {},
     button: {},
     input: {},
   },
@@ -177,20 +153,9 @@ export const dark = {
     blogpost: {
       name: 'Blog post',
       value: 'blogpost',
-      container: {
-        width: 357,
-        height: 618,
-        borderRadius: 61,
-        background: 'hsla(249.99999999999963, 8.020000000000008%, 20.81%, 0)',
-        px: 26,
-        py: 26,
-        borderWidth: 1,
-      },
       image: { width: '100%', height: 192 },
     },
     usercard: {},
-    form: {
-      card: {},
-    },
+    form: { card: {} },
   },
 }

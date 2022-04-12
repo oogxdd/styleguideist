@@ -5,6 +5,8 @@ import { atoms, molecules, organisms, templates } from 'data'
 const AppContext = createContext()
 
 const AppProvider = ({ children }) => {
+  const [fullscreen, setFullscreen] = useState(false) // local || global
+
   const [paramsType, setParamsType] = useState('global') // local || global
   const [selectedSection, setSection] = useState('molecules')
   // const [selectedComponent, setComponent] = useState(
@@ -64,6 +66,9 @@ const AppProvider = ({ children }) => {
         navigationFilter,
         setShowNavigation,
         setNavigationFilter,
+
+        fullscreen,
+        setFullscreen,
       }}
     >
       {children}

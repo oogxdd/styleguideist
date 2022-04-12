@@ -1,24 +1,37 @@
-import * as Atoms from 'components/atoms'
-import * as Molecules from 'components/molecules'
+import { useContext } from 'react'
+import { ThemeContext } from 'context'
 
-export const BlogPost = ({ post = defaultPost }) => (
-  <Atoms.Card
-    className="flex flex-col overflow-hidden h-full w-full"
-    sx={{ variant: 'molecules.blogpost.container' }}
-  >
-    <Atoms.Image src={post.imageUrl} />
-    <div className="flex-1 p-6 flex flex-col justify-between">
-      <div className="flex-1">
-        <Atoms.Label>{post.category.name}</Atoms.Label>
-        <a href={post.href} className="block mt-2">
-          <Atoms.Title>{post.title}</Atoms.Title>
-          <Atoms.Paragraph>{post.description}</Atoms.Paragraph>
-        </a>
+import { Card, Image, Label, Title, Paragraph } from 'components/atoms'
+import { UserCard } from 'components/molecules'
+
+export const BlogPost = ({ post = defaultPost }) => {
+  const { theme } = useContext(ThemeContext)
+
+  return (
+    <Card
+      className="flex flex-col overflow-hidden h-full w-full"
+      sx={
+        theme.molecules.blogpost.container
+          ? {
+              variant: 'molecules.blogpost.container',
+            }
+          : null
+      }
+    >
+      <Image src={post.imageUrl} />
+      <div className="flex-1 p-6 flex flex-col justify-between">
+        <div className="flex-1">
+          <Label>{post.category.name}</Label>
+          <a href={post.href} className="block mt-2">
+            <Title>{post.title}</Title>
+            <Paragraph>{post.description}</Paragraph>
+          </a>
+        </div>
+        <UserCard post={post} />
       </div>
-      <Molecules.UserCard post={post} />
-    </div>
-  </Atoms.Card>
-)
+    </Card>
+  )
+}
 
 const defaultPost = {
   title: 'Improve your customer experience',

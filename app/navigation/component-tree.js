@@ -16,10 +16,6 @@ export default () => {
 
   return null
 
-  console.log('selectedComponent')
-  console.log(selectedComponent)
-  console.log('selectedSubComponent')
-  console.log(selectedSubComponent)
   const component = theme.molecules.blogpost
 
   return (

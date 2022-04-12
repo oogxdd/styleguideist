@@ -61,9 +61,9 @@ const shadowToObj = (str) =>
     .split(VALUES_REG)
     .map((s) => s.trim())
     .map(parseValue)
-const shadowToString = (arr) => arr.map(stringifyValue).join(', ')
+const shadowToStr = (arr) => arr.map(stringifyValue).join(', ')
 
 module.exports = {
   shadowToObj,
-  shadowToString,
+  shadowToStr,
 }

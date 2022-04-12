@@ -11,6 +11,7 @@ export const Color = ({ open = false, fields = [] }) => {
         if (field.type === 'colorpicker') {
           return (
             <Colorpicker
+              key={field.label}
               label={field.label}
               value={field.value}
               onChange={field.onChange}
@@ -18,7 +19,7 @@ export const Color = ({ open = false, fields = [] }) => {
           )
         }
         if (field.type === 'separator') {
-          return <Separator>{field.label}</Separator>
+          return <Separator key={field.label}>{field.label}</Separator>
         }
       })}
     </Section>

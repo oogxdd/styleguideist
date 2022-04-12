@@ -46,7 +46,10 @@ export const ShadowPresets = ({ presets = [1, 2, 3, 4, 5], type }) => {
             `}
             onClick={() => {
               setPreset(index + 1)
-              setShadow(index)
+              setTheme((theme) => {
+                theme.shadows.default = theme.shadows[index]
+              })
+              // setShadow(index)
             }}
             key={preset}
             sx={{

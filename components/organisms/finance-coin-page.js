@@ -688,7 +688,6 @@ export const FinanceCoinPage = () => {
                       </svg>
                     </a>
                   </div>
-                  {console.log(theme)}
                   <div className="item">
                     <a
                       href

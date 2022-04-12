@@ -26,9 +26,9 @@ const Parameters = () => {
     setParamsType,
     selectedComponent,
     selectedSubComponent,
+    fullscreen,
+    setFullscreen,
   } = useContext(AppContext)
-
-  const [hidden, setHidden] = useState(false)
 
   // theme[group][component][field]
   // theme.atoms.paragraph.fontSize
@@ -71,9 +71,9 @@ const Parameters = () => {
       </div>
       <div
         className="fixed bottom-2 left-2 select-none z-10"
-        onClick={() => setHidden(!hidden)}
+        onClick={() => setFullscreen(!fullscreen)}
       >
-        {hidden ? (
+        {fullscreen ? (
           <ChevronRightIcon className="w-8 h-8 text-gray-700 hover:text-gray-500 cursor-pointer" />
         ) : (
           <ChevronLeftIcon className="w-8 h-8 text-gray-700 hover:text-gray-500 cursor-pointer" />

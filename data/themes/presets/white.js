@@ -5,7 +5,7 @@ export const white = {
 
   space: [2, 4, 8, 16, 32, 48, 64],
   fonts: {
-    body: 'Eesti',
+    body: 'Euclid',
     heading: '"Spotify Circular", sans-serif',
     monospace: 'Menlo, monospace',
   },
@@ -14,6 +14,8 @@ export const white = {
   lineHeights: ['280%'],
   colors: {
     text: 'hsla(82.08955223880601, 6.592762351436339%, 13.284203999999999%, 1)',
+    text2: '#4E3E9F',
+
     background: 'hsla(0, 0%, 100%, 1)',
     primary:
       'hsla(241.05263157894723, 19.310385969098608%, 27.231493500000003%, 1)',
@@ -98,7 +100,7 @@ export const white = {
     '55.9px',
   ],
   shadows: {
-    default: '0 1px 3px red, 0 1px 2px red',
+    default: '0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)',
     0: '0 0px 0px rgba(0,0,0,0.12),',
     1: '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)',
     2: '0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)',
@@ -155,14 +157,20 @@ export const white = {
       borderWidth: 1,
     },
     label: {
-      color:
-        'hsla(349.5238095238096, 75.65403743216065%, 56.83062449999999%, 1)',
+      // color:
+      //   'hsla(349.5238095238096, 75.65403743216065%, 56.83062449999999%, 1)',
       fontSize: 12,
       fontWeight: 800,
       letterSpacing: -0.5,
     },
-    heading: { color: 'hsla(0, 100%, 89.75500000000001%, 1)', fontSize: 18 },
-    paragraph: { color: 'hsla(0, 79.63%, 89.33%, 0.58)', fontSize: 15 },
+    heading: {
+      // color: 'hsla(0, 100%, 89.75500000000001%, 1)',
+      fontSize: 18,
+    },
+    paragraph: {
+      // color: 'hsla(0, 79.63%, 89.33%, 0.58)',
+      fontSize: 15,
+    },
     image: {
       borderRadius: 40,
       borderWidth: 5,

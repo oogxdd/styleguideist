@@ -1,3 +1,5 @@
+import { Avatar } from 'components/atoms'
+
 export const UserCard = ({ post }) => (
   <div
     className="mt-6 flex items-center"
@@ -6,10 +8,9 @@ export const UserCard = ({ post }) => (
     <div className="flex-shrink-0">
       <a href={post.author.href}>
         <span className="sr-only">{post.author.name}</span>
-        <img
-          className="h-10 w-10 rounded-full"
+        <Avatar
+          alt="Avatar"
           src={post.author.imageUrl}
-          alt=""
           sx={{ variant: 'atoms.avatar' }}
         />
       </a>

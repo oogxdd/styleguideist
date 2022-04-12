@@ -9,13 +9,13 @@ const shadowPresets = [
   },
 ]
 
-const sd = ['none', 'md', 'lg', 'xl', 'full']
+const sd = ['none', 'md', 'lg', 'lg', 'full']
 
 export const BorderPresets = ({
   presets = ['none', 'sm', 'md', 'lg', 'full'],
   type,
 }) => {
-  const { theme, setTheme, setBorder } = useContext(ThemeContext)
+  const { theme, setTheme, setBorderRadius } = useContext(ThemeContext)
   const [selectedPreset, setPreset] = useState(3)
 
   return (
@@ -43,7 +43,7 @@ export const BorderPresets = ({
             `}
             onClick={() => {
               setPreset(index + 1)
-              setBorder(index)
+              setBorderRadius(index * 16)
             }}
             key={preset}
             sx={{

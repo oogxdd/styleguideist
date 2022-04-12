@@ -57,10 +57,8 @@ export const ProfileSettings = () => {
 
   const { theme } = useContext(ThemeContext)
 
-  console.log(theme)
   // const color = new Values(theme.colors.primary)
   const color = new Values('hsl(204deg 100% 50% / 1)')
-  console.log(color)
 
   return (
     <main className="relative mt-16 w-4/5 self-start">

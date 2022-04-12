@@ -19,9 +19,15 @@ export const Card = ({
         border: 'border',
         borderColor: 'borderColor',
         borderRadius: 1,
-        boxShadow: 3,
+        boxShadow: 'default',
+
+        width: '400px',
+        height: 'auto',
+        paddingBottom: 12,
+        // padding: '24px 16px',
+
+        variant: theme.atoms.card ? 'atoms.card' : null,
         ...sx,
-        variant: 'atoms.card',
       }}
       className={`${!children && 'w-52 h-52'} ${className}`}
     >
