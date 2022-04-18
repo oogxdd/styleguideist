@@ -9,7 +9,7 @@ export const Title = ({ children = 'Title' }) => {
       className="text-xl font-semibold"
       sx={{
         color: 'text',
-        // variant: null,
+        fontSize: theme.fontSizes ? theme.fontSizes.base * 1.25 : undefined,
         variant: theme.atoms.heading ? 'atoms.heading' : null,
       }}
     >

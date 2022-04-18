@@ -53,10 +53,9 @@ export const molecules = [
         variant: 'molecules.form.card',
       },
       { name: 'Title', value: 'title', group: 'atoms' },
-      { name: 'Paragraph', value: 'paragraph', group: 'atoms' },
       { name: 'Input', value: 'input', group: 'atoms' },
-      { name: 'Checkbox', value: 'checkbox', group: 'atoms' },
-      { name: 'Button', value: 'button', group: 'atoms' },
+      { name: 'Button (primary)', value: 'button', group: 'atoms' },
+      { name: 'Button (secondary)', value: 'button', group: 'atoms' },
     ],
   },
   {

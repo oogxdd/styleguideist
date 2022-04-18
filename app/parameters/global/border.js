@@ -21,6 +21,8 @@ export const Border = ({ open = false }) => {
     <Section name="Border">
       <Presets type="border" />
       <Slider
+        min="0"
+        max="48"
         label="Radius"
         value={borderRadius}
         onChange={(value) => setBorderRadius(value)}

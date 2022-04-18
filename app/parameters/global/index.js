@@ -93,7 +93,7 @@ const GlobalParameters = ({ open = false }) => {
           },
         ]}
       />
-      <Font fields={[]} />
+      <Font fields={[]} open={true} />
       <Border
         fields={[
           {
@@ -112,8 +112,8 @@ const GlobalParameters = ({ open = false }) => {
           },
         ]}
       />
-      <Spacing fields={[]} />
-      <Shadow open={true} />
+      <Spacing open={false} fields={[]} />
+      <Shadow open={false} />
       <Presets open={false} />
     </>
   )

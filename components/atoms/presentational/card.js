@@ -18,10 +18,9 @@ export const Card = ({
         bg: 'card',
         border: 'border',
         borderColor: 'borderColor',
-        borderRadius: 1,
         boxShadow: 'default',
 
-        width: '400px',
+        width: theme.space.base ? 200 + theme.space.base.x * 50 : '375px',
         height: 'auto',
         paddingBottom: 12,
         // padding: '24px 16px',

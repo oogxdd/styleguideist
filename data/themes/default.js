@@ -22,7 +22,16 @@ export const base = {
     '0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)',
   ],
 
-  space: [2, 4, 8, 16, 32, 48, 64],
+  space: {
+    base: {
+      x: 4,
+      y: 4,
+    },
+  },
+
+  fontSizes: {
+    base: 15,
+  },
 
   radii: {
     default: '0px',
@@ -34,7 +43,6 @@ export const base = {
 
   borderRadius: ['0px', '10px', '100px'],
 
-  fontSizes: [12, 14, 16, 20, 24, 32, 48, 64],
   letterSpacings: ['0px'],
   lineHeights: ['100%', '125%', '150%', '175%', '200%'],
   fontWeights: {

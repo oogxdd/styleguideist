@@ -12,7 +12,7 @@ export const Label = ({ children = 'Label', href = '' }) => {
       className="hover:underline"
       sx={{
         fontWeight: 700,
-        fontSize: 15,
+        fontSize: theme.fontSizes ? theme.fontSizes.base * 0.875 : undefined,
         color: 'primary',
         variant: theme.atoms.label ? 'atoms.label' : null,
       }}

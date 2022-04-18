@@ -15,29 +15,31 @@ const Navigation = () => {
     setShowNavigation,
     navigationFilter,
     setNavigationFilter,
+    fullscreen,
   } = useContext(AppContext)
 
-  return null
+  // return null
+  if (fullscreen) return null
 
   // https://stackoverflow.com/questions/56954641/how-to-use-state-variable-usestate-in-an-eventhandler
   const navFilter = useRef() // will be same object each render
   navFilter.current = navigationFilter // assign new num value each render
 
   // later: build hook https://www.caktusgroup.com/blog/2020/07/01/usekeypress-hook-react/
-  useEffect(() => {
-    const onEscape = (e) => {
-      if (e.key === 'Escape') {
-        if (navFilter.current !== '') {
-          setNavigationFilter('')
-        } else {
-          setShowNavigation((prev) => !prev)
-        }
-      }
-    }
+  // useEffect(() => {
+  //   const onEscape = (e) => {
+  //     if (e.key === 'Escape') {
+  //       if (navFilter.current !== '') {
+  //         setNavigationFilter('')
+  //       } else {
+  //         setShowNavigation((prev) => !prev)
+  //       }
+  //     }
+  //   }
 
-    window.addEventListener('keyup', onEscape)
-    return () => window.removeEventListener('keyup', onEscape)
-  }, [])
+  //   window.addEventListener('keyup', onEscape)
+  //   return () => window.removeEventListener('keyup', onEscape)
+  // }, [])
 
   if (!showNavigation) {
     return <Collapsed />
@@ -47,13 +49,16 @@ const Navigation = () => {
 }
 
 const Collapsed = () => {
-  const { showNavigation, setShowNavigation, navigationFilter } = useContext(
-    AppContext,
-  )
+  const {
+    showNavigation,
+    setShowNavigation,
+    navigationFilter,
+    fullscreen,
+  } = useContext(AppContext)
 
   return (
     <MenuIcon
-      className="w-6 h-6 fixed top-8 right-8 cursor-pointer"
+      className="w-5 h-5 fixed top-8 right-8 cursor-pointer"
       onClick={() => setShowNavigation(true)}
       sx={{
         fill: 'text',

@@ -3,13 +3,20 @@ export const white = {
   label: 'white',
   type: 'light',
 
-  space: [2, 4, 8, 16, 32, 48, 64],
+  space: {
+    base: {
+      x: 4,
+      y: 4,
+    },
+  },
+  fontSizes: {
+    base: 15,
+  },
   fonts: {
     body: 'Eesti',
     heading: '"Spotify Circular", sans-serif',
     monospace: 'Menlo, monospace',
   },
-  fontSizes: [23, 25, 27, 31, 35, 53, 69, 75],
   fontWeights: { body: 400, heading: 700, bold: 900 },
   lineHeights: ['280%'],
   colors: {

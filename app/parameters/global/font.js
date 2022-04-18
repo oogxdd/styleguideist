@@ -11,15 +11,13 @@ export const Font = ({ open = false }) => {
       <Select />
 
       <Slider
-        label="Size"
+        label="Base size"
         min="6"
         max="64"
-        value={theme.fontSizes[0]}
+        value={theme.fontSizes.base}
         onChange={(value) => {
-          const x = parseInt(value)
-          setTheme({
-            ...theme,
-            fontSizes: [x, x + 2, x + 4, x + 8, x + 12, x + 30, x + 46, x + 52],
+          setTheme((theme) => {
+            theme.fontSizes.base = parseInt(value)
           })
         }}
       />

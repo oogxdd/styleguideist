@@ -3,13 +3,20 @@ export const green = {
   label: 'green',
   type: 'light',
 
-  space: [2, 4, 8, 16, 32, 48, 64],
+  space: {
+    base: {
+      x: 4,
+      y: 4,
+    },
+  },
+  fontSizes: {
+    base: 15,
+  },
   fonts: {
     body: 'Commissioner',
     heading: 'Commissioner',
     monospace: 'Menlo, monospace',
   },
-  fontSizes: [17, 19, 21, 25, 29, 47, 63, 69],
   fontWeights: { body: 400, heading: 700, bold: 400 },
   lineHeights: ['280%'],
   colors: {

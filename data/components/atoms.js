@@ -25,20 +25,13 @@ import {
 import { spacingParams, fontParams, colorParams, borderParams } from '../fields'
 
 export const atoms = [
-  {
-    label: 'Name',
-    value: 'name',
-    component: Name,
-    group: 'atoms',
-    params: [colorParams(), fontParams(), spacingParams({ margins: true })],
-  },
-  {
-    label: 'Caption',
-    value: 'caption',
-    component: Caption,
-    group: 'atoms',
-    params: [colorParams(), fontParams(), spacingParams({ margins: true })],
-  },
+  // {
+  //   label: 'Name',
+  //   value: 'name',
+  //   component: Name,
+  //   group: 'atoms',
+  //   params: [colorParams(), fontParams(), spacingParams({ margins: true })],
+  // },
   {
     label: 'Button',
     value: 'button',
@@ -61,23 +54,34 @@ export const atoms = [
       spacingParams({ margins: true, paddings: true, dimensions: true }),
     ],
   },
+  // {
+  //   label: 'Select',
+  //   value: 'select',
+  //   component: Select,
+  //   group: 'atoms',
+  // },
+  // {
+  //   label: 'Textarea',
+  //   value: 'textarea',
+  //   component: Textarea,
+  //   group: 'atoms',
+  // },
+  // {
+  //   label: 'Checkbox',
+  //   value: 'checkbox',
+  //   component: Checkbox,
+  //   group: 'atoms',
+  // },
   {
-    label: 'Select',
-    value: 'select',
-    component: Select,
+    label: 'Image',
+    value: 'image',
+    component: Image,
     group: 'atoms',
-  },
-  {
-    label: 'Textarea',
-    value: 'textarea',
-    component: Textarea,
-    group: 'atoms',
-  },
-  {
-    label: 'Checkbox',
-    value: 'checkbox',
-    component: Checkbox,
-    group: 'atoms',
+    params: [
+      borderParams(),
+      spacingParams({ dimensions: true, margins: true }),
+    ],
+    // params: ['border', 'shadow', 'spacing'],
   },
   {
     label: 'Avatar',
@@ -89,12 +93,12 @@ export const atoms = [
       spacingParams({ dimensions: true, margins: true }),
     ],
   },
-  {
-    label: 'Badge',
-    value: 'badge',
-    component: Badge,
-    group: 'atoms',
-  },
+  // {
+  //   label: 'Badge',
+  //   value: 'badge',
+  //   component: Badge,
+  //   group: 'atoms',
+  // },
   {
     label: 'Heading',
     value: 'heading',
@@ -119,6 +123,13 @@ export const atoms = [
     params: [colorParams(), fontParams(), spacingParams({ margins: true })],
   },
   {
+    label: 'Caption',
+    value: 'caption',
+    component: Caption,
+    group: 'atoms',
+    params: [colorParams(), fontParams(), spacingParams({ margins: true })],
+  },
+  {
     label: 'Card',
     value: 'card',
     component: Card,
@@ -129,21 +140,10 @@ export const atoms = [
       spacingParams({ dimensions: true, paddings: true }),
     ],
   },
-  {
-    label: 'Image',
-    value: 'image',
-    component: Image,
-    group: 'atoms',
-    params: [
-      borderParams(),
-      spacingParams({ dimensions: true, margins: true }),
-    ],
-    // params: ['border', 'shadow', 'spacing'],
-  },
-  {
-    label: 'Title',
-    value: 'title',
-    component: Title,
-    group: 'atoms',
-  },
+  // {
+  //   label: 'Title',
+  //   value: 'title',
+  //   component: Title,
+  //   group: 'atoms',
+  // },
 ]

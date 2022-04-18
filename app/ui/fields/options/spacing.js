@@ -124,17 +124,10 @@ export const SpacingPresets = () => {
             `}
             onClick={() => {
               setPreset(index + 1)
-              setTheme((theme) => ({
-                ...theme,
-                buttons: {
-                  ...theme.buttons,
-                  primary: {
-                    ...theme.buttons.primary,
-                    px: index + 1,
-                    py: index + 1,
-                  },
-                },
-              }))
+              setTheme((theme) => {
+                theme.space.base.x = index * 2
+                theme.space.base.y = index * 2
+              })
               // setShadow(index)
             }}
             key={preset}

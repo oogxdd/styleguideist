@@ -10,26 +10,26 @@ export const Spacing = ({ open = false }) => {
     <Section name="Spacing" open={open}>
       <Presets type="spacing" />
       <Slider
-        label="Vertical"
+        label="Base (Y)"
         min={0}
-        max={64}
-        value={
-          typeof theme.buttons.primary.py === 'number'
-            ? pxToNum(theme.space[theme.buttons.primary.py])
-            : pxToNum(theme.buttons.primary.py)
+        max={16}
+        value={theme.space.base ? theme.space.base.y : undefined}
+        onChange={(value) =>
+          setTheme((theme) => {
+            theme.space.base.y = value
+          })
         }
-        onChange={(value) => setSpacing('vertical', numToPx(value))}
       />
       <Slider
-        label="Horizontal"
+        label="Base (X)"
         min={0}
-        max={64}
-        value={
-          typeof theme.buttons.primary.px === 'number'
-            ? pxToNum(theme.space[theme.buttons.primary.px])
-            : pxToNum(theme.buttons.primary.px)
+        max={16}
+        value={theme.space.base ? theme.space.base.x : undefined}
+        onChange={(value) =>
+          setTheme((theme) => {
+            theme.space.base.x = value
+          })
         }
-        onChange={(value) => setSpacing('horizontal', numToPx(value))}
       />
     </Section>
   )

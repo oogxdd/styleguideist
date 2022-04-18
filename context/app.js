@@ -46,6 +46,17 @@ const AppProvider = ({ children }) => {
     }
   }, [selectedSubComponent, selectedComponent])
 
+  useEffect(() => {
+    const onEscape = (e) => {
+      if (e.key === 'Escape') {
+        setFullscreen(!fullscreen)
+      }
+    }
+
+    window.addEventListener('keyup', onEscape)
+    return () => window.removeEventListener('keyup', onEscape)
+  }, [fullscreen])
+
   return (
     <AppContext.Provider
       value={{

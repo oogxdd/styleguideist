@@ -9,14 +9,13 @@ export default () => {
     selectedComponent,
     selectedSubComponent,
     setSelectedSubComponent,
+    fullscreen,
   } = useContext(AppContext)
   const { theme } = useContext(ThemeContext)
 
   if (selectedComponent && selectedComponent.group === 'atoms') return null
 
-  return null
-
-  const component = theme.molecules.blogpost
+  if (fullscreen) return null
 
   return (
     <div

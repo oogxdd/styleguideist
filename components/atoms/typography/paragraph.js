@@ -1,15 +1,17 @@
 import { useContext } from 'react'
 import { ThemeContext } from 'context'
 
-export const Paragraph = ({ children = 'Paragraph' }) => {
+export const Paragraph = ({ children = 'Paragraph', style = {} }) => {
   const { theme } = useContext(ThemeContext)
 
   return (
     <p
-      className="mt-3 text-base"
+      className="text-base"
       sx={{
         color: 'text2',
+        fontSize: theme.fontSizes ? theme.fontSizes.base : undefined,
         variant: theme.atoms.paragraph ? 'atoms.paragraph' : null,
+        ...style,
       }}
     >
       {children}

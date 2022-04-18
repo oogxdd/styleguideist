@@ -40,7 +40,7 @@ const Parameters = () => {
         style={{
           width: 'calc(18rem - 0px)',
           minWidth: 'calc(18rem - 0px)',
-          display: hidden ? 'none' : 'block',
+          display: fullscreen ? 'none' : 'block',
         }}
       >
         <div
@@ -74,9 +74,31 @@ const Parameters = () => {
         onClick={() => setFullscreen(!fullscreen)}
       >
         {fullscreen ? (
-          <ChevronRightIcon className="w-8 h-8 text-gray-700 hover:text-gray-500 cursor-pointer" />
+          <ChevronRightIcon
+            className="w-8 h-8 cursor-pointer"
+            sx={{
+              // fill: 'text',
+              // filter: 'grayscale(100%)',
+              fill: 'primary',
+              opacity: '0.5',
+              ':hover': {
+                opacity: '1',
+              },
+            }}
+          />
         ) : (
-          <ChevronLeftIcon className="w-8 h-8 text-gray-700 hover:text-gray-500 cursor-pointer" />
+          <ChevronLeftIcon
+            className="w-8 h-8 cursor-pointer"
+            sx={{
+              // fill: 'text',
+              // filter: 'grayscale(100%)',
+              fill: 'primary',
+              opacity: '0.5',
+              ':hover': {
+                opacity: '1',
+              },
+            }}
+          />
         )}
       </div>
     </>

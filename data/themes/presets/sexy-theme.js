@@ -1,4 +1,4 @@
-export const a = {
+export const aa = {
   name: 'default',
   label: 'dark',
   type: 'dark',
@@ -19,14 +19,13 @@ export const a = {
   fontWeights: { body: 400, heading: 700, bold: 900 },
   lineHeights: ['280%'],
   colors: {
-    text: 'hsla(82.08955223880606, 55.62472463556808%, 84.22545000000001%, 1)',
-    text2:
-      'hsla(252.8571428571428, 43.750000000000064%, 93.72549019607843%, 1)',
-    background: 'hsla(204.00000000000003, 43.626570915619396%, 8.3480375%, 1)',
-    primary: 'hsla(241.05263157894723, 100%, 67.44%, 1)',
+    text: 'hsla(82.08955223880622, 25.09382036527396%, 26.995738000000003%, 1)',
+    text2: 'hsla(252.85714285714275, 66.22667743365251%, 57.836544%, 1)',
+    background: 'hsla(0, 9.661147055598205%, 12.429197%, 1)',
+    primary: 'hsla(241.05263157894723, 43.626570915619396%, 17.1556%, 1)',
     secondary: 'hsla(120, 35.70362328674176%, 35.614377%, 1)',
     muted: '#f6f6f6',
-    card: 'hsla(0, 7.816711590296496%, 12.2059%, 1)',
+    card: 'hsla(0, 42.175728684336995%, 75.13155%, 1)',
     borderColor: 'hsla(82.37288135593231, 34.00335008375209%, 40.5437625%, 1)',
   },
   styles: {
@@ -91,7 +90,7 @@ export const a = {
     td: { textAlign: 'left', borderBottomStyle: 'solid' },
     img: { maxWidth: '100%' },
   },
-  radii: ['0px', '4px', '8px', '10px', '100px'],
+  radii: ['16px', '32px', '64px', '128px', '256px'],
   borders: { border: '0px solid borderColor' },
   letterSpacings: [
     '3.9px',
@@ -110,7 +109,7 @@ export const a = {
     '3': '0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)',
     '4': '0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)',
     '5': '0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)',
-    default: '0 1px 59px #a5ffed, 0 6px 6px 6px rgba(0,0,0,0.23)',
+    default: '0 1px 82px #e90e0e, 0 1px 92px red',
   },
   buttons: {
     primary: {
