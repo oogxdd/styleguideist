@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import { ThemeContext } from 'context'
-import { Section, ColorPicker, Slider, Presets } from 'app/ui'
+import { Section, ColorPicker, Slider, Presets } from 'app/parameters/ui'
 import { percentToNum, pxToNum, numToPx } from 'helpers'
 
 export const Spacing = ({ open = false }) => {

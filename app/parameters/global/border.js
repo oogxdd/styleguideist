@@ -5,7 +5,13 @@
 // one of options: custom or preset
 import { useContext } from 'react'
 import { ThemeContext } from 'context'
-import { Section, ColorPicker, Slider, Presets, Checkbox } from 'app/ui'
+import {
+  Section,
+  ColorPicker,
+  Slider,
+  Presets,
+  Checkbox,
+} from 'app/parameters/ui'
 
 export const Border = ({ open = false }) => {
   const {

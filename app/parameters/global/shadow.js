@@ -1,14 +1,18 @@
 import { useContext, useState, useEffect, Fragment } from 'react'
 import { ThemeContext } from 'context'
-import { Section, ColorPicker, Slider, Presets, Checkbox } from 'app/ui'
+import {
+  Section,
+  ColorPicker,
+  Slider,
+  Presets,
+  Checkbox,
+} from 'app/parameters/ui'
 import { shadowToObj, shadowToStr } from 'helpers'
 import { XIcon } from '@heroicons/react/solid'
 
 export const Shadow = ({ open = false }) => {
   const { theme, setTheme } = useContext(ThemeContext)
   const [shadowObj, setShadowObj] = useState(shadowToObj(theme.shadows.default))
-
-  console.log(theme.shadows.default)
 
   useEffect(() => {
     if (shadowObj) {

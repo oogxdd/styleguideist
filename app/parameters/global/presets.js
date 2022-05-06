@@ -1,6 +1,11 @@
 import { useContext } from 'react'
 import { ThemeContext } from 'context'
-import { Section, ColorPicker, Slider, Presets as PresetPicker } from 'app/ui'
+import {
+  Section,
+  ColorPicker,
+  Slider,
+  Presets as PresetPicker,
+} from 'app/parameters/ui'
 import { percentToNum, pxToNum, numToPx } from 'helpers'
 
 export const Presets = ({ open = false }) => {

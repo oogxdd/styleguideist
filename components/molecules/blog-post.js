@@ -66,13 +66,11 @@ const defaultPost = {
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
   date: 'Feb 12, 2020',
   datetime: '2020-02-12',
-  imageUrl:
-    'https://images.unsplash.com/photo-1492724441997-5dc865305da7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
+  imageUrl: '/img/burn.jpeg',
   readingTime: '11 min',
   author: {
     name: 'Daniela Metz',
     href: '#',
-    imageUrl:
-      'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    imageUrl: '/img/avatar/3.jpeg',
   },
 }

@@ -2,7 +2,7 @@ import { ThemeProvider as ThemeUIProvider } from 'theme-ui'
 import { createContext, useState } from 'react'
 import { useImmer } from 'use-immer'
 import { fonts } from 'data'
-import * as themes from 'data/themes'
+import * as themes from 'themes'
 
 const ThemeContext = createContext()
 

@@ -1,6 +1,6 @@
 {
-  "name": "styleguide.ist",
-  "version": "0.1.5",
+  "name": "styleguideist",
+  "version": "0.1.9",
   "private": true,
   "scripts": {
     "dev": "next dev",

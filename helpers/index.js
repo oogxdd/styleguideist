@@ -1,6 +1,8 @@
 export * from './classnames'
-export * from './px-to-num'
-export * from './num-to-px'
-export * from './percent-to-num'
+
+export * from './convert/num-to-px'
+export * from './convert/px-to-num'
+export * from './convert/percent-to-num'
+
 export * from './shadow'
 export * from './download-file'

@@ -7,7 +7,7 @@ import Navigation from 'app/navigation'
 import ComponentTree from 'app/navigation/component-tree'
 
 import ReactTooltip from 'react-tooltip'
-import { presets } from 'data'
+import { presets } from 'themes'
 import { molecules } from 'data'
 
 const App = () => {

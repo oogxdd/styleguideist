@@ -7,7 +7,7 @@ import {
   Presets,
   Select as FontPicker,
   Checkbox,
-} from 'app/ui'
+} from 'app/parameters/ui'
 import { percentToNum, pxToNum } from 'helpers'
 
 export const Font = ({ open = false, fields = [] }) => {

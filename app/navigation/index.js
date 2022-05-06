@@ -1,11 +1,10 @@
-/** @jsxImportSource theme-ui */
 import { useContext, useEffect, useCallback, useRef } from 'react'
 import { AppContext } from 'context'
 
-import Header from './header'
-import Section from './section'
+import Header from './menu/header'
+import Section from './menu/section'
 
-import MenuIcon from './icons/menu.svg'
+import MenuIcon from 'public/icons/menu.svg'
 
 import { atoms, molecules, organisms, templates } from 'data'
 

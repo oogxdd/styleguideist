@@ -3,19 +3,19 @@ import { AppContext, ThemeContext } from 'context'
 
 import GlobalParameters from 'app/parameters/global'
 import LocalParameters from 'app/parameters/local'
-import Tabs from 'app/ui/tabs'
+import Tabs from './tabs'
 
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/solid'
 
 // if (local) {
 //  <Section
-//    name=""
-//    fields=""
+//    label=""
+//    fields=[]
 //  />
 // } else {
 //  <Section
-//    name=""
-//    fields=""
+//    label=""
+//    fields=[]
 //  />
 // }
 
@@ -61,6 +61,7 @@ const Parameters = () => {
                   : 'Local',
               ]}
             />
+            {/* paramsType === 'local' && () */}
             {paramsType === 'local' ? (
               <LocalParameters />
             ) : (

@@ -1,18 +1,19 @@
-// interactive
-export * from './interactive/button'
-export * from './interactive/input'
-export * from './interactive/textarea'
-export * from './interactive/checkbox'
-export * from './interactive/select'
+export * from './text/heading'
+export * from './text/title'
+export * from './text/paragraph'
+export * from './text/label'
+export * from './text/link'
 
-// presentational
-export * from './presentational/avatar'
-export * from './presentational/card'
-export * from './presentational/image'
+export * from './fields/input'
+export * from './fields/textarea'
+export * from './fields/checkbox'
+export * from './fields/select'
 
-// typography
-export * from './typography/heading'
-export * from './typography/title'
-export * from './typography/paragraph'
-export * from './typography/label'
-export * from './typography/link'
+export * from './button'
+export * from './avatar'
+export * from './card'
+export * from './image'
+export * from './section'
+
+// duals
+export * from './user-card'
