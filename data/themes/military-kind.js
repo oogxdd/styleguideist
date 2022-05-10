@@ -15,7 +15,6 @@ export const militaryKind = {
     text: 'hsla(70.7441844496616, 100%, 73.81%, 1)',
     text2: 'hsla(16.325579798498808, 61.230000000000004%, 92.67%, 1)',
     background: 'hsla(59.23076923076929, 45.31715469011116%, 23.6241895%, 1)',
-    // primary: 'hsla(0, 79.56558392413568%, 55.12472699999999%, 1)',
     primary: 'hsla(0, 84.6164572586716%, 56.641977%, 1)',
     secondary: 'hsla(32.7659574468085, 100%, 72.35294117647058%, 1)',
     muted: '#f6f6f6',
@@ -80,7 +79,7 @@ export const militaryKind = {
     td: { textAlign: 'left', borderBottomStyle: 'solid' },
     img: { maxWidth: '100%' },
   },
-  radii: ['5.25px', '10.5px', '21px', '42px', '84px'],
+  radii: ['3.5px', '7px', '14px', '28px', '56px'],
   borders: { border: '0px solid borderColor' },
   letterSpacings: [
     '3.9px',
@@ -118,20 +117,27 @@ export const militaryKind = {
       pr: 0,
       borderRadius: 3,
     },
-    label: { fontWeight: 800, letterSpacing: -0.5 },
-    heading: {},
-    paragraph: { fontSize: 18, fontWeight: 100 },
+    label: { fontWeight: 800, letterSpacing: -0.5, display: 'none' },
+    heading: { textAlign: 'center', mt: 30 },
+    paragraph: {
+      fontSize: 18,
+      fontWeight: 100,
+      textAlign: 'center',
+      pl: 6,
+      pr: 6,
+    },
     image: {
-      borderWidth: 4,
+      borderWidth: 0,
       borderColor: 'hsla(249.7833672913951, 0%, 0%, 1)',
       mt: 0,
       mb: 0,
       ml: 0,
       mr: 0,
+      height: 331,
     },
-    name: {},
-    caption: {},
-    avatar: {},
+    name: { color: 'hsla(0, 91.30434782608697%, 72.94117647058823%, 1)' },
+    caption: { fontSize: 16 },
+    avatar: { width: 48, height: 48, objectFit: 'cover' },
     button: {
       pt: 0,
       pb: 0,
@@ -142,7 +148,7 @@ export const militaryKind = {
       fontWeight: 600,
     },
     input: { height: 48 },
-    usercard: {},
+    usercard: { pl: 52, mb: 20, ml: 10 },
   },
   molecules: {
     blogpost: {
@@ -156,6 +162,12 @@ export const militaryKind = {
       card: {
         background: 'hsla(249.99999999999963, 8.020000000000008%, 20.81%, 0)',
         borderWidth: 1,
+        pt: 16,
+        pb: 16,
+        pl: 16,
+        pr: 16,
+        borderColor: 'hsla(14.23255654268477, 87.72000000000003%, 82.3%, 0.17)',
+        boxShadow: '10px 10px 0 rgb(0 0 0 / 12%), 0 0 0',
       },
       props: {
         title: 'Amprove your customer experience',
@@ -163,16 +175,15 @@ export const militaryKind = {
         label: 'Case Study',
         description:
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
-        imageUrl: '/img/burn.jpeg',
+        imageUrl: '/img/ukraine2.png',
         authorName: 'Daniela Metz',
-        authorAvatar:
-          'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        authorAvatar: '/img/avatar/3.jpeg',
         caption: 'Feb 12, 2020  ·  11 min read',
       },
     },
     form: {
       card: {
-        background: 'hsla(249.99999999999994, 0%, 100%, 1)',
+        background: 'hsla(0, 0%, 100%, 0.01)',
         width: 564,
         pt: 40,
         pb: 40,
