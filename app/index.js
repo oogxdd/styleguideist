@@ -7,8 +7,8 @@ import Navigation from 'app/navigation'
 import ComponentTree from 'app/navigation/component-tree'
 
 import ReactTooltip from 'react-tooltip'
-import { presets } from 'themes'
-import { molecules } from 'data'
+import { presets } from 'data/themes'
+import { molecules } from 'data/components'
 
 const App = () => {
   const { fullscreen } = useContext(AppContext)
@@ -28,6 +28,7 @@ const App = () => {
 }
 
 const Presets = () => {
+  const { selectedComponent, setComponentVariant } = useContext(AppContext)
   const { theme, setTheme } = useContext(ThemeContext)
   const [selectedPreset, setPreset] = useState(1)
 
@@ -51,10 +52,6 @@ const Presets = () => {
               justify-center 
               items-center
               rounded
-              text-gray-${isSelected ? 500 : 300}
-              border-gray-${isSelected ? 500 : 300}
-              hover:text-gray-500
-              hover:border-gray-500
               hover:shadow-md
               transition-sm
               transition-75
@@ -63,12 +60,31 @@ const Presets = () => {
 
             `}
               onClick={() => {
+                // text-gray-${isSelected ? 500 : 300}
+                // border-gray-${isSelected ? 500 : 300}
+                // hover:text-gray-500
+                // hover:border-gray-500
+
                 setTheme(preset)
                 setPreset(index + 1)
+
+                const preferredLayout =
+                  preset[selectedComponent.group][selectedComponent.value]
+                    .preferredLayout
+
+                if (preferredLayout) {
+                  setComponentVariant(preferredLayout)
+                } else {
+                  setComponentVariant(1)
+                }
               }}
               title={preset.name}
               key={`${preset.name}-${index}`}
               sx={{
+                borderColor: 'borderColor',
+                opacity: isSelected ? 1 : 0.5,
+                color: 'text',
+
                 ':hover': {
                   borderColor: preset.colors.primary,
                   color: preset.colors.primary,
@@ -96,8 +112,14 @@ const Presets = () => {
 }
 
 const Components = () => {
-  const { selectedComponent, setComponent } = useContext(AppContext)
+  const { selectedComponent, setComponent, setComponentVariant } = useContext(
+    AppContext,
+  )
   const components = [
+    // {
+    //   label: 'Post',
+    //   value: 'feeditem',
+    // },
     {
       label: 'Blog post',
       value: 'blogpost',
@@ -119,7 +141,9 @@ const Components = () => {
               key={component.value}
               style={{ marginLeft: 2, marginRight: 2 }}
               onClick={() => {
-                setComponent(molecules.find((m) => m.value === component.value))
+                const comp = molecules.find((m) => m.value === component.value)
+                setComponent(comp)
+                setComponentVariant(comp.preferredLayout || 1)
               }}
               className={`
                 text-xs
@@ -132,9 +156,6 @@ const Components = () => {
                 justify-center 
                 items-center
                 rounded
-                text-gray-${isSelected ? 500 : 300}
-                border-gray-${isSelected ? 500 : 300}
-                hover:text-gray-500
                 hover:border-gray-500
                 hover:shadow-md
                 transition-sm
@@ -144,6 +165,18 @@ const Components = () => {
               `}
               data-tip
               data-for={`component-${component.value}`}
+              sx={{
+                borderColor: 'borderColor',
+                opacity: isSelected ? 1 : 0.5,
+                color: 'text',
+
+                ':hover': {
+                  borderColor: 'primary',
+                  color: 'primary',
+                  // color: preset.colors.primary,
+                  // background: preset.colors.background,
+                },
+              }}
             >
               {component.label[0]}
             </div>

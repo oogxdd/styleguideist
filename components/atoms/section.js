@@ -7,7 +7,7 @@ import { Checkbox } from 'app/parameters/ui'
 export const Section = ({
   open = false,
   name = 'Section',
-  children,
+  children = 'content',
   customOptions,
   showCustom,
   showPlus = false,

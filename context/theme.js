@@ -2,12 +2,13 @@ import { ThemeProvider as ThemeUIProvider } from 'theme-ui'
 import { createContext, useState } from 'react'
 import { useImmer } from 'use-immer'
 import { fonts } from 'data'
-import * as themes from 'themes'
+import * as themes from 'data/themes'
 
 const ThemeContext = createContext()
 
 const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useImmer(themes.white)
+  const [gfont, setGfont] = useState('system-ui')
 
   // set button spacing
   const setSpacing = (type, value) => {
@@ -109,6 +110,9 @@ const ThemeProvider = ({ children }) => {
 
         borderWidth,
         borderRadius,
+
+        setGfont,
+        gfont,
       }}
     >
       <ThemeUIProvider theme={theme}>{children}</ThemeUIProvider>
@@ -119,7 +123,7 @@ const ThemeProvider = ({ children }) => {
               fonts.find((f) => f.label === theme.fonts.body)
                 ? fonts.find((f) => f.label === theme.fonts.body).label
                 : 'default'
-            }' !important; }
+            }'; }
           `,
         }}
       />

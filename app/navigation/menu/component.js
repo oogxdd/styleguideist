@@ -4,9 +4,12 @@ import { AppContext } from 'context'
 import { LinkIcon } from '@heroicons/react/solid'
 
 const Component = ({ component }) => {
-  const { selectedComponent, setComponent, setShowNavigation } = useContext(
-    AppContext,
-  )
+  const {
+    selectedComponent,
+    setComponent,
+    setSelectedSubComponent,
+    setShowNavigation,
+  } = useContext(AppContext)
 
   const isSelected = selectedComponent.value === component.value
 
@@ -27,6 +30,7 @@ const Component = ({ component }) => {
           if (enabled) {
             e.preventDefault()
             setComponent(component)
+            setSelectedSubComponent(component)
             setShowNavigation(false)
           }
         }}

@@ -15,7 +15,6 @@ export default () => {
   const { theme } = useContext(ThemeContext)
 
   if (selectedComponent && selectedComponent.group === 'atoms') return null
-
   if (fullscreen) return null
 
   return (
@@ -43,25 +42,35 @@ export default () => {
           <Item
             underline={selectedSubComponent.value === selectedComponent.value}
             onClick={() => setSelectedSubComponent(selectedComponent)}
-            selectedSubComponent={selectedSubComponent}
           >
             {selectedComponent.label}
           </Item>
           {selectedComponent.children.map((c1, i) => {
             // level 1 components
             return (
-              <div key={c1.value}>
+              <div key={c1.value} className="flex flex-col gap-y-3">
                 <Item
                   level={1}
-                  underline={selectedSubComponent.value === c1.value}
+                  underline={
+                    selectedSubComponent.value === c1.value
+                    // && (c1.variant
+                    //     ? selectedSubComponent.variant === c1.variant
+                    //     : true)
+                  }
                   onClick={() => {
-                    setSelectedSubComponent(
+                    console.log(
                       components[c1.group].find(
                         (component) => component.value === c1.value,
                       ),
                     )
+                    console.log(c1)
+                    setSelectedSubComponent({
+                      ...components[c1.group].find(
+                        (component) => component.value === c1.value,
+                      ),
+                      variant: c1.variant,
+                    })
                   }}
-                  selectedSubComponent={selectedSubComponent}
                 >
                   {c1.name}
                 </Item>

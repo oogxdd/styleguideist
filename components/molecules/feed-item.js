@@ -6,14 +6,32 @@ import {
   ThumbUpIcon,
   ChatAltIcon,
   ShareIcon,
+  StarIcon,
+  CodeIcon,
+  FlagIcon,
 } from '@heroicons/react/solid'
 import { classNames } from 'helpers'
 
+import { useContext } from 'react'
+import { ThemeContext } from 'context'
+
+import {
+  Card,
+  Image,
+  Label,
+  Title,
+  Paragraph,
+  UserCard,
+} from 'components/atoms'
+
 export const FeedItem = ({ item = defaultItem }) => (
-  <li className="bg-white px-4 py-6 shadow sm:p-6 sm:rounded-lg max-w-xl">
+  <div className="bg-white px-4 py-6 shadow sm:p-6 sm:rounded-lg max-w-xl">
     <article aria-labelledby={'question-title-' + item.id}>
       <div>
-        <div className="flex space-x-3">
+        <div className="flex justify-between space-x-3">
+          {/*
+          <UserCard variant={'molecules.feeditem.usercard'} />
+          */}
           <div className="flex-shrink-0">
             <img
               className="h-10 w-10 rounded-full"
@@ -177,7 +195,7 @@ export const FeedItem = ({ item = defaultItem }) => (
         </div>
       </div>
     </article>
-  </li>
+  </div>
 )
 
 const defaultItem = {

@@ -1,12 +1,13 @@
 import { useContext, useState } from 'react'
-import { ThemeContext } from 'context'
+import { ThemeContext, AppContext } from 'context'
 import { downloadFile } from 'helpers'
 
-import { presets } from 'themes'
+import { presets } from 'data/themes'
 
 const sd = ['none', 'md', 'lg', 'xl', 'full']
 
 export const ThemesPresets = ({ type }) => {
+  const { selectedComponent, setComponentVariant } = useContext(AppContext)
   const { theme, setTheme } = useContext(ThemeContext)
   const [selectedPreset, setPreset] = useState(1)
 
@@ -36,10 +37,6 @@ export const ThemesPresets = ({ type }) => {
               justify-center 
               items-center
               rounded
-              text-gray-${isSelected ? 500 : 300}
-              border-gray-${isSelected ? 500 : 300}
-              hover:text-gray-500
-              hover:border-gray-500
               hover:shadow-md
               transition-sm
               transition-75
@@ -49,11 +46,29 @@ export const ThemesPresets = ({ type }) => {
             onClick={() => {
               setTheme(preset)
               setPreset(index + 1)
+
+              const preferredLayout =
+                preset[selectedComponent.group][selectedComponent.value]
+                  .preferredLayout
+
+              if (preferredLayout) {
+                setComponentVariant(preferredLayout)
+              } else {
+                setComponentVariant(1)
+              }
             }}
             title={preset.name}
             key={`${preset.name}-${index}`}
             sx={{
+              borderColor: 'borderColor',
+              opacity: isSelected ? 1 : 0.5,
+              // text-gray-${isSelected ? 500 : 300}
+              // border-gray-${isSelected ? 500 : 300}
+              // hover:text-gray-500
+              // hover:border-gray-500
+
               ':hover': {
+                opacity: 1,
                 borderColor: preset.colors.primary,
                 color: preset.colors.primary,
                 background: preset.colors.background,
@@ -102,9 +117,6 @@ export const ThemesPresets = ({ type }) => {
               items-center
               rounded
               text-gray-300
-              border-gray-300
-              hover:text-gray-500
-              hover:border-gray-500
               hover:shadow-md
               transition-sm
               transition-75
@@ -118,7 +130,19 @@ export const ThemesPresets = ({ type }) => {
           // setPreset(index + 1)
         }}
         sx={{
+          opacity: 0.5,
+          // border-gray-300
+          // hover:text-gray-500
+          // hover:border-gray-500
           borderColor: 'borderColor',
+          color: 'text',
+
+          ':hover': {
+            opacity: 1,
+            // borderColor: preset.colors.primary,
+            // color: preset.colors.primary,
+            // background: preset.colors.background,
+          },
           // color: 'text',
         }}
       >

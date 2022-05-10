@@ -9,10 +9,12 @@ import axios from 'axios'
 
 const GOOGLE_FONTS_API_KEY = 'AIzaSyCOzhRqd9pr-kJcQimmRO38qdfV2su6yVQ'
 
-export const Select = () => {
+export const Select = ({ onChange, value }) => {
   const { theme, setTheme } = useContext(ThemeContext)
   const [selected, setSelected] = useState(
-    fonts.find((f) => f.label === theme.fonts.body),
+    value
+      ? fonts.find((f) => f.label === value)
+      : fonts.find((f) => f.label === theme.fonts.body),
   )
 
   return (
@@ -20,10 +22,14 @@ export const Select = () => {
       value={selected}
       onChange={(font) => {
         setSelected(font)
-        setTheme((theme) => ({
-          ...theme,
-          fonts: { ...theme.fonts, body: font.label, heading: font.label },
-        }))
+        if (onChange) {
+          onChange(font.label)
+        } else {
+          setTheme((theme) => ({
+            ...theme,
+            fonts: { ...theme.fonts, body: font.label, heading: font.label },
+          }))
+        }
       }}
     >
       <div className="relative mb-6">
@@ -55,7 +61,7 @@ export const Select = () => {
           leaveTo="opacity-0"
         >
           <Listbox.Options
-            className="absolute w-full py-1 mt-2 overflow-auto text-base rounded-md shadow-lg max-h-90 ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm border"
+            className="absolute w-full py-1 mt-2 overflow-auto text-base rounded-md shadow-lg max-h-90 ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm border z-10"
             sx={{
               bg: 'background',
               borderColor: 'borderColor',
@@ -65,7 +71,7 @@ export const Select = () => {
               <Listbox.Option
                 key={font.value}
                 className={
-                  'cursor-pointer select-none relative py-3 pl-3 pr-9 text-md'
+                  'cursor-pointer select-none relative py-2 pl-3 pr-9 text-md'
                 }
                 sx={{
                   '&:hover': {

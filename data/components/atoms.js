@@ -15,6 +15,8 @@ import {
   Caption,
   Avatar,
   Badge,
+  UserCard,
+  Section,
 } from 'components/atoms'
 
 import {
@@ -22,7 +24,9 @@ import {
   fontParams as font,
   colorParams as color,
   borderParams as border,
-} from './parameters'
+  shadowParams as shadow,
+  otherParams as other,
+} from 'data/parameters'
 
 export const atoms = [
   {
@@ -33,6 +37,8 @@ export const atoms = [
     params: [
       color(),
       font(),
+      shadow(),
+      border(),
       spacing({ margins: true, paddings: true, dimensions: true }),
     ],
   },
@@ -42,8 +48,18 @@ export const atoms = [
     component: Input,
     group: 'atoms',
     params: [
-      color(),
+      color({
+        fields: [
+          {
+            type: 'colorpicker',
+            key: 'background',
+            label: 'Background',
+          },
+        ],
+      }),
       font(),
+      border(),
+      shadow(),
       spacing({ margins: true, paddings: true, dimensions: true }),
     ],
   },
@@ -52,57 +68,107 @@ export const atoms = [
     value: 'image',
     component: Image,
     group: 'atoms',
-    params: [border(), spacing({ dimensions: true, margins: true })], // add shadow
+    params: [border(), spacing({ dimensions: true, margins: true }), shadow()],
   },
   {
     label: 'Avatar',
     value: 'avatar',
     component: Avatar,
     group: 'atoms',
-    params: [border(), spacing({ dimensions: true, margins: true })],
+    params: [border(), spacing({ dimensions: true, margins: true }), shadow()],
   },
   {
     label: 'Heading',
     value: 'heading',
     component: Heading,
     group: 'atoms',
-    params: [color(), font(), spacing({ margins: true })],
+    params: [
+      color(),
+      font(),
+      spacing({ margins: true }),
+      shadow({ field: 'textShadow' }),
+      other(),
+    ],
   },
   {
     label: 'Paragraph',
     value: 'paragraph',
     component: Paragraph,
     group: 'atoms',
-    params: [color(), font(), spacing({ margins: true })],
+    params: [
+      color(),
+      font(),
+      spacing({ margins: true }),
+      shadow({ field: 'textShadow' }),
+      other(),
+    ],
   },
   {
     label: 'Label',
     value: 'label',
     component: Label,
     group: 'atoms',
-    params: [color(), font(), spacing({ margins: true })],
+    params: [
+      color(),
+      font(),
+      spacing({ margins: true }),
+      border(),
+      shadow({ field: 'textShadow' }),
+      other(),
+    ],
   },
   {
     label: 'Caption',
     value: 'caption',
     component: Caption,
     group: 'atoms',
-    params: [color(), font(), spacing({ margins: true })],
+    params: [
+      color(),
+      font(),
+      spacing({ margins: true }),
+      shadow({ field: 'textShadow' }),
+    ],
+  },
+  {
+    label: 'Section',
+    value: 'section',
+    component: Section,
+    group: 'atoms',
+    // params: [color(), border(), spacing({ dimensions: true, paddings: true })],
   },
   {
     label: 'Card',
     value: 'card',
     component: Card,
     group: 'atoms',
-    params: [color(), border(), spacing({ dimensions: true, paddings: true })],
+    params: [
+      color({
+        fields: [
+          {
+            type: 'colorpicker',
+            key: 'background',
+            label: 'Background',
+          },
+        ],
+      }),
+      border(),
+      spacing({ dimensions: true, paddings: true }),
+      shadow(),
+      other(),
+    ],
   },
-  // {
-  //   label: 'Name',
-  //   value: 'name',
-  //   component: Name,
-  //   group: 'atoms',
-  //   params: [color(), font(), spacing({ margins: true })],
-  // },
+  {
+    label: 'Name',
+    value: 'name',
+    component: Name,
+    group: 'atoms',
+    params: [
+      color(),
+      font(),
+      spacing({ margins: true }),
+      shadow({ field: 'textShadow' }),
+    ],
+  },
   // {
   //   label: 'Select',
   //   value: 'select',
@@ -127,10 +193,31 @@ export const atoms = [
   //   component: Badge,
   //   group: 'atoms',
   // },
-  // {
-  //   label: 'Title',
-  //   value: 'title',
-  //   component: Title,
-  //   group: 'atoms',
-  // },
+  {
+    label: 'Title',
+    value: 'title',
+    component: Title,
+    group: 'atoms',
+    params: [
+      color(),
+      font(),
+      spacing({ margins: true }),
+      shadow({ field: 'textShadow' }),
+      other(),
+    ],
+  },
+  {
+    label: 'User card',
+    value: 'usercard',
+    component: UserCard,
+    group: 'atoms',
+    params: [
+      // color(),
+      // font(),
+      spacing({ margins: true, paddings: true, dimensions: true }),
+      shadow(),
+      border(),
+      other(),
+    ],
+  },
 ]

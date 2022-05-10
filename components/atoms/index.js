@@ -3,6 +3,8 @@ export * from './text/title'
 export * from './text/paragraph'
 export * from './text/label'
 export * from './text/link'
+export * from './text/caption'
+export * from './text/name'
 
 export * from './fields/input'
 export * from './fields/textarea'

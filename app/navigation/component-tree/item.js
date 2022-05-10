@@ -3,7 +3,6 @@ const Item = ({
   children,
   underline,
   onClick = () => {},
-  selectedSubComponent,
   ...props
 }) => {
   return (

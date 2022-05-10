@@ -23,6 +23,9 @@ export const Font = ({ open = false, fields = [] }) => {
   return (
     <Section name="Font" open={open}>
       {fields.map((field) => {
+        if (field.type === 'font-picker') {
+          return <FontPicker onChange={field.onChange} value={field.value} />
+        }
         if (field.type === 'slider') {
           return (
             <Slider

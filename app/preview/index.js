@@ -2,12 +2,14 @@ import { useContext, useEffect } from 'react'
 import { AppContext } from 'context'
 import { atoms, molecules, organisms, templates } from 'data/components'
 
+import Variants from './variants'
+
 const Preview = () => {
   const { selectedComponent: comp } = useContext(AppContext)
 
   return (
     <div
-      className="flex flex-row justify-center items-center w-full h-screen overflow-auto py-0"
+      className="flex flex-col justify-center items-center w-full h-screen overflow-auto py-0"
       sx={{ bg: 'background' }}
     >
       <div
@@ -21,7 +23,7 @@ const Preview = () => {
         {molecules.map(
           (molecule) =>
             comp.value === molecule.value && (
-              <molecule.component key={molecule.value} />
+              <molecule.component key={molecule.value} molecule={molecule} />
             ),
         )}
         {organisms.map(
@@ -37,6 +39,7 @@ const Preview = () => {
             ),
         )}
       </div>
+      <Variants />
     </div>
   )
 }

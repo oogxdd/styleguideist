@@ -4,8 +4,9 @@ export const Button = ({ children = 'Submit' }) => (
   <ThemeUIButton
     className="select-none"
     sx={{
+      // shadow: 'shadow',
+      border: 'inherit',
       variant: 'atoms.button',
-      shadow: 'shadow',
     }}
   >
     {children}

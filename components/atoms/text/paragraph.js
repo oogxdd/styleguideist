@@ -8,10 +8,10 @@ export const Paragraph = ({ children = 'Paragraph', style = {} }) => {
     <p
       className="text-base"
       sx={{
+        ...style,
         color: 'text2',
         fontSize: theme.fontSizes ? theme.fontSizes.base : undefined,
         variant: theme.atoms.paragraph ? 'atoms.paragraph' : null,
-        ...style,
       }}
     >
       {children}
