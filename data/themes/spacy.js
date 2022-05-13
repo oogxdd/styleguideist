@@ -119,37 +119,34 @@ export const spacy = {
       color:
         'hsla(249.99999999999994, 75.87915079011674%, 86.15305799999999%, 1)',
       mb: 8,
-      ml: 24,
+      ml: 12,
     },
     heading: {
       color: 'hsla(250.00000000000006, 0%, 92.5%, 1)',
       fontSize: 28,
       fontFamily: 'Orbitron',
-      ml: 24,
+      ml: 12,
       letterSpacing: 0.5,
       lineHeight: 1.1,
     },
     paragraph: {
       fontFamily: 'Jura',
       color: 'hsla(250.00000000000003, 0%, 79.16%, 1)',
-      ml: 24,
+      ml: 12,
     },
     image: {
       borderWidth: 4,
       borderColor:
         'hsla(250.00000000000003, 42.01263597377918%, 91.653354%, 1)',
-      mb: 24,
+      mb: 12,
       objectPosition: '0px -90px',
       height: 260,
     },
     name: {
       color: 'hsla(39.44055944055945, 100%, 71.96078431372548%, 1)',
-      // fontWeight: 600,
-
       display: 'block',
       fontWeight: '570',
-      // ['font-variation-settings']: `'wght' 570`,
-      fontVariationSettings: `'wght' 570`,
+      fontVariationSettings: "'wght' 570",
       marginBottom: '-4px',
     },
     caption: { color: 'hsla(39.34883561245349, 100%, 71.94%, 1)' },
@@ -163,7 +160,7 @@ export const spacy = {
       borderColor: 'hsla(263.30232398454535, 46.64%, 39.77%, 1)',
       borderWidth: 1,
     },
-    usercard: { pb: 20, ml: 24, pr: 0, mt: 38, mb: 0, pl: 4 },
+    usercard: { pb: 20, ml: 12, pr: 0, mt: 38, mb: 0, pl: 4 },
   },
   molecules: {
     blogpost: {
@@ -209,5 +206,19 @@ export const spacy = {
         background: 'hsla(250.0000000000004, 100%, 97.56%, 0.62)',
       },
     },
+    feeditem: {
+      card: {},
+      avatar: {},
+      name: {},
+      username: {},
+      date: {},
+      title: {},
+      paragraph: {},
+      actions: {},
+      text: {},
+      actions: {},
+      preferredLayout: 1,
+    },
   },
+  organisms: { feed: { preferredLayout: 1, preferredFeedItemLayout: 1 } },
 }

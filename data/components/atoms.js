@@ -17,6 +17,7 @@ import {
   Badge,
   UserCard,
   Section,
+  Text,
 } from 'components/atoms'
 
 import {
@@ -91,6 +92,19 @@ export const atoms = [
     ],
   },
   {
+    label: 'Text',
+    value: 'text',
+    component: Text,
+    group: 'atoms',
+    params: [
+      color(),
+      font(),
+      spacing({ margins: true }),
+      shadow({ field: 'textShadow' }),
+      other(),
+    ],
+  },
+  {
     label: 'Paragraph',
     value: 'paragraph',
     component: Paragraph,
@@ -152,7 +166,7 @@ export const atoms = [
         ],
       }),
       border(),
-      spacing({ dimensions: true, paddings: true }),
+      spacing({ dimensions: true, paddings: true, margins: true }),
       shadow(),
       other(),
     ],
@@ -214,6 +228,20 @@ export const atoms = [
     params: [
       // color(),
       // font(),
+      spacing({ margins: true, paddings: true, dimensions: true }),
+      shadow(),
+      border(),
+      other(),
+    ],
+  },
+  {
+    label: 'Actions',
+    value: 'actions',
+    // component: Actions,
+    group: 'atoms',
+    params: [
+      // color(),
+      font(),
       spacing({ margins: true, paddings: true, dimensions: true }),
       shadow(),
       border(),

@@ -6,7 +6,9 @@ import { Avatar as ThemeUIAvatar } from 'theme-ui'
 export const Avatar = ({
   src = '/img/logo/spotify.svg',
   alt = 'Image',
-  sx,
+  sx = {},
+  variant = 'atoms.avatar',
+  className = 'h-10 w-10 rounded-full',
 }) => {
   const { theme } = useContext(ThemeContext)
 
@@ -14,8 +16,11 @@ export const Avatar = ({
     <ThemeUIAvatar
       src={src}
       alt={alt}
-      className="h-10 w-10 rounded-full"
-      sx={{ variant: 'atoms.avatar', ...sx }}
+      className={className}
+      sx={{
+        variant,
+        ...sx,
+      }}
     />
   )
 }

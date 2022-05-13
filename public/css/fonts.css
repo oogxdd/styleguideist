@@ -10,8 +10,43 @@
 @font-face {
   font-family: 'Eesti';
   src: url('/fonts/eesti/GT-Eesti-Pro-Display-Regular.woff2') format('woff2');
-  font-weight: 900;
+  font-weight: 600;
   font-style: normal;
+}
+@font-face {
+  font-family: 'Eesti';
+  src: url('/fonts/eesti/GTEestiProDisplay-UltraLight.ttf');
+  font-weight: 100;
+}
+@font-face {
+  font-family: 'Eesti';
+  src: url('/fonts/eesti/GTEestiProDisplay-Thin.ttf');
+  font-weight: 200;
+}
+@font-face {
+  font-family: 'Eesti';
+  src: url('/fonts/eesti/GTEestiProDisplay-Light.ttf');
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'Eesti';
+  src: url('/fonts/eesti/GTEestiProDisplay-Regular.ttf');
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'Eesti';
+  src: url('/fonts/eesti/GTEestiProDisplay-Medium.ttf');
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'Eesti';
+  src: url('/fonts/eesti/GTEestiProDisplay-Bold.ttf');
+  font-weight: 800;
+}
+@font-face {
+  font-family: 'Eesti';
+  src: url('/fonts/eesti/GTEestiProDisplay-UltraBold.ttf');
+  font-weight: 900;
 }
 
 @font-face {

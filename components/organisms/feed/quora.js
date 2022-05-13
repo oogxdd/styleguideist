@@ -1,60 +1,37 @@
-import { Fragment } from 'react'
-import { Menu, Popover, Transition } from '@headlessui/react'
-import {
-  ChatAltIcon,
-  CodeIcon,
-  DotsVerticalIcon,
-  EyeIcon,
-  FlagIcon,
-  PlusSmIcon,
-  SearchIcon,
-  ShareIcon,
-  StarIcon,
-  ThumbUpIcon,
-} from '@heroicons/react/solid'
-import {
-  BellIcon,
-  FireIcon,
-  HomeIcon,
-  MenuIcon,
-  TrendingUpIcon,
-  UserGroupIcon,
-  XIcon,
-} from '@heroicons/react/outline'
+import { useContext } from 'react'
+import { ThemeContext, AppContext } from 'context'
 import * as Molecules from 'components/molecules'
 
-const user = {
-  name: 'Chelsea Hagon',
-  email: 'chelseahagon@example.com',
-  imageUrl:
-    'https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+import {
+  Card,
+  // Text,
+  // Actions
+} from 'components/atoms'
+
+export const FeedQuora = ({ itemVar = 1 }) => {
+  const { theme } = useContext(ThemeContext)
+
+  return (
+    <Card className="bg-gray-50 w-full h-full flex items-center justify-center">
+      <main className="lg:col-span-9 xl:col-span-6 max-w-2xl self-start mt-16 pb-24">
+        {/* <Molecules.Tabs /> */}
+        <div className="mt-4">
+          <h1 className="sr-only">Recent questions</h1>
+          <ul role="list" className="space-y-4">
+            {questions.map((question) => (
+              <Molecules.FeedItem
+                itemVar={itemVar}
+                item={question}
+                key={question.id}
+              />
+            ))}
+          </ul>
+        </div>
+      </main>
+    </Card>
+  )
 }
-const navigation = [
-  { name: 'Home', href: '#', icon: HomeIcon, current: true },
-  { name: 'Popular', href: '#', icon: FireIcon, current: false },
-  { name: 'Communities', href: '#', icon: UserGroupIcon, current: false },
-  { name: 'Trending', href: '#', icon: TrendingUpIcon, current: false },
-]
-const userNavigation = [
-  { name: 'Your Profile', href: '#' },
-  { name: 'Settings', href: '#' },
-  { name: 'Sign out', href: '#' },
-]
-const communities = [
-  { name: 'Movies', href: '#' },
-  { name: 'Food', href: '#' },
-  { name: 'Sports', href: '#' },
-  { name: 'Animals', href: '#' },
-  { name: 'Science', href: '#' },
-  { name: 'Dinosaurs', href: '#' },
-  { name: 'Talents', href: '#' },
-  { name: 'Gaming', href: '#' },
-]
-const tabs = [
-  { name: 'Recent', href: '#', current: true },
-  { name: 'Most Liked', href: '#', current: false },
-  { name: 'Most Answers', href: '#', current: false },
-]
+
 const questions = [
   {
     id: '81611',
@@ -138,55 +115,3 @@ const questions = [
   },
   // More questions...
 ]
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
-
-export const Feed = () => {
-  return (
-    <main className="lg:col-span-9 xl:col-span-6 max-w-2xl self-start mt-16 pb-24">
-      <div className="px-4 sm:px-0">
-        <div className="block">
-          <nav
-            className="relative z-0 rounded-lg shadow flex divide-x divide-gray-200"
-            aria-label="Tabs"
-          >
-            {tabs.map((tab, tabIdx) => (
-              <a
-                key={tab.name}
-                href={tab.href}
-                aria-current={tab.current ? 'page' : undefined}
-                className={classNames(
-                  tab.current
-                    ? 'text-gray-900'
-                    : 'text-gray-500 hover:text-gray-700',
-                  tabIdx === 0 ? 'rounded-l-lg' : '',
-                  tabIdx === tabs.length - 1 ? 'rounded-r-lg' : '',
-                  'group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-6 text-sm font-medium text-center hover:bg-gray-50 focus:z-10',
-                )}
-              >
-                <span>{tab.name}</span>
-                <span
-                  aria-hidden="true"
-                  className={classNames(
-                    tab.current ? 'bg-rose-500' : 'bg-transparent',
-                    'absolute inset-x-0 bottom-0 h-0.5',
-                  )}
-                  sx={tab.current ? { bg: 'primary' } : {}}
-                />
-              </a>
-            ))}
-          </nav>
-        </div>
-      </div>
-      <div className="mt-4">
-        <h1 className="sr-only">Recent questions</h1>
-        <ul role="list" className="space-y-4">
-          {questions.map((question) => (
-            <Molecules.FeedItem item={question} key={question.id} />
-          ))}
-        </ul>
-      </div>
-    </main>
-  )
-}

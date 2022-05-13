@@ -15,9 +15,9 @@ const AppProvider = ({ children }) => {
   //   atoms.find((m) => m.value === 'button'),
   // )
   const [selectedComponent, setComponent] = useState(
-    molecules.find((m) => m.value === 'blogpost'),
+    molecules.find((m) => m.value === 'feeditem'),
   )
-  const [selectedSubComponent, setSubComponent] = useState('blogpost')
+  const [selectedSubComponent, setSubComponent] = useState('feeditem')
   const [selectedComponentVariant, setComponentVariant] = useState(1)
 
   const [showNavigation, setShowNavigation] = useState(false)
@@ -31,6 +31,7 @@ const AppProvider = ({ children }) => {
   // when changing component, set variant to default
   useEffect(() => {
     const preferredLayout =
+      theme[selectedComponent.group][selectedComponent.value] &&
       theme[selectedComponent.group][selectedComponent.value].preferredLayout
 
     if (preferredLayout) {
@@ -135,10 +136,5 @@ const AppProvider = ({ children }) => {
     </AppContext.Provider>
   )
 }
-
-// console.log('selectedComponent')
-// console.log(selectedComponent)
-// console.log('selectedSubComponent')
-// console.log(selectedSubComponent)
 
 export { AppProvider, AppContext }

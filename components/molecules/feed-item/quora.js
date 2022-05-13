@@ -1,3 +1,6 @@
+import { useContext } from 'react'
+import { ThemeContext } from 'context'
+
 import { Fragment } from 'react'
 import { Menu, Transition } from '@headlessui/react'
 import {
@@ -12,51 +15,51 @@ import {
 } from '@heroicons/react/solid'
 import { classNames } from 'helpers'
 
-import { useContext } from 'react'
-import { ThemeContext } from 'context'
+import { Card, Avatar, Text } from 'components/atoms'
 
-import {
-  Card,
-  Image,
-  Label,
-  Title,
-  Paragraph,
-  UserCard,
-} from 'components/atoms'
-
-export const FeedItem = ({ item = defaultItem }) => (
-  <div className="bg-white px-4 py-6 shadow sm:p-6 sm:rounded-lg max-w-xl">
-    <article aria-labelledby={'question-title-' + item.id}>
+export const FeedItemQuora = ({ item = defaultItem }) => (
+  <Card
+    className="bg-white px-4 py-6 shadow sm:p-6 sm:rounded-lg max-w-2xl"
+    sx={{ variant: 'molecules.feeditem.card' }}
+  >
+    <article>
       <div>
         <div className="flex justify-between space-x-3">
-          {/*
-          <UserCard variant={'molecules.feeditem.usercard'} />
-          */}
           <div className="flex-shrink-0">
-            <img
+            <Avatar
               className="h-10 w-10 rounded-full"
               src={item.author.imageUrl}
               alt=""
+              variant="molecules.feeditem.avatar"
+              sx={{ variant: 'molecules.feeditem.avatar' }}
             />
           </div>
           <div className="min-w-0 flex-1">
-            <p className="text-sm font-medium text-gray-900">
-              <a href={item.author.href} className="hover:underline">
-                {item.author.name}
-              </a>
-            </p>
-            <p className="text-sm text-gray-500">
-              <a href={item.href} className="hover:underline">
-                <time dateTime={item.datetime}>{item.date}</time>
-              </a>
-            </p>
+            <Text
+              className="text-sm font-medium text-gray-900 hover:underline"
+              variant="molecules.feeditem.name"
+              sx={{ variant: 'molecules.feeditem.name' }}
+            >
+              {item.author.name}
+            </Text>
+            <Text
+              className="text-sm text-gray-500 hover:underline"
+              variant="molecules.feeditem.date"
+              sx={{ variant: 'molecules.feeditem.date' }}
+            >
+              {item.date}
+            </Text>
           </div>
           <div className="flex-shrink-0 self-center flex">
             <Menu as="div" className="relative inline-block text-left">
               <div>
                 <Menu.Button className="-m-2 p-2 rounded-full flex items-center text-gray-400 hover:text-gray-600">
                   <span className="sr-only">Open options</span>
-                  <DotsVerticalIcon className="h-5 w-5" aria-hidden="true" />
+                  <DotsVerticalIcon
+                    className="h-5 w-5"
+                    aria-hidden="true"
+                    sx={{ color: 'text', opacity: 0.5 }}
+                  />
                 </Menu.Button>
               </div>
 
@@ -69,7 +72,10 @@ export const FeedItem = ({ item = defaultItem }) => (
                 leaveFrom="transform opacity-100 scale-100"
                 leaveTo="transform opacity-0 scale-95"
               >
-                <Menu.Items className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                <Menu.Items
+                  className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                  sx={{ background: 'bg' }}
+                >
                   <div className="py-1">
                     <Menu.Item>
                       {({ active }) => (
@@ -134,18 +140,31 @@ export const FeedItem = ({ item = defaultItem }) => (
             </Menu>
           </div>
         </div>
-        <h2
-          id={'item-title-' + item.id}
+
+        <Text
           className="mt-4 text-base font-medium text-gray-900"
+          variant="molecules.feeditem.title"
+          sx={{ variant: 'molecules.feeditem.title' }}
+          as="h2"
         >
           {item.title}
-        </h2>
+        </Text>
       </div>
+      <Text
+        className="mt-2 text-sm text-gray-700 space-y-4 whitespace-pre-line"
+        variant="molecules.feeditem.paragraph"
+        sx={{ variant: 'molecules.feeditem.paragraph' }}
+        as="p"
+      >
+        {item.body}
+      </Text>
       <div
-        className="mt-2 text-sm text-gray-700 space-y-4"
-        dangerouslySetInnerHTML={{ __html: item.body }}
-      />
-      <div className="mt-6 flex justify-between space-x-8">
+        className="mt-6 flex justify-between space-x-8"
+        sx={{
+          // marginTop: theme.space.base ? theme.space.base.y * 6 : undefined,
+          variant: 'molecules.feeditem.actions',
+        }}
+      >
         <div className="flex space-x-6">
           <span className="inline-flex items-center text-sm">
             <button
@@ -166,7 +185,11 @@ export const FeedItem = ({ item = defaultItem }) => (
               type="button"
               className="inline-flex space-x-2 text-gray-400 hover:text-gray-500"
             >
-              <ChatAltIcon className="h-5 w-5" aria-hidden="true" />
+              <ChatAltIcon
+                className="h-5 w-5"
+                aria-hidden="true"
+                sx={{ color: 'text', opacity: 0.5 }}
+              />
               <span className="font-medium text-gray-900">{item.replies}</span>
               <span className="sr-only">replies</span>
             </button>
@@ -176,7 +199,11 @@ export const FeedItem = ({ item = defaultItem }) => (
               type="button"
               className="inline-flex space-x-2 text-gray-400 hover:text-gray-500"
             >
-              <EyeIcon className="h-5 w-5" aria-hidden="true" />
+              <EyeIcon
+                className="h-5 w-5"
+                aria-hidden="true"
+                sx={{ color: 'text', opacity: 0.5 }}
+              />
               <span className="font-medium text-gray-900">{item.views}</span>
               <span className="sr-only">views</span>
             </button>
@@ -188,33 +215,35 @@ export const FeedItem = ({ item = defaultItem }) => (
               type="button"
               className="inline-flex space-x-2 text-gray-400 hover:text-gray-500"
             >
-              <ShareIcon className="h-5 w-5" aria-hidden="true" />
+              <ShareIcon
+                className="h-5 w-5"
+                aria-hidden="true"
+                sx={{ color: 'text', opacity: 0.5 }}
+              />
               <span className="font-medium text-gray-900">Share</span>
             </button>
           </span>
         </div>
       </div>
     </article>
-  </div>
+  </Card>
 )
 
 const defaultItem = {
-  id: '81611',
-  likes: '29',
-  replies: '11',
-  views: '2.7k',
+  title: 'What would you have done differently if you ran Jurassic Park?',
+  body: `
+    Jurassic Park was an incredible idea and a magnificent feat of engineering, but poor protocols and a disregard for human safety killed what could have otherwise been one of the best businesses of our generation.
+
+      Ultimately, I think that if you wanted to run the park successfully and keep visitors safe, the most important thing to prioritize would be
+    `,
+  date: 'December 9 at 11:43 AM',
   author: {
     name: 'Dries Vincent',
     imageUrl:
       'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
     href: '#',
   },
-  date: 'December 9 at 11:43 AM',
-  datetime: '2020-12-09T11:43:00',
-  href: '#',
-  title: 'What would you have done differently if you ran Jurassic Park?',
-  body: `
-      <p>Jurassic Park was an incredible idea and a magnificent feat of engineering, but poor protocols and a disregard for human safety killed what could have otherwise been one of the best businesses of our generation.</p>
-      <p>Ultimately, I think that if you wanted to run the park successfully and keep visitors safe, the most important thing to prioritize would be&hellip;</p>
-    `,
+  likes: '29',
+  replies: '11',
+  views: '2.7k',
 }

@@ -17,7 +17,6 @@ export const Shadow = ({ open = false }) => {
   useEffect(() => {
     if (shadowObj) {
       setTheme((theme) => {
-        // console.log(shadowToStr(shadowObj))
         theme.shadows.default = shadowToStr(shadowObj)
       })
     }
@@ -30,7 +29,6 @@ export const Shadow = ({ open = false }) => {
   // const shadow = {}
 
   const shadows = shadowToObj(theme.shadows.default)
-  // console.log(shadows)
 
   return (
     <Section name="Shadow" open={open}>

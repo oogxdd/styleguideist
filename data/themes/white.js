@@ -103,10 +103,10 @@ export const white = {
   buttons: {
     primary: {},
     secondary: { color: 'background', bg: 'secondary' },
-    atoms: { card: { width: '100px', height: '100px' } },
   },
   forms: { input: {} },
   atoms: {
+    text: {},
     card: {
       background: 'hsla(249.99999999999963, 8.020000000000008%, 20.81%, 0)',
       borderWidth: 0,
@@ -165,9 +165,22 @@ export const white = {
     form: { card: {} },
     feeditem: {
       card: {},
-      usercard: {},
-      heading: {},
+      avatar: {},
+      name: {},
+      username: {},
+      date: {},
       title: {},
+      paragraph: {},
+      actions: {},
+      text: {},
+      actions: {},
+      preferredLayout: 1,
+    },
+  },
+  organisms: {
+    feed: {
+      preferredLayout: 3,
+      preferredFeedItemLayout: 3,
     },
   },
 }

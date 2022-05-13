@@ -20,7 +20,7 @@ export const BlogPost = ({ molecule }) => {
   if (selectedComponentVariant === 2) {
     return (
       <Card
-        className="flex flex-row overflow-hidden h-full w-full"
+        className="flex flex-row overflow-hidden h-full w-full items-center"
         sx={{
           px: theme.space.base ? theme.space.base.x * 6.5 : undefined,
           py: theme.space.base ? theme.space.base.y * 6.5 : undefined,
@@ -33,6 +33,7 @@ export const BlogPost = ({ molecule }) => {
         <Image
           src={post.imageUrl}
           style={{ borderRadius: pxToNum(theme.radii[2]) * 2 }}
+          className="flex-1"
         />
         <div
           className="flex-1 p-6 flex flex-col justify-between"

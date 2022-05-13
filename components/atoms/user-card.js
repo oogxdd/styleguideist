@@ -5,7 +5,6 @@ import { Avatar } from 'components/atoms'
 
 export const UserCard = ({ post = defaultPost }) => {
   const { theme } = useContext(ThemeContext)
-  console.log(theme)
 
   return (
     <div

@@ -10,11 +10,16 @@ const Preview = () => {
   return (
     <div
       className="flex flex-col justify-center items-center w-full h-screen overflow-auto py-0"
-      sx={{ bg: 'background' }}
+      sx={{ bg: 'background', width: '100%', marginLeft: -33, display: 'grid' }}
     >
       <div
         className="flex items-start justify-center items-center w-full h-full relative"
-        style={{ width: 'max-content' }}
+        style={{
+          width:
+            comp.group === 'organisms'
+              ? 'calc(100vw - 18rem + 33px)'
+              : 'max-content',
+        }}
       >
         {atoms.map(
           (atom) =>

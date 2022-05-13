@@ -1,3 +1,4 @@
+export * from './text'
 export * from './text/heading'
 export * from './text/title'
 export * from './text/paragraph'

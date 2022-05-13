@@ -26,6 +26,7 @@ export const Font = ({ open = false, fields = [] }) => {
         if (field.type === 'font-picker') {
           return <FontPicker onChange={field.onChange} value={field.value} />
         }
+
         if (field.type === 'slider') {
           return (
             <Slider

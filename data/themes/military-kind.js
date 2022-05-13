@@ -168,6 +168,7 @@ export const militaryKind = {
         pr: 16,
         borderColor: 'hsla(14.23255654268477, 87.72000000000003%, 82.3%, 0.17)',
         boxShadow: '10px 10px 0 rgb(0 0 0 / 12%), 0 0 0',
+        width: 413,
       },
       props: {
         title: 'Amprove your customer experience',
@@ -190,6 +191,25 @@ export const militaryKind = {
         pl: 40,
         pr: 40,
       },
+    },
+    feeditem: {
+      card: {},
+      avatar: {},
+      name: {},
+      username: {},
+      date: {},
+      title: {},
+      paragraph: {},
+      actions: {},
+      text: {},
+      actions: {},
+      preferredLayout: 1,
+    },
+  },
+  organisms: {
+    feed: {
+      preferredLayout: 1,
+      preferredFeedItemLayout: 1,
     },
   },
 }

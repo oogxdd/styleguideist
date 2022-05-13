@@ -14,25 +14,22 @@ export {
   white,
   green,
   butter,
-  // darkPurple,
   gray,
-  // huiZnaetZaebalsya,
-  // bluyish,
-  // someLightValeraRound,
   spacy,
   militaryKind,
-  // redGreenPurpleBlue,
+  //
 }
+
 export const presets = [
   white,
   green,
   butter,
-  // darkPurple,
   gray,
+  spacy,
+  militaryKind,
+  // darkPurple,
   // huiZnaetZaebalsya,
   // bluyish,
   // someLightValeraRound,
-  spacy,
-  militaryKind,
   // redGreenPurpleBlue,
 ]

@@ -8,7 +8,7 @@ import ComponentTree from 'app/navigation/component-tree'
 
 import ReactTooltip from 'react-tooltip'
 import { presets } from 'data/themes'
-import { molecules } from 'data/components'
+import { molecules, organisms } from 'data/components'
 
 const App = () => {
   const { fullscreen } = useContext(AppContext)
@@ -116,17 +116,17 @@ const Components = () => {
     AppContext,
   )
   const components = [
-    // {
-    //   label: 'Post',
-    //   value: 'feeditem',
-    // },
     {
-      label: 'Blog post',
-      value: 'blogpost',
+      label: 'Feed',
+      value: 'feed',
     },
     {
       label: 'Form',
       value: 'form',
+    },
+    {
+      label: 'Blog',
+      value: 'blogpost',
     },
   ]
 
@@ -141,9 +141,19 @@ const Components = () => {
               key={component.value}
               style={{ marginLeft: 2, marginRight: 2 }}
               onClick={() => {
-                const comp = molecules.find((m) => m.value === component.value)
-                setComponent(comp)
-                setComponentVariant(comp.preferredLayout || 1)
+                if (component.value === 'feed') {
+                  const comp = organisms.find(
+                    (m) => m.value === component.value,
+                  )
+                  setComponent(comp)
+                  setComponentVariant(comp.preferredLayout || 1)
+                } else {
+                  const comp = molecules.find(
+                    (m) => m.value === component.value,
+                  )
+                  setComponent(comp)
+                  setComponentVariant(comp.preferredLayout || 1)
+                }
               }}
               className={`
                 text-xs

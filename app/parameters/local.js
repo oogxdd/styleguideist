@@ -195,15 +195,12 @@ const LocalParameters = () => {
                       label="X"
                       value={shadow.offsetX}
                       onChange={(value) => {
-                        console.log('shadows')
-                        console.log(shadows)
                         const newShadowObj = [...shadows]
-                        console.log(newShadowObj)
                         newShadowObj[index] = {
                           ...newShadowObj[index],
                           offsetX: `${value}px`,
                         }
-                        console.log(newShadowObj)
+
                         onChange(shadowToStr(newShadowObj))
                       }}
                     />
@@ -257,11 +254,6 @@ const LocalParameters = () => {
                           }%, ${color.hsl.a})`,
                         }
 
-                        // {console.log('shadow.color')}
-                        // {console.log(shadow.color)}
-                        console.log(color)
-                        console.log(color.hsla)
-                        console.log(color.hsla)
                         onChange(shadowToStr(newShadowObj))
                       }}
                     />
@@ -315,15 +307,37 @@ const LocalParameters = () => {
                   const component = selectedSubComponent.value
 
                   const variant = selectedSubComponent.variant
+                  console.log('--------')
+                  // console.log(variant)
+                  // console.log(variant)
+                  // console.log(field.key)
+                  // console.log(
+                  //   theme[variant.split('.')[0]][variant.split('.')[1]][
+                  //     variant.split('.')[2]
+                  //   ],
+                  // )
 
                   if (field.type === 'font-picker') {
                     return {
                       ...field,
-                      value: theme[group][component][field.key],
+                      value: variant
+                        ? theme[variant.split('.')[0]][variant.split('.')[1]][
+                            variant.split('.')[2]
+                          ][field.key]
+                        : theme[group][component][field.key],
                       onChange: (value) => {
-                        setTheme((theme) => {
-                          theme[group][component][field.key] = value
-                        })
+                        if (variant) {
+                          // console.log(value)
+                          setTheme((theme) => {
+                            theme[variant.split('.')[0]][variant.split('.')[1]][
+                              variant.split('.')[2]
+                            ][field.key] = value
+                          })
+                        } else {
+                          setTheme((theme) => {
+                            theme[group][component][field.key] = value
+                          })
+                        }
                       },
                     }
                   }
@@ -333,13 +347,17 @@ const LocalParameters = () => {
 
                   return {
                     ...field,
-                    value: theme[group][component][field.key],
+                    value: variant
+                      ? theme[variant.split('.')[0]][variant.split('.')[1]][
+                          variant.split('.')[2]
+                        ][field.key]
+                      : theme[group][component][field.key],
                     onChange: (value) => {
                       if (variant) {
                         setTheme((theme) => {
                           theme[variant.split('.')[0]][variant.split('.')[1]][
                             variant.split('.')[2]
-                          ] = +value
+                          ][field.key] = +value
                         })
                       } else {
                         setTheme((theme) => {
@@ -363,8 +381,6 @@ const LocalParameters = () => {
 
                   let onChange
                   const variant = selectedSubComponent.variant
-                  console.log('variant')
-                  console.log(variant)
 
                   if (field.type === 'slider') {
                     if (variant) {
@@ -443,8 +459,17 @@ const LocalParameters = () => {
                       : theme[group][component][field.key],
 
                     onChange: (value) => {
-                      if (field.key === 'width') {
-                      }
+                      console.log('------')
+                      console.log(value)
+                      console.log(field.key)
+                      console.log(variant)
+                      console.log(
+                        theme[variant.split('.')[0]][variant.split('.')[1]][
+                          variant.split('.')[2]
+                        ],
+                      )
+                      // if (field.key === 'width') {
+                      // }
 
                       if (variant) {
                         setTheme((theme) => {
@@ -479,7 +504,10 @@ const LocalParameters = () => {
             return (
               <Section name="Other" open={false}>
                 {param.fields.map((field) => {
-                  if (field.key === 'order') {
+                  if (
+                    field.key === 'order' &&
+                    selectedComponent.value !== selectedSubComponent.value
+                  ) {
                     return (
                       <InputField
                         value={
@@ -511,7 +539,6 @@ const LocalParameters = () => {
                         }
                         label={field.label}
                         onChange={(e) => {
-                          console.log(theme)
                           if (variant) {
                             setTheme((theme) => {
                               theme[variant.split('.')[0]][
