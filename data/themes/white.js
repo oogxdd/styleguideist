@@ -100,10 +100,7 @@ export const white = {
     '5': '0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)',
     default: '0 0 0 rgba(0,0,0,0.12), 0 0 0',
   },
-  buttons: {
-    primary: {},
-    secondary: { color: 'background', bg: 'secondary' },
-  },
+  buttons: { primary: {}, secondary: { color: 'background', bg: 'secondary' } },
   forms: { input: {} },
   atoms: {
     text: {},
@@ -155,7 +152,6 @@ export const white = {
         description:
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
         imageUrl: '/img/burn.jpeg',
-        // imageUrl: 'https://images.unsplash.com/photo-1492724441997-5dc865305da7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
         authorName: 'Daniela Metz',
         authorAvatar:
           'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
@@ -164,23 +160,37 @@ export const white = {
     },
     form: { card: {} },
     feeditem: {
-      card: {},
+      card: { width: 573, ml: 24, mr: 24 },
       avatar: {},
-      name: {},
+      name: { display: 'block' },
       username: {},
-      date: {},
+      date: { display: 'block', color: 'hsla(0, 0%, 0%, 0.5)' },
       title: {},
-      paragraph: {},
-      actions: {},
+      paragraph: { mr: 8 },
+      actions: { mt: 16, mb: 15 },
       text: {},
-      actions: {},
-      preferredLayout: 1,
+      preferredLayout: 2,
     },
   },
   organisms: {
     feed: {
-      preferredLayout: 3,
-      preferredFeedItemLayout: 3,
+      background: {},
+      container: {
+        width: 578,
+        borderWidth: 1,
+        borderColor: 'hsla(249.9999999999998, 0%, 0%, 1)',
+        borderRadius: 26,
+        pt: 16,
+        pl: 0,
+        pr: 0,
+      },
+      separator: {
+        background: 'hsla(249.99999999999994, 0%, 0%, 1)',
+        mt: 1,
+        mb: 0,
+      },
+      preferredLayout: 2,
+      preferredFeedItemLayout: 2,
     },
   },
 }

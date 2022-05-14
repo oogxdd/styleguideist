@@ -225,15 +225,25 @@ export const green = {
       },
     },
     feeditem: {
-      card: { pt: 24, pb: 36, pl: 36, pr: 36, width: 695, borderRadius: 54 },
-      avatar: {},
+      card: {
+        pt: 24,
+        pb: 30,
+        pl: 42,
+        pr: 42,
+        width: 719,
+        borderRadius: 54,
+        background: 'hsla(249.99999999999994, 0%, 100%, 0.51)',
+      },
+      avatar: { width: 40 },
       name: {
-        fontSize: 16,
+        fontSize: 15,
         fontFamily: 'Neue Montreal',
         fontWeight: 600,
-        mt: 0,
-        mb: 0,
+        mt: 1,
+        mb: -2,
         display: 'block',
+        color:
+          'hsla(103.7554947075883, 24.898519952538564%, 18.0066185%, 0.91)',
       },
       username: {},
       date: {
@@ -242,6 +252,7 @@ export const green = {
         fontFamily: 'Manrope',
         mt: 0,
         display: 'block',
+        fontSize: 13,
       },
       title: {
         fontFamily: 'Neue Montreal',
@@ -249,6 +260,8 @@ export const green = {
         lineHeight: -5,
         fontSize: 18,
         mt: 24,
+        mb: 18,
+        // mb: 22,
       },
       paragraph: {
         fontFamily: 'Manrope',
@@ -263,5 +276,15 @@ export const green = {
       preferredLayout: 1,
     },
   },
-  organisms: { feed: { preferredLayout: 1, preferredFeedItemLayout: 2 } },
+  organisms: {
+    feed: {
+      background: {},
+      container: {},
+      separator: {
+        background: 'hsla(249.99999999999994, 50.000000000000014%, 20%, 0)',
+      },
+      preferredLayout: 1,
+      preferredFeedItemLayout: 1,
+    },
+  },
 }

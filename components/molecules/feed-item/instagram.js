@@ -12,7 +12,10 @@ import { Card, Avatar, Text } from 'components/atoms'
 
 export const FeedItemInstagram = ({ item = defaultItem }) => {
   return (
-    <div className="bg-white my-7 border rounded-sm max-w-md">
+    <Card
+      className="bg-white my-7 border rounded-sm max-w-md"
+      sx={{ variant: 'molecules.feeditem.card' }}
+    >
       <div className="flex items-center p-4">
         <div className="avatar mr-3">
           <div className="rounded-full w-10 h-10">
@@ -60,14 +63,14 @@ export const FeedItemInstagram = ({ item = defaultItem }) => {
         <EmojiHappyIcon className="h-7 mr-2" />
         <input
           type="text"
-          className="border-none flex-1 focus:ring-0 outline-none"
+          className="border-none text-sm flex-1 focus:ring-0 outline-none"
           placeholder="Add a comment..."
         />
         <button type="submit" className="font-semibold text-blue-400">
           Post
         </button>
       </form>
-    </div>
+    </Card>
   )
 }
 

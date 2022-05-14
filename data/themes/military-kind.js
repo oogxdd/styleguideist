@@ -208,6 +208,9 @@ export const militaryKind = {
   },
   organisms: {
     feed: {
+      background: {},
+      container: {},
+      separator: {},
       preferredLayout: 1,
       preferredFeedItemLayout: 1,
     },

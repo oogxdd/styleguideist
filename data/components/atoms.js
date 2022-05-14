@@ -248,4 +248,52 @@ export const atoms = [
       other(),
     ],
   },
+  {
+    label: 'Separator',
+    value: 'separator',
+    // component: Actions,
+    group: 'atoms',
+    params: [
+      // color(),
+      // font(),
+      color({
+        fields: [
+          {
+            type: 'colorpicker',
+            key: 'background',
+            label: 'Color',
+          },
+        ],
+      }),
+      shadow(),
+      spacing({ margins: true, dimensions: true }),
+      // shadow(),
+      // border(),
+      // other(),
+    ],
+  },
+  {
+    label: 'Container',
+    value: 'container',
+    // component: Actions,
+    group: 'atoms',
+    params: [
+      // color(),
+      // font(),
+      color({
+        fields: [
+          {
+            type: 'colorpicker',
+            key: 'background',
+            label: 'Color',
+          },
+        ],
+      }),
+      shadow(),
+      border(),
+      spacing({ margins: true, paddings: true, dimensions: true }),
+      // shadow(),
+      // other(),
+    ],
+  },
 ]

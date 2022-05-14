@@ -12,23 +12,15 @@ export const FeedQuora = ({ itemVar = 1 }) => {
   const { theme } = useContext(ThemeContext)
 
   return (
-    <Card className="bg-gray-50 w-full h-full flex items-center justify-center">
-      <main className="lg:col-span-9 xl:col-span-6 max-w-2xl self-start mt-16 pb-24">
-        {/* <Molecules.Tabs /> */}
-        <div className="mt-4">
-          <h1 className="sr-only">Recent questions</h1>
-          <ul role="list" className="space-y-4">
-            {questions.map((question) => (
-              <Molecules.FeedItem
-                itemVar={itemVar}
-                item={question}
-                key={question.id}
-              />
-            ))}
-          </ul>
-        </div>
-      </main>
-    </Card>
+    <div className="flex flex-col pt-24 space-y-8 pb-24 h-full">
+      {questions.map((question) => (
+        <Molecules.FeedItem
+          itemVar={itemVar}
+          item={question}
+          key={question.id}
+        />
+      ))}
+    </div>
   )
 }
 

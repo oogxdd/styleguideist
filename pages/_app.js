@@ -5,7 +5,9 @@ import 'tailwindcss/tailwind.css'
 const App = ({ Component, pageProps }) => (
   <>
     <Head>
-      <title>Styleguideist</title>
+      <link rel="icon" type="image/x-icon" href="/logo-gray3.png" />
+      <title>styleguide.ist</title>
+      {/* <title>Styleguideist</title> */}
       <meta
         name="description"
         content="Parametric design tool for building UI"

@@ -14,7 +14,7 @@ export const organisms = [
     enabled: true,
     group: 'organisms',
 
-    layoutVariants: [1, 2],
+    layoutVariants: [1, 2, 3],
     children: [
       {
         name: 'Background',
@@ -24,15 +24,15 @@ export const organisms = [
       },
       {
         name: 'Container',
-        value: 'card',
+        value: 'container',
         group: 'atoms',
         variant: 'organisms.feed.container',
       },
       {
-        name: 'Card',
-        value: 'card',
+        name: 'Separator',
+        value: 'separator',
         group: 'atoms',
-        variant: 'organisms.feed.card',
+        variant: 'organisms.feed.separator',
       },
       {
         name: 'Feed item',
@@ -40,42 +40,58 @@ export const organisms = [
         group: 'molecules',
         children: [
           {
-            name: 'Content card',
+            name: 'Card',
             value: 'card',
             group: 'atoms',
             variant: 'molecules.feeditem.card',
+            // availableIn: [1, 2, 3, 4],
           },
           {
             name: 'Avatar',
             value: 'avatar',
             group: 'atoms',
             variant: 'molecules.feeditem.avatar',
+            // availableIn: [1, 2, 3, 4],
           },
           {
             name: 'Name',
-            value: 'name',
+            value: 'text',
             group: 'atoms',
             variant: 'molecules.feeditem.name',
+            availableIn: [1, 2, 4],
           },
           {
             name: 'Username',
-            value: 'username',
+            value: 'text',
             group: 'atoms',
             variant: 'molecules.feeditem.username',
+            availableIn: [2, 3, 4],
           },
           {
             name: 'Date',
-            value: 'date',
+            value: 'text',
             group: 'atoms',
             variant: 'molecules.feeditem.date',
           },
           {
+            name: 'Title',
+            value: 'text',
+            group: 'atoms',
+            variant: 'molecules.feeditem.title',
+            availableIn: [1],
+          },
+          {
             name: 'Content',
-            value: 'paragraph',
+            value: 'text',
             group: 'atoms',
             variant: 'molecules.feeditem.paragraph',
           },
-          { name: 'Actions', value: 'actions', group: 'actions' },
+          {
+            name: 'Actions',
+            value: 'actions',
+            group: 'atoms',
+            variant: 'molecules.feeditem.actions',
+          },
         ],
       },
     ],

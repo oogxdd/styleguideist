@@ -1,21 +1,48 @@
+import { useContext } from 'react'
+import { ThemeContext } from 'context'
 import { Card, Avatar, Text } from 'components/atoms'
 
 export const FeedItemTwitter = ({ item = defaultItem }) => {
+  const { theme } = useContext(ThemeContext)
+
   return (
     <div
       id="post"
-      className="flex hover:bg-gray-100/5 duration-200 cursor-pointer pt-2 pl-3 max-w-xl"
+      className="flex hover:bg-gray-100/5 duration-200 cursor-pointer pt-2 pl-3 max-w-3xl"
+      sx={{
+        marginLeft: theme.molecules.feeditem.card.ml
+          ? theme.molecules.feeditem.card.ml
+          : undefined,
+        marginRight: theme.molecules.feeditem.card.mr
+          ? theme.molecules.feeditem.card.mr
+          : undefined,
+        marginBottom: theme.molecules.feeditem.card.mb
+          ? theme.molecules.feeditem.card.mb
+          : undefined,
+        marginTop: theme.molecules.feeditem.card.mt
+          ? theme.molecules.feeditem.card.mt
+          : undefined,
+
+        paddingLeft: theme.molecules.feeditem.card.pl
+          ? theme.molecules.feeditem.card.pl
+          : undefined,
+        paddingRight: theme.molecules.feeditem.card.pr
+          ? theme.molecules.feeditem.card.pr
+          : undefined,
+        paddingBottom: theme.molecules.feeditem.card.pb
+          ? theme.molecules.feeditem.card.pb
+          : undefined,
+        paddingTop: theme.molecules.feeditem.card.pt
+          ? theme.molecules.feeditem.card.pt
+          : undefined,
+      }}
     >
       <div className="flex-shrink-0 my-1">
-        <div id="picture" className="rounded-full">
-          <div className="rounded-full hover:opacity-80 duration-200 overflow-hidden">
-            <Avatar
-              className="w-12 h-12"
-              src={item.author.imageUrl}
-              sx={{ variant: 'molecules.feeditem.avatar' }}
-            />
-          </div>
-        </div>
+        <Avatar
+          className="w-12 h-12 rounded-full"
+          src={item.author.imageUrl}
+          sx={{ variant: 'molecules.feeditem.avatar' }}
+        />
       </div>
       <div className="flex-col my-1 mx-3">
         <div id="title" className="flex items-center justify-between">
@@ -25,7 +52,7 @@ export const FeedItemTwitter = ({ item = defaultItem }) => {
             sx={{ color: 'text' }}
           >
             <Text
-              className="text-black font-bold hover:underline"
+              className="text-black font-bold"
               variant="molecules.feeditem.name"
               sx={{ variant: 'molecules.feeditem.name' }}
             >
@@ -37,7 +64,12 @@ export const FeedItemTwitter = ({ item = defaultItem }) => {
             >
               {item.author.username}
             </Text>
-            <div className="text-gray-500">·</div>
+            <div
+              className="text-gray-500"
+              sx={{ variant: 'molecules.feeditem.date' }}
+            >
+              ·
+            </div>
             <Text
               variant="molecules.feeditem.date"
               sx={{ variant: 'molecules.feeditem.date' }}
@@ -52,6 +84,10 @@ export const FeedItemTwitter = ({ item = defaultItem }) => {
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
+                sx={{
+                  stroke: 'text',
+                  // color: 'text',
+                }}
               >
                 <path
                   strokeLinecap="round"
@@ -84,6 +120,10 @@ export const FeedItemTwitter = ({ item = defaultItem }) => {
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
+                  sx={{
+                    // fill: 'text',
+                    color: 'text',
+                  }}
                 >
                   <path
                     strokeLinecap="round"
@@ -101,12 +141,20 @@ export const FeedItemTwitter = ({ item = defaultItem }) => {
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
+                  sx={{
+                    // fill: 'text',
+                    color: 'text',
+                  }}
                 >
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth={2}
                     d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"
+                    sx={{
+                      // fill: 'text',
+                      color: 'text',
+                    }}
                   />
                 </svg>
               </div>
@@ -118,6 +166,10 @@ export const FeedItemTwitter = ({ item = defaultItem }) => {
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
+                  sx={{
+                    // fill: 'text',
+                    color: 'text',
+                  }}
                 >
                   <path
                     strokeLinecap="round"
@@ -135,6 +187,10 @@ export const FeedItemTwitter = ({ item = defaultItem }) => {
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
+                  sx={{
+                    // fill: 'text',
+                    color: 'text',
+                  }}
                 >
                   <path
                     strokeLinecap="round"
@@ -208,7 +264,10 @@ const defaultItem = {
     name: 'Lewis Lloyd',
     username: '@LloydTao',
 
-    imageUrl: 'https://placekitten.com/320/320',
+    // imageUrl: 'https://placekitten.com/320/320',
+    imageUrl:
+      'https://i.iheart.com/v3/catalog/artist/31083712?ops=fit(720%2C720)',
+
     href: '#',
   },
   likes: '29',

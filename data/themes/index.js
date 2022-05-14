@@ -16,7 +16,7 @@ export {
   butter,
   gray,
   spacy,
-  militaryKind,
+  // militaryKind,
   //
 }
 
@@ -26,7 +26,7 @@ export const presets = [
   butter,
   gray,
   spacy,
-  militaryKind,
+  // militaryKind,
   // darkPurple,
   // huiZnaetZaebalsya,
   // bluyish,

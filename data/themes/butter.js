@@ -239,5 +239,15 @@ export const butter = {
       preferredLayout: 4,
     },
   },
-  organisms: { feed: { preferredLayout: 1, preferredFeedItemLayout: 4 } },
+  organisms: {
+    feed: {
+      background: {},
+      container: {},
+      separator: {
+        background: 'hsla(249.99999999999994, 50.000000000000014%, 20%, 0)',
+      },
+      preferredLayout: 1,
+      preferredFeedItemLayout: 4,
+    },
+  },
 }

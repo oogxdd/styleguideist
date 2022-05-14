@@ -501,6 +501,9 @@ const LocalParameters = () => {
             const variant = selectedSubComponent.variant
             // theme[variant.split('.')[0]][variant.split('.')[1]][variant.split('.')[2]][field.key]
 
+            console.log(param)
+            console.log(selectedComponent)
+            console.log(selectedSubComponent)
             return (
               <Section name="Other" open={false}>
                 {param.fields.map((field) => {

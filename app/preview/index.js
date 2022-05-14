@@ -5,12 +5,18 @@ import { atoms, molecules, organisms, templates } from 'data/components'
 import Variants from './variants'
 
 const Preview = () => {
-  const { selectedComponent: comp } = useContext(AppContext)
+  const { selectedComponent: comp, fullscreen } = useContext(AppContext)
 
   return (
     <div
       className="flex flex-col justify-center items-center w-full h-screen overflow-auto py-0"
-      sx={{ bg: 'background', width: '100%', marginLeft: -33, display: 'grid' }}
+      sx={{
+        bg: 'background',
+        width: '100%',
+        // marginLeft: -33,
+        marginLeft: fullscreen ? 0 : -33,
+        display: 'grid',
+      }}
     >
       <div
         className="flex items-start justify-center items-center w-full h-full relative"

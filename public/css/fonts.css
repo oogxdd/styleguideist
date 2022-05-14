@@ -52,8 +52,17 @@
 @font-face {
   font-family: 'Euclid';
   src: url('/fonts/euclid/EuclidCircularB-Regular.woff2') format('woff2');
-  font-weight: 900;
-  font-style: normal;
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'Euclid';
+  src: url('/fonts/euclid/EuclidCircularB-Medium.woff2') format('woff2');
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'Euclid';
+  src: url('/fonts/euclid/EuclidCircularB-Semibold.woff2') format('woff2');
+  font-weight: 700;
 }
 
 @font-face {
