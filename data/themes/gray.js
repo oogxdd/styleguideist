@@ -322,5 +322,6 @@ export const gray = {
       preferredLayout: 2,
       preferredFeedItemLayout: 2,
     },
+    styleguide: {},
   },
 }

@@ -252,5 +252,6 @@ export const spacy = {
       preferredLayout: 1,
       preferredFeedItemLayout: 1,
     },
+    styleguide: {},
   },
 }

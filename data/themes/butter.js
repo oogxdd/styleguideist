@@ -251,5 +251,6 @@ export const butter = {
       preferredLayout: 3,
       preferredFeedItemLayout: 3,
     },
+    styleguide: {},
   },
 }

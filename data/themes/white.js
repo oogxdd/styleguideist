@@ -106,7 +106,7 @@ export const white = {
     text: {},
     card: {
       background: 'hsla(249.99999999999963, 8.020000000000008%, 20.81%, 0)',
-      borderWidth: 0,
+      border: '1px solid black',
     },
     label: { fontWeight: 500, letterSpacing: -0.5, mb: 8, ml: 24 },
     heading: { ml: 24, fontWeight: 200 },
@@ -192,6 +192,7 @@ export const white = {
       preferredLayout: 2,
       preferredFeedItemLayout: 2,
     },
+    styleguide: {},
   },
 }
 

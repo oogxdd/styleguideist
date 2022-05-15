@@ -10,6 +10,8 @@ import ReactTooltip from 'react-tooltip'
 import { presets } from 'data/themes'
 import { molecules, organisms } from 'data/components'
 
+import { ChipIcon } from '@heroicons/react/outline'
+
 const App = () => {
   const { fullscreen } = useContext(AppContext)
 
@@ -128,6 +130,10 @@ const Components = () => {
       label: 'Feed',
       value: 'feed',
     },
+    {
+      label: 'Guide',
+      value: 'styleguide',
+    },
   ]
 
   return (
@@ -141,7 +147,10 @@ const Components = () => {
               key={component.value}
               style={{ marginLeft: 2, marginRight: 2 }}
               onClick={() => {
-                if (component.value === 'feed') {
+                if (
+                  component.value === 'feed' ||
+                  component.value === 'styleguide'
+                ) {
                   const comp = organisms.find(
                     (m) => m.value === component.value,
                   )
@@ -188,7 +197,11 @@ const Components = () => {
                 },
               }}
             >
-              {component.label[0]}
+              {component.value === 'styleguide' ? (
+                <span className="text-lg">¤</span>
+              ) : (
+                component.label[0]
+              )}
             </div>
             <ReactTooltip
               id={`component-${component.value}`}
@@ -205,4 +218,5 @@ const Components = () => {
   )
 }
 
+// <ChipIcon className="w-3 h-3" />
 export default App

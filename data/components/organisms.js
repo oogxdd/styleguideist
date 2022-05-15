@@ -3,9 +3,17 @@ import {
   BlogList,
   ProfileSettings,
   FinanceCoinPage,
+  Styleguide,
 } from 'components/organisms'
 
 export const organisms = [
+  {
+    label: 'Styleguide',
+    value: 'styleguide',
+    component: Styleguide,
+    enabled: true,
+    group: 'organisms',
+  },
   {
     label: 'Feed',
     value: 'feed',

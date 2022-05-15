@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import { ThemeContext } from 'context'
 
-export const Paragraph = ({ children = 'Paragraph', style = {} }) => {
+export const Paragraph = ({ children = 'Paragraph', style = {}, sxx = {} }) => {
   const { theme } = useContext(ThemeContext)
 
   return (
@@ -12,6 +12,7 @@ export const Paragraph = ({ children = 'Paragraph', style = {} }) => {
         color: 'text2',
         fontSize: theme.fontSizes ? theme.fontSizes.base : undefined,
         variant: theme.atoms.paragraph ? 'atoms.paragraph' : null,
+        ...sxx,
       }}
     >
       {children}
