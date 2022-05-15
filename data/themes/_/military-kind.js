@@ -200,7 +200,9 @@ export const militaryKind = {
       date: {},
       title: {},
       paragraph: {},
-      actions: {},
+      actions: {
+        textColor: '#111827',
+      },
       text: {},
       actions: {},
       preferredLayout: 1,

@@ -41,7 +41,7 @@ export const Feed = () => {
           return (
             <>
               <Molecules.FeedItem
-                itemVar={preferredFeedItemLayout}
+                itemVar={selectedComponentVariant}
                 item={question}
                 key={question.id}
               />
@@ -52,7 +52,7 @@ export const Feed = () => {
       </div>
     </div>
   )
-  return <FeedQuora itemVar={selectedComponentVariant} />
+  // return <FeedQuora itemVar={selectedComponentVariant} />
 }
 
 const Separator = () => {

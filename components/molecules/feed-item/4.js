@@ -1,6 +1,11 @@
+import { useContext } from 'react'
+import { ThemeContext } from 'context'
+
 import { Card, Avatar, Text } from 'components/atoms'
 
 export const FeedItemBubble = ({ item = defaultItem }) => {
+  const { theme } = useContext(ThemeContext)
+
   return (
     <div className="flex max-w-3xl">
       <Avatar
@@ -48,7 +53,7 @@ export const FeedItemBubble = ({ item = defaultItem }) => {
                 fill="none"
                 viewBox="0 0 24 24"
                 sx={{
-                  stroke: 'text',
+                  stroke: theme.molecules.feeditem.actions.iconColor || 'text',
                   // color: 'text',
                 }}
               >
@@ -85,7 +90,7 @@ export const FeedItemBubble = ({ item = defaultItem }) => {
                   stroke="currentColor"
                   sx={{
                     // fill: 'text',
-                    color: 'text',
+                    color: theme.molecules.feeditem.actions.iconColor || 'text',
                   }}
                 >
                   <path
@@ -106,7 +111,7 @@ export const FeedItemBubble = ({ item = defaultItem }) => {
                   stroke="currentColor"
                   sx={{
                     // fill: 'text',
-                    color: 'text',
+                    color: theme.molecules.feeditem.actions.iconColor || 'text',
                   }}
                 >
                   <path
@@ -127,7 +132,7 @@ export const FeedItemBubble = ({ item = defaultItem }) => {
                   stroke="currentColor"
                   sx={{
                     // fill: 'text',
-                    color: 'text',
+                    color: theme.molecules.feeditem.actions.iconColor || 'text',
                   }}
                 >
                   <path
@@ -148,7 +153,7 @@ export const FeedItemBubble = ({ item = defaultItem }) => {
                   stroke="currentColor"
                   sx={{
                     // fill: 'text',
-                    color: 'text',
+                    color: theme.molecules.feeditem.actions.iconColor || 'text',
                   }}
                 >
                   <path

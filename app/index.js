@@ -117,16 +117,16 @@ const Components = () => {
   )
   const components = [
     {
-      label: 'Feed',
-      value: 'feed',
+      label: 'Article',
+      value: 'blogpost',
     },
     {
       label: 'Form',
       value: 'form',
     },
     {
-      label: 'Blog',
-      value: 'blogpost',
+      label: 'Feed',
+      value: 'feed',
     },
   ]
 

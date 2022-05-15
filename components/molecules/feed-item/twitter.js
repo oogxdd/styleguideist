@@ -1,5 +1,6 @@
 import { useContext } from 'react'
 import { ThemeContext } from 'context'
+
 import { Card, Avatar, Text } from 'components/atoms'
 
 export const FeedItemTwitter = ({ item = defaultItem }) => {
@@ -35,6 +36,13 @@ export const FeedItemTwitter = ({ item = defaultItem }) => {
         paddingTop: theme.molecules.feeditem.card.pt
           ? theme.molecules.feeditem.card.pt
           : undefined,
+
+        width: theme.molecules.feeditem.card.width
+          ? theme.molecules.feeditem.card.width
+          : undefined,
+        height: theme.molecules.feeditem.card.height
+          ? theme.molecules.feeditem.card.height
+          : undefined,
       }}
     >
       <div className="flex-shrink-0 my-1">
@@ -48,7 +56,7 @@ export const FeedItemTwitter = ({ item = defaultItem }) => {
         <div id="title" className="flex items-center justify-between">
           <div
             id="details"
-            className="flex flex-shrink-0 space-x-1"
+            className="flex items-center flex-shrink-0 space-x-1"
             sx={{ color: 'text' }}
           >
             <Text
@@ -85,7 +93,7 @@ export const FeedItemTwitter = ({ item = defaultItem }) => {
                 viewBox="0 0 24 24"
                 stroke="currentColor"
                 sx={{
-                  stroke: 'text',
+                  stroke: theme.molecules.feeditem.actions.iconColor || 'text',
                   // color: 'text',
                 }}
               >
@@ -122,7 +130,7 @@ export const FeedItemTwitter = ({ item = defaultItem }) => {
                   stroke="currentColor"
                   sx={{
                     // fill: 'text',
-                    color: 'text',
+                    color: theme.molecules.feeditem.actions.iconColor || 'text',
                   }}
                 >
                   <path
@@ -143,7 +151,7 @@ export const FeedItemTwitter = ({ item = defaultItem }) => {
                   stroke="currentColor"
                   sx={{
                     // fill: 'text',
-                    color: 'text',
+                    color: theme.molecules.feeditem.actions.iconColor || 'text',
                   }}
                 >
                   <path
@@ -153,7 +161,8 @@ export const FeedItemTwitter = ({ item = defaultItem }) => {
                     d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"
                     sx={{
                       // fill: 'text',
-                      color: 'text',
+                      color:
+                        theme.molecules.feeditem.actions.iconColor || 'text',
                     }}
                   />
                 </svg>
@@ -168,7 +177,7 @@ export const FeedItemTwitter = ({ item = defaultItem }) => {
                   stroke="currentColor"
                   sx={{
                     // fill: 'text',
-                    color: 'text',
+                    color: theme.molecules.feeditem.actions.iconColor || 'text',
                   }}
                 >
                   <path
@@ -189,7 +198,7 @@ export const FeedItemTwitter = ({ item = defaultItem }) => {
                   stroke="currentColor"
                   sx={{
                     // fill: 'text',
-                    color: 'text',
+                    color: theme.molecules.feeditem.actions.iconColor || 'text',
                   }}
                 >
                   <path

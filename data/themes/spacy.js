@@ -233,7 +233,9 @@ export const spacy = {
         ['font-variation-settings']: `'wght' 550`,
       },
       paragraph: { mr: 8, fontSize: 14, mt: 0 },
-      actions: {},
+      actions: {
+        textColor: '#111827',
+      },
       text: {},
       preferredLayout: 1,
     },

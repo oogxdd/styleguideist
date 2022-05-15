@@ -100,6 +100,7 @@ export const molecules = [
         group: 'atoms',
         ordering: true,
         propsKey: 'title',
+        // variant: 'molecules.blogpost.heading',
       },
       {
         name: 'Paragraph',
@@ -172,7 +173,7 @@ export const molecules = [
     component: FeedItem,
     group: 'molecules',
     enabled: true,
-    layoutVariants: [1, 2, 3, 4],
+    layoutVariants: [1, 2, 3],
     children: [
       {
         name: 'Card',

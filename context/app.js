@@ -7,7 +7,7 @@ const AppContext = createContext()
 
 const AppProvider = ({ children }) => {
   const { theme } = useContext(ThemeContext)
-  const [fullscreen, setFullscreen] = useState(false) // local || global
+  const [fullscreen, setFullscreen] = useState(true) // local || global
 
   const [paramsType, setParamsType] = useState('global') // local || global
   const [selectedSection, setSection] = useState('molecules')
@@ -15,9 +15,9 @@ const AppProvider = ({ children }) => {
   //   atoms.find((m) => m.value === 'button'),
   // )
   const [selectedComponent, setComponent] = useState(
-    molecules.find((m) => m.value === 'feeditem'),
+    molecules.find((m) => m.value === 'blogpost'),
   )
-  const [selectedSubComponent, setSubComponent] = useState('feeditem')
+  const [selectedSubComponent, setSubComponent] = useState('blogpost')
   const [selectedComponentVariant, setComponentVariant] = useState(1)
 
   const [showNavigation, setShowNavigation] = useState(false)

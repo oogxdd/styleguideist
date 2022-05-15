@@ -76,6 +76,12 @@ export default () => {
                     //     : true)
                   }
                   onClick={() => {
+                    console.log(c1)
+                    console.log(
+                      components[c1.group].find(
+                        (component) => component.value === c1.value,
+                      ),
+                    )
                     setSelectedSubComponent({
                       ...components[c1.group].find(
                         (component) => component.value === c1.value,
@@ -92,14 +98,18 @@ export default () => {
                     return (
                       <Item
                         level={2}
-                        underline={selectedSubComponent.value === c2.value}
+                        underline={
+                          selectedSubComponent.value === c2.value &&
+                          selectedSubComponent.variant === c2.variant
+                        }
                         key={c2.group + c2.value}
                         onClick={() => {
-                          setSelectedSubComponent(
-                            components[c2.group].find(
+                          setSelectedSubComponent({
+                            ...components[c2.group].find(
                               (component) => component.value === c2.value,
                             ),
-                          )
+                            variant: c2.variant,
+                          })
                         }}
                         selectedSubComponent={selectedSubComponent}
                       >

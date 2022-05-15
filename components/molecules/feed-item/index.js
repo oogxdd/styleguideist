@@ -16,11 +16,11 @@ export const FeedItem = ({ itemVar }) => {
     return <FeedItemTwitter />
   }
 
-  if (variant === 3) {
-    return <FeedItemInstagram />
-  }
+  // if (variant === 3) {
+  //   return <FeedItemInstagram />
+  // }
 
-  if (variant === 4) {
+  if (variant === 3) {
     return <FeedItemBubble />
   }
 

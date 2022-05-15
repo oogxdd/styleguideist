@@ -251,13 +251,21 @@ export const gray = {
     },
     feeditem: {
       card: {
-        width: 454,
+        width: '100%',
+        maxWidth: '100%',
         pl: 36,
         pr: 36,
         mt: '0px !important',
         pt: '32px !important',
       },
-      avatar: { width: 99, height: 99, mr: 20, borderRadius: 100 },
+      avatar: {
+        width: 99,
+        height: 99,
+        mr: 20,
+        borderRadius: 100,
+        minWidth: 99,
+        minHeight: 99,
+      },
       name: {
         fontFamily: 'Luckiest_Guy',
         textShadow:
@@ -272,7 +280,13 @@ export const gray = {
       },
       username: { display: 'none', fontSize: 27 },
       date: { display: 'none' },
-      title: {},
+      title: {
+        fontSize: 27,
+        fontFamily: 'Bangers',
+        mb: 33,
+        mt: 22,
+        color: 'hsla(51.917496079644536, 100%, 58.50500000000001%, 1)',
+      },
       paragraph: {
         fontSize: 25,
         fontWeight: 100,
@@ -285,7 +299,7 @@ export const gray = {
         mr: 5,
         ml: 0,
       },
-      actions: { mt: 19, mb: 24 },
+      actions: { mt: 19, mb: 24, textColor: '#111827' },
       text: {},
       preferredLayout: 2,
     },
@@ -296,7 +310,6 @@ export const gray = {
       container: {
         borderWidth: 1,
         borderColor: 'hsla(250.0000000000029, 0%, 24.66%, 1)',
-        // pt: 28,
         pl: 0,
         pr: 0,
         width: 770,
@@ -306,7 +319,7 @@ export const gray = {
         mt: '0',
         mb: '0',
       },
-      preferredLayout: 1,
+      preferredLayout: 2,
       preferredFeedItemLayout: 2,
     },
   },

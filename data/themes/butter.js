@@ -234,9 +234,11 @@ export const butter = {
         fontWeight: 300,
         mt: 7,
       },
-      actions: {},
+      actions: {
+        textColor: '#111827',
+      },
       text: {},
-      preferredLayout: 4,
+      preferredLayout: 3,
     },
   },
   organisms: {
@@ -246,8 +248,8 @@ export const butter = {
       separator: {
         background: 'hsla(249.99999999999994, 50.000000000000014%, 20%, 0)',
       },
-      preferredLayout: 1,
-      preferredFeedItemLayout: 4,
+      preferredLayout: 3,
+      preferredFeedItemLayout: 3,
     },
   },
 }

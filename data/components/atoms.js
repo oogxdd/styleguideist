@@ -240,7 +240,25 @@ export const atoms = [
     // component: Actions,
     group: 'atoms',
     params: [
-      // color(),
+      color({
+        fields: [
+          {
+            type: 'colorpicker',
+            key: 'textColor',
+            label: 'Text color',
+          },
+          {
+            type: 'colorpicker',
+            key: 'iconColor',
+            label: 'Icon color',
+          },
+          {
+            type: 'colorpicker',
+            key: 'activeIconColor',
+            label: 'Active icon color',
+          },
+        ],
+      }),
       font(),
       spacing({ margins: true, paddings: true, dimensions: true }),
       shadow(),

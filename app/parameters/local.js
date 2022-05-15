@@ -459,15 +459,6 @@ const LocalParameters = () => {
                       : theme[group][component][field.key],
 
                     onChange: (value) => {
-                      console.log('------')
-                      console.log(value)
-                      console.log(field.key)
-                      console.log(variant)
-                      console.log(
-                        theme[variant.split('.')[0]][variant.split('.')[1]][
-                          variant.split('.')[2]
-                        ],
-                      )
                       // if (field.key === 'width') {
                       // }
 
@@ -501,15 +492,13 @@ const LocalParameters = () => {
             const variant = selectedSubComponent.variant
             // theme[variant.split('.')[0]][variant.split('.')[1]][variant.split('.')[2]][field.key]
 
-            console.log(param)
-            console.log(selectedComponent)
-            console.log(selectedSubComponent)
             return (
               <Section name="Other" open={false}>
                 {param.fields.map((field) => {
                   if (
                     field.key === 'order' &&
-                    selectedComponent.value !== selectedSubComponent.value
+                    selectedComponent.value !== selectedSubComponent.value &&
+                    !variant
                   ) {
                     return (
                       <InputField
