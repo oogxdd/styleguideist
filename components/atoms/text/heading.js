@@ -1,7 +1,7 @@
 import { Heading as ThemeUIHeading } from 'theme-ui'
 
-export const Heading = ({ children = 'Heading', sxx = {}, size = 'h1' }) => {
-  if (size === 'h2') {
+export const Heading = ({ children = 'Heading', sxx = {}, as = 'h1' }) => {
+  if (as === 'h2') {
     return (
       <ThemeUIHeading
         className="text-xl text-bold cursor-default"
@@ -11,7 +11,8 @@ export const Heading = ({ children = 'Heading', sxx = {}, size = 'h1' }) => {
       </ThemeUIHeading>
     )
   }
-  if (size === 'h3') {
+
+  if (as === 'h3') {
     return (
       <ThemeUIHeading
         className="text-lg text-bold cursor-default"
@@ -21,6 +22,7 @@ export const Heading = ({ children = 'Heading', sxx = {}, size = 'h1' }) => {
       </ThemeUIHeading>
     )
   }
+
   return (
     <ThemeUIHeading
       className="text-3xl text-bold cursor-default"

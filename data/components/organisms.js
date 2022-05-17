@@ -1,10 +1,4 @@
-import {
-  Feed,
-  BlogList,
-  ProfileSettings,
-  FinanceCoinPage,
-  Styleguide,
-} from 'components/organisms'
+import { Feed, Styleguide } from 'components/organisms'
 
 export const organisms = [
   {
@@ -104,25 +98,4 @@ export const organisms = [
       },
     ],
   },
-  // {
-  //   label: 'Profile settings',
-  //   value: 'profile-settings',
-  //   component: ProfileSettings,
-  //   enabled: true,
-  // },
-  // {
-  //   label: 'Blog list',
-  //   value: 'blog-list',
-  //   component: BlogList,
-  //   link: 'https://tailwindui.com/components/marketing/sections/blog-sections',
-  //   enabled: true,
-  //   group: 'organisms',
-  //   children: [],
-  // },
-  // {
-  //   label: 'FinanceCoinPage',
-  //   value: 'financecoinpage',
-  //   component: FinanceCoinPage,
-  //   enabled: true,
-  // },
 ]

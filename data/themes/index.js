@@ -3,6 +3,7 @@ import { butter } from './butter'
 import { green } from './green'
 import { gray } from './gray'
 import { spacy } from './spacy'
+import { base } from './base'
 // import { militaryKind } from './military-kind'
 // import { darkPurple } from './dark-purple'
 // import { huiZnaetZaebalsya } from './hui-znaet-zaebalsya'
@@ -16,6 +17,7 @@ export {
   butter,
   gray,
   spacy,
+  base,
   // militaryKind,
   //
 }

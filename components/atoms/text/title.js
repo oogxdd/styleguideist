@@ -1,7 +1,13 @@
 import { useContext } from 'react'
 import { ThemeContext } from 'context'
 
-export const Title = ({ children = 'Title', variant = 'atoms.heading' }) => {
+export const Title = ({
+  children = 'Title',
+  variant = 'atoms.heading',
+  style = {},
+  sxx = {},
+  yo,
+}) => {
   const { theme } = useContext(ThemeContext)
 
   return (
@@ -11,6 +17,7 @@ export const Title = ({ children = 'Title', variant = 'atoms.heading' }) => {
         color: 'text',
         fontSize: theme.fontSizes ? theme.fontSizes.base * 1.25 : undefined,
         variant,
+        ...style,
       }}
     >
       {children}

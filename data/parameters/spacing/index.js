@@ -38,6 +38,7 @@ export const spacingParams = ({
 
   return {
     type: 'spacing',
+    name: 'Spacing',
     fields,
   }
 }

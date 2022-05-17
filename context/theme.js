@@ -8,6 +8,7 @@ const ThemeContext = createContext()
 
 const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useImmer(themes.white)
+  const [adThemes, setAdThemes] = useState([]) // this is additional user-created themes
   const [gfont, setGfont] = useState('system-ui')
 
   // set button spacing
@@ -24,6 +25,7 @@ const ThemeProvider = ({ children }) => {
         },
       }))
     }
+
     if (type === 'horizontal') {
       setTheme((theme) => ({
         ...theme,
@@ -100,6 +102,9 @@ const ThemeProvider = ({ children }) => {
       value={{
         theme,
         setTheme,
+
+        adThemes,
+        setAdThemes,
 
         setColor,
         setSpacing,

@@ -209,7 +209,7 @@ export const atoms = [
   // },
   {
     label: 'Title',
-    value: 'title',
+    value: 'heading',
     component: Title,
     group: 'atoms',
     params: [

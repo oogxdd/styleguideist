@@ -7,7 +7,7 @@ const AppContext = createContext()
 
 const AppProvider = ({ children }) => {
   const { theme } = useContext(ThemeContext)
-  const [fullscreen, setFullscreen] = useState(true) // local || global
+  const [fullscreen, setFullscreen] = useState(false) // local || global
 
   const [paramsType, setParamsType] = useState('global') // local || global
   const [selectedSection, setSection] = useState('molecules')

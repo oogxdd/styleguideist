@@ -1,6 +1,6 @@
-export const white = {
-  name: 'white',
-  label: 'white',
+export const base = {
+  // name: 'white',
+  // label: 'white',
   type: 'light',
   space: { base: { x: 4, y: 4 } },
   fontSizes: { base: 15 },
@@ -103,7 +103,6 @@ export const white = {
   buttons: { primary: {}, secondary: { color: 'background', bg: 'secondary' } },
   forms: { input: {} },
   atoms: {
-    title: {},
     text: {},
     card: {
       background: 'hsla(249.99999999999963, 8.020000000000008%, 20.81%, 0)',

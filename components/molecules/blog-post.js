@@ -8,6 +8,7 @@ import {
   Title,
   Paragraph,
   UserCard,
+  Heading,
 } from 'components/atoms'
 
 import { pxToNum, numToPx } from 'helpers'
@@ -16,6 +17,13 @@ export const BlogPost = ({ molecule }) => {
   const { theme } = useContext(ThemeContext)
   const { selectedComponent, selectedComponentVariant } = useContext(AppContext)
   const post = theme.molecules.blogpost.props || defaultPost
+
+  let overrideHeading =
+    theme[selectedComponent.group][selectedComponent.value]['heading'] &&
+    theme[selectedComponent.group][selectedComponent.value]['heading']
+      .override &&
+    theme[selectedComponent.group][selectedComponent.value]['heading'].override
+      .font
 
   if (selectedComponentVariant === 2) {
     return (
@@ -52,7 +60,32 @@ export const BlogPost = ({ molecule }) => {
                   : undefined,
               }}
             >
-              <Title>{post.title}</Title>
+              <Title
+                as="h2"
+                // sxx={{
+                //   variant: overrideHeading
+                //     ? 'molecules.blogpost.heading'
+                //     : 'atoms.heading',
+                // }}
+                style={{
+                  // variant: 'atoms.heading',
+                  variant: 'molecules.blogpost.heading',
+
+                  // variant: ['atoms.heading', 'molecules.blogpost.heading'],
+
+                  // variant: overrideHeading
+                  //   ? 'molecules.blogpost.heading'
+                  //   : 'atoms.heading',
+                }}
+                // variant={
+                //   overrideHeading
+                //     ? 'molecules.blogpost.heading'
+                //     : 'atoms.heading'
+                // }
+                // yo="'GOVBNo'"
+              >
+                {post.title}
+              </Title>
               <Paragraph
                 style={{
                   marginTop: theme.space.base

@@ -9,6 +9,7 @@ export const colorParams = ({
 } = {}) => {
   return {
     type: 'color',
+    name: 'Color',
     fields: fields,
   }
 }

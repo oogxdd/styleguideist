@@ -197,11 +197,12 @@ const Components = () => {
                 },
               }}
             >
-              {component.value === 'styleguide' ? (
+              {component.label[0]}
+              {/*component.value === 'styleguide' ? (
                 <span className="text-lg">¤</span>
               ) : (
                 component.label[0]
-              )}
+                  )*/}
             </div>
             <ReactTooltip
               id={`component-${component.value}`}

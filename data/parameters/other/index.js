@@ -1,5 +1,6 @@
 export const otherParams = () => ({
   type: 'other',
+  name: 'Other',
   fields: [
     {
       type: 'input',

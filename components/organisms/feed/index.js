@@ -14,7 +14,6 @@ export const Feed = () => {
   const { selectedComponent, selectedComponentVariant } = useContext(AppContext)
   const { theme } = useContext(ThemeContext)
 
-  console.log(selectedComponent)
   const preferredFeedItemLayout = theme.organisms.feed.preferredFeedItemLayout
 
   // if (preferredFeedItemLayout === 1) {
@@ -26,8 +25,6 @@ export const Feed = () => {
   // if (preferredFeedItemLayout === 3) {
   //   return <div>prefered feed item layout: 3</div>
   // }
-
-  // console.log(selectedComponent)
 
   return (
     <div className="pt-24 pb-24">

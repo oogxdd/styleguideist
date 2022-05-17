@@ -1,6 +1,6 @@
 export const fontFields = [
   {
-    type: 'font-picker',
+    type: 'fontpicker',
     key: 'fontFamily',
     label: 'Family',
     // min: '6',
@@ -41,5 +41,6 @@ export const fontFields = [
 
 export const fontParams = () => ({
   type: 'font',
+  name: 'Font',
   fields: fontFields,
 })

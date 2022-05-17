@@ -18,5 +18,6 @@ export const borderFields = [
 
 export const borderParams = () => ({
   type: 'border',
+  name: 'Border',
   fields: borderFields,
 })

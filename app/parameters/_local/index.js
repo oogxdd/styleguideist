@@ -1,10 +1,10 @@
 import { useContext, Fragment } from 'react'
 import { AppContext, ThemeContext } from 'context'
 
-import { Color } from './local/color'
-import { Font } from './local/font'
-import { Border } from './local/border'
-import { Spacing } from './local/spacing'
+import { Color } from './color'
+import { Font } from './font'
+import { Border } from './border'
+import { Spacing } from './spacing'
 
 import { InputField, TextareaField } from 'components/atoms'
 
@@ -305,66 +305,74 @@ const LocalParameters = () => {
                 fields={param.fields.map((field) => {
                   const group = selectedSubComponent.group
                   const component = selectedSubComponent.value
-
                   const variant = selectedSubComponent.variant
-                  console.log('--------')
-                  // console.log(variant)
-                  // console.log(variant)
-                  // console.log(field.key)
-                  // console.log(
-                  //   theme[variant.split('.')[0]][variant.split('.')[1]][
-                  //     variant.split('.')[2]
-                  //   ],
-                  // )
 
-                  if (field.type === 'font-picker') {
+                  let value
+                  let onChange
+                  let override =
+                    theme[selectedComponent.group][selectedComponent.value][
+                      selectedSubComponent.value
+                    ] &&
+                    theme[selectedComponent.group][selectedComponent.value][
+                      selectedSubComponent.value
+                    ].override &&
+                    theme[selectedComponent.group][selectedComponent.value][
+                      selectedSubComponent.value
+                    ].override.font
+
+                  // console.log('override')
+                  // console.log(override)
+                  // console.log(override)
+                  // console.log(override)
+                  // console.log(override)
+                  // console.log(override)
+
+                  console.log(variant)
+                  console.log(field)
+                  console.log(theme)
+                  console.log(
+                    theme[variant.split('.')[0]][variant.split('.')[1]][
+                      variant.split('.')[2]
+                    ],
+                  )
+                  console.log(
+                    theme[variant.split('.')[0]][variant.split('.')[1]][
+                      variant.split('.')[2]
+                    ][field.key],
+                  )
+                  if (override) {
+                    // modify variant setting inside the blogpost
+                    value =
+                      theme[variant.split('.')[0]][variant.split('.')[1]][
+                        variant.split('.')[2]
+                      ][field.key]
+                    onChange = (value) =>
+                      setTheme((theme) => {
+                        theme[variant.split('.')[0]][variant.split('.')[1]][
+                          variant.split('.')[2]
+                        ][field.key] = value
+                      })
+                  } else {
+                    // modify atom heading
+                    value = theme[group][component][field.key]
+                    onChange = (value) =>
+                      setTheme((theme) => {
+                        theme[group][component][field.key] = value
+                      })
+                  }
+
+                  if (field.type === 'fontpicker') {
                     return {
                       ...field,
-                      value: variant
-                        ? theme[variant.split('.')[0]][variant.split('.')[1]][
-                            variant.split('.')[2]
-                          ][field.key]
-                        : theme[group][component][field.key],
-                      onChange: (value) => {
-                        if (variant) {
-                          // console.log(value)
-                          setTheme((theme) => {
-                            theme[variant.split('.')[0]][variant.split('.')[1]][
-                              variant.split('.')[2]
-                            ][field.key] = value
-                          })
-                        } else {
-                          setTheme((theme) => {
-                            theme[group][component][field.key] = value
-                          })
-                        }
-                      },
+                      value,
+                      onChange,
                     }
                   }
 
-                  // theme[group][component][field]
-                  // theme.atoms.paragraph.fontSize
-
                   return {
                     ...field,
-                    value: variant
-                      ? theme[variant.split('.')[0]][variant.split('.')[1]][
-                          variant.split('.')[2]
-                        ][field.key]
-                      : theme[group][component][field.key],
-                    onChange: (value) => {
-                      if (variant) {
-                        setTheme((theme) => {
-                          theme[variant.split('.')[0]][variant.split('.')[1]][
-                            variant.split('.')[2]
-                          ][field.key] = +value
-                        })
-                      } else {
-                        setTheme((theme) => {
-                          theme[group][component][field.key] = +value
-                        })
-                      }
-                    },
+                    value,
+                    onChange: (v) => onChange(+v),
                   }
                 })}
               />

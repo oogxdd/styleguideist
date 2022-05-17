@@ -1,4 +1,4 @@
-import { BlogPost, FeedItem, Form, OrderTest } from 'components/molecules'
+import { BlogPost, FeedItem, Form } from 'components/molecules'
 
 import {
   Card,
@@ -30,6 +30,7 @@ export const molecules = [
     params: [
       {
         type: 'props',
+        name: 'Props',
         fields: [
           {
             type: 'input',
@@ -84,6 +85,7 @@ export const molecules = [
         component: Image,
         group: 'atoms',
         ordering: true,
+        variant: 'molecules.blogpost.image',
       },
       {
         name: 'Label',
@@ -92,6 +94,7 @@ export const molecules = [
         component: Label,
         ordering: true,
         propsKey: 'label',
+        variant: 'molecules.blogpost.label',
       },
       {
         name: 'Heading',
@@ -100,7 +103,7 @@ export const molecules = [
         group: 'atoms',
         ordering: true,
         propsKey: 'title',
-        // variant: 'molecules.blogpost.heading',
+        variant: 'molecules.blogpost.heading',
       },
       {
         name: 'Paragraph',
@@ -109,6 +112,7 @@ export const molecules = [
         group: 'atoms',
         ordering: true,
         propsKey: 'description',
+        variant: 'molecules.blogpost.paragraph',
       },
       {
         name: 'User card',
@@ -117,6 +121,7 @@ export const molecules = [
         group: 'atoms',
         ordering: true,
         propsKey: '*',
+        variant: 'molecules.blogpost.usercard',
         children: [
           {
             name: 'Avatar',
@@ -230,12 +235,4 @@ export const molecules = [
       },
     ],
   },
-  // {
-  //   label: 'Order test',
-  //   value: 'order-test',
-  //   component: OrderTest,
-  //   group: 'molecules',
-  //   enabled: true,
-  //   children: [],
-  // },
 ]

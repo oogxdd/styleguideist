@@ -179,7 +179,10 @@ export const spacy = {
       },
       image: { order: 1, width: '100%', height: 192 },
       label: { order: 2 },
-      heading: { order: 3 },
+      heading: {
+        variant: 'atoms.heading',
+        order: 3,
+      },
       paragraph: { order: 4 },
       usercard: { order: 5 },
       props: {

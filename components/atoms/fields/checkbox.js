@@ -1,12 +1,16 @@
-/** @jsxImportSource theme-ui */
-import { useState } from 'react'
+import { useContext, useState } from 'react'
+import { ThemeContext } from 'context'
 
 export const Checkbox = ({
   label = 'Custom',
   value = false,
   onChange = () => {},
+  labelWidth = 'w-16',
+  className = '',
+  style = {},
   // value: initialValue = false,
 }) => {
+  const { theme, setTheme } = useContext(ThemeContext)
   // const [value, setValue] = useState(initialValue)
   // const onChange = (value) => {
   //   setValue(value)
@@ -14,18 +18,26 @@ export const Checkbox = ({
 
   return (
     <div
-      className="flex items-center justify-between"
+      className={`${className} flex items-center justify-between`}
       style={
         label === 'Custom'
           ? {
               // marginBottom: '0.5rem',
               // marginBottom: '0.75rem',
               // marginBottom: '1rem'
+              ...style,
             }
-          : {}
+          : {
+              ...style,
+            }
       }
+      sx={{
+        // 'hsla(82.37288135593238, 0%, 0%, 1)'.split(',').slice(0, -1).join() + ', 0.3)'
+        borderColor:
+          theme.colors.borderColor.split(',').slice(0, -1).join() + ', 0.3)',
+      }}
     >
-      <label className="text-sm w-16" htmlFor="checkbox">
+      <label className={`text-sm ${labelWidth}`} htmlFor="checkbox">
         {label}
       </label>
 

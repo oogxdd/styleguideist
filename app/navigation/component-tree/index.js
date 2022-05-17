@@ -76,12 +76,6 @@ export default () => {
                     //     : true)
                   }
                   onClick={() => {
-                    console.log(c1)
-                    console.log(
-                      components[c1.group].find(
-                        (component) => component.value === c1.value,
-                      ),
-                    )
                     setSelectedSubComponent({
                       ...components[c1.group].find(
                         (component) => component.value === c1.value,

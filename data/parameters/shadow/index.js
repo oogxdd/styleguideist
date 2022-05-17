@@ -1,5 +1,6 @@
 export const shadowParams = ({ field = 'boxShadow' } = {}) => ({
   type: 'shadow',
+  name: 'Shadow',
   field,
   fields: [
     {

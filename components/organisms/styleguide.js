@@ -3,7 +3,7 @@ import * as Atoms from 'components/atoms'
 
 export const Styleguide = () => {
   return (
-    <div className="flex flex-col w-full self-start mt-16">
+    <div className="flex flex-col w-full self-start mt-16 mb-16">
       <div className="flex justify-between">
         <Typography />
         <Colors />
