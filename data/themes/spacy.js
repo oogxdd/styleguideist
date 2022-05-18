@@ -253,7 +253,6 @@ export const spacy = {
         mb: 0,
       },
       preferredLayout: 1,
-      preferredFeedItemLayout: 1,
     },
     styleguide: {},
   },

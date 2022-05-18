@@ -294,7 +294,6 @@ export const green = {
         background: 'hsla(249.99999999999994, 50.000000000000014%, 20%, 0)',
       },
       preferredLayout: 1,
-      preferredFeedItemLayout: 1,
     },
     styleguide: {},
   },

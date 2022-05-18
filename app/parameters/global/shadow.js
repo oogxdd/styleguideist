@@ -1,3 +1,6 @@
+// here:
+// set shadow for the card component
+
 import { useContext, useState, useEffect, Fragment } from 'react'
 import { ThemeContext } from 'context'
 import {

@@ -4,10 +4,7 @@ import { ThemeContext } from 'context'
 export const Card = ({
   children,
   className = '',
-  // width = '100%',
-  // height = '100%',
-  // width = '128px',
-  // height = '128px',
+  variant = 'atoms.card',
   sx = {},
 }) => {
   const { theme, setTheme } = useContext(ThemeContext)
@@ -25,7 +22,7 @@ export const Card = ({
         paddingBottom: 12,
         // padding: '24px 16px',
 
-        variant: theme.atoms.card ? 'atoms.card' : null,
+        variant,
         ...sx,
       }}
       className={`${!children && 'w-52 h-52'} ${className}`}

@@ -41,7 +41,6 @@ const LocalParameters = () => {
     selectedSubComponent: sub,
     //
   } = useContext(AppContext)
-  console.log(theme)
 
   return (
     <>

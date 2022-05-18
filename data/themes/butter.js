@@ -249,7 +249,6 @@ export const butter = {
         background: 'hsla(249.99999999999994, 50.000000000000014%, 20%, 0)',
       },
       preferredLayout: 3,
-      preferredFeedItemLayout: 3,
     },
     styleguide: {},
   },

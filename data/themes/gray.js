@@ -320,7 +320,6 @@ export const gray = {
         mb: '0',
       },
       preferredLayout: 2,
-      preferredFeedItemLayout: 2,
     },
     styleguide: {},
   },

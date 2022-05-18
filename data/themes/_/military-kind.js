@@ -214,7 +214,6 @@ export const militaryKind = {
       container: {},
       separator: {},
       preferredLayout: 1,
-      preferredFeedItemLayout: 1,
     },
   },
 }
