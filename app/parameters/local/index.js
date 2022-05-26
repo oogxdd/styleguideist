@@ -52,11 +52,12 @@ const LocalParameters = () => {
             !!theme[comp.group][comp.value][sub.value].override
 
           if (param.type === 'shadow') {
-            return <ShadowParams param={param} />
+            return <ShadowParams param={param} key={param.type} />
           }
 
+          console.log(sub)
           return (
-            <Section name={param.name} open={false}>
+            <Section name={param.name} open={false} key={param.type}>
               {param.fields.map((field) => {
                 let value
                 let onChange
@@ -73,11 +74,29 @@ const LocalParameters = () => {
                   }
                 } else {
                   // modify subcomponent original parameters
-                  value = theme[sub.group][sub.value][field.key]
-                  onChange = (value) => {
-                    setTheme((theme) => {
-                      theme[sub.group][sub.value][field.key] = value
-                    })
+                  if (sub.subvalue) {
+                    console.log(sub)
+                    console.log(sub)
+                    console.log(sub)
+                    console.log(sub)
+                    console.log(sub)
+                    // this one is done for atoms.heading.h1
+
+                    value = theme[sub.group][sub.value][sub.subvalue][field.key]
+                    onChange = (value) => {
+                      setTheme((theme) => {
+                        theme[sub.group][sub.value][sub.subvalue][
+                          field.key
+                        ] = value
+                      })
+                    }
+                  } else {
+                    value = theme[sub.group][sub.value][field.key]
+                    onChange = (value) => {
+                      setTheme((theme) => {
+                        theme[sub.group][sub.value][field.key] = value
+                      })
+                    }
                   }
                 }
 
@@ -91,6 +110,12 @@ const LocalParameters = () => {
                     })
                   }
                 }
+
+                // console.log('----')
+                // console.log(comp.group)
+                // console.log(comp.value)
+                // console.log(sub.group)
+                // console.log(sub.value)
 
                 // ___fields___:
                 // 1. input

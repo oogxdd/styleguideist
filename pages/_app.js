@@ -13,7 +13,6 @@ const App = ({ Component, pageProps }) => (
         content="Parametric design tool for building UI"
       />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-      <link href="/css/index.css" rel="stylesheet" />
     </Head>
     <ThemeProvider>
       <AppProvider>

@@ -98,6 +98,7 @@ export const molecules = [
       {
         name: 'Heading',
         value: 'heading',
+        subvalue: 'h2',
         component: Heading,
         group: 'atoms',
         ordering: true,
@@ -131,6 +132,7 @@ export const molecules = [
             name: 'Username',
             value: 'heading',
             group: 'atoms',
+            subvalue: 'h4',
           },
           {
             name: 'Caption',

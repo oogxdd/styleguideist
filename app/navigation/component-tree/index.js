@@ -76,11 +76,13 @@ export default () => {
                     //     : true)
                   }
                   onClick={() => {
+                    console.log(c1)
                     setSelectedSubComponent({
                       ...components[c1.group].find(
                         (component) => component.value === c1.value,
                       ),
                       variant: c1.variant,
+                      subvalue: c1.subvalue,
                     })
                   }}
                 >
@@ -103,6 +105,7 @@ export default () => {
                               (component) => component.value === c2.value,
                             ),
                             variant: c2.variant,
+                            subvalue: c1.subvalue,
                           })
                         }}
                       >
