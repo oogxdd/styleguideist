@@ -182,6 +182,8 @@ const LocalParameters = () => {
             </Section>
           )
         })}
+
+      {/* OVERRIDE COMPONENT SETTINGS */}
       {comp.group !== 'atoms' && theme[comp.group][comp.value][sub.value] && (
         <Checkbox
           className="py-6 px-6 flex-row-reverse justify-start border-b"

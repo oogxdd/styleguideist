@@ -11,7 +11,7 @@ export const Image = ({
 
   return (
     <img
-      className={`h-48 w-full object-cover ${className}`}
+      className={`h-48 w-full object-cover duration-200 ${className}`}
       src={src}
       alt=""
       sx={{

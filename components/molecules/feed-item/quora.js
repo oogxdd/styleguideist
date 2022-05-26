@@ -15,7 +15,15 @@ import {
 } from '@heroicons/react/solid'
 import { classNames } from 'helpers'
 
-import { Card, Avatar, Text } from 'components/atoms'
+import {
+  Card,
+  Avatar,
+  Text,
+  UserCard,
+  Heading,
+  Paragraph,
+  Actions,
+} from 'components/atoms'
 
 export const FeedItemQuora = ({ item = defaultItem }) => {
   const { theme } = useContext(ThemeContext)
@@ -28,31 +36,7 @@ export const FeedItemQuora = ({ item = defaultItem }) => {
       <article>
         <div>
           <div className="flex justify-between items-center space-x-3">
-            <div className="flex-shrink-0">
-              <Avatar
-                className="h-10 w-10 rounded-full"
-                src={item.author.imageUrl}
-                alt=""
-                variant="molecules.feeditem.avatar"
-                sx={{ variant: 'molecules.feeditem.avatar' }}
-              />
-            </div>
-            <div className="min-w-0 flex-1">
-              <Text
-                className="text-sm font-medium text-gray-900 hover:underline block"
-                variant="molecules.feeditem.name"
-                sx={{ variant: 'molecules.feeditem.name' }}
-              >
-                {item.author.name}
-              </Text>
-              <Text
-                className="text-sm text-gray-500 hover:underline block"
-                variant="molecules.feeditem.date"
-                sx={{ variant: 'molecules.feeditem.date' }}
-              >
-                {item.date}
-              </Text>
-            </div>
+            <UserCard />
             <div className="flex-shrink-0 self-center flex">
               <Menu as="div" className="relative inline-block text-left">
                 <div>
@@ -150,137 +134,24 @@ export const FeedItemQuora = ({ item = defaultItem }) => {
             </div>
           </div>
 
-          <Text
+          <Heading
             className="mt-4 text-base font-medium text-gray-900"
             variant="molecules.feeditem.title"
             sx={{ variant: 'molecules.feeditem.title' }}
             as="h2"
           >
             {item.title}
-          </Text>
+          </Heading>
         </div>
-        <Text
+        <Paragraph
           className="mt-2 text-sm text-gray-700 space-y-4 whitespace-pre-line"
           variant="molecules.feeditem.paragraph"
           sx={{ variant: 'molecules.feeditem.paragraph' }}
           as="p"
         >
           {item.body}
-        </Text>
-        <div
-          className="mt-6 flex justify-between space-x-8"
-          sx={{
-            // marginTop: theme.space.base ? theme.space.base.y * 6 : undefined,
-            variant: 'molecules.feeditem.actions',
-          }}
-        >
-          <div className="flex space-x-6">
-            <span className="inline-flex items-center text-sm">
-              <button
-                type="button"
-                className="inline-flex space-x-2 text-gray-400 hover:text-gray-500"
-              >
-                <ThumbUpIcon
-                  className="h-5 w-5"
-                  aria-hidden="true"
-                  sx={{
-                    color:
-                      theme.molecules.feeditem.actions.activeIconColor ||
-                      'primary',
-                  }}
-                />
-                <span
-                  className="font-medium text-gray-900"
-                  sx={{
-                    color: theme.molecules.feeditem.actions.textColor,
-                  }}
-                >
-                  {item.likes}
-                </span>
-                <span className="sr-only">likes</span>
-              </button>
-            </span>
-            <span className="inline-flex items-center text-sm">
-              <button
-                type="button"
-                className="inline-flex space-x-2 text-gray-400 hover:text-gray-500"
-              >
-                <ChatAltIcon
-                  className="h-5 w-5"
-                  aria-hidden="true"
-                  sx={{
-                    color: theme.molecules.feeditem.actions.iconColor || 'text',
-                    opacity: theme.molecules.feeditem.actions.iconColor
-                      ? 1
-                      : 0.5,
-                  }}
-                />
-                <span
-                  className="font-medium text-gray-900"
-                  sx={{
-                    color: theme.molecules.feeditem.actions.textColor,
-                  }}
-                >
-                  {item.replies}
-                </span>
-                <span className="sr-only">replies</span>
-              </button>
-            </span>
-            <span className="inline-flex items-center text-sm">
-              <button
-                type="button"
-                className="inline-flex space-x-2 text-gray-400 hover:text-gray-500"
-              >
-                <EyeIcon
-                  className="h-5 w-5"
-                  aria-hidden="true"
-                  sx={{
-                    color: theme.molecules.feeditem.actions.iconColor || 'text',
-                    opacity: theme.molecules.feeditem.actions.iconColor
-                      ? 1
-                      : 0.5,
-                  }}
-                />
-                <span
-                  className="font-medium text-gray-900"
-                  sx={{
-                    color: theme.molecules.feeditem.actions.textColor,
-                  }}
-                >
-                  {item.views}
-                </span>
-                <span className="sr-only">views</span>
-              </button>
-            </span>
-          </div>
-          <div className="flex text-sm">
-            <span className="inline-flex items-center text-sm">
-              <button
-                type="button"
-                className="inline-flex space-x-2 text-gray-400 hover:text-gray-500"
-              >
-                <ShareIcon
-                  className="h-5 w-5"
-                  aria-hidden="true"
-                  sx={{
-                    color: theme.molecules.feeditem.actions.iconColor || 'text',
-                    opacity: theme.molecules.feeditem.actions.iconColor
-                      ? 1
-                      : 0.5,
-                  }}
-                />
-                <span
-                  className="font-medium text-gray-900"
-                  sx={{
-                    color: theme.molecules.feeditem.actions.textColor,
-                  }}
-                >
-                  Share
-                </span>
-              </button>
-            </span>
-          </div>
-        </div>
+        </Paragraph>
+        <Actions type="quora" />
       </article>
     </Card>
   )

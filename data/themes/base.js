@@ -1,9 +1,24 @@
 export const base = {
+  label: 'base',
   // spacing
   space: {
-    x: [2, 4, 8, 16, 20, 24, 32, 48, 64, 128],
-    y: [2, 4, 8, 16, 20, 24, 32, 48, 64, 128],
+    x: [2, 4, 8, 12, 16, 20, 24, 32, 48, 64, 128, 256, 512, 1024],
+    y: [2, 4, 8, 12, 16, 20, 24, 32, 48, 64, 128, 256, 512, 1024],
   },
+  // x  // 0 - 2
+  // 2x  // 1 - 4
+  // 4x  // 2 - 8
+  // 6x  // 3 - 12
+  // 8x  // 4 - 16
+  // 10x  // 5 - 20
+  // 12x  // 6 - 24
+  // 16x  // 7 - 32
+  // 24x  // 8 - 48
+  // 32x  // 9 - 64
+  // 64x  // 10 - 128
+  // 128x  // 11 - 256
+  // 256x  // 12 - 512
+  // 512x  // 13 - 1024
 
   // font
   fonts: {
@@ -11,11 +26,21 @@ export const base = {
     body: 'system-ui',
     monospace: 'monospace',
   },
-  fontSizes: [11, 13, 15, 18, 21, 24, 32, 48, 64],
+
+  fontSizes: [11, 13, 15, 18, 21, 24, 48],
+  // 0 - extrasmall
+  // 1 - small
+  // 2 - regular
+  // 3 - h3
+  // 4 - h2
+  // 5 - h1
+
   fontWeights: {
-    heading: 700,
-    body: 400,
     bold: 900,
+    heading: 600,
+    medium: 500,
+    regular: 400,
+    caption: 300,
     light: 100,
   },
   lineHeights: ['280%'],
@@ -53,7 +78,7 @@ export const base = {
     '3': '0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)',
     '4': '0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)',
     '5': '0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)',
-    default: '0 0 0 rgba(0,0,0,0.12), 0 0 0',
+    default: '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)',
   },
   // shadows: [
   //   '0 0px 0px rgba(0,0,0,0.12),',
@@ -67,14 +92,56 @@ export const base = {
   atoms: {
     text: {},
     card: {
-      shadow: 1,
+      bg: 'card',
+      border: 'border',
+      borderColor: 'borderColor',
+      // borderWidth:
+      boxShadow: 'default',
+      height: 'auto',
     },
-    label: {},
-    heading: {},
-    paragraph: {},
+    label: {
+      color: 'primary',
+      fontWeight: 'regular',
+      fontSize: 1,
+    },
+    heading: {
+      fontSize: 4,
+
+      h1: {
+        color: 'text',
+        lineHeight: 'normal',
+        fontSize: 5,
+      },
+      h2: {
+        color: 'text',
+        lineHeight: 'normal',
+        fontSize: 4,
+      },
+      h3: {
+        color: 'text',
+        // fontWeight: 'regular',
+        lineHeight: 'normal',
+        fontSize: 3,
+      },
+      h4: {
+        color: 'text',
+        fontWeight: 'regular',
+        lineHeight: 'normal',
+        fontSize: 2,
+      },
+    },
+    paragraph: {
+      color: 'text2',
+      fontSize: 2,
+      fontWeight: 'regular',
+    },
     image: {},
     name: {},
-    caption: {},
+    caption: {
+      color: 'text2',
+      fontSize: 1,
+      fontWeight: 'regular',
+    },
     avatar: {},
     button: {},
     input: {},
@@ -97,7 +164,7 @@ export const base = {
         order: 2,
       },
       heading: {
-        variant: 'atoms.heading',
+        variant: 'atoms.heading.h2',
         override: false,
         order: 3,
       },
@@ -110,8 +177,13 @@ export const base = {
         variant: 'atoms.usercard',
         override: false,
         order: 5,
+        name: {
+          variant: 'atoms.heading.h4',
+        },
+        caption: {
+          variant: 'atoms.caption',
+        },
       },
-      props: {},
     },
     form: {
       card: {

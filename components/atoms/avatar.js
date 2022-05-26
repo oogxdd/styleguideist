@@ -16,7 +16,7 @@ export const Avatar = ({
     <ThemeUIAvatar
       src={src}
       alt={alt}
-      className={className}
+      className={`duration-200 ${className}`}
       sx={{
         variant,
         ...sx,

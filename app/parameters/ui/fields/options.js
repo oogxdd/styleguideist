@@ -5,7 +5,7 @@ import { ThemeContext } from 'context'
 import { ShadowPresets } from './options/shadow'
 import { BorderPresets } from './options/border'
 import { SpacingPresets } from './options/spacing'
-import { ThemesPresets } from './options/themes'
+import { ThemesPresets } from './options/presets'
 
 export const Presets = ({ type }) => {
   const { theme, setTheme, setShadow } = useContext(ThemeContext)

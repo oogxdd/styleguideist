@@ -7,9 +7,8 @@ import * as themes from 'data/themes'
 const ThemeContext = createContext()
 
 const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useImmer(themes.white)
+  const [theme, setTheme] = useImmer(themes.base)
   const [adThemes, setAdThemes] = useState([]) // this is additional user-created themes
-  const [gfont, setGfont] = useState('system-ui')
 
   // set button spacing
   const setSpacing = (type, value) => {
@@ -115,9 +114,6 @@ const ThemeProvider = ({ children }) => {
 
         borderWidth,
         borderRadius,
-
-        setGfont,
-        gfont,
       }}
     >
       <ThemeUIProvider theme={theme}>{children}</ThemeUIProvider>

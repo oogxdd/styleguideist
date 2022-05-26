@@ -1,10 +1,17 @@
+/** @jsxImportSource theme-ui */
 import { useContext } from 'react'
 import { ThemeContext } from 'context'
 
-export const Caption = ({ children, sxx = {} }) => {
+export const Caption = ({ children, style = {} }) => {
   return (
-    <p className="mt-2 text-sm text-gray-500" sx={{ ...sxx }}>
+    <span
+      className="uration-200"
+      sx={{
+        variant: 'atoms.caption',
+        ...style,
+      }}
+    >
       {children}
-    </p>
+    </span>
   )
 }

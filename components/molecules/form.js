@@ -1,16 +1,7 @@
 import { useContext } from 'react'
 import { ThemeContext, AppContext } from 'context'
 
-import {
-  Card,
-  Input,
-  Button,
-  Checkbox,
-  Label,
-  Link,
-  Heading,
-  Paragraph,
-} from 'components/atoms'
+import { Card, Input, Button, Heading } from 'components/atoms'
 
 export const Form = () => {
   const { theme } = useContext(ThemeContext)
@@ -29,6 +20,7 @@ export const Form = () => {
         }}
       >
         <Heading
+          as="h1"
           sxx={{
             variant: 'atoms.heading',
             textTransform: 'uppercase',
@@ -53,7 +45,9 @@ export const Form = () => {
         variant: theme.molecules.form.card ? 'molecules.form.card' : undefined,
       }}
     >
-      <Heading variant="atoms.heading">Sign up</Heading>
+      <Heading variant="atoms.heading" as="h1">
+        Sign up
+      </Heading>
       <Field name="nickname" label="Username" placeholder="" />
       <Field
         name="email"

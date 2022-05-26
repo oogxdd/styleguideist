@@ -2,7 +2,10 @@ import { useContext, useState } from 'react'
 import { ThemeContext, AppContext } from 'context'
 import { downloadFile } from 'helpers'
 import { DownloadIcon, PlusIcon } from '@heroicons/react/solid'
-import { FolderDownloadIcon } from '@heroicons/react/outline'
+import {
+  // FolderDownloadIcon,
+  ArrowSmDownIcon,
+} from '@heroicons/react/outline'
 
 // import { presets } from 'data/themes'
 import { presets, base as defaultTheme } from 'data/themes'
@@ -47,22 +50,21 @@ export const ThemesPresets = ({ type }) => {
       })}
       <div
         className={`
-              h-10 w-10
-              max-h-10 max-w-10
-              border
-              focus:ring-indigo-500
-              cursor-pointer
-              flex
-              justify-center 
-              items-center
-              rounded
-              text-gray-300
-              hover:shadow-md
-              transition-sm
-              transition-75
-              transition-ease-out
-
-            `}
+          h-10 w-10
+          max-h-10 max-w-10
+          border
+          focus:ring-indigo-500
+          cursor-pointer
+          flex
+          justify-center 
+          items-center
+          rounded
+          text-gray-300
+          hover:shadow-md
+          transition-sm
+          transition-75
+          transition-ease-out
+        `}
         onClick={() => {
           const newThemeNumber = presets.length + adThemes.length + 1
           const newTheme = {
@@ -74,10 +76,10 @@ export const ThemesPresets = ({ type }) => {
           setTheme(newTheme)
           setPreset(newThemeNumber)
 
-          setComponent(organisms.find((c) => c.value === 'styleguide'))
-          setSelectedSubComponent(
-            organisms.find((c) => c.value === 'styleguide'),
-          )
+          // setComponent(organisms.find((c) => c.value === 'styleguide'))
+          // setSelectedSubComponent(
+          //   organisms.find((c) => c.value === 'styleguide'),
+          // )
 
           // window.localStorage.setItem('themes', JSON.stringify(theme))
           // downloadFile(`${presets.length + 1}.js`, JSON.stringify(theme))
@@ -110,8 +112,48 @@ export const ThemesPresets = ({ type }) => {
           }
         />
       </div>
+      <div
+        className={`
+          h-10 w-10
+          max-h-10 max-w-10
+          border
+          focus:ring-indigo-500
+          cursor-pointer
+          flex
+          justify-center 
+          items-center
+          rounded
+          text-gray-300
+          hover:shadow-md
+          transition-sm
+          transition-75
+          transition-ease-out
+        `}
+        onClick={() => {
+          downloadFile(`theme.js`, JSON.stringify(theme))
+        }}
+        sx={{
+          opacity: 0.5,
+          borderColor: 'borderColor',
+          color: 'text',
+
+          ':hover': {
+            opacity: 1,
+          },
+        }}
+      >
+        <ArrowSmDownIcon
+          className="h-4 w-4"
+          sx={
+            {
+              // color: preset.colors.primary,
+            }
+          }
+        />
+      </div>
     </div>
   )
+
   return
 }
 

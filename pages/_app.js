@@ -14,11 +14,6 @@ const App = ({ Component, pageProps }) => (
       />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       <link href="/css/index.css" rel="stylesheet" />
-      {/* <link href="/css/coinmarketcap.css" rel="stylesheet" /> */}
-      {/* <link */}
-      {/*   href="/css/homePage-2021-12-29-22-55-47800891c8cf5e5ec4497c43f5c6089235ec6dbe.css" */}
-      {/*   rel="stylesheet" */}
-      {/* /> */}
     </Head>
     <ThemeProvider>
       <AppProvider>

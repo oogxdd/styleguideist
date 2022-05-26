@@ -105,7 +105,6 @@ export default () => {
                             variant: c2.variant,
                           })
                         }}
-                        selectedSubComponent={selectedSubComponent}
                       >
                         {c2.name}
                       </Item>

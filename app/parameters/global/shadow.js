@@ -115,7 +115,9 @@ export const Shadow = ({ open = false }) => {
               const newShadowObj = [...shadowObj]
               newShadowObj[index] = {
                 ...newShadowObj[index],
-                color: color.hex,
+                color: `hsla(${color.hsl.h}, ${color.hsl.s * 100}%, ${
+                  color.hsl.l * 100
+                }%, ${color.hsl.a})`,
               }
               setShadowObj(newShadowObj)
             }}

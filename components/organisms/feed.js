@@ -1,26 +1,61 @@
+// 1: separators
+// 2. bubbles
+
 import { useContext } from 'react'
 import { ThemeContext, AppContext } from 'context'
+
 import * as Molecules from 'components/molecules'
 
-import {
-  Card,
-  // Text,
-  // Actions
-} from 'components/atoms'
-
-export const FeedQuora = ({ itemVar = 1 }) => {
+export const Feed = () => {
+  const { selectedComponent, selectedComponentVariant } = useContext(AppContext)
   const { theme } = useContext(ThemeContext)
 
   return (
-    <div className="flex flex-col pt-24 space-y-8 pb-24 h-full">
-      {questions.map((question) => (
-        <Molecules.FeedItem
-          itemVar={itemVar}
-          item={question}
-          key={question.id}
-        />
-      ))}
+    <div className="pt-24 pb-24">
+      <div
+        className="flex flex-col space-y-8 h-full"
+        sx={{
+          variant: 'organisms.feed.container',
+        }}
+      >
+        {questions.map((question, index) => {
+          return (
+            <>
+              <Molecules.FeedItem
+                itemVar={selectedComponentVariant}
+                item={question}
+                key={question.id}
+              />
+              {index !== questions.length - 1 && <Separator />}
+            </>
+          )
+        })}
+      </div>
     </div>
+  )
+}
+
+const Separator = () => {
+  const { theme } = useContext(ThemeContext)
+  // return <hr sx={{ variant: 'organisms.feed.separator' }} />
+
+  return (
+    <div
+      sx={{
+        width: '100%',
+        height: 1,
+        // background: 'borderColor',
+        background: '#e5e7eb',
+        mt: 32,
+        variant: 'organisms.feed.separator',
+        marginBottom: theme.organisms.feed.separator.mb
+          ? `${theme.organisms.feed.separator.mb}px !important`
+          : null,
+        marginTop: theme.organisms.feed.separator.mt
+          ? `${theme.organisms.feed.separator.mt}px !important`
+          : null,
+      }}
+    />
   )
 }
 

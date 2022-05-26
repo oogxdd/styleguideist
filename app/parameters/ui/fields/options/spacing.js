@@ -124,9 +124,27 @@ export const SpacingPresets = () => {
             `}
             onClick={() => {
               setPreset(index + 1)
+
+              const x = index + 1
+              const sizes = [
+                x,
+                2 * x,
+                4 * x,
+                6 * x,
+                8 * x,
+                10 * x,
+                12 * x,
+                16 * x,
+                24 * x,
+                32 * x,
+                64 * x,
+                128 * x,
+                256 * x,
+                512 * x,
+              ]
               setTheme((theme) => {
-                theme.space.base.x = index * 2
-                theme.space.base.y = index * 2
+                theme.space.x = sizes
+                theme.space.y = sizes
               })
               // setShadow(index)
             }}

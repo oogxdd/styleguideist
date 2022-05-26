@@ -1,12 +1,11 @@
 import { BlogPost, FeedItem, Form } from 'components/molecules'
 
 import {
-  Card,
-  Image,
-  Label,
-  Title,
   Heading,
   Paragraph,
+  Label,
+  Card,
+  Image,
   UserCard,
 } from 'components/atoms'
 
@@ -99,7 +98,7 @@ export const molecules = [
       {
         name: 'Heading',
         value: 'heading',
-        component: Title,
+        component: Heading,
         group: 'atoms',
         ordering: true,
         propsKey: 'title',
@@ -129,8 +128,8 @@ export const molecules = [
             group: 'atoms',
           },
           {
-            name: 'Name',
-            value: 'name',
+            name: 'Username',
+            value: 'heading',
             group: 'atoms',
           },
           {
@@ -156,7 +155,7 @@ export const molecules = [
         group: 'atoms',
         variant: 'molecules.form.card',
       },
-      { name: 'Title', value: 'title', group: 'atoms' },
+      { name: 'Heading', value: 'heading', group: 'atoms' },
       { name: 'Input', value: 'input', group: 'atoms' },
       {
         name: 'Button',
@@ -215,8 +214,8 @@ export const molecules = [
         variant: 'molecules.feeditem.date',
       },
       {
-        name: 'Title',
-        value: 'text',
+        name: 'Heading',
+        value: 'heading',
         group: 'atoms',
         variant: 'molecules.feeditem.title',
         availableIn: [1],

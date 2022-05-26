@@ -1,29 +1,25 @@
 import { useContext } from 'react'
 import { ThemeContext } from 'context'
 
-import { Avatar } from 'components/atoms'
+import { Avatar, Heading, Paragraph, Caption } from 'components/atoms'
 
-export const UserCard = ({ post = defaultPost }) => {
+export const UserCard = ({
+  post = defaultPost,
+  style,
+  // variant = 'molecules.blogpost.usercard',
+  variant = 'atoms',
+}) => {
   const { theme } = useContext(ThemeContext)
 
   return (
     <div
       className="mt-6 flex items-center"
       sx={{
-        marginTop: theme.space.base ? theme.space.base.y * 6 : undefined,
-        variant: 'atoms.usercard',
+        ...style,
       }}
     >
       <div className="flex-shrink-0">
         <a>
-          <span
-            className="sr-only"
-            sx={{
-              variant: 'atoms.name',
-            }}
-          >
-            {post.authorName}
-          </span>
           <Avatar
             alt="Avatar"
             src={post.authorAvatar}
@@ -32,40 +28,25 @@ export const UserCard = ({ post = defaultPost }) => {
         </a>
       </div>
       <div className={theme.name === 'butter' ? '' : 'ml-3'}>
-        <p
-          className="font-medium text-gray-900"
-          // sx={{
-          //   fontSize: theme.fontSizes
-          //     ? theme.fontSizes.base * 0.875
-          //     : undefined,
-          //   color: 'text',
-          //   variant: 'atoms.name',
-          // }}
+        <Heading
+          as="h4"
+          className="hover:underline"
+          style={{
+            variant: 'atoms.heading.h4',
+            // variant: `${variant}.name`,
+          }}
         >
-          <a
-            className="hover:underline"
-            sx={{
-              fontSize: theme.fontSizes
-                ? theme.fontSizes.base * 0.875
-                : undefined,
-              color: 'text',
-              variant: 'atoms.name',
-            }}
-          >
-            {post.authorName}
-          </a>
-        </p>
-        <span
-          sx={{
-            fontSize: theme.fontSizes
-              ? theme.fontSizes.base * 0.875
-              : undefined,
-            color: 'text2',
+          {post.authorName}
+        </Heading>
+        <Caption
+          style={{
             variant: 'atoms.caption',
+            // color: 'text2',
+            // variant: `${variant}.caption`,
           }}
         >
           {post.caption}
-        </span>
+        </Caption>
       </div>
     </div>
   )

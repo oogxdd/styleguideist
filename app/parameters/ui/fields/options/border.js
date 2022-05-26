@@ -43,7 +43,7 @@ export const BorderPresets = ({
             `}
             onClick={() => {
               setPreset(index + 1)
-              setBorderRadius(index * 16)
+              setBorderRadius(index * 8)
             }}
             key={preset}
             sx={{

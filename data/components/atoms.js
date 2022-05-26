@@ -1,23 +1,23 @@
 import {
-  Button,
-  Input,
-  Select,
-  Textarea,
-  Checkbox,
+  //
   Heading,
-  Title,
   Paragraph,
   Label,
-  Link,
+  Caption,
+  Text,
+
+  //
   Card,
   Image,
-  Name,
-  Caption,
   Avatar,
-  Badge,
+  Actions,
   UserCard,
   Section,
-  Text,
+  Separator,
+
+  //
+  Button,
+  Input,
 } from 'components/atoms'
 
 import {
@@ -40,7 +40,11 @@ export const atoms = [
       font(),
       shadow(),
       border(),
-      spacing({ margins: true, paddings: true, dimensions: true }),
+      spacing({
+        margins: true,
+        paddings: true,
+        dimensions: true,
+      }),
     ],
   },
   {
@@ -92,9 +96,9 @@ export const atoms = [
     ],
   },
   {
-    label: 'Text',
-    value: 'text',
-    component: Text,
+    label: 'Paragraph',
+    value: 'paragraph',
+    component: Paragraph,
     group: 'atoms',
     params: [
       color(),
@@ -105,9 +109,9 @@ export const atoms = [
     ],
   },
   {
-    label: 'Paragraph',
-    value: 'paragraph',
-    component: Paragraph,
+    label: 'Text',
+    value: 'text',
+    // component: Text,
     group: 'atoms',
     params: [
       color(),
@@ -146,7 +150,7 @@ export const atoms = [
   {
     label: 'Section',
     value: 'section',
-    component: Section,
+    // component: Section,
     group: 'atoms',
     // params: [color(), border(), spacing({ dimensions: true, paddings: true })],
   },
@@ -168,55 +172,6 @@ export const atoms = [
       border(),
       spacing({ dimensions: true, paddings: true, margins: true }),
       shadow(),
-      other(),
-    ],
-  },
-  {
-    label: 'Name',
-    value: 'name',
-    component: Name,
-    group: 'atoms',
-    params: [
-      color(),
-      font(),
-      spacing({ margins: true }),
-      shadow({ field: 'textShadow' }),
-    ],
-  },
-  // {
-  //   label: 'Select',
-  //   value: 'select',
-  //   component: Select,
-  //   group: 'atoms',
-  // },
-  // {
-  //   label: 'Textarea',
-  //   value: 'textarea',
-  //   component: Textarea,
-  //   group: 'atoms',
-  // },
-  // {
-  //   label: 'Checkbox',
-  //   value: 'checkbox',
-  //   component: Checkbox,
-  //   group: 'atoms',
-  // },
-  // {
-  //   label: 'Badge',
-  //   value: 'badge',
-  //   component: Badge,
-  //   group: 'atoms',
-  // },
-  {
-    label: 'Title',
-    value: 'heading',
-    component: Title,
-    group: 'atoms',
-    params: [
-      color(),
-      font(),
-      spacing({ margins: true }),
-      shadow({ field: 'textShadow' }),
       other(),
     ],
   },

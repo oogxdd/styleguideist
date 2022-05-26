@@ -1,11 +1,8 @@
-export * from './text'
+export * from './text/text'
 export * from './text/heading'
-export * from './text/title'
 export * from './text/paragraph'
 export * from './text/label'
-export * from './text/link'
 export * from './text/caption'
-export * from './text/name'
 
 export * from './fields/input'
 export * from './fields/textarea'
@@ -17,6 +14,6 @@ export * from './avatar'
 export * from './card'
 export * from './image'
 export * from './section'
-
-// duals
+export * from './separator'
 export * from './user-card'
+export * from './actions'

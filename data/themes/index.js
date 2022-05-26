@@ -28,6 +28,7 @@ export const presets = [
   butter,
   gray,
   spacy,
+  base,
   // militaryKind,
   // darkPurple,
   // huiZnaetZaebalsya,
