@@ -1,5 +1,5 @@
 export const base = {
-  label: 'base',
+  label: 'white',
   // spacing
   space: {
     x: [2, 4, 8, 12, 16, 20, 24, 32, 48, 64, 128, 256, 512, 1024],
@@ -21,10 +21,15 @@ export const base = {
   // 512x  // 13 - 1024
 
   // font
+  // fonts: {
+  //   heading: 'system-ui, sans-serif',
+  //   body: 'system-ui',
+  //   monospace: 'monospace',
+  // },
   fonts: {
-    heading: 'system-ui, sans-serif',
-    body: 'system-ui',
-    monospace: 'monospace',
+    body: 'Euclid',
+    heading: '"Spotify Circular", sans-serif',
+    monospace: 'Menlo, monospace',
   },
 
   fontSizes: [11, 13, 15, 18, 21, 24, 48],
@@ -246,6 +251,6 @@ export const base = {
       separator: {},
       preferredLayout: 2,
     },
-    styleguide: {},
+    styleguide: { card: { variant: 'atoms.card' } },
   },
 }

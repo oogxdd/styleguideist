@@ -4,7 +4,7 @@ const Tabs = ({ activeTab, setTab, tabs }) => (
     sx={{ borderColor: 'borderColor' }}
   >
     <span
-      className="w-1/2 flex items-center justify-center py-2 cursor-pointer"
+      className="w-1/2 flex items-center justify-center py-2 cursor-pointer transition duration-500"
       sx={
         activeTab === 'global'
           ? {
@@ -19,7 +19,7 @@ const Tabs = ({ activeTab, setTab, tabs }) => (
       {tabs[0]}
     </span>
     <span
-      className="w-1/2 flex items-center justify-center py-2 cursor-pointer"
+      className="w-1/2 flex items-center justify-center py-2 cursor-pointer transition duration-500"
       sx={
         activeTab === 'local'
           ? {

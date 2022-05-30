@@ -1,3 +1,4 @@
+import { UserCard } from 'components/organisms'
 import { Feed, Styleguide } from 'components/organisms'
 
 export const organisms = [
@@ -47,6 +48,34 @@ export const organisms = [
             group: 'atoms',
             variant: 'molecules.feeditem.card',
             // availableIn: [1, 2, 3, 4],
+          },
+          {
+            name: 'User card',
+            value: 'usercard',
+            component: UserCard,
+            group: 'atoms',
+            ordering: true,
+            propsKey: '*',
+            variant: 'organisms.feed.usercard',
+            children: [
+              {
+                name: 'Avatar',
+                value: 'avatar',
+                group: 'atoms',
+              },
+              {
+                name: 'Username',
+                value: 'heading',
+                group: 'atoms',
+                subvalue: 'h4',
+                parent: 'usercard',
+              },
+              {
+                name: 'Caption',
+                value: 'caption',
+                group: 'atoms',
+              },
+            ],
           },
           {
             name: 'Avatar',

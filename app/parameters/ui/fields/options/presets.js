@@ -22,7 +22,9 @@ export const ThemesPresets = ({ type }) => {
     setComponentVariant,
   } = useContext(AppContext)
   const { theme, setTheme, adThemes, setAdThemes } = useContext(ThemeContext)
-  const [selectedPreset, setPreset] = useState(1)
+  const [selectedPreset, setPreset] = useState(
+    [...presets, ...adThemes].findIndex((th) => th.label === theme.label) + 1,
+  )
 
   return (
     <div

@@ -8,6 +8,7 @@ export const Paragraph = ({ children = 'Paragraph', style = {} }) => {
     <p
       className="text-base uration-200"
       sx={{
+        variant: 'atoms.paragraph',
         ...style,
       }}
     >

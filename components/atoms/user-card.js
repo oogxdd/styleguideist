@@ -6,8 +6,8 @@ import { Avatar, Heading, Paragraph, Caption } from 'components/atoms'
 export const UserCard = ({
   post = defaultPost,
   style,
-  // variant = 'molecules.blogpost.usercard',
-  variant = 'atoms',
+  variant = 'molecules.blogpost.usercard',
+  // variant = 'atoms',
 }) => {
   const { theme } = useContext(ThemeContext)
 
@@ -15,6 +15,7 @@ export const UserCard = ({
     <div
       className="mt-6 flex items-center"
       sx={{
+        variant,
         ...style,
       }}
     >
@@ -23,16 +24,20 @@ export const UserCard = ({
           <Avatar
             alt="Avatar"
             src={post.authorAvatar}
-            sx={{ variant: 'atoms.avatar' }}
+            sx={{
+              variant: `${variant}.avatar`,
+              // variant: 'atoms.avatar',
+            }}
           />
         </a>
       </div>
-      <div className={theme.name === 'butter' ? '' : 'ml-3'}>
+      <div className={theme.name === 'yellow' ? '' : 'ml-3'}>
         <Heading
           as="h4"
           className="hover:underline"
           style={{
-            variant: 'atoms.heading.h4',
+            variant: `${variant}.heading`,
+            // variant: 'atoms.heading.h4',
             // variant: `${variant}.name`,
           }}
         >
@@ -40,7 +45,8 @@ export const UserCard = ({
         </Heading>
         <Caption
           style={{
-            variant: 'atoms.caption',
+            variant: `${variant}.caption`,
+            // variant: 'atoms.caption',
             // color: 'text2',
             // variant: `${variant}.caption`,
           }}

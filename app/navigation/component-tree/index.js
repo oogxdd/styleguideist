@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { AppContext, ThemeContext } from 'context'
+import { AppContext, ThemeContext, UIContext } from 'context'
 import { ChevronDownIcon } from '@heroicons/react/solid'
 
 import * as components from 'data/components'
@@ -11,8 +11,8 @@ export default () => {
     selectedSubComponent,
     setSelectedSubComponent,
     selectedComponentVariant,
-    fullscreen,
   } = useContext(AppContext)
+  const { fullscreen } = useContext(UIContext)
   const { theme } = useContext(ThemeContext)
 
   if (
@@ -76,6 +76,7 @@ export default () => {
                     //     : true)
                   }
                   onClick={() => {
+                    console.log('c1')
                     console.log(c1)
                     setSelectedSubComponent({
                       ...components[c1.group].find(
@@ -100,12 +101,23 @@ export default () => {
                         }
                         key={c2.group + c2.value}
                         onClick={() => {
+                          console.log('c2')
+                          console.log(c2)
+                          console.log(c1)
+                          // console.log({
+                          //   ...components[c2.group].find(
+                          //     (component) => component.value === c2.value,
+                          //   ),
+                          //   variant: c2.variant,
+                          //   subvalue: c1.subvalue,
+                          // })
                           setSelectedSubComponent({
+                            ...c2,
                             ...components[c2.group].find(
                               (component) => component.value === c2.value,
                             ),
-                            variant: c2.variant,
-                            subvalue: c1.subvalue,
+                            // variant: c2.variant,
+                            // subvalue: c1.subvalue,
                           })
                         }}
                       >

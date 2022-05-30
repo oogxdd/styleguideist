@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react'
-import { AppContext, ThemeContext } from 'context'
+import { AppContext, ThemeContext, UIContext } from 'context'
 
 import GlobalParameters from 'app/parameters/global'
 import LocalParameters from 'app/parameters/local'
@@ -21,14 +21,10 @@ import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/solid'
 
 const Parameters = () => {
   const { theme, setTheme } = useContext(ThemeContext)
-  const {
-    paramsType,
-    setParamsType,
-    selectedComponent,
-    selectedSubComponent,
-    fullscreen,
-    setFullscreen,
-  } = useContext(AppContext)
+  const { selectedComponent, selectedSubComponent } = useContext(AppContext)
+  const { paramsType, setParamsType, fullscreen, setFullscreen } = useContext(
+    UIContext,
+  )
 
   // theme[group][component][field]
   // theme.atoms.paragraph.fontSize
@@ -44,8 +40,11 @@ const Parameters = () => {
         }}
       >
         <div
-          className="parameters grid grid-cols-1 gap-x-8 gap-y-10 pt-0 min-h-screen overflow-scroll"
+          className="parameters grid grid-cols-1 gap-x-8 gap-y-10 pt-0 min-h-screen overflow-scroll transition duration-500"
           style={{ maxHeight: '125vh' }}
+          sx={{
+            bg: 'background',
+          }}
         >
           <form
             className="block border-r pb-6"

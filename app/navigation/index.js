@@ -1,12 +1,12 @@
 import { useContext, useEffect, useCallback, useRef } from 'react'
-import { AppContext } from 'context'
+import { AppContext, UIContext } from 'context'
 
 import Header from './menu/header'
 import Section from './menu/section'
 
 import MenuIcon from 'public/icons/menu.svg'
 
-import { atoms, molecules, organisms, templates } from 'data'
+import { atoms, molecules, organisms, templates } from 'data/components'
 
 const Navigation = () => {
   const {
@@ -15,7 +15,7 @@ const Navigation = () => {
     navigationFilter,
     setNavigationFilter,
     fullscreen,
-  } = useContext(AppContext)
+  } = useContext(UIContext)
 
   // return null
   // if (fullscreen) return null
@@ -53,7 +53,7 @@ const Collapsed = () => {
     setShowNavigation,
     navigationFilter,
     fullscreen,
-  } = useContext(AppContext)
+  } = useContext(UIContext)
 
   return (
     <MenuIcon
@@ -72,12 +72,10 @@ const Collapsed = () => {
 }
 
 const Expanded = () => {
-  const {
-    showNavigation,
-    setShowNavigation,
-    navigationFilter,
-    setComponent,
-  } = useContext(AppContext)
+  const { showNavigation, setShowNavigation, navigationFilter } = useContext(
+    UIContext,
+  )
+  const { setComponent } = useContext(AppContext)
 
   const allFilteredComponents = [
     ...atoms,
@@ -108,7 +106,7 @@ const Expanded = () => {
     return () => window.removeEventListener('keyup', onEnter)
   }, [])
 
-  const { fullscreen } = useContext(AppContext)
+  const { fullscreen } = useContext(UIContext)
 
   return (
     <div

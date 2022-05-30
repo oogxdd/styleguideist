@@ -1,11 +1,11 @@
 import { useContext } from 'react'
-import { AppContext } from 'context'
+import { UIContext } from 'context'
 
 import Component from './component'
 import Template from './template'
 
 const Section = ({ components, label }) => {
-  const { navigationFilter, setNavigationFilter } = useContext(AppContext)
+  const { navigationFilter, setNavigationFilter } = useContext(UIContext)
 
   const filteredComponents = components
     .filter((c) =>

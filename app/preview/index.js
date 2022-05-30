@@ -1,15 +1,17 @@
 import { useContext, useEffect } from 'react'
-import { AppContext } from 'context'
+import { AppContext, UIContext } from 'context'
 import { atoms, molecules, organisms, templates } from 'data/components'
 
 import Variants from './variants'
 
 const Preview = () => {
-  const { selectedComponent: comp, fullscreen } = useContext(AppContext)
+  const { selectedComponent: comp } = useContext(AppContext)
+  const { fullscreen } = useContext(UIContext)
 
   return (
     <div
-      className="flex flex-col justify-center items-center w-full h-screen overflow-auto py-0"
+      className="flex flex-col justify-center items-center w-full h-screen overflow-auto py-0
+      transition duration-500"
       sx={{
         bg: 'background',
         width: '100%',
@@ -21,10 +23,10 @@ const Preview = () => {
       <div
         className="flex items-start justify-center items-center w-full h-full relative"
         style={{
-          width:
-            comp.group === 'organisms'
-              ? 'calc(100vw - 18rem + 33px)'
-              : 'max-content',
+          width: '100%',
+          // comp.group === 'organisms'
+          //   ? 'calc(100vw - 18rem + 33px)'
+          //   : 'max-content',
         }}
       >
         {atoms.map(

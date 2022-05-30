@@ -7,7 +7,7 @@ import * as themes from 'data/themes'
 const ThemeContext = createContext()
 
 const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useImmer(themes.base)
+  const [theme, setTheme] = useImmer(themes.black)
   const [adThemes, setAdThemes] = useState([]) // this is additional user-created themes
 
   // set button spacing

@@ -1,8 +1,8 @@
 import { useContext } from 'react'
-import { AppContext } from 'context'
+import { UIContext } from 'context'
 
 const SearchBar = () => {
-  const { navigationFilter, setNavigationFilter } = useContext(AppContext)
+  const { navigationFilter, setNavigationFilter } = useContext(UIContext)
 
   return (
     <input

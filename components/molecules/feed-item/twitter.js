@@ -55,7 +55,7 @@ export const FeedItemTwitter = ({ item = defaultItem }) => {
     >
       <div className="flex-col my-1 mx-3">
         <div id="title" className="flex items-center justify-between">
-          <UserCard />
+          <UserCard variant="molecules.feeditem.usercard" />
           <div id="options">
             <div className="w-7 text-gray-400 hover:text-blue-400 hover:bg-blue-100 duration-200 rounded-full p-1">
               <svg

@@ -55,7 +55,7 @@ const LocalParameters = () => {
             return <ShadowParams param={param} key={param.type} />
           }
 
-          console.log(sub)
+          // console.log(sub)
           return (
             <Section name={param.name} open={false} key={param.type}>
               {param.fields.map((field) => {
@@ -63,23 +63,74 @@ const LocalParameters = () => {
                 let onChange
 
                 if (override) {
-                  // modify variant parameters
-                  value = theme[comp.group][comp.value][sub.value][field.key]
-                  onChange = (value) => {
-                    setTheme((theme) => {
-                      theme[comp.group][comp.value][sub.value][
-                        field.key
-                      ] = value
-                    })
+                  if (sub.subvalue) {
+                    // console.log(sub)
+                    // console.log(sub)
+                    // console.log(sub)
+                    // console.log(sub)
+                    // console.log(sub)
+                    // this one is done for atoms.heading.h1
+
+                    console.log('sub.subvalue')
+                    console.log(sub.subvalue)
+                    console.log(comp)
+                    console.log(sub)
+                    // console.log(theme[comp.group])
+                    console.log(theme[comp.group][comp.value])
+                    if (sub.parent) {
+                      //
+                      value =
+                        theme[comp.group][comp.value][sub.parent][sub.value][
+                          field.key
+                        ]
+                      onChange = (value) => {
+                        setTheme((theme) => {
+                          theme[comp.group][comp.value][sub.parent][sub.value][
+                            field.key
+                          ] = value
+                        })
+                      }
+                    } else {
+                      value =
+                        theme[comp.group][comp.value][sub.value][field.key]
+                      onChange = (value) => {
+                        setTheme((theme) => {
+                          theme[comp.group][comp.value][sub.value][
+                            field.key
+                          ] = value
+                        })
+                      }
+                    }
+                    // value =
+                    //   theme[comp.group][comp.value][sub.value][sub.subvalue][
+                    //     field.key
+                    //   ]
+                    // onChange = (value) => {
+                    //   setTheme((theme) => {
+                    //     theme[comp.group][comp.value][sub.value][sub.subvalue][
+                    //       field.key
+                    //     ] = value
+                    //   })
+                    // }
+                  } else {
+                    // modify variant parameters
+                    value = theme[comp.group][comp.value][sub.value][field.key]
+                    onChange = (value) => {
+                      setTheme((theme) => {
+                        theme[comp.group][comp.value][sub.value][
+                          field.key
+                        ] = value
+                      })
+                    }
                   }
                 } else {
                   // modify subcomponent original parameters
                   if (sub.subvalue) {
-                    console.log(sub)
-                    console.log(sub)
-                    console.log(sub)
-                    console.log(sub)
-                    console.log(sub)
+                    // console.log(sub)
+                    // console.log(sub)
+                    // console.log(sub)
+                    // console.log(sub)
+                    // console.log(sub)
                     // this one is done for atoms.heading.h1
 
                     value = theme[sub.group][sub.value][sub.subvalue][field.key]

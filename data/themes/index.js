@@ -1,9 +1,10 @@
 import { white } from './white'
-import { butter } from './butter'
+import { yellow } from './yellow'
 import { green } from './green'
 import { gray } from './gray'
 import { spacy } from './spacy'
 import { base } from './base'
+import { black } from './black'
 // import { militaryKind } from './military-kind'
 // import { darkPurple } from './dark-purple'
 // import { huiZnaetZaebalsya } from './hui-znaet-zaebalsya'
@@ -12,23 +13,25 @@ import { base } from './base'
 // import { redGreenPurpleBlue } from './red-green-purple-blue'
 
 export {
-  white,
+  base,
   green,
-  butter,
+  yellow,
   gray,
   spacy,
-  base,
+  black,
+  white,
   // militaryKind,
   //
 }
 
 export const presets = [
-  white,
+  base,
   green,
-  butter,
+  yellow,
   gray,
   spacy,
-  base,
+  black,
+  white,
   // militaryKind,
   // darkPurple,
   // huiZnaetZaebalsya,

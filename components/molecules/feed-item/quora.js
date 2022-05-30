@@ -36,7 +36,7 @@ export const FeedItemQuora = ({ item = defaultItem }) => {
       <article>
         <div>
           <div className="flex justify-between items-center space-x-3">
-            <UserCard />
+            <UserCard variant="molecules.feeditem.usercard" />
             <div className="flex-shrink-0 self-center flex">
               <Menu as="div" className="relative inline-block text-left">
                 <div>

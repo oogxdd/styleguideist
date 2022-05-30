@@ -1,12 +1,9 @@
 import { useContext, useState } from 'react'
-import { AppContext, ThemeContext } from 'context'
+import { AppContext, ThemeContext, UIContext } from 'context'
 
 const Variants = () => {
-  const {
-    selectedComponent,
-    selectedComponentVariant,
-    fullscreen,
-  } = useContext(AppContext)
+  const { selectedComponent, selectedComponentVariant } = useContext(AppContext)
+  const { fullscreen } = useContext(UIContext)
   const toShow =
     selectedComponent.layoutVariants &&
     selectedComponent.layoutVariants.length > 0
@@ -39,7 +36,7 @@ const Variants = () => {
 
 const Variant = ({ children, selected = false, val }) => {
   const { setComponentVariant, selectedComponent } = useContext(AppContext)
-  const { setTheme } = useContext(ThemeContext)
+  const { theme, setTheme } = useContext(ThemeContext)
 
   return (
     <div
@@ -52,17 +49,27 @@ const Variant = ({ children, selected = false, val }) => {
           setComponentVariant(val)
 
           if (selectedComponent.value === 'blogpost') {
+            let prevWidth =
+              theme.molecules.blogpost.card.width || theme.atoms.card.width
+            console.log(prevWidth)
+            console.log(prevWidth)
+            console.log(prevWidth)
+            console.log(prevWidth)
             if (val === 2) {
+              console.log(prevWidth ? prevWidth / 2 : 400)
               setTheme((theme) => {
-                theme.molecules.blogpost.card.width =
-                  theme.molecules.blogpost.card.width * 2 || 400
+                theme.molecules.blogpost.card.width = prevWidth
+                  ? prevWidth * 2
+                  : 800
               })
               //
             }
             if (val === 1) {
+              console.log(prevWidth ? prevWidth / 2 : 800)
               setTheme((theme) => {
-                theme.molecules.blogpost.card.width =
-                  theme.molecules.blogpost.card.width / 2 || 800
+                theme.molecules.blogpost.card.width = prevWidth
+                  ? prevWidth / 2
+                  : 400
               })
               //
             }

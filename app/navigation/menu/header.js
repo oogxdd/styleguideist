@@ -1,9 +1,9 @@
-import { XIcon } from '@heroicons/react/solid'
 import { useContext } from 'react'
-import { AppContext } from 'context'
+import { UIContext } from 'context'
 
 import SearchBar from './search-bar'
 import CloseIcon from 'public/icons/close.svg'
+import { XIcon } from '@heroicons/react/solid'
 
 const Header = () => (
   <div className="flex justify-between mb-8">
@@ -13,7 +13,7 @@ const Header = () => (
 )
 
 const Close = () => {
-  const { setShowNavigation } = useContext(AppContext)
+  const { setShowNavigation } = useContext(UIContext)
 
   return (
     <CloseIcon

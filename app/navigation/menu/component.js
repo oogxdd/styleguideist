@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { AppContext } from 'context'
+import { AppContext, UIContext } from 'context'
 
 import { LinkIcon } from '@heroicons/react/solid'
 
@@ -8,8 +8,8 @@ const Component = ({ component }) => {
     selectedComponent,
     setComponent,
     setSelectedSubComponent,
-    setShowNavigation,
   } = useContext(AppContext)
+  const { setShowNavigation } = useContext(UIContext)
 
   const isSelected = selectedComponent.value === component.value
 

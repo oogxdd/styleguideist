@@ -133,6 +133,7 @@ export const molecules = [
             value: 'heading',
             group: 'atoms',
             subvalue: 'h4',
+            parent: 'usercard',
           },
           {
             name: 'Caption',

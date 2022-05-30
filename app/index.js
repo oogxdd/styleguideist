@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react'
-import { AppContext, ThemeContext } from 'context'
+import { AppContext, ThemeContext, UIContext } from 'context'
 
 import Parameters from 'app/parameters'
 import Preview from 'app/preview'
@@ -13,7 +13,7 @@ import { molecules, organisms } from 'data/components'
 import { ChipIcon } from '@heroicons/react/outline'
 
 const App = () => {
-  const { fullscreen } = useContext(AppContext)
+  const { fullscreen } = useContext(UIContext)
 
   return (
     <div className="flex h-screen items-center">
@@ -44,23 +44,22 @@ const Presets = () => {
             <div
               style={{ marginLeft: 2, marginRight: 2 }}
               className={`
-              text-xs
-              h-5 w-5
-              max-h-10 max-w-10
-              border
-              focus:ring-indigo-500
-              cursor-pointer
-              flex
-              justify-center 
-              items-center
-              rounded
-              hover:shadow-md
-              transition-sm
-              transition-75
-              transition-ease-out
-              relative
-
-            `}
+                text-xs
+                h-5 w-5
+                max-h-10 max-w-10
+                border
+                focus:ring-indigo-500
+                cursor-pointer
+                flex
+                justify-center 
+                items-center
+                rounded
+                hover:shadow-md
+                transition-sm
+                transition-75
+                transition-ease-out
+                relative
+              `}
               onClick={() => {
                 // text-gray-${isSelected ? 500 : 300}
                 // border-gray-${isSelected ? 500 : 300}
