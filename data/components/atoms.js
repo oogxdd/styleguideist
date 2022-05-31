@@ -36,15 +36,28 @@ export const atoms = [
     component: Button,
     group: 'atoms',
     params: [
-      color(),
+      color({
+        fields: [
+          {
+            type: 'colorpicker',
+            key: 'background',
+            label: 'Background',
+          },
+          {
+            type: 'colorpicker',
+            key: 'color',
+            label: 'Text',
+          },
+        ],
+      }),
       font(),
-      shadow(),
       border(),
       spacing({
         margins: true,
         paddings: true,
         dimensions: true,
       }),
+      shadow(),
     ],
   },
   {
@@ -60,12 +73,17 @@ export const atoms = [
             key: 'background',
             label: 'Background',
           },
+          {
+            type: 'colorpicker',
+            key: 'color',
+            label: 'Text',
+          },
         ],
       }),
       font(),
       border(),
-      shadow(),
       spacing({ margins: true, paddings: true, dimensions: true }),
+      shadow(),
     ],
   },
   {
@@ -267,6 +285,25 @@ export const atoms = [
       spacing({ margins: true, paddings: true, dimensions: true }),
       // shadow(),
       // other(),
+    ],
+  },
+  {
+    label: 'Field',
+    value: 'field',
+    group: 'atoms',
+    params: [
+      color({
+        fields: [
+          {
+            type: 'colorpicker',
+            key: 'background',
+            label: 'Color',
+          },
+        ],
+      }),
+      spacing({ margins: true, paddings: true }),
+      shadow(),
+      border(),
     ],
   },
 ]

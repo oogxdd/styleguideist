@@ -51,12 +51,7 @@ const Variant = ({ children, selected = false, val }) => {
           if (selectedComponent.value === 'blogpost') {
             let prevWidth =
               theme.molecules.blogpost.card.width || theme.atoms.card.width
-            console.log(prevWidth)
-            console.log(prevWidth)
-            console.log(prevWidth)
-            console.log(prevWidth)
             if (val === 2) {
-              console.log(prevWidth ? prevWidth / 2 : 400)
               setTheme((theme) => {
                 theme.molecules.blogpost.card.width = prevWidth
                   ? prevWidth * 2
@@ -65,7 +60,6 @@ const Variant = ({ children, selected = false, val }) => {
               //
             }
             if (val === 1) {
-              console.log(prevWidth ? prevWidth / 2 : 800)
               setTheme((theme) => {
                 theme.molecules.blogpost.card.width = prevWidth
                   ? prevWidth / 2

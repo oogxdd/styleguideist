@@ -10,13 +10,21 @@ export const FeedItem = ({ itemVar }) => {
 
   const variant = itemVar || selectedComponentVariant
 
-  if (variant === 2) {
+  // 1 - twitter
+  // 2 - quora
+  // 3 - bubble
+
+  if (variant === 1) {
     return <FeedItemTwitter />
+  }
+
+  if (variant === 2) {
+    return <FeedItemQuora />
   }
 
   if (variant === 3) {
     return <FeedItemBubble />
   }
 
-  return <FeedItemQuora />
+  return <FeedItemTwitter />
 }

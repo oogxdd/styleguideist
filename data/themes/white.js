@@ -147,7 +147,7 @@ export const white = {
       paragraph: { mr: 8 },
       actions: { mt: 16, mb: 15, textColor: '#111827' },
       text: {},
-      preferredLayout: 2,
+      preferredLayout: 1,
     },
   },
   organisms: {
@@ -167,8 +167,10 @@ export const white = {
         mt: 1,
         mb: 0,
       },
-      preferredLayout: 2,
+      preferredLayout: 1,
     },
+  },
+  templates: {
     styleguide: { card: { variant: 'atoms.card' } },
   },
 }

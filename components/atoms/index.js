@@ -4,10 +4,7 @@ export * from './text/paragraph'
 export * from './text/label'
 export * from './text/caption'
 
-export * from './fields/input'
-export * from './fields/textarea'
-export * from './fields/checkbox'
-export * from './fields/select'
+export * from './fields'
 
 export * from './button'
 export * from './avatar'

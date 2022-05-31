@@ -70,14 +70,13 @@ export default () => {
                   level={1}
                   underline={
                     selectedSubComponent.value === c1.value &&
-                    selectedSubComponent.variant === c1.variant
+                    selectedSubComponent.variant === c1.variant &&
+                    selectedSubComponent.subvalue === c1.subvalue
                     // && (c1.variant
                     //     ? selectedSubComponent.variant === c1.variant
                     //     : true)
                   }
                   onClick={() => {
-                    console.log('c1')
-                    console.log(c1)
                     setSelectedSubComponent({
                       ...components[c1.group].find(
                         (component) => component.value === c1.value,
@@ -99,18 +98,8 @@ export default () => {
                           selectedSubComponent.value === c2.value &&
                           selectedSubComponent.variant === c2.variant
                         }
-                        key={c2.group + c2.value}
+                        key={c2.group + c2.value + c2.variant}
                         onClick={() => {
-                          console.log('c2')
-                          console.log(c2)
-                          console.log(c1)
-                          // console.log({
-                          //   ...components[c2.group].find(
-                          //     (component) => component.value === c2.value,
-                          //   ),
-                          //   variant: c2.variant,
-                          //   subvalue: c1.subvalue,
-                          // })
                           setSelectedSubComponent({
                             ...c2,
                             ...components[c2.group].find(

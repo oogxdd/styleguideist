@@ -51,63 +51,6 @@ export const green = {
     borderColor: 'hsla(265.39534724035934, 37.79%, 16.55%, 0.35)',
     border: 'hsla(246.04617032991104, 100%, 50%, 1)',
   },
-  styles: {
-    root: { fontFamily: 'body', lineHeight: 'body', fontWeight: 'body' },
-    h1: {
-      color: 'text',
-      fontFamily: 'heading',
-      lineHeight: 'heading',
-      fontWeight: 'heading',
-    },
-    h2: {
-      color: 'text',
-      fontFamily: 'heading',
-      lineHeight: 'heading',
-      fontWeight: 'heading',
-    },
-    h3: {
-      color: 'text',
-      fontFamily: 'heading',
-      lineHeight: 'heading',
-      fontWeight: 'heading',
-    },
-    h4: {
-      color: 'text',
-      fontFamily: 'heading',
-      lineHeight: 'heading',
-      fontWeight: 'heading',
-    },
-    h5: {
-      color: 'text',
-      fontFamily: 'heading',
-      lineHeight: 'heading',
-      fontWeight: 'heading',
-    },
-    h6: {
-      color: 'text',
-      fontFamily: 'heading',
-      lineHeight: 'heading',
-      fontWeight: 'heading',
-      fontSize: 0,
-    },
-    p: {
-      color: 'text',
-      fontFamily: 'body',
-      fontWeight: 'body',
-      lineHeight: 'body',
-    },
-    a: { color: 'primary' },
-    pre: {
-      fontFamily: 'monospace',
-      overflowX: 'auto',
-      code: { color: 'inherit' },
-    },
-    code: { fontFamily: 'monospace', fontSize: 'inherit' },
-    table: { width: '100%', borderCollapse: 'separate', borderSpacing: 0 },
-    th: { textAlign: 'left', borderBottomStyle: 'solid' },
-    td: { textAlign: 'left', borderBottomStyle: 'solid' },
-    img: { maxWidth: '100%' },
-  },
   radii: ['6.25px', '12.5px', '25px', '50px', '100px'],
   borders: { border: '0px solid borderColor' },
   buttons: {
@@ -262,6 +205,8 @@ export const green = {
     },
     feeditem: {
       card: {
+        variant: 'atoms.card',
+        override: false,
         pt: 24,
         pb: 30,
         pl: 42,
@@ -271,6 +216,8 @@ export const green = {
         background: 'hsla(249.99999999999994, 0%, 100%, 0.51)',
       },
       avatar: {
+        variant: 'atoms.avatar',
+        override: false,
         width: 40,
         height: 40,
         minWidth: 40,
@@ -278,6 +225,8 @@ export const green = {
         borderWidth: 0,
       },
       name: {
+        variant: 'atoms.heading.h4',
+        override: false,
         fontSize: 15,
         fontFamily: 'Neue Montreal',
         fontWeight: 600,
@@ -287,8 +236,13 @@ export const green = {
         color:
           'hsla(103.7554947075883, 24.898519952538564%, 18.0066185%, 0.91)',
       },
-      username: {},
+      username: {
+        variant: 'atoms.heading.h4',
+        override: false,
+      },
       date: {
+        variant: 'atoms.caption',
+        override: false,
         ml: 0,
         color: 'hsla(249.9999999999998, 0%, 0%, 0.38)',
         fontFamily: 'Manrope',
@@ -297,6 +251,8 @@ export const green = {
         fontSize: 13,
       },
       title: {
+        variant: 'atoms.heading.h3',
+        override: false,
         fontFamily: 'Neue Montreal',
         letterSpacing: 0.2,
         lineHeight: -5,
@@ -305,6 +261,8 @@ export const green = {
         mb: 18,
       },
       paragraph: {
+        variant: 'atoms.paragraph',
+        override: false,
         fontFamily: 'Manrope',
         mt: 0,
         fontSize: 16,
@@ -312,9 +270,16 @@ export const green = {
         letterSpacing: 0.3,
         lineHeight: 1.4,
       },
-      actions: { textColor: '#111827' },
-      text: {},
-      preferredLayout: 1,
+      actions: {
+        variant: 'atoms.actions',
+        override: false,
+        textColor: '#111827',
+      },
+      text: {
+        variant: 'atoms.text',
+        override: false,
+      },
+      preferredLayout: 2,
     },
   },
   organisms: {
@@ -324,8 +289,10 @@ export const green = {
       separator: {
         background: 'hsla(249.99999999999994, 50.000000000000014%, 20%, 0)',
       },
-      preferredLayout: 1,
+      preferredLayout: 2,
     },
+  },
+  templates: {
     styleguide: { card: { variant: 'atoms.card' } },
   },
 }

@@ -115,7 +115,9 @@ export const base = {
       h1: {
         color: 'text',
         lineHeight: 'normal',
-        fontSize: 5,
+        // fontSize: 5,
+        fontSize: '1.875rem',
+        lineHeight: '2.25rem',
       },
       h2: {
         color: 'text',
@@ -148,8 +150,14 @@ export const base = {
       fontWeight: 'regular',
     },
     avatar: {},
-    button: {},
-    input: {},
+    button: { height: 40, borderRadius: 6, borderWidth: 0, pl: 16, pr: 16 },
+    input: {
+      height: 40,
+      color: 'hsla(250, 0%, 0%, 1)',
+      borderRadius: 6,
+      background: 'hsla(250, 0%, 96.86274509803921%, 1)',
+      borderColor: 'hsla(250, 0%, 90.19607843137256%, 1)',
+    },
     usercard: {},
   },
   molecules: {
@@ -189,11 +197,18 @@ export const base = {
           variant: 'atoms.caption',
         },
       },
+      props: {
+        //
+      },
     },
     form: {
+      heading: {
+        variant: 'atoms.heading.h1',
+      },
       card: {
         variant: 'atoms.card',
         override: false,
+        boxShadow: 'none',
       },
       input: {
         variant: 'atoms.input',
@@ -208,14 +223,23 @@ export const base = {
       card: {
         variant: 'atoms.card',
         override: false,
+        width: 528,
+        ml: 24,
+        mr: 24,
+        pt: 8,
       },
       avatar: {
         variant: 'atoms.avatar',
         override: false,
+        width: 48,
+        height: 48,
+        minWidth: 48,
+        minHeight: 48,
       },
       name: {
         variant: 'atoms.name',
         override: false,
+        display: 'block',
       },
       username: {
         variant: 'atoms.username',
@@ -224,6 +248,8 @@ export const base = {
       date: {
         variant: 'atoms.date',
         override: false,
+        display: 'block',
+        color: 'hsla(0, 0%, 0%, 0.5)',
       },
       title: {
         variant: 'atoms.title',
@@ -232,25 +258,43 @@ export const base = {
       paragraph: {
         variant: 'atoms.paragraph',
         override: false,
+        mr: 8,
       },
       actions: {
         variant: 'atoms.actions',
         override: false,
+        mt: 16,
+        mb: 15,
+        textColor: '#111827',
       },
       text: {
         variant: 'atoms.text',
         override: false,
       },
-      preferredLayout: 2,
+      preferredLayout: 1,
     },
   },
   organisms: {
     feed: {
       background: {},
-      container: {},
-      separator: {},
-      preferredLayout: 2,
+      container: {
+        width: 578,
+        borderWidth: 1,
+        borderColor: 'hsla(249.9999999999998, 0%, 0%, 1)',
+        borderRadius: 26,
+        pt: 16,
+        pl: 0,
+        pr: 0,
+      },
+      separator: {
+        background: 'hsla(249.99999999999994, 0%, 0%, 1)',
+        mt: 1,
+        mb: 0,
+      },
+      preferredLayout: 1,
     },
+  },
+  templates: {
     styleguide: { card: { variant: 'atoms.card' } },
   },
 }

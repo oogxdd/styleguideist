@@ -1,14 +1,7 @@
 import { UserCard } from 'components/organisms'
-import { Feed, Styleguide } from 'components/organisms'
+import { Feed } from 'components/organisms'
 
 export const organisms = [
-  {
-    label: 'Styleguide',
-    value: 'styleguide',
-    component: Styleguide,
-    enabled: true,
-    group: 'organisms',
-  },
   {
     label: 'Feed',
     value: 'feed',

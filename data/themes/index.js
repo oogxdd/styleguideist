@@ -19,7 +19,7 @@ export {
   gray,
   spacy,
   black,
-  white,
+  // white,
   // militaryKind,
   //
 }
@@ -31,7 +31,7 @@ export const presets = [
   gray,
   spacy,
   black,
-  white,
+  // white,
   // militaryKind,
   // darkPurple,
   // huiZnaetZaebalsya,

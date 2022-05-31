@@ -16,7 +16,6 @@ export const Spacing = ({ open = false }) => {
         step="0.01"
         value={theme.space.x[0]}
         onChange={(value) => {
-          console.log(value)
           const x = value
 
           const sizes = [

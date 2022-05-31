@@ -1,9 +1,11 @@
-// import {} from 'components/templates'
+import { Styleguide } from 'components/templates'
 
 export const templates = [
-  // {
-  //   label: 'ListingPage',
-  //   value: 'listing-page',
-  //   component: ListingPage,
-  // },
+  {
+    label: 'Styleguide',
+    value: 'styleguide',
+    component: Styleguide,
+    enabled: true,
+    group: 'templates',
+  },
 ]

@@ -246,6 +246,8 @@ export const gray = {
     },
     feeditem: {
       card: {
+        variant: 'atoms.card',
+        override: false,
         width: '100%',
         maxWidth: '100%',
         pl: 36,
@@ -254,6 +256,8 @@ export const gray = {
         pt: '32px !important',
       },
       avatar: {
+        variant: 'atoms.avatar',
+        override: false,
         width: 99,
         height: 99,
         mr: 20,
@@ -262,6 +266,8 @@ export const gray = {
         minHeight: 99,
       },
       name: {
+        variant: 'atoms.heading.h4',
+        override: false,
         fontFamily: 'Luckiest_Guy',
         textShadow:
           '12px 8px 93px hsla(0, 61.4465611882467%, 49.85550599999999%, 1), 3px 5px 0 hsla(249.99999999999994, 83.68846436443792%, 42.915051999999996%, 1)',
@@ -273,9 +279,20 @@ export const gray = {
         mt: 33,
         mb: 17,
       },
-      username: { display: 'none', fontSize: 27 },
-      date: { display: 'none' },
+      username: {
+        variant: 'atoms.heading.h4',
+        override: false,
+        display: 'none',
+        fontSize: 27,
+      },
+      date: {
+        variant: 'atoms.caption',
+        override: false,
+        display: 'none',
+      },
       title: {
+        variant: 'atoms.heading.h3',
+        override: false,
         fontSize: 27,
         fontFamily: 'Bangers',
         mb: 33,
@@ -283,6 +300,8 @@ export const gray = {
         color: 'hsla(51.917496079644536, 100%, 58.50500000000001%, 1)',
       },
       paragraph: {
+        variant: 'atoms.paragraph',
+        override: false,
         fontSize: 25,
         fontWeight: 100,
         color:
@@ -294,9 +313,18 @@ export const gray = {
         mr: 5,
         ml: 0,
       },
-      actions: { mt: 19, mb: 24, textColor: '#111827' },
-      text: {},
-      preferredLayout: 2,
+      actions: {
+        variant: 'atoms.actions',
+        override: false,
+        mt: 19,
+        mb: 24,
+        textColor: '#111827',
+      },
+      text: {
+        variant: 'atoms.text',
+        override: false,
+      },
+      preferredLayout: 1,
     },
   },
   organisms: {
@@ -314,8 +342,10 @@ export const gray = {
         mt: '0',
         mb: '0',
       },
-      preferredLayout: 2,
+      preferredLayout: 1,
     },
+  },
+  templates: {
     styleguide: { card: { variant: 'atoms.card' } },
   },
 }

@@ -98,12 +98,15 @@ export const black = {
     },
     paragraph: { color: 'text2', fontSize: 2, fontWeight: 'regular' },
     image: {},
-    name: {},
     caption: { color: 'text2', fontSize: 14, fontWeight: 'regular' },
     avatar: {},
-    button: {},
+    button: {
+      primary: {},
+      secondary: {},
+    },
     input: {},
     usercard: {},
+    field: {},
   },
   molecules: {
     blogpost: {
@@ -133,29 +136,68 @@ export const black = {
     },
     form: {
       card: { variant: 'atoms.card', override: false },
-      input: { variant: 'atoms.input', override: false },
-      button: { variant: 'atoms.button', override: false },
+      input: {
+        variant: 'atoms.input',
+        override: false,
+      },
+      label: {
+        // variant: 'atoms.label',
+        override: true,
+        unique: true,
+      },
+      caption: {
+        // variant: 'atoms.caption',
+        override: true,
+        unique: true,
+      },
+
+      field: {
+        variant: 'atoms.field',
+        override: true,
+        input: {
+          variant: 'atoms.input',
+          override: false,
+          unique: true,
+        },
+        label: {
+          // variant: 'atoms.label',
+          override: true,
+          unique: true,
+        },
+        caption: {
+          // variant: 'atoms.caption',
+          override: true,
+          unique: true,
+        },
+      },
+      button: {
+        primary: {
+          variant: 'atoms.button',
+          override: false,
+        },
+        secondary: {
+          variant: 'atoms.button',
+          override: false,
+        },
+      },
     },
     feeditem: {
       card: { variant: 'atoms.card', override: false },
       avatar: { variant: 'atoms.avatar', override: false },
-      name: { variant: 'atoms.name', override: false },
-      username: { variant: 'atoms.username', override: false },
-      date: { variant: 'atoms.date', override: false },
-      title: { variant: 'atoms.title', override: false },
+      name: { variant: 'atoms.heading.h4', override: false },
+      username: { variant: 'atoms.heading.h4', override: false },
+      date: { variant: 'atoms.caption', override: false },
+      title: { variant: 'atoms.heading.h3', override: false },
       paragraph: { variant: 'atoms.paragraph', override: false },
       actions: { variant: 'atoms.actions', override: false },
       text: { variant: 'atoms.text', override: false },
-      preferredLayout: 2,
-      usercard: {
-        avatar: { variant: 'atoms.avatar' },
-        heading: { variant: 'atoms.heading.h4' },
-        caption: { variant: 'atoms.caption' },
-      },
+      preferredLayout: 1,
     },
   },
   organisms: {
-    feed: { background: {}, container: {}, separator: {}, preferredLayout: 2 },
+    feed: { background: {}, container: {}, separator: {}, preferredLayout: 1 },
+  },
+  templates: {
     styleguide: { card: { variant: 'atoms.card' } },
   },
 }

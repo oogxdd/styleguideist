@@ -206,6 +206,8 @@ export const yellow = {
     },
     feeditem: {
       card: {
+        variant: 'atoms.card',
+        override: false,
         pt: 24,
         pb: 16,
         pl: 32,
@@ -216,6 +218,8 @@ export const yellow = {
         borderWidth: 3,
       },
       avatar: {
+        variant: 'atoms.avatar',
+        override: false,
         display: 'block',
         width: 48,
         height: 48,
@@ -224,18 +228,33 @@ export const yellow = {
         borderWidth: 2,
         borderColor: 'hsla(0, 0%, 0%, 1)',
       },
-      name: { fontWeight: 800, fontSize: 21, letterSpacing: 0.3 },
+      name: {
+        variant: 'atoms.heading.h4',
+        override: false,
+        fontWeight: 800,
+        fontSize: 21,
+        letterSpacing: 0.3,
+      },
       username: {
+        variant: 'atoms.heading.h4',
+        override: false,
         fontWeight: 300,
         color: 'hsla(249.99999999999994, 50.000000000000014%, 20%, 0.68)',
       },
       date: {
+        variant: 'atoms.caption',
+        override: false,
         color: 'hsla(249.99999999999994, 50.000000000000014%, 20%, 0.68)',
         fontWeight: 200,
         fontSize: 16,
       },
-      title: {},
+      title: {
+        variant: 'atoms.heading.h3',
+        override: false,
+      },
       paragraph: {
+        variant: 'atoms.paragraph',
+        override: false,
         color: 'hsla(0, 0%, 0%, 0.9)',
         mb: 25,
         display: 'block',
@@ -243,9 +262,14 @@ export const yellow = {
         mt: 7,
       },
       actions: {
+        variant: 'atoms.actions',
+        override: false,
         textColor: '#111827',
       },
-      text: {},
+      text: {
+        variant: 'atoms.text',
+        override: false,
+      },
       preferredLayout: 3,
     },
   },
@@ -258,6 +282,8 @@ export const yellow = {
       },
       preferredLayout: 3,
     },
+  },
+  templates: {
     styleguide: { card: { variant: 'atoms.card' } },
   },
 }

@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import { ThemeContext, AppContext } from 'context'
 
-import { Card, Input, Button, Heading } from 'components/atoms'
+import { Card, InputField, Button, Heading } from 'components/atoms'
 
 export const Form = () => {
   const { theme } = useContext(ThemeContext)
@@ -21,8 +21,8 @@ export const Form = () => {
       >
         <Heading
           as="h1"
-          sxx={{
-            variant: 'atoms.heading',
+          style={{
+            variant: 'molecules.form.heading',
             textTransform: 'uppercase',
             fontSize: 39,
             marginBottom: 21,
@@ -30,8 +30,8 @@ export const Form = () => {
         >
           Sign up
         </Heading>
-        <Field name="nickname" placeholder="Email" />
-        <Field name="email" placeholder="Password" type="email" />
+        <InputField name="nickname" placeholder="Email" />
+        <InputField name="email" placeholder="Password" type="email" />
         <Button>Continue</Button>
       </Card>
     )
@@ -39,64 +39,59 @@ export const Form = () => {
 
   return (
     <Card
-      className="flex flex-col px-8 py-12 space-y-4 w-96"
+      className="flex flex-col px-8 py-12 w-96"
       sx={{
         // borderColor: 'borderColor',
         variant: theme.molecules.form.card ? 'molecules.form.card' : undefined,
       }}
     >
-      <Heading variant="atoms.heading" as="h1">
+      <Heading
+        as="h1"
+        style={{
+          variant: 'molecules.form.heading',
+        }}
+      >
         Sign up
       </Heading>
-      <Field name="nickname" label="Username" placeholder="" />
-      <Field
+      <InputField
+        name="nickname"
+        label="Username"
+        placeholder=""
+        variant="molecules.form"
+      />
+      <InputField
         name="email"
         label="Email"
         placeholder=""
         type="email"
         hint="Make sure you are using real email. We will contact you regarding the payment"
+        variant="molecules.form"
       />
-      <Field name="password" label="Password" placeholder="" type="password" />
-      <Field name="country" label="Country" placeholder="" type="text" />
-      <Button>Continue</Button>
-      <Button secondary>Already have an account? Sign in</Button>
+      <InputField
+        name="password"
+        label="Password"
+        placeholder=""
+        type="password"
+        variant="molecules.form"
+      />
+      <InputField
+        name="country"
+        label="Country"
+        placeholder=""
+        type="text"
+        variant="molecules.form"
+      />
+      <Button
+      // variant="molecules.form.button.primary"
+      >
+        Continue
+      </Button>
+      <Button
+      // variant="molecules.form.button.secondary"
+      >
+        Already have an account? Sign in
+      </Button>
     </Card>
-  )
-}
-
-const Field = ({
-  label,
-  placeholder = 'Placeholder',
-  type = 'text',
-  hint,
-  value,
-  onChange = () => {},
-}) => {
-  return (
-    <div className="mb-4">
-      {label && (
-        <label
-          htmlFor="email"
-          className="block text-sm font-medium text-gray-700"
-        >
-          {label}
-        </label>
-      )}
-      <div className="mt-1 relative">
-        <Input
-          className={`shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md`}
-          placeholder={placeholder}
-          type={type}
-          value={value}
-          onChange={onChange}
-        />
-      </div>
-      {hint && (
-        <p className="mt-2 text-sm text-gray-500" id="email-description">
-          {hint}
-        </p>
-      )}
-    </div>
   )
 }
 

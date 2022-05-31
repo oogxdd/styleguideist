@@ -159,12 +159,50 @@ export const molecules = [
         variant: 'molecules.form.card',
       },
       { name: 'Heading', value: 'heading', group: 'atoms' },
-      { name: 'Input', value: 'input', group: 'atoms' },
+      {
+        name: 'Field',
+        value: 'field',
+        group: 'atoms',
+        children: [
+          {
+            name: 'Label',
+            value: 'label',
+            group: 'atoms',
+            // subvalue: 'label',
+          },
+          {
+            name: 'Input',
+            value: 'input',
+            group: 'atoms',
+            // subvalue: 'input',
+          },
+          {
+            name: 'Caption',
+            value: 'caption',
+            group: 'atoms',
+            // subvalue: 'caption',
+          },
+        ],
+      },
       {
         name: 'Button',
         value: 'button',
         group: 'atoms',
         // variant: 'primary',
+        children: [
+          {
+            name: 'Primary',
+            value: 'button',
+            subvalue: 'primary',
+            group: 'atoms',
+          },
+          {
+            name: 'Secondary',
+            value: 'button',
+            subvalue: 'secondary',
+            group: 'atoms',
+          },
+        ],
       },
       // {
       //   name: 'Button [secondary]',

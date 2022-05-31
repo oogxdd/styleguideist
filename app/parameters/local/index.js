@@ -46,37 +46,35 @@ const LocalParameters = () => {
     <>
       {sub.params &&
         sub.params.map((param) => {
-          let override =
-            comp.group !== 'atoms' &&
-            theme[comp.group][comp.value][sub.value] &&
-            !!theme[comp.group][comp.value][sub.value].override
+          let override = sub.subvalue
+            ? comp.group !== 'atoms' &&
+              theme[comp.group][comp.value][sub.value][sub.subvalue] &&
+              !!theme[comp.group][comp.value][sub.value][sub.subvalue].override
+            : comp.group !== 'atoms' &&
+              theme[comp.group][comp.value][sub.value] &&
+              !!theme[comp.group][comp.value][sub.value].override
 
           if (param.type === 'shadow') {
             return <ShadowParams param={param} key={param.type} />
           }
 
-          // console.log(sub)
           return (
             <Section name={param.name} open={false} key={param.type}>
               {param.fields.map((field) => {
                 let value
                 let onChange
 
+                // console.log('------')
+                // console.log(theme[comp.group][comp.value][sub.value])
+                // console.log(theme[comp.group][comp.value][sub.value])
+                // console.log(theme[comp.group][comp.value])
+                // console.log(override)
+                // console.log(comp)
+                // console.log(sub)
                 if (override) {
                   if (sub.subvalue) {
-                    // console.log(sub)
-                    // console.log(sub)
-                    // console.log(sub)
-                    // console.log(sub)
-                    // console.log(sub)
                     // this one is done for atoms.heading.h1
 
-                    console.log('sub.subvalue')
-                    console.log(sub.subvalue)
-                    console.log(comp)
-                    console.log(sub)
-                    // console.log(theme[comp.group])
-                    console.log(theme[comp.group][comp.value])
                     if (sub.parent) {
                       //
                       value =
@@ -126,11 +124,6 @@ const LocalParameters = () => {
                 } else {
                   // modify subcomponent original parameters
                   if (sub.subvalue) {
-                    // console.log(sub)
-                    // console.log(sub)
-                    // console.log(sub)
-                    // console.log(sub)
-                    // console.log(sub)
                     // this one is done for atoms.heading.h1
 
                     value = theme[sub.group][sub.value][sub.subvalue][field.key]
@@ -161,12 +154,6 @@ const LocalParameters = () => {
                     })
                   }
                 }
-
-                // console.log('----')
-                // console.log(comp.group)
-                // console.log(comp.value)
-                // console.log(sub.group)
-                // console.log(sub.value)
 
                 // ___fields___:
                 // 1. input
@@ -237,7 +224,7 @@ const LocalParameters = () => {
                 if (field.type === 'slider') {
                   return (
                     <Slider
-                      key={field.label}
+                      key={field.key}
                       label={field.label}
                       min={field.min}
                       max={field.max}
@@ -259,52 +246,60 @@ const LocalParameters = () => {
           )
         })}
 
+      {console.log(theme[comp.group][comp.value][sub.value])}
+      {console.log(theme[comp.group][comp.value][sub.value])}
+      {console.log(theme[comp.group][comp.value][sub.value])}
+      {console.log(theme[comp.group][comp.value][sub.value])}
+      {console.log(theme[comp.group][comp.value][sub.value])}
+      {console.log(theme[comp.group][comp.value][sub.value])}
+      {console.log(theme[comp.group][comp.value][sub.value])}
       {/* OVERRIDE COMPONENT SETTINGS */}
-      {comp.group !== 'atoms' && theme[comp.group][comp.value][sub.value] && (
-        <Checkbox
-          className="py-6 px-6 flex-row-reverse justify-start border-b"
-          labelWidth="w-auto"
-          style={{ justifyContent: 'flex-end' }}
-          label={
-            <div
-              className="flex space-x-1 select-none"
-              style={{ marginLeft: 8 }}
-            >
-              Override{' '}
-              <b
-                className=""
-                style={{
-                  marginLeft: 3.5,
-                  marginRight: 3.5,
-                  // fontWeight: 600,
-                  fontWeight: 'normal',
-                }}
+      {comp.group !== 'atoms' &&
+        theme[comp.group][comp.value][sub.value] &&
+        theme[comp.group][comp.value][sub.value].unique !== true && (
+          <Checkbox
+            className="py-6 px-6 flex-row-reverse justify-start border-b"
+            labelWidth="w-auto"
+            style={{ justifyContent: 'flex-end' }}
+            label={
+              <div
+                className="flex space-x-1 select-none"
+                style={{ marginLeft: 8 }}
               >
-                {sub.label}
-              </b>{' '}
-              for{' '}
-              <b
-                style={{
-                  marginLeft: 3.5,
-                  marginRight: 3.5,
-                  // fontWeight: 600,
-                  fontWeight: 'normal',
-                }}
-              >
-                {comp.label}
-              </b>
-            </div>
-          }
-          value={theme[comp.group][comp.value][sub.value].override}
-          onChange={(value) => {
-            console.log(value)
-            setTheme((theme) => {
-              theme[comp.group][comp.value][sub.value].override =
-                value === 'false'
-            })
-          }}
-        />
-      )}
+                Override{' '}
+                <b
+                  className=""
+                  style={{
+                    marginLeft: 3.5,
+                    marginRight: 3.5,
+                    // fontWeight: 600,
+                    fontWeight: 'normal',
+                  }}
+                >
+                  {sub.label}
+                </b>{' '}
+                for{' '}
+                <b
+                  style={{
+                    marginLeft: 3.5,
+                    marginRight: 3.5,
+                    // fontWeight: 600,
+                    fontWeight: 'normal',
+                  }}
+                >
+                  {comp.label}
+                </b>
+              </div>
+            }
+            value={theme[comp.group][comp.value][sub.value].override}
+            onChange={(value) => {
+              setTheme((theme) => {
+                theme[comp.group][comp.value][sub.value].override =
+                  value === 'false'
+              })
+            }}
+          />
+        )}
     </>
   )
 }

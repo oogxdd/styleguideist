@@ -211,6 +211,8 @@ export const spacy = {
     },
     feeditem: {
       card: {
+        variant: 'atoms.card',
+        override: false,
         background: 'hsla(250.00000000000003, 0%, 100%, 1)',
         borderColor:
           'hsla(250.26315789473688, 48.71794871794874%, 69.41176470588235%, 1)',
@@ -222,23 +224,50 @@ export const spacy = {
         width: 578,
         borderRadius: 17,
       },
-      avatar: {},
+      avatar: {
+        variant: 'atoms.avatar',
+        override: false,
+      },
       name: {
+        variant: 'atoms.heading.h4',
+        override: false,
         display: 'block',
         fontWeight: 975,
         'font-variation-settings': "'wght' 975",
       },
-      username: {},
-      date: { display: 'block' },
+      username: {
+        variant: 'atoms.heading.h4',
+        override: false,
+      },
+      date: {
+        variant: 'atoms.caption',
+        override: false,
+        display: 'block',
+      },
       title: {
+        variant: 'atoms.heading.h3',
+        override: false,
         mb: 18,
         fontWeight: 550,
         'font-variation-settings': "'wght' 550",
       },
-      paragraph: { mr: 8, fontSize: 14, mt: 0 },
-      actions: { textColor: '#111827' },
-      text: {},
-      preferredLayout: 1,
+      paragraph: {
+        variant: 'atoms.paragraph',
+        override: false,
+        mr: 8,
+        fontSize: 14,
+        mt: 0,
+      },
+      actions: {
+        variant: 'atoms.actions',
+        override: false,
+        textColor: '#111827',
+      },
+      text: {
+        variant: 'atoms.text',
+        override: false,
+      },
+      preferredLayout: 2,
     },
   },
   organisms: {
@@ -250,8 +279,10 @@ export const spacy = {
         mt: 8,
         mb: 0,
       },
-      preferredLayout: 1,
+      preferredLayout: 2,
     },
+  },
+  templates: {
     styleguide: {
       card: {
         variant: 'atoms.card',

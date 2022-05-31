@@ -19,7 +19,6 @@ import {
   Card,
   Avatar,
   Text,
-  UserCard,
   Heading,
   Paragraph,
   Actions,
@@ -36,7 +35,31 @@ export const FeedItemQuora = ({ item = defaultItem }) => {
       <article>
         <div>
           <div className="flex justify-between items-center space-x-3">
-            <UserCard variant="molecules.feeditem.usercard" />
+            <div className="flex-shrink-0">
+              <Avatar
+                className="h-10 w-10 rounded-full"
+                src={item.author.imageUrl}
+                alt=""
+                variant="molecules.feeditem.avatar"
+                sx={{ variant: 'molecules.feeditem.avatar' }}
+              />
+            </div>
+            <div className="min-w-0 flex-1">
+              <Text
+                className="text-sm font-medium text-gray-900 hover:underline block"
+                variant="molecules.feeditem.name"
+                sx={{ variant: 'molecules.feeditem.name' }}
+              >
+                {item.author.name}
+              </Text>
+              <Text
+                className="text-sm text-gray-500 hover:underline block"
+                variant="molecules.feeditem.date"
+                sx={{ variant: 'molecules.feeditem.date' }}
+              >
+                {item.date}
+              </Text>
+            </div>
             <div className="flex-shrink-0 self-center flex">
               <Menu as="div" className="relative inline-block text-left">
                 <div>

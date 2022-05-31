@@ -5,8 +5,8 @@ import {
   Card,
   Avatar,
   Text,
-  UserCard,
   Heading,
+  Caption,
   Paragraph,
   Actions,
 } from 'components/atoms'
@@ -32,10 +32,10 @@ export const FeedItemBubble = ({ item = defaultItem }) => {
             sx={{ color: 'text' }}
           >
             <Heading
-              as="h3"
+              as="h4"
               className="text-black font-bold hover:underline"
               variant="molecules.feeditem.name"
-              sx={{ variant: 'molecules.feeditem.name' }}
+              style={{ variant: 'molecules.feeditem.name' }}
             >
               {item.author.name}
             </Heading>
@@ -79,7 +79,7 @@ export const FeedItemBubble = ({ item = defaultItem }) => {
         <div id="body" className=" pr-2">
           <Paragraph
             variant="molecules.feeditem.paragraph"
-            sx={{ variant: 'molecules.feeditem.paragraph' }}
+            style={{ variant: 'molecules.feeditem.paragraph' }}
           >
             {item.body}
           </Paragraph>

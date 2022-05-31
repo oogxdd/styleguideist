@@ -8,7 +8,7 @@ import ComponentTree from 'app/navigation/component-tree'
 
 import ReactTooltip from 'react-tooltip'
 import { presets } from 'data/themes'
-import { molecules, organisms } from 'data/components'
+import { molecules, organisms, templates } from 'data/components'
 
 import { ChipIcon } from '@heroicons/react/outline'
 
@@ -146,22 +146,11 @@ const Components = () => {
               key={component.value}
               style={{ marginLeft: 2, marginRight: 2 }}
               onClick={() => {
-                if (
-                  component.value === 'feed' ||
-                  component.value === 'styleguide'
-                ) {
-                  const comp = organisms.find(
-                    (m) => m.value === component.value,
-                  )
-                  setComponent(comp)
-                  setComponentVariant(comp.preferredLayout || 1)
-                } else {
-                  const comp = molecules.find(
-                    (m) => m.value === component.value,
-                  )
-                  setComponent(comp)
-                  setComponentVariant(comp.preferredLayout || 1)
-                }
+                const comp = [...molecules, ...organisms, ...templates].find(
+                  (m) => m.value === component.value,
+                )
+                setComponent(comp)
+                setComponentVariant(comp.preferredLayout || 1)
               }}
               className={`
                 text-xs

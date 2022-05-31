@@ -53,9 +53,47 @@ export const FeedItemTwitter = ({ item = defaultItem }) => {
           : undefined,
       }}
     >
-      <div className="flex-col my-1 mx-3">
-        <div id="title" className="flex items-center justify-between">
-          <UserCard variant="molecules.feeditem.usercard" />
+      <div>
+        <div className="flex items-center justify-between">
+          <div className="flex items-center">
+            <Avatar
+              className="w-12 h-12 rounded-full"
+              src={item.author.imageUrl}
+              sx={{ variant: 'molecules.feeditem.avatar' }}
+            />
+
+            <div
+              id="details"
+              className="flex items-center flex-shrink-0 space-x-1"
+              sx={{ color: 'text' }}
+            >
+              <Text
+                className="text-black font-bold"
+                variant="molecules.feeditem.name"
+                sx={{ variant: 'molecules.feeditem.name' }}
+              >
+                {item.author.name}
+              </Text>
+              <Text
+                variant="molecules.feeditem.username"
+                sx={{ variant: 'molecules.feeditem.username' }}
+              >
+                {item.author.username}
+              </Text>
+              <div
+                className="text-gray-500"
+                sx={{ variant: 'molecules.feeditem.date' }}
+              >
+                ·
+              </div>
+              <Text
+                variant="molecules.feeditem.date"
+                sx={{ variant: 'molecules.feeditem.date' }}
+              >
+                {item.date}
+              </Text>
+            </div>
+          </div>
           <div id="options">
             <div className="w-7 text-gray-400 hover:text-blue-400 hover:bg-blue-100 duration-200 rounded-full p-1">
               <svg
