@@ -3,7 +3,8 @@ import { AppContext, ThemeContext } from 'context'
 
 import { XIcon } from '@heroicons/react/solid'
 import { shadowToObj, shadowToStr } from 'helpers'
-import { Section, Slider, ColorPicker } from 'app/parameters/ui'
+import { Slider, ColorPicker } from 'components'
+import { Section } from 'components/atoms'
 
 const ShadowParams = ({ param }) => {
   const { theme, setTheme } = useContext(ThemeContext)
@@ -31,12 +32,13 @@ const ShadowParams = ({ param }) => {
       ][param.field] || '0 0 0 rgb(0 0 0 / 12%), 0 0 0',
     )
 
-    onChange = (obj) =>
+    onChange = (obj) => {
       setTheme((theme) => {
         theme[variant.split('.')[0]][variant.split('.')[1]][
           variant.split('.')[2]
         ][param.field] = obj
       })
+    }
   } else {
     shadows = shadowToObj(
       theme[group][component][param.field] || '0 0 0 rgb(0 0 0 / 12%), 0 0 0',
@@ -47,6 +49,8 @@ const ShadowParams = ({ param }) => {
         theme[group][component][param.field] = obj
       })
   }
+
+  console.log(variant)
 
   return (
     <Section name="Shadow" open={false}>

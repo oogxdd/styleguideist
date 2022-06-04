@@ -3,6 +3,8 @@ import { ThemeContext, AppContext } from 'context'
 
 import { Card, InputField, Button, Heading } from 'components/atoms'
 
+import { pxToNum, numToPx } from 'helpers'
+
 export const Form = () => {
   const { theme } = useContext(ThemeContext)
 
@@ -14,6 +16,11 @@ export const Form = () => {
         className="flex flex-col px-8 py-12 w-96"
         sx={{
           // borderColor: 'borderColor',
+          borderRadius: theme.molecules.blogpost.card.borderRadius
+            ? `${theme.molecules.blogpost.card.borderRadius}px`
+            : theme.atoms.card.borderRadius
+            ? `${theme.atoms.card.borderRadius}px`
+            : pxToNum(theme.radii[2]) * 3,
           variant: theme.molecules.form.card
             ? 'molecules.form.card'
             : undefined,
@@ -32,7 +39,7 @@ export const Form = () => {
         </Heading>
         <InputField name="nickname" placeholder="Email" />
         <InputField name="email" placeholder="Password" type="email" />
-        <Button>Continue</Button>
+        <Button>CONTINUE</Button>
       </Card>
     )
   }
@@ -42,6 +49,11 @@ export const Form = () => {
       className="flex flex-col px-8 py-12 w-96"
       sx={{
         // borderColor: 'borderColor',
+        borderRadius: theme.molecules.blogpost.card.borderRadius
+          ? `${theme.molecules.blogpost.card.borderRadius}px`
+          : theme.atoms.card.borderRadius
+          ? `${theme.atoms.card.borderRadius}px`
+          : pxToNum(theme.radii[2]) * 3,
         variant: theme.molecules.form.card ? 'molecules.form.card' : undefined,
       }}
     >

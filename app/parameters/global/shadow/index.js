@@ -3,13 +3,8 @@
 
 import { useContext, useState, useEffect, Fragment } from 'react'
 import { ThemeContext } from 'context'
-import {
-  Section,
-  ColorPicker,
-  Slider,
-  Presets,
-  Checkbox,
-} from 'app/parameters/ui'
+import { Section, ColorPicker, Slider, Checkbox } from 'components/atoms'
+import { ShadowPresets } from './presets'
 import { shadowToObj, shadowToStr } from 'helpers'
 import { XIcon } from '@heroicons/react/solid'
 
@@ -35,7 +30,7 @@ export const Shadow = ({ open = false }) => {
 
   return (
     <Section name="Shadow" open={open}>
-      <Presets type="shadow" />
+      <ShadowPresets />
       {shadows.map((shadow, index) => (
         <Fragment key={`${shadow}-${index}`}>
           {index !== 0 && (

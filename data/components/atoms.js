@@ -51,12 +51,12 @@ export const atoms = [
         ],
       }),
       font(),
-      border(),
       spacing({
         margins: true,
         paddings: true,
         dimensions: true,
       }),
+      border(),
       shadow(),
     ],
   },
@@ -81,8 +81,8 @@ export const atoms = [
         ],
       }),
       font(),
-      border(),
       spacing({ margins: true, paddings: true, dimensions: true }),
+      border(),
       shadow(),
     ],
   },
@@ -91,14 +91,24 @@ export const atoms = [
     value: 'image',
     component: Image,
     group: 'atoms',
-    params: [border(), spacing({ dimensions: true, margins: true }), shadow()],
+    params: [
+      spacing({ dimensions: true, margins: true }),
+      border(),
+      shadow(),
+      other(),
+    ],
   },
   {
     label: 'Avatar',
     value: 'avatar',
     component: Avatar,
     group: 'atoms',
-    params: [border(), spacing({ dimensions: true, margins: true }), shadow()],
+    params: [
+      spacing({ dimensions: true, margins: true }),
+      border(),
+      shadow(),
+      other(),
+    ],
   },
   {
     label: 'Heading',
@@ -145,9 +155,22 @@ export const atoms = [
     component: Label,
     group: 'atoms',
     params: [
-      color(),
+      color({
+        fields: [
+          {
+            type: 'colorpicker',
+            key: 'background',
+            label: 'Background',
+          },
+          {
+            type: 'colorpicker',
+            key: 'color',
+            label: 'Text',
+          },
+        ],
+      }),
       font(),
-      spacing({ margins: true }),
+      spacing({ dimensions: true, paddings: true, margins: true }),
       border(),
       shadow({ field: 'textShadow' }),
       other(),
@@ -168,9 +191,7 @@ export const atoms = [
   {
     label: 'Section',
     value: 'section',
-    // component: Section,
     group: 'atoms',
-    // params: [color(), border(), spacing({ dimensions: true, paddings: true })],
   },
   {
     label: 'Card',
@@ -187,8 +208,8 @@ export const atoms = [
           },
         ],
       }),
-      border(),
       spacing({ dimensions: true, paddings: true, margins: true }),
+      border(),
       shadow(),
       other(),
     ],
@@ -199,18 +220,24 @@ export const atoms = [
     component: UserCard,
     group: 'atoms',
     params: [
-      // color(),
-      // font(),
+      color({
+        fields: [
+          {
+            type: 'colorpicker',
+            key: 'background',
+            label: 'Background',
+          },
+        ],
+      }),
       spacing({ margins: true, paddings: true, dimensions: true }),
-      shadow(),
       border(),
+      shadow(),
       other(),
     ],
   },
   {
     label: 'Actions',
     value: 'actions',
-    // component: Actions,
     group: 'atoms',
     params: [
       color({
@@ -232,11 +259,22 @@ export const atoms = [
           },
         ],
       }),
-      font(),
-      spacing({ margins: true, paddings: true, dimensions: true }),
-      shadow(),
-      border(),
-      other(),
+    ],
+  },
+  {
+    label: 'Background',
+    value: 'background',
+    group: 'atoms',
+    params: [
+      color({
+        fields: [
+          {
+            type: 'colorpicker',
+            key: 'background',
+            label: 'Background',
+          },
+        ],
+      }),
     ],
   },
   {
@@ -245,8 +283,6 @@ export const atoms = [
     // component: Actions,
     group: 'atoms',
     params: [
-      // color(),
-      // font(),
       color({
         fields: [
           {
@@ -256,17 +292,15 @@ export const atoms = [
           },
         ],
       }),
-      shadow(),
       spacing({ margins: true, dimensions: true }),
-      // shadow(),
-      // border(),
-      // other(),
+      border(),
+      shadow(),
     ],
   },
   {
     label: 'Container',
     value: 'container',
-    // component: Actions,
+    component: Actions,
     group: 'atoms',
     params: [
       // color(),
@@ -280,9 +314,9 @@ export const atoms = [
           },
         ],
       }),
-      shadow(),
-      border(),
       spacing({ margins: true, paddings: true, dimensions: true }),
+      border(),
+      shadow(),
       // shadow(),
       // other(),
     ],
@@ -302,8 +336,8 @@ export const atoms = [
         ],
       }),
       spacing({ margins: true, paddings: true }),
-      shadow(),
       border(),
+      shadow(),
     ],
   },
 ]

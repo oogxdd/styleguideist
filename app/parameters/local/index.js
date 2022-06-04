@@ -3,6 +3,8 @@ import { AppContext, ThemeContext } from 'context'
 
 import ShadowParams from './shadow'
 
+import { pxToNum } from 'helpers'
+
 // import {
 //   Input,
 //   Textarea,
@@ -14,17 +16,15 @@ import ShadowParams from './shadow'
 // } from './fields'
 
 import {
+  ColorPicker,
+  FontPicker,
+  Slider,
+  Separator,
+  Section,
   InputField as Input,
   TextareaField as Textarea,
   Checkbox,
 } from 'components/atoms'
-import {
-  Section,
-  ColorPicker as Colorpicker,
-  Select as FontPicker,
-  Slider,
-  Separator,
-} from 'app/parameters/ui'
 
 // 1. props
 // 2. color
@@ -36,7 +36,7 @@ import {
 
 const LocalParameters = () => {
   const { theme, setTheme } = useContext(ThemeContext)
-  const {
+  let {
     selectedComponent: comp,
     selectedSubComponent: sub,
     //
@@ -46,6 +46,18 @@ const LocalParameters = () => {
     <>
       {sub.params &&
         sub.params.map((param) => {
+          if (sub.variant === 'molecules.feeditem.username') {
+            sub.value = 'username'
+          }
+
+          if (sub.variant === 'molecules.feeditem.name') {
+            sub.value = 'name'
+          }
+
+          if (sub.variant === 'molecules.feeditem.date') {
+            sub.value = 'date'
+          }
+
           let override = sub.subvalue
             ? comp.group !== 'atoms' &&
               theme[comp.group][comp.value][sub.value][sub.subvalue] &&
@@ -64,13 +76,6 @@ const LocalParameters = () => {
                 let value
                 let onChange
 
-                // console.log('------')
-                // console.log(theme[comp.group][comp.value][sub.value])
-                // console.log(theme[comp.group][comp.value][sub.value])
-                // console.log(theme[comp.group][comp.value])
-                // console.log(override)
-                // console.log(comp)
-                // console.log(sub)
                 if (override) {
                   if (sub.subvalue) {
                     // this one is done for atoms.heading.h1
@@ -155,6 +160,32 @@ const LocalParameters = () => {
                   }
                 }
 
+                if (param.type === 'other') {
+                  if (sub.parent) {
+                    //
+                    value =
+                      theme[comp.group][comp.value][sub.parent][sub.value][
+                        field.key
+                      ]
+                    onChange = (value) => {
+                      setTheme((theme) => {
+                        theme[comp.group][comp.value][sub.parent][sub.value][
+                          field.key
+                        ] = value
+                      })
+                    }
+                  } else {
+                    value = theme[comp.group][comp.value][sub.value][field.key]
+                    onChange = (value) => {
+                      setTheme((theme) => {
+                        theme[comp.group][comp.value][sub.value][
+                          field.key
+                        ] = value
+                      })
+                    }
+                  }
+                }
+
                 // ___fields___:
                 // 1. input
                 // 2. textarea
@@ -205,7 +236,7 @@ const LocalParameters = () => {
                 // 4.
                 if (field.type === 'colorpicker') {
                   return (
-                    <Colorpicker
+                    <ColorPicker
                       key={field.label}
                       label={field.label}
                       value={value}
@@ -220,6 +251,12 @@ const LocalParameters = () => {
                   )
                 }
 
+                let convertToPx =
+                  field.key === 'borderRadius' ||
+                  field.key === 'fontSize' ||
+                  field.key === 'letterSpacing'
+                // || field.key === 'lineHeight'
+
                 // 5.
                 if (field.type === 'slider') {
                   return (
@@ -229,8 +266,14 @@ const LocalParameters = () => {
                       min={field.min}
                       max={field.max}
                       step={field.step || 1}
-                      value={value}
-                      onChange={(v) => onChange(+v)}
+                      value={convertToPx ? pxToNum(value) : value}
+                      onChange={(v) => {
+                        if (convertToPx) {
+                          onChange(+v + 'px')
+                        } else {
+                          onChange(+v)
+                        }
+                      }}
                     />
                   )
                 }
@@ -246,13 +289,6 @@ const LocalParameters = () => {
           )
         })}
 
-      {console.log(theme[comp.group][comp.value][sub.value])}
-      {console.log(theme[comp.group][comp.value][sub.value])}
-      {console.log(theme[comp.group][comp.value][sub.value])}
-      {console.log(theme[comp.group][comp.value][sub.value])}
-      {console.log(theme[comp.group][comp.value][sub.value])}
-      {console.log(theme[comp.group][comp.value][sub.value])}
-      {console.log(theme[comp.group][comp.value][sub.value])}
       {/* OVERRIDE COMPONENT SETTINGS */}
       {comp.group !== 'atoms' &&
         theme[comp.group][comp.value][sub.value] &&

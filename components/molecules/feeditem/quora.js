@@ -159,9 +159,9 @@ export const FeedItemQuora = ({ item = defaultItem }) => {
 
           <Heading
             className="mt-4 text-base font-medium text-gray-900"
-            variant="molecules.feeditem.title"
-            sx={{ variant: 'molecules.feeditem.title' }}
-            as="h2"
+            variant="molecules.feeditem.heading"
+            style={{ variant: 'molecules.feeditem.heading' }}
+            as="h4"
           >
             {item.title}
           </Heading>

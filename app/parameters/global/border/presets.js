@@ -1,4 +1,3 @@
-/** @jsxImportSource theme-ui */
 import { useContext, useState } from 'react'
 import { ThemeContext } from 'context'
 
@@ -43,7 +42,7 @@ export const BorderPresets = ({
             `}
             onClick={() => {
               setPreset(index + 1)
-              setBorderRadius(index * 8)
+              setBorderRadius(index * 4)
             }}
             key={preset}
             sx={{

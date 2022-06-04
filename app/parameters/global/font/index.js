@@ -5,9 +5,9 @@ import {
   ColorPicker,
   Slider,
   Presets,
-  Select,
+  FontPicker,
   Checkbox,
-} from 'app/parameters/ui'
+} from 'components/atoms'
 import { percentToNum, pxToNum } from 'helpers'
 
 export const Font = ({ open = false }) => {
@@ -15,7 +15,7 @@ export const Font = ({ open = false }) => {
 
   return (
     <Section name="Font" open={open}>
-      <Select />
+      <FontPicker />
 
       <Slider
         label="Base size"

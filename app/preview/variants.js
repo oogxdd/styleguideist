@@ -51,19 +51,30 @@ const Variant = ({ children, selected = false, val }) => {
           if (selectedComponent.value === 'blogpost') {
             let prevWidth =
               theme.molecules.blogpost.card.width || theme.atoms.card.width
+
             if (val === 2) {
               setTheme((theme) => {
-                theme.molecules.blogpost.card.width = prevWidth
-                  ? prevWidth * 2
-                  : 800
+                if (prevWidth) {
+                  if (theme.molecules.blogpost.card.width) {
+                    theme.molecules.blogpost.card.width = prevWidth * 2
+                  }
+                  theme.atoms.card.width = prevWidth * 2
+                } else {
+                  theme.atoms.card.width = 800
+                }
               })
               //
             }
             if (val === 1) {
               setTheme((theme) => {
-                theme.molecules.blogpost.card.width = prevWidth
-                  ? prevWidth / 2
-                  : 400
+                if (prevWidth) {
+                  if (theme.molecules.blogpost.card.width) {
+                    theme.molecules.blogpost.card.width = prevWidth / 2
+                  }
+                  theme.atoms.card.width = prevWidth / 2
+                } else {
+                  theme.atoms.card.width = 400
+                }
               })
               //
             }

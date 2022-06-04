@@ -3,12 +3,12 @@ import { ThemeContext } from 'context'
 
 import { shadowToObj, shadowToStr } from 'helpers'
 
-import { Font } from './global/font'
-import { Color } from './global/color'
-import { Border } from './global/border'
-import { Spacing } from './global/spacing'
-import { Presets } from './global/presets'
-import { Shadow } from './global/shadow'
+import { Font } from './font'
+import { Color } from './color'
+import { Spacing } from './spacing'
+import { Border } from './border'
+import { Shadow } from './shadow'
+import { Presets } from './presets'
 
 const GlobalParameters = ({ open = false }) => {
   const {
@@ -94,6 +94,7 @@ const GlobalParameters = ({ open = false }) => {
         ]}
       />
       <Font fields={[]} open={false} />
+      <Spacing open={false} fields={[]} />
       <Border
         fields={[
           {
@@ -112,7 +113,6 @@ const GlobalParameters = ({ open = false }) => {
           },
         ]}
       />
-      <Spacing open={false} fields={[]} />
       <Shadow open={false} />
       <Presets open={true} />
     </>

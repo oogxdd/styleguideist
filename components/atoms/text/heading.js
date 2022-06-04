@@ -1,6 +1,12 @@
 import { Heading as ThemeUIHeading } from 'theme-ui'
 
-export const Heading = ({ children = 'Heading', style = {}, as = 'h1' }) => {
+export const Heading = ({
+  children: defaultChildren,
+  style = {},
+  as = 'h1',
+}) => {
+  const children = defaultChildren || `Heading (${as})`
+
   if (as === 'h2') {
     return (
       <ThemeUIHeading

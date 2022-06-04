@@ -12,6 +12,7 @@ export const fontFields = [
     label: 'Size',
     min: '6',
     max: '64',
+    step: '0.1',
   },
   {
     type: 'slider',
@@ -27,7 +28,7 @@ export const fontFields = [
     label: 'Kerning',
     min: '-5',
     max: '5',
-    step: '0.1',
+    step: '0.01',
   },
   {
     type: 'slider',
@@ -35,7 +36,7 @@ export const fontFields = [
     label: 'Leading',
     min: '-5',
     max: '5',
-    step: '0.1',
+    step: '0.01',
   },
 ]
 

@@ -1,14 +1,13 @@
 import { createContext, useState, useEffect, useContext } from 'react'
 import { ThemeContext } from 'context'
 import { useImmer } from 'use-immer'
-// import * as components from 'data/components'
 import { atoms, molecules, organisms, templates } from 'data/components'
 
 const AppContext = createContext()
 
 const AppProvider = ({ children }) => {
   const { theme } = useContext(ThemeContext)
-  const comp = 'form'
+  const comp = 'blogpost'
 
   const [selectedComponent, setComponent] = useState(
     [...atoms, ...molecules, ...organisms, ...templates].find(

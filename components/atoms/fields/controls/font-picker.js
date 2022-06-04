@@ -1,4 +1,3 @@
-/** @jsxImportSource theme-ui */
 import { useState, useContext, Fragment, useEffect } from 'react'
 import { ThemeContext } from 'context'
 import { Listbox, Transition } from '@headlessui/react'
@@ -9,7 +8,7 @@ import axios from 'axios'
 
 const GOOGLE_FONTS_API_KEY = 'AIzaSyCOzhRqd9pr-kJcQimmRO38qdfV2su6yVQ'
 
-export const Select = ({ onChange, value }) => {
+export const FontPicker = ({ onChange, value }) => {
   const { theme, setTheme } = useContext(ThemeContext)
   const [selected, setSelected] = useState(
     value

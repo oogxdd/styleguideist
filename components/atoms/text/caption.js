@@ -2,7 +2,7 @@
 import { useContext } from 'react'
 import { ThemeContext } from 'context'
 
-export const Caption = ({ children, style = {} }) => {
+export const Caption = ({ children = 'Caption', style = {} }) => {
   return (
     <span
       className="uration-200"

@@ -1,6 +1,7 @@
 import { useContext } from 'react'
 import { ThemeContext } from 'context'
-import { Section, ColorPicker, Slider, Presets } from 'app/parameters/ui'
+import { Section, ColorPicker, Slider } from 'components/atoms'
+import { SpacingPresets } from './presets'
 import { percentToNum, pxToNum, numToPx } from 'helpers'
 
 export const Spacing = ({ open = false }) => {
@@ -8,7 +9,7 @@ export const Spacing = ({ open = false }) => {
 
   return (
     <Section name="Spacing" open={open}>
-      <Presets type="spacing" />
+      <SpacingPresets />
       <Slider
         label="Base (X)"
         min={1}

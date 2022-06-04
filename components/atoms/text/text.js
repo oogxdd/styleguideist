@@ -1,41 +1,11 @@
-export const Text = ({ children, variant, sx = {}, as, className = '' }) => {
-  if (as === 'h2') {
-    return (
-      <h2
-        className={className}
-        sx={{
-          color: 'text',
-          variant,
-          ...sx,
-        }}
-      >
-        {children}
-      </h2>
-    )
-  }
-
-  if (as === 'p') {
-    return (
-      <p
-        className={className}
-        sx={{
-          color: 'text',
-          variant,
-          ...sx,
-        }}
-      >
-        {children}
-      </p>
-    )
-  }
-
+export const Text = ({ children, variant, style = {}, as, className = '' }) => {
   return (
     <span
       className={className}
       sx={{
         color: 'text',
         variant,
-        ...sx,
+        ...style,
       }}
     >
       {children}

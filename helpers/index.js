@@ -6,3 +6,5 @@ export * from './convert/percent-to-num'
 
 export * from './shadow'
 export * from './download-file'
+
+export * from './get-value'

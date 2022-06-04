@@ -1,17 +1,24 @@
 // 1: separators
 // 2. bubbles
 
-import { useContext } from 'react'
-import { ThemeContext, AppContext } from 'context'
+import { useContext, Fragment } from 'react'
+import { ThemeContext, AppContext, UIContext } from 'context'
 
 import * as Molecules from 'components/molecules'
 
 export const Feed = () => {
   const { selectedComponent, selectedComponentVariant } = useContext(AppContext)
   const { theme } = useContext(ThemeContext)
+  const { fullscreen } = useContext(UIContext)
 
   return (
-    <div className="pt-24 pb-24">
+    <div
+      className="pt-24 pb-24 w-full flex flex-col items-center"
+      sx={{
+        variant: 'atoms.background',
+        width: fullscreen ? '100vw' : 'calc(100vw - 18rem + 33px)',
+      }}
+    >
       <div
         className="flex flex-col space-y-8 h-full"
         sx={{
@@ -20,14 +27,13 @@ export const Feed = () => {
       >
         {questions.map((question, index) => {
           return (
-            <>
+            <Fragment key={question.id}>
               <Molecules.FeedItem
                 itemVar={selectedComponentVariant}
                 item={question}
-                key={question.id}
               />
               {index !== questions.length - 1 && <Separator />}
-            </>
+            </Fragment>
           )
         })}
       </div>

@@ -127,6 +127,7 @@ export const molecules = [
             name: 'Avatar',
             value: 'avatar',
             group: 'atoms',
+            parent: 'usercard',
           },
           {
             name: 'Username',
@@ -139,6 +140,7 @@ export const molecules = [
             name: 'Caption',
             value: 'caption',
             group: 'atoms',
+            parent: 'usercard',
           },
         ],
       },
@@ -158,7 +160,7 @@ export const molecules = [
         group: 'atoms',
         variant: 'molecules.form.card',
       },
-      { name: 'Heading', value: 'heading', group: 'atoms' },
+      { name: 'Heading', value: 'heading', group: 'atoms', subvalue: 'h1' },
       {
         name: 'Field',
         value: 'field',
@@ -246,7 +248,7 @@ export const molecules = [
         value: 'text',
         group: 'atoms',
         variant: 'molecules.feeditem.username',
-        availableIn: [2, 3, 4],
+        availableIn: [1, 3, 4],
       },
       {
         name: 'Date',
@@ -257,13 +259,14 @@ export const molecules = [
       {
         name: 'Heading',
         value: 'heading',
+        subvalue: 'h3',
         group: 'atoms',
-        variant: 'molecules.feeditem.title',
-        availableIn: [1],
+        variant: 'molecules.feeditem.heading',
+        availableIn: [2],
       },
       {
         name: 'Content',
-        value: 'text',
+        value: 'paragraph',
         group: 'atoms',
         variant: 'molecules.feeditem.paragraph',
       },

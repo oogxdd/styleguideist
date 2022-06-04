@@ -5,9 +5,13 @@ export const Input = ({
   placeholder,
   type = 'text',
   style = {},
+  value = '',
+  onChange = () => {},
 }) => (
   <ThemeUIInput
     defaultValue={placeholder}
+    value={value}
+    onChange={onChange}
     sx={{
       variant: 'atoms.input',
       ...style,

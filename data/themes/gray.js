@@ -101,7 +101,7 @@ export const gray = {
         lineHeight: 0.9,
         letterSpacing: 1.1,
         mt: 33,
-        mb: 17,
+        mb: 49,
       },
       h2: {
         fontFamily: 'Luckiest_Guy',
@@ -135,7 +135,7 @@ export const gray = {
       color:
         'hsla(95.86046351942852, 4.8437827636821185%, 45.305499999999995%, 1)',
       fontFamily: 'BebasNeue',
-      mt: 18,
+      // mt: 18,
       letterSpacing: -0.2,
       lineHeight: 1.2,
       mr: 5,
@@ -157,7 +157,7 @@ export const gray = {
     avatar: { borderRadius: 6 },
     button: {
       width: null,
-      mt: 24,
+      mt: 8,
       pt: 14,
       pb: 16,
       pl: 24,
@@ -170,6 +170,8 @@ export const gray = {
       fontWeight: 800,
       mb: 44,
       height: 55,
+      borderWidth: 0,
+      borderColor: 'hsla(275.860463519429, 11.523645841279023%, 58.926879%, 1)',
     },
     input: {
       pt: 24,
@@ -182,9 +184,12 @@ export const gray = {
       height: 12,
       background: 'hsla(249.94368240792434, 0%, 95.83%, 0)',
       boxShadow:
-        '13px 14px 20px 11px hsla(0, 36.04000000000001%, 27.800000000000004%, 0.33), 8px 12px 46px hsla(249.99999999999994, 85.49%, 62.07%, 0.19)',
+        '13px 5px 15px 4px hsla(0, 36.04000000000001%, 27.800000000000004%, 0.33), 8px 12px 46px hsla(249.99999999999994, 85.49%, 62.07%, 0.19)',
       mb: 9,
       color: '#6e6b7f8c',
+      fontFamily: 'Bangers',
+      lineHeight: -5,
+      letterSpacing: 2.2,
     },
     usercard: {
       borderRadius: 17,
@@ -197,6 +202,11 @@ export const gray = {
         'hsla(249.99999999999994, 31.570291428195517%, 37.113241499999994%, 1)',
     },
     title: {},
+    field: {},
+    actions: {},
+    background: {},
+    container: {},
+    separator: {},
   },
   molecules: {
     blogpost: {
@@ -213,11 +223,18 @@ export const gray = {
         pt: 32.5,
         pb: 32.5,
       },
-      image: { variant: 'atoms.image', order: 1, width: '100%', height: 192 },
+      image: { variant: 'atoms.image', order: 1 },
       label: { variant: 'atoms.label', order: 2, ml: 0 },
       heading: { variant: 'atoms.heading.h2', order: 3, ml: 0 },
       paragraph: { variant: 'atoms.paragraph', order: 4, ml: 0, mr: 0 },
-      usercard: { variant: 'atoms.usercard', order: 5, display: 'none' },
+      usercard: {
+        variant: 'atoms.usercard',
+        order: 5,
+        display: 'none',
+        avatar: { variant: 'atoms.avatar' },
+        name: { variant: 'atoms.heading.h4' },
+        caption: { variant: 'atoms.caption' },
+      },
       props: {
         title:
           'Lil Uzi Vert:                        ‘I’m Not Gonna Act Gangster’',
@@ -225,8 +242,7 @@ export const gray = {
         label: 'Case Study',
         description:
           '“I’m a happy person and I vibe with my fans if you see me I’m not gonna act gangster because that not what I am or who I am,” Uzi wrote. “it’s okay 2 smile 😃 🤓 I’m myself.”',
-        imageUrl:
-          'https://images.complex.com/complex/images/c_fill,dpr_auto,f_auto,q_auto,w_1400/fl_lossy,pg_1/m9tztnugm9qfos6rqua0/uzi-vert-stage?fimg-ssr-default',
+        imageUrl: 'img/uzi.webp',
         authorName: 'Daniela Metz',
         authorAvatar:
           'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
@@ -235,14 +251,29 @@ export const gray = {
     },
     form: {
       preferredLayout: 2,
+      heading: { variant: 'atoms.heading.h1' },
       card: {
+        variant: 'atoms.card',
+        override: true,
         borderWidth: 0,
         width: 590,
         background: 'hsla(249.99999999999994, 91.36%, 29.600000000000005%, 0)',
         pt: 0,
         pb: 39,
       },
-      title: {},
+      input: { variant: 'atoms.input', override: false },
+      button: { variant: 'atoms.button', override: false },
+      label: { override: true, unique: true },
+      caption: { override: true, unique: true },
+      field: {
+        variant: 'atoms.field',
+        override: true,
+        input: { variant: 'atoms.input', override: false, unique: true },
+        label: { override: true, unique: true },
+        caption: { override: true, unique: true },
+        mt: 16,
+        mb: 0,
+      },
     },
     feeditem: {
       card: {
@@ -285,11 +316,7 @@ export const gray = {
         display: 'none',
         fontSize: 27,
       },
-      date: {
-        variant: 'atoms.caption',
-        override: false,
-        display: 'none',
-      },
+      date: { variant: 'atoms.caption', override: false, display: 'none' },
       title: {
         variant: 'atoms.heading.h3',
         override: false,
@@ -320,17 +347,17 @@ export const gray = {
         mb: 24,
         textColor: '#111827',
       },
-      text: {
-        variant: 'atoms.text',
-        override: false,
-      },
+      text: { variant: 'atoms.text', override: false },
       preferredLayout: 1,
     },
   },
   organisms: {
     feed: {
-      background: {},
+      preferredLayout: 1,
+      background: { variant: 'atoms.background', override: false },
       container: {
+        variant: 'atoms.container',
+        override: false,
         borderWidth: 1,
         borderColor: 'hsla(250.0000000000029, 0%, 24.66%, 1)',
         pl: 0,
@@ -338,14 +365,25 @@ export const gray = {
         width: 770,
       },
       separator: {
+        variant: 'atoms.separator',
+        override: false,
         background: 'hsla(250, 0%, 24.705882352941178%, 1)',
         mt: '0',
         mb: '0',
       },
-      preferredLayout: 1,
+      card: { variant: 'atoms.card', override: false },
+      avatar: { variant: 'atoms.avatar', override: false },
+      name: { variant: 'atoms.heading.h4', override: true },
+      username: { variant: 'atoms.heading.h4', override: true },
+      date: { variant: 'atoms.caption', override: true },
+      actions: { variant: 'atoms.actions', override: true, unique: true },
+      paragraph: { variant: 'atoms.paragraph', override: false },
+      heading: {
+        variant: 'atoms.heading.h3',
+        override: false,
+        h3: { variant: 'atoms.heading.h3', override: false },
+      },
     },
   },
-  templates: {
-    styleguide: { card: { variant: 'atoms.card' } },
-  },
+  templates: { styleguide: { card: { variant: 'atoms.card' } } },
 }

@@ -1,4 +1,3 @@
-/** @jsxImportSource theme-ui */
 import { useContext, useState } from 'react'
 import { ThemeContext } from 'context'
 

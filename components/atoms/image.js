@@ -15,8 +15,8 @@ export const Image = ({
       src={src}
       alt=""
       sx={{
-        ...style,
         variant: theme.atoms.image ? 'atoms.image' : null,
+        ...style,
       }}
     />
   )

@@ -5,102 +5,61 @@ import {
   Card,
   Avatar,
   Text,
-  UserCard,
   Heading,
+  Caption,
   Paragraph,
   Actions,
 } from 'components/atoms'
 
-export const FeedItemTwitter = ({ item = defaultItem }) => {
+export const FeedItemBubble = ({ item = defaultItem }) => {
   const { theme } = useContext(ThemeContext)
 
   return (
-    <div
-      id="post"
-      className="flex hover:bg-gray-100/5 duration-200 cursor-pointer pt-2 pl-3 max-w-3xl"
-      sx={{
-        marginLeft: theme.molecules.feeditem.card.ml
-          ? theme.molecules.feeditem.card.ml
-          : undefined,
-        marginRight: theme.molecules.feeditem.card.mr
-          ? theme.molecules.feeditem.card.mr
-          : undefined,
-        marginBottom: theme.molecules.feeditem.card.mb
-          ? theme.molecules.feeditem.card.mb
-          : undefined,
-        marginTop: theme.molecules.feeditem.card.mt
-          ? theme.molecules.feeditem.card.mt
-          : undefined,
-
-        paddingLeft: theme.molecules.feeditem.card.pl
-          ? theme.molecules.feeditem.card.pl
-          : undefined,
-        paddingRight: theme.molecules.feeditem.card.pr
-          ? theme.molecules.feeditem.card.pr
-          : undefined,
-        paddingBottom: theme.molecules.feeditem.card.pb
-          ? theme.molecules.feeditem.card.pb
-          : undefined,
-        paddingTop: theme.molecules.feeditem.card.pt
-          ? theme.molecules.feeditem.card.pt
-          : undefined,
-
-        width: theme.molecules.feeditem.card.width
-          ? theme.molecules.feeditem.card.width
-          : undefined,
-        height: theme.molecules.feeditem.card.height
-          ? theme.molecules.feeditem.card.height
-          : undefined,
-      }}
-    >
-      <div>
-        <div className="flex items-center justify-between">
-          <div className="flex items-center">
-            <Avatar
-              className="w-12 h-12 rounded-full"
-              src={item.author.imageUrl}
-              sx={{ variant: 'molecules.feeditem.avatar' }}
-            />
-
-            <div
-              id="details"
-              className="flex items-center flex-shrink-0 space-x-1"
-              sx={{ color: 'text' }}
+    <div className="flex max-w-3xl">
+      <Avatar
+        className="w-12 h-12"
+        src={item.author.imageUrl}
+        sx={{ variant: 'molecules.feeditem.avatar' }}
+      />
+      <Card
+        className="flex-col my-1 mx-3 border rounded-lg p-6"
+        sx={{ variant: 'molecules.feeditem.card' }}
+      >
+        <div id="title" className="flex items-center justify-between">
+          <div
+            id="details"
+            className="flex flex-shrink-0 space-x-1"
+            sx={{ color: 'text' }}
+          >
+            <Text
+              className="text-sm font-medium text-gray-900 hover:underline block"
+              variant="molecules.feeditem.username"
+              sx={{ variant: 'molecules.feeditem.username' }}
             >
-              <Text
-                className="text-black font-bold"
-                variant="molecules.feeditem.name"
-                sx={{ variant: 'molecules.feeditem.name' }}
-              >
-                {item.author.name}
-              </Text>
-              <Text
-                variant="molecules.feeditem.username"
-                sx={{ variant: 'molecules.feeditem.username' }}
-              >
-                {item.author.username}
-              </Text>
-              <div
-                className="text-gray-500"
-                sx={{ variant: 'molecules.feeditem.date' }}
-              >
-                ·
-              </div>
-              <Text
-                variant="molecules.feeditem.date"
-                sx={{ variant: 'molecules.feeditem.date' }}
-              >
-                {item.date}
-              </Text>
-            </div>
+              {item.author.name}
+            </Text>
+            {/*
+            <Text
+              variant="molecules.feeditem.username"
+              sx={{ variant: 'molecules.feeditem.username' }}
+            >
+              {item.author.username}
+            </Text>
+            <div className="text-gray-500">Â·</div>
+            <Text
+              variant="molecules.feeditem.date"
+              sx={{ variant: 'molecules.feeditem.date' }}
+            >
+              {item.date}
+            </Text>
+            */}
           </div>
           <div id="options">
-            <div className="w-7 text-gray-400 hover:text-blue-400 hover:bg-blue-100 duration-200 rounded-full p-1">
+            <div className="w-7 hover:text-blue-400 hover:cursor-pointer hover:bg-blue-100 duration-200 rounded-full p-1">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke="currentColor"
                 sx={{
                   stroke: theme.molecules.feeditem.actions.iconColor || 'text',
                   // color: 'text',
@@ -119,13 +78,13 @@ export const FeedItemTwitter = ({ item = defaultItem }) => {
         <div id="body" className=" pr-2">
           <Paragraph
             variant="molecules.feeditem.paragraph"
-            sx={{ variant: 'molecules.feeditem.paragraph' }}
+            style={{ variant: 'molecules.feeditem.paragraph' }}
           >
             {item.body}
           </Paragraph>
-          <Actions />
+          <Actions type="twitter" />
         </div>
-      </div>
+      </Card>
     </div>
   )
 }
@@ -185,11 +144,8 @@ const defaultItem = {
   author: {
     name: 'Lewis Lloyd',
     username: '@LloydTao',
-
-    // imageUrl: 'https://placekitten.com/320/320',
     imageUrl:
-      'https://i.iheart.com/v3/catalog/artist/31083712?ops=fit(720%2C720)',
-
+      'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
     href: '#',
   },
   likes: '29',

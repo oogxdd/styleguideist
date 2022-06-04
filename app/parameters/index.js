@@ -1,23 +1,11 @@
 import { useContext, useState } from 'react'
 import { AppContext, ThemeContext, UIContext } from 'context'
 
-import GlobalParameters from 'app/parameters/global'
-import LocalParameters from 'app/parameters/local'
 import Tabs from './tabs'
+import GlobalParameters from './global'
+import LocalParameters from './local'
 
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/solid'
-
-// if (local) {
-//  <Section
-//    label=""
-//    fields=[]
-//  />
-// } else {
-//  <Section
-//    label=""
-//    fields=[]
-//  />
-// }
 
 const Parameters = () => {
   const { theme, setTheme } = useContext(ThemeContext)
@@ -25,9 +13,6 @@ const Parameters = () => {
   const { paramsType, setParamsType, fullscreen, setFullscreen } = useContext(
     UIContext,
   )
-
-  // theme[group][component][field]
-  // theme.atoms.paragraph.fontSize
 
   return (
     <>
@@ -104,46 +89,5 @@ const Parameters = () => {
     </>
   )
 }
-
-{
-  /*
-<>
-  <Color open />
-  <Font />
-  <Border />
-  <Shadow />
-  <Spacing />
-  <Presets open />
-</>
-  */
-}
-
-// const paragraphFields = [
-//   {
-//     type: 'slider',
-//     label: 'Size',
-//     min: '6',
-//     max: '64',
-//     value: theme.atoms.paragraph.fontSize,
-//     onChange: (value) => {
-//       setTheme((theme) => {
-//         theme.atoms.paragraph.fontSize = +value
-//       })
-//     },
-//   },
-//   {
-//     type: 'slider',
-//     label: 'Weight',
-//     min: '100',
-//     max: '900',
-//     step: 100,
-//     value: theme.atoms.paragraph.fontWeight,
-//     onChange: (value) => {
-//       setTheme((theme) => {
-//         theme.atoms.paragraph.fontWeight = +value
-//       })
-//     },
-//   },
-// ]
 
 export default Parameters

@@ -5,13 +5,8 @@
 // one of options: custom or preset
 import { useContext } from 'react'
 import { ThemeContext } from 'context'
-import {
-  Section,
-  ColorPicker,
-  Slider,
-  Presets,
-  Checkbox,
-} from 'app/parameters/ui'
+import { Section, ColorPicker, Slider, Checkbox } from 'components/atoms'
+import { BorderPresets } from './presets'
 
 export const Border = ({ open = false }) => {
   const {
@@ -25,16 +20,18 @@ export const Border = ({ open = false }) => {
 
   return (
     <Section name="Border">
-      <Presets type="border" />
+      <BorderPresets />
       <Slider
         min="0"
-        max="48"
+        max="12"
+        step="0.01"
         label="Radius"
         value={borderRadius}
         onChange={(value) => setBorderRadius(value)}
       />
       <Slider
         label="Width"
+        step="0.01"
         value={borderWidth}
         onChange={(value) => setBorderWidth(value)}
       />

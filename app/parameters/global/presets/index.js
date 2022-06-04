@@ -1,20 +1,17 @@
 import { useContext, useState } from 'react'
 import { ThemeContext, AppContext } from 'context'
+import { Section, ColorPicker, Slider } from 'components/atoms'
+import { percentToNum, pxToNum, numToPx } from 'helpers'
+
 import { downloadFile } from 'helpers'
 import { DownloadIcon, PlusIcon } from '@heroicons/react/solid'
-import {
-  // FolderDownloadIcon,
-  ArrowSmDownIcon,
-} from '@heroicons/react/outline'
+import { ArrowSmDownIcon } from '@heroicons/react/outline'
 
-// import { presets } from 'data/themes'
 import { presets, base as defaultTheme } from 'data/themes'
 
 import { organisms } from 'data/components'
 
-const sd = ['none', 'md', 'lg', 'xl', 'full']
-
-export const ThemesPresets = ({ type }) => {
+export const Presets = ({ open = false }) => {
   const {
     selectedComponent,
     setComponent,
@@ -27,31 +24,96 @@ export const ThemesPresets = ({ type }) => {
   )
 
   return (
-    <div
-      className="flex items-center justify-between mb-6 flex-wrap"
-      style={{
-        justifyContent: 'space-between',
-        gridTemplateColumns: '2.5rem 2.5rem 2.5rem 2.5rem 2.5rem',
-        display: 'grid',
-        gridRowGap: '12px',
-      }}
-    >
-      {[...presets, ...adThemes].map((preset, index) => {
-        const isSelected = selectedPreset === index + 1
+    <Section name="Presets" open={open} withoutBottomBorder>
+      <div
+        className="flex items-center justify-between mb-6 flex-wrap"
+        style={{
+          justifyContent: 'space-between',
+          gridTemplateColumns: '2.5rem 2.5rem 2.5rem 2.5rem 2.5rem',
+          display: 'grid',
+          gridRowGap: '12px',
+        }}
+      >
+        {[...presets, ...adThemes].map((preset, index) => {
+          const isSelected = selectedPreset === index + 1
 
-        return (
-          <Theme
-            key={`${preset.name}-${index}`}
-            preset={preset}
-            isSelected={isSelected}
-            selectedPreset={selectedPreset}
-            setPreset={setPreset}
-            index={index}
+          return (
+            <Theme
+              key={`${preset.name}-${index}`}
+              preset={preset}
+              isSelected={isSelected}
+              selectedPreset={selectedPreset}
+              setPreset={setPreset}
+              index={index}
+            />
+          )
+        })}
+        <div
+          className={`
+          h-10 w-10
+          max-h-10 max-w-10
+          border
+          focus:ring-indigo-500
+          cursor-pointer
+          flex
+          justify-center 
+          items-center
+          rounded
+          text-gray-300
+          hover:shadow-md
+          transition-sm
+          transition-75
+          transition-ease-out
+        `}
+          onClick={() => {
+            const newThemeNumber = presets.length + adThemes.length + 1
+            const newTheme = {
+              ...defaultTheme,
+              name: newThemeNumber,
+              label: newThemeNumber,
+            }
+            setAdThemes([...adThemes, newTheme])
+            setTheme(newTheme)
+            setPreset(newThemeNumber)
+
+            // setComponent(organisms.find((c) => c.value === 'styleguide'))
+            // setSelectedSubComponent(
+            //   organisms.find((c) => c.value === 'styleguide'),
+            // )
+
+            // window.localStorage.setItem('themes', JSON.stringify(theme))
+            // downloadFile(`${presets.length + 1}.js`, JSON.stringify(theme))
+            // setTheme(preset)
+            // setPreset(index + 1)
+          }}
+          sx={{
+            opacity: 0.5,
+            // border-gray-300
+            // hover:text-gray-500
+            // hover:border-gray-500
+            borderColor: 'borderColor',
+            color: 'text',
+
+            ':hover': {
+              opacity: 1,
+              // borderColor: preset.colors.primary,
+              // color: preset.colors.primary,
+              // background: preset.colors.background,
+            },
+            // color: 'text',
+          }}
+        >
+          <PlusIcon
+            className="h-3 w-3"
+            sx={
+              {
+                // color: preset.colors.primary,
+              }
+            }
           />
-        )
-      })}
-      <div
-        className={`
+        </div>
+        <div
+          className={`
           h-10 w-10
           max-h-10 max-w-10
           border
@@ -67,96 +129,31 @@ export const ThemesPresets = ({ type }) => {
           transition-75
           transition-ease-out
         `}
-        onClick={() => {
-          const newThemeNumber = presets.length + adThemes.length + 1
-          const newTheme = {
-            ...defaultTheme,
-            name: newThemeNumber,
-            label: newThemeNumber,
-          }
-          setAdThemes([...adThemes, newTheme])
-          setTheme(newTheme)
-          setPreset(newThemeNumber)
+          onClick={() => {
+            downloadFile(`theme.js`, JSON.stringify(theme))
+          }}
+          sx={{
+            opacity: 0.5,
+            borderColor: 'borderColor',
+            color: 'text',
 
-          // setComponent(organisms.find((c) => c.value === 'styleguide'))
-          // setSelectedSubComponent(
-          //   organisms.find((c) => c.value === 'styleguide'),
-          // )
-
-          // window.localStorage.setItem('themes', JSON.stringify(theme))
-          // downloadFile(`${presets.length + 1}.js`, JSON.stringify(theme))
-          // setTheme(preset)
-          // setPreset(index + 1)
-        }}
-        sx={{
-          opacity: 0.5,
-          // border-gray-300
-          // hover:text-gray-500
-          // hover:border-gray-500
-          borderColor: 'borderColor',
-          color: 'text',
-
-          ':hover': {
-            opacity: 1,
-            // borderColor: preset.colors.primary,
-            // color: preset.colors.primary,
-            // background: preset.colors.background,
-          },
-          // color: 'text',
-        }}
-      >
-        <PlusIcon
-          className="h-3 w-3"
-          sx={
-            {
-              // color: preset.colors.primary,
+            ':hover': {
+              opacity: 1,
+            },
+          }}
+        >
+          <ArrowSmDownIcon
+            className="h-4 w-4"
+            sx={
+              {
+                // color: preset.colors.primary,
+              }
             }
-          }
-        />
+          />
+        </div>
       </div>
-      <div
-        className={`
-          h-10 w-10
-          max-h-10 max-w-10
-          border
-          focus:ring-indigo-500
-          cursor-pointer
-          flex
-          justify-center 
-          items-center
-          rounded
-          text-gray-300
-          hover:shadow-md
-          transition-sm
-          transition-75
-          transition-ease-out
-        `}
-        onClick={() => {
-          downloadFile(`theme.js`, JSON.stringify(theme))
-        }}
-        sx={{
-          opacity: 0.5,
-          borderColor: 'borderColor',
-          color: 'text',
-
-          ':hover': {
-            opacity: 1,
-          },
-        }}
-      >
-        <ArrowSmDownIcon
-          className="h-4 w-4"
-          sx={
-            {
-              // color: preset.colors.primary,
-            }
-          }
-        />
-      </div>
-    </div>
+    </Section>
   )
-
-  return
 }
 
 const Theme = ({ preset, isSelected, selectedPreset, setPreset, index }) => {

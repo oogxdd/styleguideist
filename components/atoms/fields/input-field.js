@@ -1,5 +1,59 @@
 import { Input } from './controls/input'
 
+export const InputField = ({
+  label,
+  placeholder = 'Placeholder',
+  type = 'text',
+  hint,
+  value,
+  onChange = () => {},
+  variant = 'atoms',
+}) => {
+  return (
+    <div
+      className="mb-4"
+      sx={{
+        variant: `${variant}.field`,
+      }}
+    >
+      {label && (
+        <label
+          htmlFor="email"
+          className="block text-sm font-medium text-gray-700"
+          sx={{
+            variant: variant === 'atoms' ? '' : `${variant}.label`,
+          }}
+        >
+          {label}
+        </label>
+      )}
+      <div className="mt-1 relative">
+        <Input
+          className={`shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md`}
+          placeholder={placeholder}
+          type={type}
+          value={value}
+          onChange={onChange}
+          style={{
+            variant: `${variant}.input`,
+          }}
+        />
+      </div>
+      {hint && (
+        <p
+          className="mt-2 text-sm text-gray-500"
+          id="email-description"
+          sx={{
+            variant: `${variant}.caption`,
+          }}
+        >
+          {hint}
+        </p>
+      )}
+    </div>
+  )
+}
+
 // export const InputField = ({
 //   label = 'Input',
 //   value = '',
@@ -35,57 +89,3 @@ import { Input } from './controls/input'
 //     />
 //   </div>
 // )
-
-export const InputField = ({
-  label,
-  placeholder = 'Placeholder',
-  type = 'text',
-  hint,
-  value,
-  onChange = () => {},
-  variant = 'atoms',
-}) => {
-  return (
-    <div
-      className="mb-4"
-      sx={{
-        variant: `${variant}.field`,
-      }}
-    >
-      {label && (
-        <label
-          htmlFor="email"
-          className="block text-sm font-medium text-gray-700"
-          sx={{
-            variant: `${variant}.label`,
-          }}
-        >
-          {label}
-        </label>
-      )}
-      <div className="mt-1 relative">
-        <Input
-          className={`shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md`}
-          placeholder={placeholder}
-          type={type}
-          value={value}
-          onChange={onChange}
-          style={{
-            variant: `${variant}.input`,
-          }}
-        />
-      </div>
-      {hint && (
-        <p
-          className="mt-2 text-sm text-gray-500"
-          id="email-description"
-          sx={{
-            variant: `${variant}.caption`,
-          }}
-        >
-          {hint}
-        </p>
-      )}
-    </div>
-  )
-}

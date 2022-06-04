@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Disclosure } from '@headlessui/react'
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/solid'
 import { PlusCircleIcon } from '@heroicons/react/solid'
-import { Checkbox } from 'app/parameters/ui'
+import { Checkbox } from 'components'
 
 export const Section = ({
   open = false,

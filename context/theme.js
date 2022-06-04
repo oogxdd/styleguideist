@@ -7,7 +7,7 @@ import * as themes from 'data/themes'
 const ThemeContext = createContext()
 
 const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useImmer(themes.black)
+  const [theme, setTheme] = useImmer(themes.base)
   const [adThemes, setAdThemes] = useState([]) // this is additional user-created themes
 
   // set button spacing
@@ -66,20 +66,20 @@ const ThemeProvider = ({ children }) => {
     }))
   }
 
-  const borderRadius = theme.radii[2].substring(0, theme.radii[2].length - 2)
+  const borderRadius = theme.radii[0].substring(0, theme.radii[0].length - 2)
   const borderWidth = theme.borders.border
     .split(' ')[0]
     .substring(0, theme.borders.border.split(' ')[0].length - 2)
 
   const setBorderRadius = (value) => {
     const values = [
-      value / 4 + 'px',
-      value / 2 + 'px',
       value + 'px',
       value * 2 + 'px',
-      // value * 3 + 'px',
       value * 4 + 'px',
-      // value * 10 + 'px',
+      value * 6 + 'px',
+      value * 8 + 'px',
+      value * 12 + 'px',
+      value * 24 + 'px',
     ]
     setTheme((theme) => ({
       ...theme,
