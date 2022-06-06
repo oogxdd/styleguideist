@@ -58,6 +58,14 @@ const LocalParameters = () => {
             sub.value = 'date'
           }
 
+          if (sub.variant === 'molecules.feeditem.heading') {
+            sub.value = 'heading'
+          }
+
+          if (sub.variant === 'molecules.feeditem.card') {
+            sub.value = 'card'
+          }
+
           let override = sub.subvalue
             ? comp.group !== 'atoms' &&
               theme[comp.group][comp.value][sub.value][sub.subvalue] &&
@@ -183,6 +191,22 @@ const LocalParameters = () => {
                         ] = value
                       })
                     }
+                  }
+                }
+
+                // here if we are modifying organisms, but which consists of molecules ->
+                // we modify molecules straitght
+                if (
+                  comp.group === 'organisms' &&
+                  comp.value === 'feed' &&
+                  sub.value !== 'separator' &&
+                  sub.value !== 'container'
+                ) {
+                  value = theme.molecules.feeditem[sub.value][field.key]
+                  onChange = (value) => {
+                    setTheme((theme) => {
+                      theme.molecules.feeditem[sub.value][field.key] = value
+                    })
                   }
                 }
 

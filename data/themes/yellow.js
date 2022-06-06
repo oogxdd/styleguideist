@@ -83,11 +83,6 @@ export const yellow = {
         textAlign: 'start',
         fontWeight: 500,
         fontSize: '23.75px',
-        // mt: 10px;
-        // margin-bottom: 16px;
-        // text-align: start;
-        // margin-left: 24px;
-        // font-weight: 500;
       },
       h3: { mt: 10, mb: 16, textAlign: 'start', fontWeight: 500 },
       h4: {
@@ -154,9 +149,6 @@ export const yellow = {
         variant: 'atoms.image',
         order: 1,
         width: '100%',
-        height: 192,
-        borderRadius: '42px',
-        // marginBottom: 20,
         height: '262px',
         borderRadius: '80px',
       },
@@ -193,10 +185,7 @@ export const yellow = {
       heading: {
         variant: 'atoms.heading.h1',
         fontWeight: 700,
-        h1: {
-          variant: 'atoms.heading.h1',
-          fontWeight: 700,
-        },
+        h1: { variant: 'atoms.heading.h1', fontWeight: 700 },
       },
       card: {
         variant: 'atoms.card',
@@ -250,37 +239,44 @@ export const yellow = {
       },
       name: {
         variant: 'atoms.heading.h4',
-        override: false,
-        fontWeight: 800,
-        fontSize: 21,
+        override: true,
+        fontWeight: 600,
+        fontSize: '19.6px',
         letterSpacing: 0.3,
       },
       username: {
         variant: 'atoms.heading.h4',
-        override: false,
+        override: true,
         fontWeight: 300,
         color: 'hsla(249.99999999999994, 50.000000000000014%, 20%, 0.68)',
       },
       date: {
         variant: 'atoms.caption',
-        override: false,
+        override: true,
         color: 'hsla(249.99999999999994, 50.000000000000014%, 20%, 0.68)',
         fontWeight: 200,
         fontSize: 16,
+      },
+      heading: {
+        variant: 'atoms.heading.h3',
+        override: false,
+        h3: { variant: 'atoms.heading.h3', override: false },
       },
       title: { variant: 'atoms.heading.h3', override: false },
       paragraph: {
         variant: 'atoms.paragraph',
         override: false,
-        color: 'hsla(0, 0%, 0%, 0.9)',
+        color: 'hsla(0, 0%, 0%, 0.73)',
         mb: 25,
         display: 'block',
         fontWeight: 300,
-        mt: 7,
+        mt: 9,
+        fontSize: '16.6px',
+        mr: 0,
       },
       actions: {
         variant: 'atoms.actions',
-        override: false,
+        override: true,
         textColor: '#111827',
       },
       text: { variant: 'atoms.text', override: false },
@@ -291,10 +287,10 @@ export const yellow = {
     feed: {
       preferredLayout: 3,
       background: { variant: 'atoms.background', override: false },
-      container: { variant: 'atoms.container', override: false },
+      container: { variant: 'atoms.container', override: true },
       separator: {
         variant: 'atoms.separator',
-        override: false,
+        override: true,
         background: 'hsla(249.99999999999994, 50.000000000000014%, 20%, 0)',
       },
       card: { variant: 'atoms.card', override: false },
@@ -303,7 +299,7 @@ export const yellow = {
       username: { variant: 'atoms.heading.h4', override: true },
       date: { variant: 'atoms.caption', override: true },
       actions: { variant: 'atoms.actions', override: true, unique: true },
-      paragraph: { variant: 'atoms.paragraph', override: false },
+      paragraph: { variant: 'atoms.paragraph', override: true },
       heading: {
         variant: 'atoms.heading.h3',
         override: false,

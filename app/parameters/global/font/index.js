@@ -32,6 +32,7 @@ export const Font = ({ open = false }) => {
             (x * 18) / 15,
             (x * 21) / 15,
             (x * 24) / 15,
+            (x * 28) / 15,
             (x * 48) / 15,
           ]
           setTheme((theme) => {

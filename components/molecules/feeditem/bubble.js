@@ -15,11 +15,13 @@ export const FeedItemBubble = ({ item = defaultItem }) => {
   const { theme } = useContext(ThemeContext)
 
   return (
-    <div className="flex max-w-3xl">
+    <div className="flex items-start max-w-3xl">
       <Avatar
-        className="w-12 h-12"
+        className="w-16 h-16"
         src={item.author.imageUrl}
-        sx={{ variant: 'molecules.feeditem.avatar' }}
+        style={{ variant: 'molecules.feeditem.avatar' }}
+        // width="64"
+        // width="64"
       />
       <Card
         className="flex-col my-1 mx-3 border rounded-lg p-6"
@@ -33,8 +35,8 @@ export const FeedItemBubble = ({ item = defaultItem }) => {
           >
             <Text
               className="text-sm font-medium text-gray-900 hover:underline block"
-              variant="molecules.feeditem.username"
-              sx={{ variant: 'molecules.feeditem.username' }}
+              variant="molecules.feeditem.name"
+              sx={{ variant: 'molecules.feeditem.name' }}
             >
               {item.author.name}
             </Text>

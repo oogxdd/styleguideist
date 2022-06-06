@@ -12,12 +12,12 @@ export const organisms = [
 
     layoutVariants: [1, 2, 3],
     children: [
-      {
-        name: 'Background',
-        value: 'background',
-        group: 'atoms',
-        variant: 'organisms.feed.background',
-      },
+      // {
+      //   name: 'Background',
+      //   value: 'background',
+      //   group: 'atoms',
+      //   variant: 'organisms.feed.background',
+      // },
       {
         name: 'Container',
         value: 'container',
@@ -40,28 +40,27 @@ export const organisms = [
             value: 'card',
             group: 'atoms',
             variant: 'molecules.feeditem.card',
-            // availableIn: [1, 2, 3, 4],
+            availableIn: [1, 2, 3],
           },
           {
             name: 'Avatar',
             value: 'avatar',
             group: 'atoms',
             variant: 'molecules.feeditem.avatar',
-            // availableIn: [1, 2, 3, 4],
           },
           {
             name: 'Name',
             value: 'text',
             group: 'atoms',
             variant: 'molecules.feeditem.name',
-            availableIn: [2, 2, 4],
+            availableIn: [1, 2, 3],
           },
           {
             name: 'Username',
             value: 'text',
             group: 'atoms',
             variant: 'molecules.feeditem.username',
-            availableIn: [1, 3, 4],
+            availableIn: [1],
           },
           {
             name: 'Date',

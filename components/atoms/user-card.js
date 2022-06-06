@@ -24,7 +24,7 @@ export const UserCard = ({
           <Avatar
             alt="Avatar"
             src={post.authorAvatar}
-            sx={{
+            style={{
               variant: `${variant}.avatar`,
               // variant: 'atoms.avatar',
             }}

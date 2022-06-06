@@ -9,7 +9,15 @@ import { black } from './black'
 
 export { white, green, yellow, gray, spacy, black, base }
 
-export const presets = [white, green, yellow, gray, spacy, black, base]
+export const presets = [
+  white,
+  green,
+  yellow,
+  gray,
+  spacy,
+  black,
+  // base
+]
 
 // import { militaryKind } from './military-kind'
 // import { darkPurple } from './dark-purple'

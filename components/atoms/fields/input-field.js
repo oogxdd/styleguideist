@@ -1,4 +1,8 @@
+import { useContext } from 'react'
+import { ThemeContext } from 'context'
 import { Input } from './controls/input'
+
+import { value as getValue } from 'helpers'
 
 export const InputField = ({
   label,
@@ -8,20 +12,29 @@ export const InputField = ({
   value,
   onChange = () => {},
   variant = 'atoms',
+  style = {},
 }) => {
+  const { theme } = useContext(ThemeContext)
+
   return (
     <div
       className="mb-4"
       sx={{
         variant: `${variant}.field`,
+        ...style,
       }}
     >
       {label && (
         <label
           htmlFor="email"
-          className="block text-sm font-medium text-gray-700"
+          className="block font-medium text-gray-700"
           sx={{
             variant: variant === 'atoms' ? '' : `${variant}.label`,
+            // fontSize:
+            //   getValue(theme, [
+            //     'molecules.form.field.label.fontSize',
+            //     'atoms.field.label.fontSize',
+            //   ]) + '!important',
           }}
         >
           {label}

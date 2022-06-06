@@ -11,13 +11,15 @@ import {
   Actions,
 } from 'components/atoms'
 
+import { value } from 'helpers'
+
 export const FeedItemTwitter = ({ item = defaultItem }) => {
   const { theme } = useContext(ThemeContext)
 
   return (
     <div
       id="post"
-      className="flex hover:bg-gray-100/5 duration-200 cursor-pointer pt-2 pl-3 max-w-3xl"
+      className="flex items-start hover:bg-gray-100/5 duration-200 pt-2 pl-3 max-w-3xl"
       sx={{
         marginLeft: theme.molecules.feeditem.card.ml
           ? theme.molecules.feeditem.card.ml
@@ -45,63 +47,73 @@ export const FeedItemTwitter = ({ item = defaultItem }) => {
           ? theme.molecules.feeditem.card.pt
           : undefined,
 
-        width: theme.molecules.feeditem.card.width
-          ? theme.molecules.feeditem.card.width
-          : undefined,
+        // maxWidth: value(
+        //   theme,
+        //   ['theme.molecules.feeditem.card.width', 'theme.atoms.card.width'],
+        //   theme.space.x[0] * 600,
+        // ),
+        // width: theme.molecules.feeditem.card.width
+        //   ? theme.molecules.feeditem.card.width
+        //   : undefined,
         height: theme.molecules.feeditem.card.height
           ? theme.molecules.feeditem.card.height
           : undefined,
       }}
     >
-      <div>
-        <div className="flex items-center justify-between">
-          <div className="flex items-center">
-            <Avatar
-              className="w-12 h-12 rounded-full"
-              src={item.author.imageUrl}
-              sx={{ variant: 'molecules.feeditem.avatar' }}
-            />
+      <Avatar
+        className="w-12 h-12 rounded-full"
+        src={item.author.imageUrl}
+        sx={{
+          variant: 'molecules.feeditem.avatar',
+          mr: value(
+            theme,
+            ['molecules.feeditem.avatar.mr', 'atoms.avatar.mr'],
+            'x.4',
+          ),
+        }}
+      />
 
-            <div
-              id="details"
-              className="flex items-center flex-shrink-0 space-x-1"
-              sx={{ color: 'text' }}
+      <div className="flex flex-col">
+        <div className="flex items-center justify-between cursor-default">
+          <div
+            id="details"
+            className="flex items-center flex-shrink-0 space-x-1"
+            sx={{ color: 'text' }}
+          >
+            <Text
+              className="text-black font-bold"
+              variant="molecules.feeditem.name"
+              style={{
+                variant: 'molecules.feeditem.name',
+                // marginTop: 0,
+              }}
             >
-              <Text
-                className="text-black font-bold"
-                variant="molecules.feeditem.name"
-                style={{
-                  variant: 'molecules.feeditem.name',
-                  marginTop: 0,
-                }}
-              >
-                {item.author.name}
-              </Text>
-              <Text
-                variant="molecules.feeditem.username"
-                style={{
-                  variant: 'molecules.feeditem.username',
-                  marginTop: 0,
-                }}
-              >
-                {item.author.username}
-              </Text>
-              <Text
-                variant="molecules.feeditem.date"
-                style={{ variant: 'molecules.feeditem.date' }}
-              >
-                &#183;
-              </Text>
-              <Text
-                variant="molecules.feeditem.date"
-                style={{ variant: 'molecules.feeditem.date' }}
-              >
-                {item.date}
-              </Text>
-            </div>
+              {item.author.name}
+            </Text>
+            <Text
+              variant="molecules.feeditem.username"
+              style={{
+                variant: 'molecules.feeditem.username',
+                // marginTop: 0,
+              }}
+            >
+              {item.author.username}
+            </Text>
+            <Text
+              variant="molecules.feeditem.date"
+              style={{ variant: 'molecules.feeditem.date' }}
+            >
+              &#183;
+            </Text>
+            <Text
+              variant="molecules.feeditem.date"
+              style={{ variant: 'molecules.feeditem.date' }}
+            >
+              {item.date}
+            </Text>
           </div>
-          <div id="options">
-            <div className="w-7 text-gray-400 hover:text-blue-400 hover:bg-blue-100 duration-200 rounded-full p-1">
+          <div id="options cursor-pointer">
+            <div className="w-7 text-gray-400 hover:text-blue-400 hover:bg-blue-100 duration-200 rounded-full p-1 cursor-pointer">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"

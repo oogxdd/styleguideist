@@ -90,6 +90,14 @@ export default () => {
                 </Item>
                 {c1.children &&
                   c1.children.map((c2) => {
+                    if (c2.availableIn) {
+                      if (
+                        c2.availableIn.indexOf(selectedComponentVariant) === -1
+                      ) {
+                        return null
+                      }
+                    }
+
                     // level 2 components
                     return (
                       <Item

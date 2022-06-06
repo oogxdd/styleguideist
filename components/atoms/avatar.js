@@ -6,7 +6,7 @@ import { Avatar as ThemeUIAvatar } from 'theme-ui'
 export const Avatar = ({
   src = '/img/logo/spotify.svg',
   alt = 'Image',
-  sx = {},
+  style = {},
   variant = 'atoms.avatar',
   className = 'h-10 w-10 rounded-full',
 }) => {
@@ -19,7 +19,8 @@ export const Avatar = ({
       className={`duration-200 ${className}`}
       sx={{
         variant,
-        ...sx,
+        ...style,
+        minWidth: 'auto',
       }}
     />
   )

@@ -259,6 +259,7 @@ export const atoms = [
           },
         ],
       }),
+      spacing({ margins: true, paddings: true, dimensions: true }),
     ],
   },
   {
@@ -310,7 +311,7 @@ export const atoms = [
           {
             type: 'colorpicker',
             key: 'background',
-            label: 'Color',
+            label: 'Background',
           },
         ],
       }),

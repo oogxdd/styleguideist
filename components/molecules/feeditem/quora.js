@@ -41,21 +41,21 @@ export const FeedItemQuora = ({ item = defaultItem }) => {
                 src={item.author.imageUrl}
                 alt=""
                 variant="molecules.feeditem.avatar"
-                sx={{ variant: 'molecules.feeditem.avatar' }}
+                style={{ variant: 'molecules.feeditem.avatar' }}
               />
             </div>
             <div className="min-w-0 flex-1">
               <Text
                 className="text-sm font-medium text-gray-900 hover:underline block"
                 variant="molecules.feeditem.name"
-                sx={{ variant: 'molecules.feeditem.name' }}
+                style={{ variant: 'molecules.feeditem.name' }}
               >
                 {item.author.name}
               </Text>
               <Text
                 className="text-sm text-gray-500 hover:underline block"
                 variant="molecules.feeditem.date"
-                sx={{ variant: 'molecules.feeditem.date' }}
+                style={{ variant: 'molecules.feeditem.date' }}
               >
                 {item.date}
               </Text>
@@ -161,7 +161,7 @@ export const FeedItemQuora = ({ item = defaultItem }) => {
             className="mt-4 text-base font-medium text-gray-900"
             variant="molecules.feeditem.heading"
             style={{ variant: 'molecules.feeditem.heading' }}
-            as="h4"
+            as="h3"
           >
             {item.title}
           </Heading>
@@ -169,7 +169,7 @@ export const FeedItemQuora = ({ item = defaultItem }) => {
         <Paragraph
           className="mt-2 text-sm text-gray-700 space-y-4 whitespace-pre-line"
           variant="molecules.feeditem.paragraph"
-          sx={{ variant: 'molecules.feeditem.paragraph' }}
+          style={{ variant: 'molecules.feeditem.paragraph' }}
           as="p"
         >
           {item.body}
