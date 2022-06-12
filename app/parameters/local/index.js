@@ -169,6 +169,8 @@ const LocalParameters = () => {
                 }
 
                 if (param.type === 'other') {
+                  console.log(comp)
+                  console.log(sub)
                   if (sub.parent) {
                     //
                     value =

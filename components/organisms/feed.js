@@ -16,7 +16,7 @@ export const Feed = () => {
       className="pt-24 pb-24 w-full flex flex-col items-center"
       sx={{
         variant: 'atoms.background',
-        width: fullscreen ? '100vw' : 'calc(100vw - 18rem + 33px)',
+        width: fullscreen ? '100%' : 'calc(100vw - 18rem + 16px)',
       }}
     >
       <div

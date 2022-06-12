@@ -67,7 +67,7 @@ export const white = {
       h3: { color: 'text', lineHeight: 'normal', fontSize: 3 },
       h4: {
         color: 'text',
-        fontWeight: 'regular',
+        // fontWeight: 'regular',
         lineHeight: 'normal',
         fontSize: 2,
       },
@@ -111,7 +111,7 @@ export const white = {
         override: false,
         order: 5,
         avatar: { variant: 'atoms.avatar' },
-        name: { variant: 'atoms.heading.h4' },
+        heading: { variant: 'atoms.heading.h4' },
         caption: { variant: 'atoms.caption' },
       },
       props: {

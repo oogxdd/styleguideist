@@ -1,11 +1,22 @@
 import { createContext, useState, useEffect, useContext } from 'react'
 import { AppContext } from 'context'
 import { useImmer } from 'use-immer'
+import { useRouter } from 'next/router'
 import * as components from 'data/components'
 
 const UIContext = createContext()
 
 const UIProvider = ({ children }) => {
+  const router = useRouter()
+  const { fs } = router.query
+
+  // console.log(fs)
+  // console.log(fs === 'true')
+
+  useEffect(() => {
+    if (fs === 'true') setFullscreen(true)
+  }, [fs])
+
   const { selectedSubComponent, selectedComponent } = useContext(AppContext)
 
   const [fullscreen, setFullscreen] = useState(false)

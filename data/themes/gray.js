@@ -231,7 +231,7 @@ export const gray = {
         order: 5,
         display: 'none',
         avatar: { variant: 'atoms.avatar' },
-        name: { variant: 'atoms.heading.h4' },
+        heading: { variant: 'atoms.heading.h4' },
         caption: { variant: 'atoms.caption' },
       },
       props: {
