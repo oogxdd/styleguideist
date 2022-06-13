@@ -5,6 +5,7 @@ export default function Document() {
     <Html>
       <Head>
         <link href="/css/index.css" rel="stylesheet" />
+        <link href="/css/actions-list.css" rel="stylesheet" />
       </Head>
       <body>
         <Main />
