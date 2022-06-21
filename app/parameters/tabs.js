@@ -1,6 +1,6 @@
 const Tabs = ({ activeTab, setTab, tabs }) => (
   <div
-    className="flex flex-row border-b text-sm"
+    className="flex flex-row-reverse border-b text-xs"
     sx={{ borderColor: 'borderColor' }}
   >
     <span

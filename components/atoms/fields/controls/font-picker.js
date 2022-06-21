@@ -33,7 +33,7 @@ export const FontPicker = ({ onChange, value }) => {
     >
       <div className="relative mb-6">
         <Listbox.Button
-          className="relative w-full border rounded-md pl-3 pr-10 py-2 text-left focus:outline-none focus:ring-1 sm:text-sm cursor-pointer"
+          className="relative w-full border rounded-md pl-3 pr-10 py-2 text-left focus:outline-none focus:ring-1 sm:text-xs cursor-pointer"
           sx={{
             border: `1px solid ${theme.colors.borderColor}`,
             borderColor: 'borderColor',
@@ -60,7 +60,7 @@ export const FontPicker = ({ onChange, value }) => {
           leaveTo="opacity-0"
         >
           <Listbox.Options
-            className="absolute w-full py-1 mt-2 overflow-auto text-base rounded-md shadow-lg max-h-90 ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm border z-10"
+            className="absolute w-full py-1 mt-2 overflow-auto rounded-md shadow-lg max-h-90 ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-xs border z-10"
             sx={{
               bg: 'background',
               borderColor: 'borderColor',
@@ -70,7 +70,7 @@ export const FontPicker = ({ onChange, value }) => {
               <Listbox.Option
                 key={font.value}
                 className={
-                  'cursor-pointer select-none relative py-2 pl-3 pr-9 text-md'
+                  'cursor-pointer select-none relative py-2 pl-3 pr-9 text-xs'
                 }
                 sx={{
                   '&:hover': {

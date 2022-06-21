@@ -81,7 +81,7 @@ export const FeedItemTwitter = ({ item = defaultItem }) => {
             sx={{ color: 'text' }}
           >
             <Text
-              className="text-black font-bold"
+              className="font-bold"
               variant="molecules.feeditem.name"
               style={{
                 variant: 'molecules.feeditem.name',

@@ -8,9 +8,9 @@ export const ColorPicker = ({ value: color, onChange, label = 'Color' }) => {
   return (
     <div className="flex flex-col">
       <div className="flex items-center justify-between">
-        <label className="mr-3 text-sm">{label}</label>
+        <label className="mr-3 text-xs">{label}</label>
         <div
-          className="h-6 w-6 rounded text-indigo-600 focus:ring-indigo-500 bg-green-500 border"
+          className="h-5 w-5 rounded text-indigo-600 focus:ring-indigo-500 bg-green-500 border"
           style={{ background: color }}
           onClick={() => setExpanded(!expanded)}
           sx={{

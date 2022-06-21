@@ -5,7 +5,7 @@ export const TextareaField = ({
   placeholder = '',
 }) => (
   <div className="flex flex-col justify-between">
-    <label className="text-sm mb-0.5">{label}</label>
+    <label className="text-xs mb-0.5">{label}</label>
     <textarea
       className="w-full rounded flex items-center justify-center text-xs border"
       value={value}

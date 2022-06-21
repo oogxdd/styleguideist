@@ -31,6 +31,7 @@ import {
 
 export const atoms = [
   {
+    // children: [{ label: 'A', value: 'b' }],
     label: 'Button',
     value: 'button',
     component: Button,
@@ -159,13 +160,13 @@ export const atoms = [
         fields: [
           {
             type: 'colorpicker',
-            key: 'background',
-            label: 'Background',
+            key: 'color',
+            label: 'Text',
           },
           {
             type: 'colorpicker',
-            key: 'color',
-            label: 'Text',
+            key: 'background',
+            label: 'Background',
           },
         ],
       }),
@@ -301,7 +302,7 @@ export const atoms = [
   {
     label: 'Container',
     value: 'container',
-    component: Actions,
+    // component: Actions,
     group: 'atoms',
     params: [
       // color(),

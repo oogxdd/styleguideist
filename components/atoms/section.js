@@ -18,7 +18,7 @@ export const Section = ({
   return (
     <Disclosure
       as="div"
-      className={`${withoutBottomBorder ? '' : 'border-b'} py-6 px-6`}
+      className={`${withoutBottomBorder ? '' : 'border-b'} py-6 px-4`}
       defaultOpen={open}
       sx={{
         borderColor: 'borderColor',
@@ -27,7 +27,7 @@ export const Section = ({
       {({ open }) => (
         <>
           <h3 className="-my-3 flow-root">
-            <Disclosure.Button className="py-3 w-full flex items-center justify-between text-sm">
+            <Disclosure.Button className="py-3 w-full flex items-center justify-between text-xs">
               <span className="font-medium flex items-center">{name}</span>
               <span className="ml-6 flex items-center">
                 {open ? (

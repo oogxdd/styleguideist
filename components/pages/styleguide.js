@@ -42,7 +42,7 @@ const Typography = () => {
       <Atoms.Card
         className="flex flex-col"
         style={{
-          variant: 'templates.styleguide.card',
+          variant: 'pages.styleguide.card',
           paddingLeft: 'x.8',
           paddingRight: 'x.8',
           paddingTop: 'y.8',
@@ -148,7 +148,7 @@ const Colors = () => {
       <Atoms.Card
         className="flex flex-col"
         style={{
-          variant: 'templates.styleguide.card',
+          variant: 'pages.styleguide.card',
           paddingLeft: 'x.8',
           paddingRight: 'x.8',
           paddingTop: 'y.8',
@@ -202,7 +202,7 @@ const Components = () => {
       <Atoms.Card
         className="flex flex-col"
         style={{
-          variant: 'templates.styleguide.card',
+          variant: 'pages.styleguide.card',
           paddingLeft: 'x.8',
           paddingRight: 'x.8',
           paddingTop: 'y.8',

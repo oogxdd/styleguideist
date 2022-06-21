@@ -6,6 +6,7 @@ export const Button = ({ children = 'Submit', variant = 'atoms.button' }) => (
     sx={{
       // shadow: 'shadow',
       border: 'inherit',
+      minWidth: 120,
       variant,
     }}
   >

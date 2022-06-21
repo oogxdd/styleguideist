@@ -14,7 +14,7 @@ import { organisms } from 'data/components'
 export const Presets = ({ open = false }) => {
   const {
     selectedComponent,
-    setComponent,
+    setSelectedComponent,
     setSelectedSubComponent,
     setComponentVariant,
   } = useContext(AppContext)
@@ -59,7 +59,6 @@ export const Presets = ({ open = false }) => {
           justify-center 
           items-center
           rounded
-          text-gray-300
           hover:shadow-md
           transition-sm
           transition-75
@@ -76,7 +75,7 @@ export const Presets = ({ open = false }) => {
             setTheme(newTheme)
             setPreset(newThemeNumber)
 
-            // setComponent(organisms.find((c) => c.value === 'styleguide'))
+            // setSelectedComponent(organisms.find((c) => c.value === 'styleguide'))
             // setSelectedSubComponent(
             //   organisms.find((c) => c.value === 'styleguide'),
             // )
@@ -102,48 +101,12 @@ export const Presets = ({ open = false }) => {
             },
             // color: 'text',
           }}
+          style={{
+            fontSize: 12,
+          }}
         >
           <PlusIcon
             className="h-3 w-3"
-            sx={
-              {
-                // color: preset.colors.primary,
-              }
-            }
-          />
-        </div>
-        <div
-          className={`
-          h-10 w-10
-          max-h-10 max-w-10
-          border
-          focus:ring-indigo-500
-          cursor-pointer
-          flex
-          justify-center 
-          items-center
-          rounded
-          text-gray-300
-          hover:shadow-md
-          transition-sm
-          transition-75
-          transition-ease-out
-        `}
-          onClick={() => {
-            downloadFile(`theme.js`, JSON.stringify(theme))
-          }}
-          sx={{
-            opacity: 0.5,
-            borderColor: 'borderColor',
-            color: 'text',
-
-            ':hover': {
-              opacity: 1,
-            },
-          }}
-        >
-          <ArrowSmDownIcon
-            className="h-4 w-4"
             sx={
               {
                 // color: preset.colors.primary,
@@ -157,14 +120,12 @@ export const Presets = ({ open = false }) => {
 }
 
 const Theme = ({ preset, isSelected, selectedPreset, setPreset, index }) => {
-  const [clicked, setClicked] = useState(false)
   const { selectedComponent, setComponentVariant } = useContext(AppContext)
   const { theme, setTheme, adThemes, setAdThemes } = useContext(ThemeContext)
 
   return (
     <div
       className={`
-              text-xs
               h-10 w-10
               max-h-10 max-w-10
               border
@@ -183,12 +144,7 @@ const Theme = ({ preset, isSelected, selectedPreset, setPreset, index }) => {
             `}
       onClick={() => {
         if (isSelected) {
-          setClicked(true)
-          if (clicked) {
-            downloadFile(`${preset.name}.js`, JSON.stringify(preset))
-          }
         } else {
-          setClicked(false)
           setTheme(preset)
           setPreset(index + 1)
 
@@ -206,6 +162,7 @@ const Theme = ({ preset, isSelected, selectedPreset, setPreset, index }) => {
       title={preset.name}
       sx={{
         borderColor: 'borderColor',
+        color: 'text',
         opacity: isSelected ? 1 : 0.5,
         // text-gray-${isSelected ? 500 : 300}
         // border-gray-${isSelected ? 500 : 300}
@@ -231,36 +188,11 @@ const Theme = ({ preset, isSelected, selectedPreset, setPreset, index }) => {
         // borderColor: 'borderColor',
         // color: 'text',
       }}
-      style={
-        {
-          // borderColor: preset.colors
-          //   ? preset.colors.primary
-          //   : 'borderColor',
-          // background: preset.colors
-          //   ? preset.colors.background
-          //   : 'background',
-          // borderColor: preset.colors.primary,
-          // background: preset.colors.background,
-          // borderColor: 'borderColor',
-          // color: 'text',
-        }
-      }
+      style={{
+        fontSize: 11,
+      }}
     >
-      <div
-        className={`block ${isSelected && clicked ? 'group-hover:hidden' : ''}`}
-      >
-        {preset.logo || preset.label || index + 1}
-      </div>
-      <div
-        className={`hidden ${isSelected && clicked ? 'group-hover:block' : ''}`}
-      >
-        <DownloadIcon
-          className="h-4 w-4"
-          sx={{
-            color: preset.colors.primary,
-          }}
-        />
-      </div>
+      <div className={`block`}>{preset.logo || preset.label || index + 1}</div>
     </div>
   )
 }

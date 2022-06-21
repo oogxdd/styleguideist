@@ -168,30 +168,43 @@ const LocalParameters = () => {
                   }
                 }
 
+                console.log('------')
+                console.log(comp)
+                console.log(sub)
+                console.log(field)
                 if (param.type === 'other') {
-                  console.log(comp)
-                  console.log(sub)
-                  if (sub.parent) {
-                    //
-                    value =
-                      theme[comp.group][comp.value][sub.parent][sub.value][
-                        field.key
-                      ]
+                  if (comp.group === 'atoms') {
+                    value = theme[comp.group][comp.value][field.key]
                     onChange = (value) => {
                       setTheme((theme) => {
-                        theme[comp.group][comp.value][sub.parent][sub.value][
-                          field.key
-                        ] = value
+                        theme[comp.group][comp.value][field.key] = value
                       })
                     }
+                    //
                   } else {
-                    value = theme[comp.group][comp.value][sub.value][field.key]
-                    onChange = (value) => {
-                      setTheme((theme) => {
-                        theme[comp.group][comp.value][sub.value][
+                    if (sub.parent) {
+                      //
+                      value =
+                        theme[comp.group][comp.value][sub.parent][sub.value][
                           field.key
-                        ] = value
-                      })
+                        ]
+                      onChange = (value) => {
+                        setTheme((theme) => {
+                          theme[comp.group][comp.value][sub.parent][sub.value][
+                            field.key
+                          ] = value
+                        })
+                      }
+                    } else {
+                      value =
+                        theme[comp.group][comp.value][sub.value][field.key]
+                      onChange = (value) => {
+                        setTheme((theme) => {
+                          theme[comp.group][comp.value][sub.value][
+                            field.key
+                          ] = value
+                        })
+                      }
                     }
                   }
                 }

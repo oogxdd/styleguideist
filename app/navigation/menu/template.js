@@ -4,7 +4,7 @@ import { AppContext } from 'context'
 import Component from './component'
 
 const Template = ({ template }) => {
-  const { selectedComponent, setComponent } = useContext(AppContext)
+  const { selectedComponent, setSelectedComponent } = useContext(AppContext)
   const isSelected = false
   return null
 
@@ -40,7 +40,7 @@ const Template = ({ template }) => {
   //           <li
   //             className="mr-3 text-sm cursor-pointer"
   //             key={component.value}
-  //             onClick={() => setComponent(page)}
+  //             onClick={() => setSelectedComponent(page)}
   //             sx={
   //               selectedComponent.value === page.value
   //                 ? { color: 'primary', ':hover': { color: 'primary' } }

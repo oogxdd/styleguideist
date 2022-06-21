@@ -346,7 +346,7 @@ export const spacy = {
       },
     },
   },
-  templates: {
+  pages: {
     styleguide: {
       card: {
         variant: 'atoms.card',

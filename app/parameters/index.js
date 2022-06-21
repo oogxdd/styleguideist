@@ -17,24 +17,28 @@ const Parameters = () => {
   return (
     <>
       <div
-        className="max-h-screen overflow-hidden"
+        className="max-h-screen overflow-y-auto"
         style={{
-          width: 'calc(18rem - 0px)',
-          minWidth: 'calc(18rem - 0px)',
-          display: fullscreen ? 'none' : 'block',
+          // width: '100%',
+          // minWidth: 'calc(18rem - 0px)',
+          // display: fullscreen ? 'none' : 'block',
+          fontSize: 13,
+          minHeight: 'calc(104vh + 7px)',
         }}
       >
         <div
-          className="parameters grid grid-cols-1 gap-x-8 gap-y-10 pt-0 min-h-screen overflow-scroll transition duration-500"
-          style={{ maxHeight: '125vh' }}
+          className="parameters grid grid-cols-1 gap-x-8 gap-y-10 pt-0 overflow-scroll w-full"
+          style={{
+            width: '100%',
+
+            // transform: 'scale(0.9)',
+            // transformOrigin: 'top right',
+          }}
           sx={{
             bg: 'background',
           }}
         >
-          <form
-            className="block border-r pb-6"
-            sx={{ borderColor: 'borderColor', minHeight: '125vh' }}
-          >
+          <form className="block pb-6" sx={{ borderColor: 'borderColor' }}>
             <Tabs
               activeTab={paramsType}
               setTab={setParamsType}
@@ -54,6 +58,7 @@ const Parameters = () => {
           </form>
         </div>
       </div>
+      {/*
       <div
         className="fixed bottom-2 left-2 select-none z-10"
         onClick={() => setFullscreen(!fullscreen)}
@@ -86,6 +91,7 @@ const Parameters = () => {
           />
         )}
       </div>
+      */}
     </>
   )
 }

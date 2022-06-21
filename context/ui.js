@@ -10,6 +10,9 @@ const UIProvider = ({ children }) => {
   const router = useRouter()
   const { fs } = router.query
 
+  const [showExportModal, setShowExportModal] = useState(false)
+  const [device, setDevice] = useState('desktop')
+
   // console.log(fs)
   // console.log(fs === 'true')
 
@@ -56,13 +59,13 @@ const UIProvider = ({ children }) => {
   useEffect(() => {
     const onEscape = (e) => {
       if (e.key === 'Escape') {
-        setShowNavigation(!showNavigation)
+        setFullscreen(!fullscreen)
       }
     }
 
     window.addEventListener('keyup', onEscape)
     return () => window.removeEventListener('keyup', onEscape)
-  }, [showNavigation])
+  }, [fullscreen])
 
   return (
     <UIContext.Provider
@@ -78,6 +81,12 @@ const UIProvider = ({ children }) => {
 
         setShowNavigation,
         setNavigationFilter,
+
+        showExportModal,
+        setShowExportModal,
+
+        device,
+        setDevice,
       }}
     >
       {children}

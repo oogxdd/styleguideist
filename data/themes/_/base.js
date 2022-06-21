@@ -325,7 +325,7 @@ export const base = {
       preferredLayout: 1,
     },
   },
-  templates: {
+  pages: {
     styleguide: { card: { variant: 'atoms.card' } },
   },
 }

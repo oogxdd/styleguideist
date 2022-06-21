@@ -287,5 +287,5 @@ export const black = {
       paragraph: { variant: 'atoms.paragraph', override: true },
     },
   },
-  templates: { styleguide: { card: { variant: 'atoms.card' } } },
+  pages: { styleguide: { card: { variant: 'atoms.card' } } },
 }

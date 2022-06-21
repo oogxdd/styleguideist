@@ -20,23 +20,27 @@ export const organisms = [
       // },
       {
         name: 'Container',
+        label: 'Container',
         value: 'container',
         group: 'atoms',
         variant: 'organisms.feed.container',
       },
       {
         name: 'Separator',
+        label: 'Separator',
         value: 'separator',
         group: 'atoms',
         variant: 'organisms.feed.separator',
       },
       {
         name: 'Feed item',
+        label: 'Feed item',
         value: 'feeditem',
         group: 'molecules',
         children: [
           {
             name: 'Card',
+            label: 'Card',
             value: 'card',
             group: 'atoms',
             variant: 'molecules.feeditem.card',
@@ -44,12 +48,14 @@ export const organisms = [
           },
           {
             name: 'Avatar',
+            label: 'Avatar',
             value: 'avatar',
             group: 'atoms',
             variant: 'molecules.feeditem.avatar',
           },
           {
             name: 'Name',
+            label: 'Name',
             value: 'text',
             group: 'atoms',
             variant: 'molecules.feeditem.name',
@@ -57,6 +63,7 @@ export const organisms = [
           },
           {
             name: 'Username',
+            label: 'Username',
             value: 'text',
             group: 'atoms',
             variant: 'molecules.feeditem.username',
@@ -64,12 +71,14 @@ export const organisms = [
           },
           {
             name: 'Date',
+            label: 'Date',
             value: 'text',
             group: 'atoms',
             variant: 'molecules.feeditem.date',
           },
           {
             name: 'Heading',
+            label: 'Heading',
             value: 'heading',
             subvalue: 'h3',
             group: 'atoms',
@@ -78,12 +87,14 @@ export const organisms = [
           },
           {
             name: 'Content',
+            label: 'Content',
             value: 'paragraph',
             group: 'atoms',
             variant: 'molecules.feeditem.paragraph',
           },
           {
             name: 'Actions',
+            label: 'Actions',
             value: 'actions',
             group: 'atoms',
             variant: 'molecules.feeditem.actions',

@@ -14,7 +14,11 @@ const App = ({ Component, pageProps }) => (
       />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
 
-      <svg xmlns="http://www.w3.org/2000/svg" hidden>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        hidden
+        style={{ display: 'none' }}
+      >
         <symbol
           id="octicon_file-directory-fill_16"
           viewBox="0 0 16 16"
@@ -117,10 +121,10 @@ const App = ({ Component, pageProps }) => (
       }
 
       .parameters {
-        min-width: calc(18rem + 30px);
-        max-width: calc(18rem + 30px);
-        transform: scale(0.8);
-        transform-origin: top left;
+        // min-width: calc(18rem + 30px);
+        // max-width: calc(18rem + 30px);
+        // transform: scale(0.8);
+        // transform-origin: top left;
 
         -ms-overflow-style: none; /* Internet Explorer 10+ */
         scrollbar-width: none; /* Firefox */
@@ -150,7 +154,7 @@ const App = ({ Component, pageProps }) => (
       }
 
       body {
-        overflow: hidden;
+        // overflow: hidden;
         margin: 0px !important;
       }
 

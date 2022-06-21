@@ -1,16 +1,18 @@
+// rename to NavigationContext
 import { createContext, useState, useEffect, useContext } from 'react'
 import { ThemeContext } from 'context'
 import { useImmer } from 'use-immer'
-import { atoms, molecules, organisms, templates } from 'data/components'
+import { atoms, molecules, organisms, pages } from 'data/components'
 
 const AppContext = createContext()
 
 const AppProvider = ({ children }) => {
   const { theme } = useContext(ThemeContext)
-  const comp = 'blogpost'
+  const comp = 'button'
 
-  const [selectedComponent, setComponent] = useState(
-    [...atoms, ...molecules, ...organisms, ...templates].find(
+  const [selectedCategory, setSelectedCategory] = useState('atoms')
+  const [selectedComponent, setSelectedComponent] = useState(
+    [...atoms, ...molecules, ...organisms, ...pages].find(
       (m) => m.value === comp,
     ),
   )
@@ -39,12 +41,14 @@ const AppProvider = ({ children }) => {
   return (
     <AppContext.Provider
       value={{
+        selectedCategory,
         selectedComponent,
         selectedSubComponent,
         selectedComponentVariant,
 
+        setSelectedCategory,
         setSelectedSubComponent: setSubComponent,
-        setComponent,
+        setSelectedComponent,
         setComponentVariant,
       }}
     >

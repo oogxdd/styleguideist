@@ -246,5 +246,5 @@ export const white = {
       },
     },
   },
-  templates: { styleguide: { card: { variant: 'atoms.card' } } },
+  pages: { styleguide: { card: { variant: 'atoms.card' } } },
 }

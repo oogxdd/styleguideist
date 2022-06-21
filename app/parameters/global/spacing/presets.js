@@ -23,11 +23,7 @@ export const SpacingPresets = () => {
               flex
               justify-center
               items-center
-              text-gray-${isSelected ? 500 : 300}
-              border-gray-${isSelected ? 500 : 300}
               shadow-${isSelected ? sd[index] : 'none'}
-              hover:text-gray-500
-              hover:border-gray-500
               hover:shadow-${sd[index]}
               transition-all
               transition-75
@@ -65,6 +61,10 @@ export const SpacingPresets = () => {
             sx={{
               borderColor: 'borderColor',
               color: 'text',
+              opacity: isSelected ? 1 : 0.5,
+              ':hover': {
+                opacity: 1,
+              },
             }}
           >
             {isSelected ? preset.activeChildren : preset.children}
@@ -79,7 +79,7 @@ const presets = [
   {
     activeChildren: (
       <div
-        className="h-3 w-3 border-gray-500 rounded-sm border group-hover:border-gray-500 transition-all transition-75 transition-ease-out"
+        className="h-3 w-3 rounded-sm border group-hover transition-all transition-75 transition-ease-out"
         sx={{
           borderColor: 'borderColor',
           color: 'text',
@@ -88,7 +88,7 @@ const presets = [
     ),
     children: (
       <div
-        className="h-3 w-3 border-gray-200 rounded-sm border group-hover:border-gray-500 transition-all transition-75 transition-ease-out"
+        className="h-3 w-3 rounded-sm border group-hover transition-all transition-75 transition-ease-out"
         sx={{
           borderColor: 'borderColor',
           color: 'text',
@@ -99,7 +99,7 @@ const presets = [
   {
     activeChildren: (
       <div
-        className="h-5 w-5 border-gray-500 rounded-sm border group-hover:border-gray-500 transition-all transition-75 transition-ease-out"
+        className="h-5 w-5 rounded-sm border group-hover transition-all transition-75 transition-ease-out"
         sx={{
           borderColor: 'borderColor',
           color: 'text',
@@ -108,7 +108,7 @@ const presets = [
     ),
     children: (
       <div
-        className="h-5 w-5 border-gray-200 rounded-sm border group-hover:border-gray-500 transition-all transition-75 transition-ease-out"
+        className="h-5 w-5 rounded-sm border group-hover transition-all transition-75 transition-ease-out"
         sx={{
           borderColor: 'borderColor',
           color: 'text',
@@ -119,7 +119,7 @@ const presets = [
   {
     activeChildren: (
       <div
-        className="h-7 w-7 border-gray-500 rounded-sm border group-hover:border-gray-500 transition-all transition-75 transition-ease-out"
+        className="h-7 w-7 rounded-sm border group-hover transition-all transition-75 transition-ease-out"
         sx={{
           borderColor: 'borderColor',
           color: 'text',
@@ -128,7 +128,7 @@ const presets = [
     ),
     children: (
       <div
-        className="h-7 w-7 border-gray-200 rounded-sm border group-hover:border-gray-500 transition-all transition-75 transition-ease-out"
+        className="h-7 w-7 rounded-sm border group-hover transition-all transition-75 transition-ease-out"
         sx={{
           borderColor: 'borderColor',
           color: 'text',
@@ -139,7 +139,7 @@ const presets = [
   {
     activeChildren: (
       <div
-        className="h-8 w-8 border-gray-500 rounded-sm border group-hover:border-gray-500 transition-all transition-75 transition-ease-out"
+        className="h-8 w-8 rounded-sm border group-hover transition-all transition-75 transition-ease-out"
         sx={{
           borderColor: 'borderColor',
           color: 'text',
@@ -148,7 +148,7 @@ const presets = [
     ),
     children: (
       <div
-        className="h-8 w-8 border-gray-200 rounded-sm border group-hover:border-gray-500 transition-all transition-75 transition-ease-out"
+        className="h-8 w-8 rounded-sm border group-hover transition-all transition-75 transition-ease-out"
         sx={{
           borderColor: 'borderColor',
           color: 'text',

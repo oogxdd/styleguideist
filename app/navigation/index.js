@@ -6,7 +6,7 @@ import Section from './menu/section'
 
 import MenuIcon from 'public/icons/menu.svg'
 
-import { atoms, molecules, organisms, templates } from 'data/components'
+import { atoms, molecules, organisms, pages } from 'data/components'
 
 const Navigation = () => {
   const {
@@ -75,13 +75,13 @@ const Expanded = () => {
   const { showNavigation, setShowNavigation, navigationFilter } = useContext(
     UIContext,
   )
-  const { setComponent } = useContext(AppContext)
+  const { sesetSelectedComponent } = useContext(AppContext)
 
   const allFilteredComponents = [
     ...atoms,
     ...molecules,
     ...organisms,
-    ...templates,
+    ...pages,
   ].filter((c) =>
     c.label.toLowerCase().includes(navigationFilter.toLowerCase()),
   )
@@ -96,7 +96,7 @@ const Expanded = () => {
     const onEnter = (e) => {
       if (e.key === 'Enter') {
         if (navFilter.current !== '' && filteredComps.current.length !== 0) {
-          setComponent(filteredComps.current[0])
+          setSelectedComponent(filteredComps.current[0])
           setShowNavigation(false)
         }
       }
@@ -124,7 +124,7 @@ const Expanded = () => {
           <Section components={atoms} label="Atoms" />
           <Section components={molecules} label="Molecules" />
           <Section components={organisms} label="Organisms" />
-          <Section components={templates} label="Templates" />
+          <Section components={pages} label="Templates" />
         </>
       ) : (
         <div className="w-full h-full flex items-center justify-center text-2xl -mt-14">

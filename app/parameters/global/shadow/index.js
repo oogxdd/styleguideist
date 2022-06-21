@@ -35,7 +35,7 @@ export const Shadow = ({ open = false }) => {
         <Fragment key={`${shadow}-${index}`}>
           {index !== 0 && (
             <div
-              className="flex justify-center items-center text-sm mt-3 strike whitespace-nowrap mt-5 relative group cursor-default"
+              className="flex justify-center items-center text-xs mt-3 strike whitespace-nowrap mt-5 relative group cursor-default"
               style={{ marginTop: '1.5rem', marginBottom: '1.5rem' }}
             >
               Shadow {index + 1}
@@ -120,7 +120,7 @@ export const Shadow = ({ open = false }) => {
         </Fragment>
       ))}
       <div
-        className="border text-sm flex justify-center align-center rounded py-1 cursor-pointer hover:shadow-md"
+        className="border text-xs flex justify-center align-center rounded py-1 cursor-pointer hover:shadow-md"
         sx={{
           borderColor: 'borderColor',
           color: 'text',
@@ -151,7 +151,7 @@ export const Shadow = ({ open = false }) => {
 
 const Separator = () => (
   <div
-    className="flex justify-center items-center text-sm mt-3 strike whitespace-nowrap mt-5 cursor-default"
+    className="flex justify-center items-center text-xs mt-3 strike whitespace-nowrap mt-5 cursor-default"
     style={{ marginTop: '1.5rem', marginBottom: '1.5rem' }}
   >
     Shadow {index + 1}

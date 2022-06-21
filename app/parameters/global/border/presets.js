@@ -33,11 +33,12 @@ export const BorderPresets = ({
               justify-center 
               items-center
               rounded-${sd[index]}
-              hover:shadow-md
+              shadow-${isSelected ? sd[index] : 'none'}
+              hover:shadow-${sd[index]}
               transition-sm
               transition-75
               transition-ease-out
-              text-sm
+              text-xs
 
             `}
             onClick={() => {
@@ -46,9 +47,9 @@ export const BorderPresets = ({
             }}
             key={preset}
             sx={{
-              borderColor: isSelected ? 'primary' : 'borderColor',
-              color: isSelected ? 'primary' : 'text',
-              // opacity: isSelected ? 1 : 0.5,
+              borderColor: 'borderColor',
+              color: 'text',
+              opacity: isSelected ? 1 : 0.5,
               ':hover': {
                 opacity: 1,
               },

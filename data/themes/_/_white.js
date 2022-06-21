@@ -170,7 +170,7 @@ export const white = {
       preferredLayout: 1,
     },
   },
-  templates: {
+  pages: {
     styleguide: { card: { variant: 'atoms.card' } },
   },
 }

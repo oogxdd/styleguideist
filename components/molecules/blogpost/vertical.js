@@ -20,7 +20,7 @@ export const BlogPostVertical = ({ post, molecule }) => {
 
   return (
     <Card
-      className="flex flex-col overflow-hidden h-full w-full flex-1 p-6 flex flex-col justify-between duration-200"
+      className="flex flex-col overflow-hidden flex-1 p-6 flex flex-col justify-between duration-200"
       style={{
         width:
           theme.molecules.blogpost.card.width ||

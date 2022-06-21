@@ -42,7 +42,7 @@ export const InputField = ({
       )}
       <div className="mt-1 relative">
         <Input
-          className={`shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md`}
+          className={`shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-xs border-gray-300 rounded-md`}
           placeholder={placeholder}
           type={type}
           value={value}
@@ -54,7 +54,7 @@ export const InputField = ({
       </div>
       {hint && (
         <p
-          className="mt-2 text-sm text-gray-500"
+          className="mt-2 text-xs text-gray-500"
           id="email-description"
           sx={{
             variant: `${variant}.caption`,
@@ -76,7 +76,7 @@ export const InputField = ({
 // }) => (
 //   <div className="flex flex-col justify-between">
 //     <label
-//       className="text-sm mb-0.5"
+//       className="text-xs mb-0.5"
 //       sx={{
 //         variant: `${variant}.label`,
 //       }}

@@ -10,7 +10,7 @@ export const Heading = ({
   if (as === 'h2') {
     return (
       <ThemeUIHeading
-        className="text-xl text-bold cursor-default uration-200"
+        className="text-bold cursor-default uration-200"
         sx={{ variant: 'atoms.heading.h2', ...style }}
         as={as}
       >
@@ -22,7 +22,7 @@ export const Heading = ({
   if (as === 'h3') {
     return (
       <ThemeUIHeading
-        className="text-lg text-bold cursor-default uration-200"
+        className="text-bold cursor-default uration-200"
         sx={{ variant: 'atoms.heading.h3', ...style }}
         as={as}
       >
@@ -34,7 +34,7 @@ export const Heading = ({
   if (as === 'h4') {
     return (
       <ThemeUIHeading
-        className="text-lg text-bold cursor-default uration-200"
+        className="text-bold cursor-default uration-200"
         sx={{ variant: 'atoms.heading.h4', ...style }}
         as={as}
       >
@@ -45,7 +45,7 @@ export const Heading = ({
 
   return (
     <ThemeUIHeading
-      className="text-3xl text-bold cursor-default uration-200"
+      className=" text-bold cursor-default uration-200"
       sx={{ variant: 'atoms.heading.h1', ...style }}
       as={as}
     >

@@ -121,7 +121,7 @@ const GlobalParameters = ({ open = false }) => {
 
 const Separator = () => (
   <div
-    className="flex justify-center items-center text-sm mt-3 strike whitespace-nowrap mt-5"
+    className="flex justify-center items-center text-xs mt-3 strike whitespace-nowrap mt-5"
     style={{ marginTop: '1.5rem', marginBottom: '1.5rem' }}
   >
     Shadow {index + 1}

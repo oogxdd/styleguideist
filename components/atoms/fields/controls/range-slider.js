@@ -16,7 +16,7 @@ export const Slider = ({
 
   return (
     <div className="flex items-center justify-between">
-      <label className="text-sm w-16">{label}</label>
+      <label className="text-xs w-16">{label}</label>
       <input
         type="range"
         className="-ml-6 "
@@ -37,7 +37,10 @@ export const Slider = ({
         }}
       />
       <input
-        className="h-6 w-6 rounded flex items-center justify-center text-xs text-center border"
+        className="h-5 w-5 rounded flex items-center justify-center text-xs text-center border"
+        style={{
+          fontSize: 10.5,
+        }}
         value={value}
         onChange={(e) => onChange(e.target.value)}
         onKeyDown={(e) => {

@@ -30,16 +30,12 @@ export const ShadowPresets = ({ presets = [1, 2, 3, 4, 5], type }) => {
               flex
               justify-center 
               items-center
-              text-gray-${isSelected ? 500 : 300}
-              border-gray-${isSelected ? 500 : 300}
               shadow-${isSelected ? sd[index] : 'none'}
-              hover:text-gray-500
-              hover:border-gray-500
               hover:shadow-${sd[index]}
               transition-all
               transition-75
               transition-ease-out
-              text-sm
+              text-xs
 
 
             `}
@@ -52,8 +48,14 @@ export const ShadowPresets = ({ presets = [1, 2, 3, 4, 5], type }) => {
             }}
             key={preset}
             sx={{
+              // borderColor: isSelected ? 'primary' : 'borderColor',
+              // color: isSelected ? 'primary' : 'text',
               borderColor: 'borderColor',
               color: 'text',
+              opacity: isSelected ? 1 : 0.5,
+              ':hover': {
+                opacity: 1,
+              },
             }}
           >
             {index + 1}

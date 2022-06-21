@@ -37,7 +37,7 @@ export const Checkbox = ({
           theme.colors.borderColor.split(',').slice(0, -1).join() + ', 0.3)',
       }}
     >
-      <label className={`text-sm ${labelWidth}`} htmlFor="checkbox">
+      <label className={`text-xs ${labelWidth}`} htmlFor="checkbox">
         {label}
       </label>
 

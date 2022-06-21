@@ -73,6 +73,7 @@ export const molecules = [
     children: [
       {
         name: 'Card',
+        label: 'Card',
         value: 'card',
         component: Card,
         group: 'atoms',
@@ -80,6 +81,7 @@ export const molecules = [
       },
       {
         name: 'Image',
+        label: 'Image',
         value: 'image',
         component: Image,
         group: 'atoms',
@@ -88,6 +90,7 @@ export const molecules = [
       },
       {
         name: 'Label',
+        label: 'Label',
         value: 'label',
         group: 'atoms',
         component: Label,
@@ -97,6 +100,7 @@ export const molecules = [
       },
       {
         name: 'Heading',
+        label: 'Heading',
         value: 'heading',
         subvalue: 'h2',
         component: Heading,
@@ -107,6 +111,7 @@ export const molecules = [
       },
       {
         name: 'Paragraph',
+        label: 'Paragraph',
         value: 'paragraph',
         component: Paragraph,
         group: 'atoms',
@@ -116,6 +121,7 @@ export const molecules = [
       },
       {
         name: 'User card',
+        label: 'User card',
         value: 'usercard',
         component: UserCard,
         group: 'atoms',
@@ -125,12 +131,14 @@ export const molecules = [
         children: [
           {
             name: 'Avatar',
+            label: 'Avatar',
             value: 'avatar',
             group: 'atoms',
             parent: 'usercard',
           },
           {
             name: 'Username',
+            label: 'Username',
             value: 'heading',
             group: 'atoms',
             subvalue: 'h4',
@@ -138,6 +146,7 @@ export const molecules = [
           },
           {
             name: 'Caption',
+            label: 'Caption',
             value: 'caption',
             group: 'atoms',
             parent: 'usercard',
@@ -156,18 +165,27 @@ export const molecules = [
     children: [
       {
         name: 'Card',
+        label: 'Card',
         value: 'card',
         group: 'atoms',
         variant: 'molecules.form.card',
       },
-      { name: 'Heading', value: 'heading', group: 'atoms', subvalue: 'h1' },
+      {
+        name: 'Heading',
+        label: 'Heading',
+        value: 'heading',
+        group: 'atoms',
+        subvalue: 'h1',
+      },
       {
         name: 'Field',
+        label: 'Field',
         value: 'field',
         group: 'atoms',
         children: [
           {
             name: 'Label',
+            label: 'Label',
             value: 'label',
             group: 'atoms',
             // parent: 'field',
@@ -175,6 +193,7 @@ export const molecules = [
           },
           {
             name: 'Input',
+            label: 'Input',
             value: 'input',
             group: 'atoms',
             // parent: 'field',
@@ -182,6 +201,7 @@ export const molecules = [
           },
           {
             name: 'Caption',
+            label: 'Caption',
             value: 'caption',
             group: 'atoms',
             // parent: 'field',
@@ -191,6 +211,7 @@ export const molecules = [
       },
       {
         name: 'Button',
+        label: 'Button',
         value: 'button',
         group: 'atoms',
         // variant: 'primary',
@@ -229,6 +250,7 @@ export const molecules = [
     children: [
       {
         name: 'Card',
+        label: 'Card',
         value: 'card',
         group: 'atoms',
         variant: 'molecules.feeditem.card',
@@ -236,6 +258,7 @@ export const molecules = [
       },
       {
         name: 'Avatar',
+        label: 'Avatar',
         value: 'avatar',
         group: 'atoms',
         variant: 'molecules.feeditem.avatar',
@@ -243,6 +266,7 @@ export const molecules = [
       },
       {
         name: 'Name',
+        label: 'Name',
         value: 'text',
         group: 'atoms',
         variant: 'molecules.feeditem.name',
@@ -250,6 +274,7 @@ export const molecules = [
       },
       {
         name: 'Username',
+        label: 'Username',
         value: 'text',
         group: 'atoms',
         variant: 'molecules.feeditem.username',
@@ -257,12 +282,14 @@ export const molecules = [
       },
       {
         name: 'Date',
+        label: 'Date',
         value: 'text',
         group: 'atoms',
         variant: 'molecules.feeditem.date',
       },
       {
         name: 'Heading',
+        label: 'Heading',
         value: 'heading',
         subvalue: 'h3',
         group: 'atoms',
@@ -271,12 +298,14 @@ export const molecules = [
       },
       {
         name: 'Content',
+        label: 'Content',
         value: 'paragraph',
         group: 'atoms',
         variant: 'molecules.feeditem.paragraph',
       },
       {
         name: 'Actions',
+        label: 'Actions',
         value: 'actions',
         group: 'atoms',
         variant: 'molecules.feeditem.actions',

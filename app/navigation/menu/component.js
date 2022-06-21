@@ -6,7 +6,7 @@ import { LinkIcon } from '@heroicons/react/solid'
 const Component = ({ component }) => {
   const {
     selectedComponent,
-    setComponent,
+    setSelectedComponent,
     setSelectedSubComponent,
   } = useContext(AppContext)
   const { setShowNavigation } = useContext(UIContext)
@@ -29,7 +29,7 @@ const Component = ({ component }) => {
         onClick={(e) => {
           if (enabled) {
             e.preventDefault()
-            setComponent(component)
+            sesetSelectedComponent(component)
             setSelectedSubComponent(component)
             setShowNavigation(false)
           }

@@ -8,7 +8,7 @@ import ComponentTree from 'app/navigation/component-tree'
 
 import ReactTooltip from 'react-tooltip'
 import { presets } from 'data/themes'
-import { molecules, organisms, templates } from 'data/components'
+import { molecules, organisms, pages } from 'data/components'
 
 import { ChipIcon } from '@heroicons/react/outline'
 
@@ -113,9 +113,11 @@ const Presets = () => {
 }
 
 const Components = () => {
-  const { selectedComponent, setComponent, setComponentVariant } = useContext(
-    AppContext,
-  )
+  const {
+    selectedComponent,
+    setSelectedComponent,
+    setComponentVariant,
+  } = useContext(AppContext)
   const components = [
     {
       label: 'Article',
@@ -146,10 +148,10 @@ const Components = () => {
               key={component.value}
               style={{ marginLeft: 2, marginRight: 2 }}
               onClick={() => {
-                const comp = [...molecules, ...organisms, ...templates].find(
+                const comp = [...molecules, ...organisms, ...pages].find(
                   (m) => m.value === component.value,
                 )
-                setComponent(comp)
+                sesetSelectedComponent(comp)
                 setComponentVariant(comp.preferredLayout || 1)
               }}
               className={`

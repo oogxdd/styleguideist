@@ -8,3 +8,4 @@ export * from './shadow'
 export * from './download-file'
 
 export * from './get-value'
+export * from './get-color-pair'
