@@ -28,6 +28,12 @@ import { fonts } from 'data'
 import Navigation from 'app/navigation2'
 import AddDropdown from 'app/navigation2/add-dropdown'
 
+function randomFloat(min, max, decimals = 2) {
+  const str = (Math.random() * (max - min) + min).toFixed(decimals)
+
+  return parseFloat(str)
+}
+
 function randomInt(min, max) {
   // min and max included
   return Math.floor(Math.random() * (max - min + 1) + min)
@@ -81,10 +87,10 @@ const App = () => {
           className="flex flex-col items-center justify-between h-full"
           style={{
             position: 'fixed',
-            left: 198,
+            left: fullscreen ? 0 : 198,
             top: 0,
-            width: fullscreen ? '100vw' : 'calc(100vw - 432px)',
-            maxWidth: fullscreen ? '100vw' : 'calc(100vw - 432px)',
+            width: fullscreen ? '100vw' : 'calc(100vw - 433px)',
+            maxWidth: fullscreen ? '100vw' : 'calc(100vw - 433px)',
           }}
         >
           <div
@@ -94,7 +100,25 @@ const App = () => {
               right: fullscreen ? 0 : 234,
             }}
           >
-            <div data-tip data-for={`device`} className="mr-1 cursor-pointer">
+            <div
+              data-tip
+              data-for={`device`}
+              className="mr-1 cursor-pointer"
+              onClick={() => {
+                if (device === 'fluid') {
+                  setDevice('desktop')
+                }
+                if (device === 'desktop') {
+                  setDevice('mobile')
+                }
+                if (device === 'mobile') {
+                  setDevice('tablet')
+                }
+                if (device === 'tablet') {
+                  setDevice('fluid')
+                }
+              }}
+            >
               <DeviceMobileIcon className="h-5 w-5" />
             </div>
             <div
@@ -115,7 +139,7 @@ const App = () => {
                 // className="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip dark:bg-gray-700 !important"
                 className="sg-tooltip"
               >
-                <span>Fullscreen</span>
+                <span className="select-none">Fullscreen</span>
               </ReactTooltip>
               <ReactTooltip
                 id={`device`}
@@ -123,22 +147,8 @@ const App = () => {
                 place="bottom"
                 // className="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip dark:bg-gray-700 !important"
                 className="sg-tooltip"
-                onClick={() => {
-                  if (device === 'fluid') {
-                    setDevice('desktop')
-                  }
-                  if (device === 'desktop') {
-                    setDevice('mobile')
-                  }
-                  if (device === 'mobile') {
-                    setDevice('tablet')
-                  }
-                  if (device === 'tablet') {
-                    setDevice('fluid')
-                  }
-                }}
               >
-                <span>Device: {device}</span>
+                <span className="select-none">Device: {device}</span>
               </ReactTooltip>
             </div>
           </div>
@@ -233,7 +243,7 @@ const App = () => {
                     theme.colors.secondary = colors[4]
 
                     // 2. borders
-                    const br = randomInt(0, 8)
+                    const br = randomFloat(0, 8)
                     const values = [
                       br + 'px',
                       br * 2 + 'px',
@@ -243,11 +253,11 @@ const App = () => {
                       br * 12 + 'px',
                       br * 24 + 'px',
                     ]
-                    theme.border = `${randomInt(0, 6)}px solid black`
+                    theme.border = `${randomFloat(0, 6)}px solid black`
                     theme.radii = values
 
                     // 3. font
-                    const fs = randomInt(9, 24)
+                    const fs = randomFloat(9, 24)
                     const fontSizes = [
                       (fs * 11) / 15,
                       (fs * 13) / 15,
@@ -270,8 +280,8 @@ const App = () => {
 
                     // 4. spacing
 
-                    const sx = randomInt(1, 8)
-                    const sy = randomInt(1, 8)
+                    const sx = randomFloat(1.5, 4)
+                    const sy = randomFloat(1.5, 4)
 
                     const xSizes = [
                       sx,

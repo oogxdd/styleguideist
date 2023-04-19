@@ -30,5 +30,5 @@ export const getColorPair = () => {
     colorE = randomColor()
   }
 
-  return [colorA, colorB, colorC]
+  return [colorA, colorB, colorC, colorD, colorE]
 }

@@ -8,9 +8,9 @@ const AppContext = createContext()
 
 const AppProvider = ({ children }) => {
   const { theme } = useContext(ThemeContext)
-  const comp = 'button'
+  const comp = 'blogpost'
 
-  const [selectedCategory, setSelectedCategory] = useState('atoms')
+  const [selectedCategory, setSelectedCategory] = useState('molecules')
   const [selectedComponent, setSelectedComponent] = useState(
     [...atoms, ...molecules, ...organisms, ...pages].find(
       (m) => m.value === comp,

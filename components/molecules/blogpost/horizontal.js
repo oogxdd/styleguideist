@@ -20,7 +20,7 @@ export const BlogPostHorizontal = ({ post, molecule }) => {
 
   return (
     <Card
-      className="flex flex-row overflow-hidden h-full w-full items-center"
+      className="flex flex-row overflow-hidden items-center"
       style={{
         width:
           theme.molecules.blogpost.card.width ||

@@ -105,6 +105,7 @@ export const base = {
       pr: 16,
       mt: 16,
       fontSize: 2,
+      background: 'primary',
     },
     input: {
       height: 40,

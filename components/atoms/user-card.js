@@ -13,8 +13,9 @@ export const UserCard = ({
 
   return (
     <div
-      className="mt-6 flex items-center"
+      className="mt-6 items-center"
       sx={{
+        display: 'flex',
         variant,
         ...style,
       }}
