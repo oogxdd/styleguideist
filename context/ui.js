@@ -85,4 +85,6 @@ const UIProvider = ({ children }) => {
   )
 }
 
-export { UIProvider, UIContext }
+const useUI = () => useContext(UIContext)
+
+export { UIProvider, UIContext, useUI }

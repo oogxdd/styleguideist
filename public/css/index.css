@@ -1,5 +1,44 @@
 @import './fonts.css';
 
+input:checked + div {
+  @apply border-indigo-500;
+}
+input:checked + div svg {
+  @apply block;
+}
+
+.sketch-picker {
+  z-index: 10;
+}
+
+.parameters::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+.strike:before,
+.strike:after {
+  content: '';
+  height: 1px;
+  background: var(--theme-ui-colors-borderColor);
+  width: 100%;
+  /* opacity: 0.75; */
+}
+
+.strike:before {
+  right: 100%;
+  margin-right: 15px;
+}
+
+.strike:after {
+  left: 100%;
+  margin-left: 15px;
+}
+
+body {
+  overflow: hidden;
+  margin: 0px !important;
+}
+
 button {
   /* transition: background 0.2s, border-radius 0.2s, height 0.2s, color 0.2s, */
   /*   height 0.2s; */

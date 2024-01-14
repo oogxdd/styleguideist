@@ -7,7 +7,7 @@ const AppContext = createContext()
 
 const AppProvider = ({ children }) => {
   const { theme } = useContext(ThemeContext)
-  const comp = 'blogpost'
+  const comp = 'button'
 
   const [selectedComponent, setComponent] = useState(
     [...atoms, ...molecules, ...organisms, ...templates].find(
@@ -53,4 +53,6 @@ const AppProvider = ({ children }) => {
   )
 }
 
-export { AppProvider, AppContext }
+const useApp = () => useContext(AppContext)
+
+export { AppProvider, AppContext, useApp }

@@ -1,5 +1,5 @@
 import { ThemeProvider as ThemeUIProvider } from 'theme-ui'
-import { createContext, useState } from 'react'
+import { createContext, useState, useContext } from 'react'
 import { useImmer } from 'use-immer'
 import { fonts } from 'data'
 import * as themes from 'data/themes'
@@ -132,4 +132,6 @@ const ThemeProvider = ({ children }) => {
   )
 }
 
-export { ThemeProvider, ThemeContext }
+const useTheme = () => useContext(ThemeContext)
+
+export { ThemeProvider, ThemeContext, useTheme }

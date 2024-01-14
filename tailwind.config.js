@@ -1,4 +1,7 @@
-const colors = require('tailwindcss/colors')
+// const colors = require('tailwindcss/colors')
+
+const { createPlugin } = require('windy-radix-palette')
+const radixColors = createPlugin()
 
 module.exports = {
   // mode: 'jit',
@@ -11,5 +14,6 @@ module.exports = {
   plugins: [
     require('@tailwindcss/forms'),
     require('@tailwindcss/aspect-ratio'),
+    radixColors.plugin,
   ],
 }

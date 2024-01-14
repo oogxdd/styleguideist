@@ -2,13 +2,13 @@
 import { useState, useEffect, useRef } from 'react'
 import { SketchPicker } from 'react-color'
 
-export const ColorPicker = ({ value: color, onChange, label = 'Color' }) => {
+export const ColorPicker = ({ value: color, onChange, label }) => {
   const [expanded, setExpanded] = useState(false)
 
   return (
     <div className="flex flex-col">
       <div className="flex items-center justify-between">
-        <label className="mr-3 text-sm">{label}</label>
+        {label && <label className="mr-3 text-sm">{label}</label>}
         <div
           className="h-6 w-6 rounded text-indigo-600 focus:ring-indigo-500 bg-green-500 border"
           style={{ background: color }}
