@@ -10,7 +10,7 @@ import {
   StarIcon,
   CodeIcon,
   FlagIcon,
-} from '@heroicons/react/solid'
+} from '@heroicons/react/24/solid'
 
 export const Actions = ({ type = 'twitter', item = defaultItem }) => {
   const { theme } = useContext(ThemeContext)

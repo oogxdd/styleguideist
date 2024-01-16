@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Disclosure } from '@headlessui/react'
-import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/solid'
+import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/solid'
 import { PlusCircleIcon } from '@heroicons/react/solid'
 import { Checkbox } from 'components'
 

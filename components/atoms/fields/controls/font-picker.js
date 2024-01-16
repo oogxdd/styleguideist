@@ -1,7 +1,10 @@
 import { useState, useContext, Fragment, useEffect } from 'react'
 import { ThemeContext } from 'context'
 import { Listbox, Transition } from '@headlessui/react'
-import { CheckIcon, SelectorIcon } from '@heroicons/react/solid'
+import {
+  CheckIcon,
+  ChevronUpDownIcon as SelectorIcon,
+} from '@heroicons/react/24/solid'
 import { classNames } from 'helpers'
 import { fonts } from 'data'
 import axios from 'axios'
