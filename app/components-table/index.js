@@ -47,7 +47,7 @@ const Label = ({ children, style = {} }) => (
   </span>
 )
 
-export const ComponentsParametricTable = () => {
+export const ComponentsTable = () => {
   return (
     <div className="flex flex-col">
       <Label style={{ opacity: 0 }}>Components</Label>
