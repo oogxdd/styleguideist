@@ -30,8 +30,8 @@ export const white = {
     '55.9px',
   ],
   colors: {
-    primary: 'hsla(208.23529411764707, 100%, 50%, 1)',
-    secondary: 'green',
+    primary: 'rgb(91, 91, 214)',
+    secondary: 'rgb(35, 175, 208)',
     text: 'hsla(82.08955223880601, 6.592762351436339%, 13.284203999999999%, 1)',
     text2: '#4E3E9F',
     background: 'hsla(0, 0%, 100%, 1)',

@@ -12,43 +12,7 @@ import {
   // MoonIcon,
   //
 } from '@heroicons/react/24/outline'
-
-const defaultStyles = {
-  backgroundColor: '#46474c',
-  borderColor: '#e7e7ea',
-  color: '#e7e7ea',
-}
-
-const atomStyles = {
-  backgroundColor: '#433c65',
-  borderColor: '#f3e8fd',
-  color: '#f3e8fd',
-  stroke: '#f3e8fd',
-}
-
-const moleculeStyles = {
-  backgroundColor: '#244d57',
-  borderColor: '#d8f8ff',
-  color: '#d8f8ff',
-}
-
-const organismStyles = {
-  backgroundColor: '#622e39',
-  borderColor: '#ffe7e7',
-  color: '#ffe7e7',
-}
-
-const templateStyles = {
-  backgroundColor: '#523e1b',
-  borderColor: '#fef7e0',
-  color: '#fef7e0',
-}
-
-const pageStyles = {
-  backgroundColor: '#2a4165',
-  borderColor: '#e2eeff',
-  color: '#e2eeff',
-}
+import { Cell } from './cell'
 
 const BASE_HEIGHT = 42
 
@@ -86,7 +50,7 @@ const RectRound = ({ className }) => {
         className="absolute bottom-0 left-0"
         style={{
           backgroundColor: '#46474c',
-          width: (BASE_HEIGHT / 3) * 3,
+          width: (BASE_HEIGHT / 3) * 3 - 4,
           height: (BASE_HEIGHT / 3) * 1,
           borderTopLeftRadius: 4,
           borderBottomRightRadius: 4,
@@ -98,7 +62,7 @@ const RectRound = ({ className }) => {
         style={{
           backgroundColor: '#46474c',
           width: (BASE_HEIGHT / 3) * 1,
-          height: (BASE_HEIGHT / 3) * 3,
+          height: (BASE_HEIGHT / 3) * 3 - 4,
           borderBottomLeftRadius: 4,
           borderBottomRightRadius: 4,
           borderTopLeftRadius: 4,
@@ -163,13 +127,13 @@ export const Parameters = () => {
   const GRID_WIDTH = (42 + 2) * 5 - 2
 
   return (
-    <div className="flex flex-col mr-32">
+    <div className="flex flex-col">
       <Label>Border</Label>
       <div className="flex mb-2.5">
         <Cell>
           <RectRound className="rounded-none" />
         </Cell>
-        <Cell>
+        <Cell active>
           <RectRound className="rounded-sm" />
         </Cell>
         <Cell>
@@ -209,7 +173,7 @@ export const Parameters = () => {
         <Cell>
           <SpacingRect type="sm" />
         </Cell>
-        <Cell>
+        <Cell active>
           <SpacingRect type="md" />
         </Cell>
         <Cell>
@@ -248,7 +212,7 @@ export const Parameters = () => {
       <Label>Shadows</Label>
       <div className="flex mb-2.5">
         <Cell>1</Cell>
-        <Cell>2</Cell>
+        <Cell active>2</Cell>
         <Cell>3</Cell>
         <Cell>4</Cell>
         <Cell>5</Cell>
@@ -277,7 +241,9 @@ export const Parameters = () => {
           style={{
             // bg
             background: 'rgb(32 33 36)',
-            border: '1px solid #3c393f',
+            // border: '1px solid #3c393f',
+            borderColor: '#3c393f',
+            borderWidth: '1px',
           }}
         ></Cell>
         <Cell
@@ -314,7 +280,7 @@ export const Parameters = () => {
            */}
           <DesktopIcon className="h-4 w-4" />
         </Cell>
-        <Cell width={(GRID_WIDTH - 6) / 4}>
+        <Cell width={(GRID_WIDTH - 6) / 4} active>
           <LaptopIcon className="h-4 w-4" />
         </Cell>
         <Cell width={(GRID_WIDTH - 6) / 4}>
@@ -328,7 +294,7 @@ export const Parameters = () => {
         <Cell width={(GRID_WIDTH - 2) / 2}>
           <SunIcon className="h-4 w-4" />
         </Cell>
-        <Cell width={(GRID_WIDTH - 2) / 2}>
+        <Cell width={(GRID_WIDTH - 2) / 2} active>
           <MoonIcon className="h-4 w-4" />
         </Cell>
       </div>
@@ -336,33 +302,42 @@ export const Parameters = () => {
   )
 }
 
-const Cell = ({
-  children,
-  type = 'default',
-  width = 42,
-  height = 42,
-  style,
-}) => (
-  <div
-    className="text-xs font-medium tracking-wide w-8 h-8 flex items-center justify-center border-transparent mr-[2px] mb-[2px] relative"
-    style={{
-      ...(type === 'default' && { ...defaultStyles }),
-      ...(type === 'atom' && { ...atomStyles }),
-      ...(type === 'molecule' && { ...moleculeStyles }),
-      ...(type === 'organism' && { ...organismStyles }),
-      ...(type === 'template' && { ...templateStyles }),
-      ...(type === 'page' && { ...pageStyles }),
+// const Cell = ({
+//   children,
+//   type = 'default',
+//   width = 42,
+//   height = 42,
+//   style,
+// }) => (
+//   <div
+//     className="text-xs font-medium tracking-wide w-8 h-8 flex items-center justify-center border-transparent mr-[2px] mb-[2px] relative"
+//     sx={{
+//       ...(type === 'default' && {
+//         ...defaultStyles,
+//         ':hover': {
+//           background: '#393a3e',
+//           // color: 'red',
+//         },
+//       }),
+//       ...(type === 'atom' && { ...atomStyles }),
+//       ...(type === 'molecule' && { ...moleculeStyles }),
+//       ...(type === 'organism' && { ...organismStyles }),
+//       ...(type === 'template' && { ...templateStyles }),
+//       ...(type === 'page' && { ...pageStyles }),
 
-      borderRadius: 4,
-      width: width || 42,
-      height: height || 42,
-      fontSize: 13,
+//       // borderRadius: 4,
+//       borderRadius: '4px',
+//       width: width || 42,
+//       height: height || 42,
+//       fontSize: '13px',
 
-      ...style,
-    }}
-  >
-    {children}
-  </div>
-)
+//       cursor: 'pointer',
+
+//       ...style,
+//     }}
+//   >
+//     {children}
+//   </div>
+// )
 
 export default Parameters

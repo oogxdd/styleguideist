@@ -1,13 +1,21 @@
+// small:
+// const GRID_WIDTH = (42 + 2) * 5 - 2
+const GRID_WIDTH = (42 + 2) * 6 - 2
+
 export const Cell = ({
   children,
   type = 'default',
   width = (GRID_WIDTH - 5 * 2) / 6,
   height = 42,
   style,
+  active = false,
 }) => (
   <div
     className="text-xs font-medium tracking-wide w-8 h-8 flex items-center justify-center border-transparent mr-[2px] mb-[2px] relative"
-    style={{
+    sx={{
+      border: '2px solid',
+      borderColor: 'transparent',
+
       ...(type === 'default' && { ...defaultStyles }),
       ...(type === 'atom' && { ...atomStyles }),
       ...(type === 'molecule' && { ...moleculeStyles }),
@@ -15,12 +23,22 @@ export const Cell = ({
       ...(type === 'template' && { ...templateStyles }),
       ...(type === 'page' && { ...pageStyles }),
 
-      borderRadius: 4,
+      // borderRadius: 4,
+      borderRadius: '4px',
       width: width || 42,
       height: height || 42,
-      fontSize: 13,
+      fontSize: '13px',
+
+      cursor: 'pointer',
 
       ...style,
+
+      ...(active && {
+        // border: '1px solid secondary',
+        // borderColor: 'secondary',
+        borderColor: '#e7e7ea',
+        borderWidth: '1px',
+      }),
     }}
   >
     {children}
@@ -29,8 +47,11 @@ export const Cell = ({
 
 const defaultStyles = {
   backgroundColor: '#46474c',
-  borderColor: '#e7e7ea',
+  // borderColor: '#e7e7ea',
   color: '#e7e7ea',
+  ':hover': {
+    background: '#393a3e',
+  },
 }
 
 const atomStyles = {

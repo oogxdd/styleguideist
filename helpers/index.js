@@ -1,4 +1,4 @@
-export * from './classnames'
+export * from './classNames'
 
 export * from './convert/num-to-px'
 export * from './convert/px-to-num'

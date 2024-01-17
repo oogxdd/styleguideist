@@ -10,11 +10,13 @@ import { Cell } from './cell'
 const BASE_WIDTH = 50.8
 const BASE_HEIGHT = 42
 
+// small:
+// const GRID_WIDTH = (42 + 2) * 5 - 2
 const GRID_WIDTH = (42 + 2) * 6 - 2
 
 export const Parameters = () => {
   return (
-    <div className="flex flex-col mr-32">
+    <div className="flex flex-col">
       {/* PARAMETERS BORDER */}
       <Label>Border</Label>
       <div className="flex mb-2.5">
