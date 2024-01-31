@@ -5,14 +5,21 @@ import { ChevronDownIcon, ArrowPathIcon } from '@heroicons/react/24/solid'
 import { Parameters } from 'app/parameters'
 import { ComponentsTable } from 'app/components-table'
 
+import { Separator } from 'components/atoms'
+
 const MakeUI = () => {
   const [expanded, setExpanded] = useState(false)
 
   return (
-    <div className="w-screen min-h-screen bg-[#202124] flex overflow-auto">
+    <div
+      className="w-screen min-h-screen flex overflow-auto"
+      sx={{
+        bg: 'background',
+      }}
+    >
       <div
         className="flex justify-between flex-col p-6 pt-4 border-r h-screen"
-        sx={{ borderColor: '#3c4043' }}
+        sx={{ borderColor: 'borderColor' }}
       >
         <div className="flex flex-col">
           <div className="text-white mb-0.5">
@@ -25,6 +32,57 @@ const MakeUI = () => {
             <br />
             thing
           </p>
+
+          <div className="mb-8 flex flex-col">
+            <textarea
+              placeholder="type in anything you want to build &#10;eg “e-commerce shop for the kids”"
+              className="text-xs w-full resize-none rounded-lg h-20"
+              style={{
+                background: '#222225',
+                borderColor: '#3c4043',
+              }}
+              // className="text-sm p-2 bg-red text-red bg-gray-100 bg-opacity-60 border-gray-200 resize-none mb-2"
+            />
+            <button
+              primary
+              className="flex text-xs items-center justify-center px-4 py-1.5 mt-1.5 self-start rounded-md"
+              style={{
+                backgroundColor: 'rgb(70, 71, 76)',
+                borderColor: 'rgb(231, 231, 234)',
+                color: 'rgb(231, 231, 234)',
+                // borderRadius: '4px',
+                // width: '108px',
+                // height: '42px',
+                // height: '42px',
+                // fontSize: '13px',
+                // width: '100%',
+                // marginTop: '24px',
+                fontWeight: '600',
+              }}
+              sx={
+                {
+                  // color: 'primary',
+                  // height: 32,
+                  // pl: 14,
+                  // pr: 14,
+                  // fontSize: 2,
+                }
+              }
+            >
+              Generate
+            </button>
+          </div>
+
+          <Separator
+            style={
+              {
+                // marginTop: '3rem',
+                //   marginBottom: '3rem'
+              }
+            }
+          >
+            or
+          </Separator>
           <Parameters />
           <button
             className="flex text-sm items-center justify-center"
@@ -50,7 +108,7 @@ const MakeUI = () => {
             <span>Randomize</span>
           </button>
         </div>
-        <div>footer</div>
+        <div className="text-xs opacity-30 font-light">2024</div>
       </div>
       <div className="flex flex-col -reverse w-full">
         {expanded ? (
@@ -90,7 +148,7 @@ const MakeUI = () => {
             background: '#222225',
           }}
         >
-          yo
+          Component preview
         </div>
       </div>
     </div>

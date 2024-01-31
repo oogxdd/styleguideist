@@ -33,6 +33,7 @@ export const atoms = [
   {
     label: 'Button',
     value: 'button',
+    abrv: 'BTN',
     component: Button,
     group: 'atoms',
     params: [
@@ -63,6 +64,7 @@ export const atoms = [
   {
     label: 'Input',
     value: 'input',
+    abrv: 'INPT',
     component: Input,
     group: 'atoms',
     params: [
@@ -89,6 +91,7 @@ export const atoms = [
   {
     label: 'Image',
     value: 'image',
+    abrv: 'IMG',
     component: Image,
     group: 'atoms',
     params: [
@@ -101,6 +104,7 @@ export const atoms = [
   {
     label: 'Avatar',
     value: 'avatar',
+    abrv: 'AV',
     component: Avatar,
     group: 'atoms',
     params: [
@@ -113,6 +117,7 @@ export const atoms = [
   {
     label: 'Heading',
     value: 'heading',
+    abrv: 'H',
     component: Heading,
     group: 'atoms',
     params: [
@@ -126,6 +131,7 @@ export const atoms = [
   {
     label: 'Paragraph',
     value: 'paragraph',
+    abrv: 'P',
     component: Paragraph,
     group: 'atoms',
     params: [
@@ -136,22 +142,24 @@ export const atoms = [
       other(),
     ],
   },
-  {
-    label: 'Text',
-    value: 'text',
-    // component: Text,
-    group: 'atoms',
-    params: [
-      color(),
-      font(),
-      spacing({ margins: true }),
-      shadow({ field: 'textShadow' }),
-      other(),
-    ],
-  },
+  // {
+  //   label: 'Text',
+  //   value: 'text',
+  //   abrv: '',
+  //   // component: Text,
+  //   group: 'atoms',
+  //   params: [
+  //     color(),
+  //     font(),
+  //     spacing({ margins: true }),
+  //     shadow({ field: 'textShadow' }),
+  //     other(),
+  //   ],
+  // },
   {
     label: 'Label',
     value: 'label',
+    abrv: 'LAB',
     component: Label,
     group: 'atoms',
     params: [
@@ -179,6 +187,7 @@ export const atoms = [
   {
     label: 'Caption',
     value: 'caption',
+    abrv: 'CAP',
     component: Caption,
     group: 'atoms',
     params: [
@@ -188,14 +197,16 @@ export const atoms = [
       shadow({ field: 'textShadow' }),
     ],
   },
-  {
-    label: 'Section',
-    value: 'section',
-    group: 'atoms',
-  },
+  // {
+  //   label: 'Section',
+  //   value: 'section',
+  //   abrv: '',
+  //   group: 'atoms',
+  // },
   {
     label: 'Card',
     value: 'card',
+    abrv: 'CRD',
     component: Card,
     group: 'atoms',
     params: [
@@ -214,73 +225,77 @@ export const atoms = [
       other(),
     ],
   },
-  {
-    label: 'User card',
-    value: 'usercard',
-    component: UserCard,
-    group: 'atoms',
-    params: [
-      color({
-        fields: [
-          {
-            type: 'colorpicker',
-            key: 'background',
-            label: 'Background',
-          },
-        ],
-      }),
-      spacing({ margins: true, paddings: true, dimensions: true }),
-      border(),
-      shadow(),
-      other(),
-    ],
-  },
-  {
-    label: 'Actions',
-    value: 'actions',
-    group: 'atoms',
-    params: [
-      color({
-        fields: [
-          {
-            type: 'colorpicker',
-            key: 'textColor',
-            label: 'Text color',
-          },
-          {
-            type: 'colorpicker',
-            key: 'iconColor',
-            label: 'Icon color',
-          },
-          {
-            type: 'colorpicker',
-            key: 'activeIconColor',
-            label: 'Active icon color',
-          },
-        ],
-      }),
-      spacing({ margins: true, paddings: true, dimensions: true }),
-    ],
-  },
-  {
-    label: 'Background',
-    value: 'background',
-    group: 'atoms',
-    params: [
-      color({
-        fields: [
-          {
-            type: 'colorpicker',
-            key: 'background',
-            label: 'Background',
-          },
-        ],
-      }),
-    ],
-  },
+  // {
+  //   label: 'User card',
+  //   value: 'usercard',
+  //   abrv: '',
+  //   component: UserCard,
+  //   group: 'atoms',
+  //   params: [
+  //     color({
+  //       fields: [
+  //         {
+  //           type: 'colorpicker',
+  //           key: 'background',
+  //           label: 'Background',
+  //         },
+  //       ],
+  //     }),
+  //     spacing({ margins: true, paddings: true, dimensions: true }),
+  //     border(),
+  //     shadow(),
+  //     other(),
+  //   ],
+  // },
+  // {
+  //   label: 'Actions',
+  //   value: 'actions',
+  //   abrv: '',
+  //   group: 'atoms',
+  //   params: [
+  //     color({
+  //       fields: [
+  //         {
+  //           type: 'colorpicker',
+  //           key: 'textColor',
+  //           label: 'Text color',
+  //         },
+  //         {
+  //           type: 'colorpicker',
+  //           key: 'iconColor',
+  //           label: 'Icon color',
+  //         },
+  //         {
+  //           type: 'colorpicker',
+  //           key: 'activeIconColor',
+  //           label: 'Active icon color',
+  //         },
+  //       ],
+  //     }),
+  //     spacing({ margins: true, paddings: true, dimensions: true }),
+  //   ],
+  // },
+  // {
+  //   label: 'Background',
+  //   value: 'background',
+  //   abrv: '',
+  //   group: 'atoms',
+  //   params: [
+  //     color({
+  //       fields: [
+  //         {
+  //           type: 'colorpicker',
+  //           key: 'background',
+  //           label: 'Background',
+  //         },
+  //       ],
+  //     }),
+  //   ],
+  // },
   {
     label: 'Separator',
     value: 'separator',
+    abrv: 'SPRT',
     // component: Actions,
     group: 'atoms',
     params: [
@@ -301,6 +316,7 @@ export const atoms = [
   {
     label: 'Container',
     value: 'container',
+    abrv: 'CNT',
     component: Actions,
     group: 'atoms',
     params: [
@@ -325,6 +341,7 @@ export const atoms = [
   {
     label: 'Field',
     value: 'field',
+    abrv: 'FLD',
     group: 'atoms',
     params: [
       color({

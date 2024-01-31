@@ -1,3 +1,5 @@
+import { atoms, molecules, organisms, templates, pages } from 'data/components'
+
 const defaultStyles = {
   backgroundColor: '#46474c',
   borderColor: '#e7e7ea',
@@ -52,42 +54,39 @@ export const ComponentsTable = () => {
     <div className="flex flex-col">
       <Label style={{ opacity: 0 }}>Components</Label>
       <div className="flex">
-        <Cell type="atom">BTN</Cell>
-        <Cell type="atom">INPT</Cell>
-        <Cell type="atom">SLCT</Cell>
-        <Cell type="atom">IMG</Cell>
-        <Cell type="atom">AV</Cell>
-        <Cell type="atom">H</Cell>
-        <Cell type="atom">P</Cell>
-        <Cell type="atom">L</Cell>
-        <Cell type="atom">CPT</Cell>
-        <Cell type="atom">CRD</Cell>
-        <Cell type="atom">CNTR</Cell>
+        {atoms.map((atom) => (
+          <Cell type="atom" key={atom.abrv}>
+            {atom.abrv}
+          </Cell>
+        ))}
       </div>
       <div className="flex">
-        <Cell type="molecule">POST</Cell>
-        <Cell type="molecule">FRM</Cell>
-        <Cell type="molecule">FDI</Cell>
+        {molecules.map((molecule) => (
+          <Cell type="molecule" key={molecule.abrv}>
+            {molecule.abrv}
+          </Cell>
+        ))}
       </div>
       <div className="flex">
-        <Cell type="organism">FEED</Cell>
-        <Cell type="organism">FRM</Cell>
-        <Cell type="organism">BLG</Cell>
+        {organisms.map((organism) => (
+          <Cell type="organism" key={organism.abrv}>
+            {organism.abrv}
+          </Cell>
+        ))}
       </div>
-
+      {/*
       <div className="flex">
         <Cell type="template">STK</Cell>
         <Cell type="template">SIDE</Cell>
         <Cell type="template">COL</Cell>
       </div>
+*/}
       <div className="flex">
-        <Cell type="page">HOM</Cell>
-        <Cell type="page">ABT</Cell>
-        <Cell type="page">CNT</Cell>
-        <Cell type="page">PRD</Cell>
-        <Cell type="page">BLG</Cell>
-        <Cell type="page">LOG</Cell>
-        <Cell type="page">REG</Cell>
+        {pages.map((page) => (
+          <Cell type="page" key={page.abrv}>
+            {page.abrv}
+          </Cell>
+        ))}
       </div>
 
       <div className="flex flex-col space-y-3.5 mt-7">
@@ -102,6 +101,118 @@ export const ComponentsTable = () => {
     </div>
   )
 }
+
+// export const ComponentsTable = () => {
+//   return (
+//     <div className="flex flex-col">
+//       <Label style={{ opacity: 0 }}>Components</Label>
+//       <div className="flex">
+//         <Cell type="atom">BTN</Cell>
+//         <Cell type="atom">INPT</Cell>
+//         <Cell type="atom">SLCT</Cell>
+//         <Cell type="atom">IMG</Cell>
+//         <Cell type="atom">AV</Cell>
+//         <Cell type="atom">H</Cell>
+//         <Cell type="atom">P</Cell>
+//         <Cell type="atom">L</Cell>
+//         <Cell type="atom">CPT</Cell>
+//         <Cell type="atom">CRD</Cell>
+//         <Cell type="atom">CNTR</Cell>
+//       </div>
+//       <div className="flex">
+//         <Cell type="molecule">POST</Cell>
+//         <Cell type="molecule">FRM</Cell>
+//         <Cell type="molecule">FDI</Cell>
+//       </div>
+//       <div className="flex">
+//         <Cell type="organism">FEED</Cell>
+//         <Cell type="organism">FRM</Cell>
+//         <Cell type="organism">BLG</Cell>
+//       </div>
+
+//       <div className="flex">
+//         <Cell type="template">STK</Cell>
+//         <Cell type="template">SIDE</Cell>
+//         <Cell type="template">COL</Cell>
+//       </div>
+//       <div className="flex">
+//         <Cell type="page">HOM</Cell>
+//         <Cell type="page">ABT</Cell>
+//         <Cell type="page">CNT</Cell>
+//         <Cell type="page">PRD</Cell>
+//         <Cell type="page">BLG</Cell>
+//         <Cell type="page">LOG</Cell>
+//         <Cell type="page">REG</Cell>
+//       </div>
+
+//       <div className="flex flex-col space-y-3.5 mt-7">
+//         <div className="flex space-x-5">
+//           <GroupLabel groupStyles={atomStyles} label="Atoms" />
+//           <GroupLabel groupStyles={moleculeStyles} label="Molecules" />
+//           <GroupLabel groupStyles={organismStyles} label="Organisms" />
+//           <GroupLabel groupStyles={templateStyles} label="Templates" />
+//           <GroupLabel groupStyles={pageStyles} label="Pages" />
+//         </div>
+//       </div>
+//     </div>
+//   )
+// }
+
+// export const ComponentsTable = () => {
+//   return (
+//     <div className="flex flex-col">
+//       <Label style={{ opacity: 0 }}>Components</Label>
+//       <div className="flex">
+//         <Cell type="atom">BTN</Cell>
+//         <Cell type="atom">INPT</Cell>
+//         <Cell type="atom">SLCT</Cell>
+//         <Cell type="atom">IMG</Cell>
+//         <Cell type="atom">AV</Cell>
+//         <Cell type="atom">H</Cell>
+//         <Cell type="atom">P</Cell>
+//         <Cell type="atom">L</Cell>
+//         <Cell type="atom">CPT</Cell>
+//         <Cell type="atom">CRD</Cell>
+//         <Cell type="atom">CNTR</Cell>
+//       </div>
+//       <div className="flex">
+//         <Cell type="molecule">POST</Cell>
+//         <Cell type="molecule">FRM</Cell>
+//         <Cell type="molecule">FDI</Cell>
+//       </div>
+//       <div className="flex">
+//         <Cell type="organism">FEED</Cell>
+//         <Cell type="organism">FRM</Cell>
+//         <Cell type="organism">BLG</Cell>
+//       </div>
+
+//       <div className="flex">
+//         <Cell type="template">STK</Cell>
+//         <Cell type="template">SIDE</Cell>
+//         <Cell type="template">COL</Cell>
+//       </div>
+//       <div className="flex">
+//         <Cell type="page">HOM</Cell>
+//         <Cell type="page">ABT</Cell>
+//         <Cell type="page">CNT</Cell>
+//         <Cell type="page">PRD</Cell>
+//         <Cell type="page">BLG</Cell>
+//         <Cell type="page">LOG</Cell>
+//         <Cell type="page">REG</Cell>
+//       </div>
+
+//       <div className="flex flex-col space-y-3.5 mt-7">
+//         <div className="flex space-x-5">
+//           <GroupLabel groupStyles={atomStyles} label="Atoms" />
+//           <GroupLabel groupStyles={moleculeStyles} label="Molecules" />
+//           <GroupLabel groupStyles={organismStyles} label="Organisms" />
+//           <GroupLabel groupStyles={templateStyles} label="Templates" />
+//           <GroupLabel groupStyles={pageStyles} label="Pages" />
+//         </div>
+//       </div>
+//     </div>
+//   )
+// }
 
 // <div className="flex space-x-5">
 // </div>

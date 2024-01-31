@@ -7,7 +7,8 @@ export const Cell = ({
   type = 'default',
   width = (GRID_WIDTH - 5 * 2) / 6,
   height = 42,
-  style,
+  style = {},
+  sx = {},
   active = false,
   className = '',
   ...props
@@ -34,6 +35,7 @@ export const Cell = ({
       cursor: 'pointer',
 
       ...style,
+      ...sx,
 
       ...(active && {
         // border: '1px solid secondary',

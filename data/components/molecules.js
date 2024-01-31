@@ -21,6 +21,7 @@ export const molecules = [
   {
     label: 'Blog post',
     value: 'blogpost',
+    abrv: 'BLG',
     component: BlogPost,
     group: 'molecules',
     className: 'max-w-xl',
@@ -149,6 +150,7 @@ export const molecules = [
   {
     label: 'Form',
     value: 'form',
+    abrv: 'FRM',
     component: Form,
     group: 'molecules',
     enabled: true,
@@ -222,6 +224,7 @@ export const molecules = [
   {
     label: 'Feed item',
     value: 'feeditem',
+    abrv: 'FEED',
     component: FeedItem,
     group: 'molecules',
     enabled: true,

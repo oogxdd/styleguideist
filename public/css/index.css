@@ -1,5 +1,29 @@
 @import './fonts.css';
 
+@import '@radix-ui/colors/blue.css';
+
+/* frontend */
+@import '@radix-ui/colors/jade.css';
+@import '@radix-ui/colors/jade-alpha.css';
+@import '@radix-ui/colors/jade-dark.css';
+@import '@radix-ui/colors/jade-dark-alpha.css';
+@import '@radix-ui/colors/teal.css';
+@import '@radix-ui/colors/teal-alpha.css';
+@import '@radix-ui/colors/teal-dark.css';
+@import '@radix-ui/colors/teal-dark-alpha.css';
+@import '@radix-ui/colors/cyan.css';
+@import '@radix-ui/colors/cyan-alpha.css';
+@import '@radix-ui/colors/cyan-dark.css';
+@import '@radix-ui/colors/cyan-dark-alpha.css';
+
+@import '@radix-ui/colors/gray.css';
+@import '@radix-ui/colors/green.css';
+@import '@radix-ui/colors/red.css';
+@import '@radix-ui/colors/gray-dark.css';
+@import '@radix-ui/colors/blue-dark.css';
+@import '@radix-ui/colors/green-dark.css';
+@import '@radix-ui/colors/red-dark.css';
+
 input:checked + div {
   @apply border-indigo-500;
 }

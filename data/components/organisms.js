@@ -5,6 +5,7 @@ export const organisms = [
   {
     label: 'Feed',
     value: 'feed',
+    abrv: 'FEED',
     component: Feed,
     link: 'https://tailwindui.com/components/application-ui/lists/feeds',
     enabled: true,
