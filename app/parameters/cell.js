@@ -9,9 +9,11 @@ export const Cell = ({
   height = 42,
   style,
   active = false,
+  className = '',
+  ...props
 }) => (
   <div
-    className="text-xs font-medium tracking-wide w-8 h-8 flex items-center justify-center border-transparent mr-[2px] mb-[2px] relative"
+    className={`text-xs font-medium tracking-wide w-8 h-8 flex items-center justify-center border-transparent mr-[2px] mb-[2px] relative ${className}`}
     sx={{
       border: '2px solid',
       borderColor: 'transparent',
@@ -40,6 +42,7 @@ export const Cell = ({
         borderWidth: '1px',
       }),
     }}
+    {...props}
   >
     {children}
   </div>

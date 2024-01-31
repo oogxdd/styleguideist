@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { ChevronDownIcon, ArrowPathIcon } from '@heroicons/react/24/solid'
 
-import { Parameters } from 'app/parameters/_small'
+// import { Parameters } from 'app/parameters/_small'
+import { Parameters } from 'app/parameters'
 import { ComponentsTable } from 'app/components-table'
 
 const MakeUI = () => {
