@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { ChevronDownIcon, ArrowPathIcon } from '@heroicons/react/24/solid'
 
 // import { Parameters } from 'app/parameters/_small'
+import { ComponentPreview } from 'app/preview'
 import { Parameters } from 'app/parameters'
 import { ComponentsTable } from 'app/components-table'
 
@@ -142,17 +143,19 @@ const MakeUI = () => {
         )}
         {/*
          */}
-        <div
-          className="h-full w-full flex items-center justify-center text-white"
-          sx={{
-            background: '#222225',
-          }}
-        >
-          Component preview
-        </div>
+        <ComponentPreview />
       </div>
     </div>
   )
 }
+
+// <div
+//   className="h-full w-full flex items-center justify-center text-white"
+//   sx={{
+//     background: '#222225',
+//   }}
+// >
+//   Component preview
+// </div>
 
 export default MakeUI

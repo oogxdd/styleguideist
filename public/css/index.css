@@ -24,6 +24,18 @@
 @import '@radix-ui/colors/green-dark.css';
 @import '@radix-ui/colors/red-dark.css';
 
+@import '@radix-ui/colors/plum-alpha.css';
+@import '@radix-ui/colors/plum-dark-alpha.css';
+
+@import '@radix-ui/colors/purple-alpha.css';
+@import '@radix-ui/colors/purple-dark-alpha.css';
+
+@import '@radix-ui/colors/orange-alpha.css';
+@import '@radix-ui/colors/orange-dark-alpho.css';
+
+@import '@radix-ui/colors/amber-alpha.css';
+@import '@radix-ui/colors/amber-dark-alpho.css';
+
 input:checked + div {
   @apply border-indigo-500;
 }

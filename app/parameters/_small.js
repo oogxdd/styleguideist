@@ -302,42 +302,4 @@ export const Parameters = () => {
   )
 }
 
-// const Cell = ({
-//   children,
-//   type = 'default',
-//   width = 42,
-//   height = 42,
-//   style,
-// }) => (
-//   <div
-//     className="text-xs font-medium tracking-wide w-8 h-8 flex items-center justify-center border-transparent mr-[2px] mb-[2px] relative"
-//     sx={{
-//       ...(type === 'default' && {
-//         ...defaultStyles,
-//         ':hover': {
-//           background: '#393a3e',
-//           // color: 'red',
-//         },
-//       }),
-//       ...(type === 'atom' && { ...atomStyles }),
-//       ...(type === 'molecule' && { ...moleculeStyles }),
-//       ...(type === 'organism' && { ...organismStyles }),
-//       ...(type === 'template' && { ...templateStyles }),
-//       ...(type === 'page' && { ...pageStyles }),
-
-//       // borderRadius: 4,
-//       borderRadius: '4px',
-//       width: width || 42,
-//       height: height || 42,
-//       fontSize: '13px',
-
-//       cursor: 'pointer',
-
-//       ...style,
-//     }}
-//   >
-//     {children}
-//   </div>
-// )
-
 export default Parameters

@@ -292,70 +292,70 @@ export const atoms = [
   //     }),
   //   ],
   // },
-  {
-    label: 'Separator',
-    value: 'separator',
-    abrv: 'SPRT',
-    // component: Actions,
-    group: 'atoms',
-    params: [
-      color({
-        fields: [
-          {
-            type: 'colorpicker',
-            key: 'background',
-            label: 'Color',
-          },
-        ],
-      }),
-      spacing({ margins: true, dimensions: true }),
-      border(),
-      shadow(),
-    ],
-  },
-  {
-    label: 'Container',
-    value: 'container',
-    abrv: 'CNT',
-    component: Actions,
-    group: 'atoms',
-    params: [
-      // color(),
-      // font(),
-      color({
-        fields: [
-          {
-            type: 'colorpicker',
-            key: 'background',
-            label: 'Background',
-          },
-        ],
-      }),
-      spacing({ margins: true, paddings: true, dimensions: true }),
-      border(),
-      shadow(),
-      // shadow(),
-      // other(),
-    ],
-  },
-  {
-    label: 'Field',
-    value: 'field',
-    abrv: 'FLD',
-    group: 'atoms',
-    params: [
-      color({
-        fields: [
-          {
-            type: 'colorpicker',
-            key: 'background',
-            label: 'Color',
-          },
-        ],
-      }),
-      spacing({ margins: true, paddings: true }),
-      border(),
-      shadow(),
-    ],
-  },
+  // {
+  //   label: 'Separator',
+  //   value: 'separator',
+  //   abrv: 'SPRT',
+  //   // component: Actions,
+  //   group: 'atoms',
+  //   params: [
+  //     color({
+  //       fields: [
+  //         {
+  //           type: 'colorpicker',
+  //           key: 'background',
+  //           label: 'Color',
+  //         },
+  //       ],
+  //     }),
+  //     spacing({ margins: true, dimensions: true }),
+  //     border(),
+  //     shadow(),
+  //   ],
+  // },
+  // {
+  //   label: 'Container',
+  //   value: 'container',
+  //   abrv: 'CNT',
+  //   component: Actions,
+  //   group: 'atoms',
+  //   params: [
+  //     // color(),
+  //     // font(),
+  //     color({
+  //       fields: [
+  //         {
+  //           type: 'colorpicker',
+  //           key: 'background',
+  //           label: 'Background',
+  //         },
+  //       ],
+  //     }),
+  //     spacing({ margins: true, paddings: true, dimensions: true }),
+  //     border(),
+  //     shadow(),
+  //     // shadow(),
+  //     // other(),
+  //   ],
+  // },
+  // {
+  //   label: 'Field',
+  //   value: 'field',
+  //   abrv: 'FLD',
+  //   group: 'atoms',
+  //   params: [
+  //     color({
+  //       fields: [
+  //         {
+  //           type: 'colorpicker',
+  //           key: 'background',
+  //           label: 'Color',
+  //         },
+  //       ],
+  //     }),
+  //     spacing({ margins: true, paddings: true }),
+  //     border(),
+  //     shadow(),
+  //   ],
+  // },
 ]

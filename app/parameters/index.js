@@ -8,6 +8,7 @@ import { SunIcon, CpuChipIcon as LaptopIcon } from '@heroicons/react/24/outline'
 import { Cell } from './cell'
 
 import ColorParameters from './color'
+import BorderParameters from './border'
 
 export const BASE_WIDTH = 50.8
 export const BASE_HEIGHT = 42
@@ -23,23 +24,7 @@ export const Parameters = () => {
     <div className="flex flex-col">
       {/* PARAMETERS BORDER */}
       <Label>Border</Label>
-      <div className="flex mb-2.5">
-        <Cell>
-          <RectRound className="rounded-none" />
-        </Cell>
-        <Cell>
-          <RectRound className="rounded" />
-        </Cell>
-        <Cell>
-          <RectRound className="rounded-md" />
-        </Cell>
-        <Cell>
-          <RectRound className="rounded-lg" />
-        </Cell>
-        <Cell>
-          <RectRound className="rounded-xl" />
-        </Cell>
-      </div>
+      <BorderParameters />
 
       {/* PARAMETERS SPACING */}
       <Label>Spacing</Label>
@@ -108,47 +93,6 @@ export const Parameters = () => {
         </Cell>
       </div>
     </div>
-  )
-}
-
-const RectRound = ({ className }) => {
-  return (
-    <>
-      <div
-        className={`absolute bottom-0 left-0 border ${className}`}
-        style={{
-          width: (BASE_HEIGHT / 3) * 2,
-          height: (BASE_HEIGHT / 3) * 2,
-          borderColor: '#e7e7ea',
-          // borderTopWidth: 1.5,
-          // borderRightWidth: 1.5,
-          // borderTopLeftRadius: 4,
-          borderBottomLeftRadius: 4,
-        }}
-      ></div>
-      <div
-        className="absolute bottom-0 left-0"
-        style={{
-          backgroundColor: '#46474c',
-          width: (BASE_HEIGHT / 3) * 3 - 4,
-          height: (BASE_HEIGHT / 3) * 1,
-          borderTopLeftRadius: 4,
-          borderBottomRightRadius: 4,
-          borderBottomLeftRadius: 4,
-        }}
-      ></div>
-      <div
-        className="absolute bottom-0 left-0"
-        style={{
-          backgroundColor: '#46474c',
-          width: (BASE_HEIGHT / 3) * 1,
-          height: (BASE_HEIGHT / 3) * 3 - 4,
-          borderBottomLeftRadius: 4,
-          borderBottomRightRadius: 4,
-          borderTopLeftRadius: 4,
-        }}
-      ></div>
-    </>
   )
 }
 

@@ -1,4 +1,5 @@
 import { atoms, molecules, organisms, templates, pages } from 'data/components'
+import { useApp } from 'context'
 
 const defaultStyles = {
   backgroundColor: '#46474c',
@@ -50,29 +51,58 @@ const Label = ({ children, style = {} }) => (
 )
 
 export const ComponentsTable = () => {
+  const { selectedComponent, setComponent, setSelectedSubComponent } = useApp()
+
   return (
     <div className="flex flex-col">
       <Label style={{ opacity: 0 }}>Components</Label>
       <div className="flex">
-        {atoms.map((atom) => (
-          <Cell type="atom" key={atom.abrv}>
-            {atom.abrv}
-          </Cell>
-        ))}
+        {atoms.map((atom) => {
+          const isSelected = selectedComponent.value === atom.value
+
+          return (
+            <Cell
+              type="atom"
+              key={atom.abrv}
+              onClick={() => setComponent(atom)}
+              active={isSelected}
+            >
+              {atom.abrv}
+            </Cell>
+          )
+        })}
       </div>
       <div className="flex">
-        {molecules.map((molecule) => (
-          <Cell type="molecule" key={molecule.abrv}>
-            {molecule.abrv}
-          </Cell>
-        ))}
+        {molecules.map((molecule) => {
+          const isSelected = selectedComponent.value === molecule.value
+
+          return (
+            <Cell
+              type="molecule"
+              key={molecule.abrv}
+              onClick={() => setComponent(molecule)}
+              active={isSelected}
+            >
+              {molecule.abrv}
+            </Cell>
+          )
+        })}
       </div>
       <div className="flex">
-        {organisms.map((organism) => (
-          <Cell type="organism" key={organism.abrv}>
-            {organism.abrv}
-          </Cell>
-        ))}
+        {organisms.map((organism) => {
+          const isSelected = selectedComponent.value === organism.value
+
+          return (
+            <Cell
+              type="organism"
+              key={organism.abrv}
+              onClick={() => setComponent(organism)}
+              active={isSelected}
+            >
+              {organism.abrv}
+            </Cell>
+          )
+        })}
       </div>
       {/*
       <div className="flex">
@@ -82,11 +112,20 @@ export const ComponentsTable = () => {
       </div>
 */}
       <div className="flex">
-        {pages.map((page) => (
-          <Cell type="page" key={page.abrv}>
-            {page.abrv}
-          </Cell>
-        ))}
+        {pages.map((page) => {
+          const isSelected = selectedComponent.value === page.value
+
+          return (
+            <Cell
+              type="page"
+              key={page.abrv}
+              onClick={() => setComponent(page)}
+              active={isSelected}
+            >
+              {page.abrv}
+            </Cell>
+          )
+        })}
       </div>
 
       <div className="flex flex-col space-y-3.5 mt-7">
@@ -94,7 +133,9 @@ export const ComponentsTable = () => {
           <GroupLabel groupStyles={atomStyles} label="Atoms" />
           <GroupLabel groupStyles={moleculeStyles} label="Molecules" />
           <GroupLabel groupStyles={organismStyles} label="Organisms" />
+          {/*
           <GroupLabel groupStyles={templateStyles} label="Templates" />
+          */}
           <GroupLabel groupStyles={pageStyles} label="Pages" />
         </div>
       </div>
@@ -250,6 +291,7 @@ const Cell = ({
   width = (GRID_WIDTH - 5 * 2) / 6,
   height = 42,
   style,
+  ...props
 }) => (
   <div
     className="text-xs font-medium tracking-wide w-8 h-8 flex items-center justify-center border-transparent mr-[2px] mb-[2px] relative"
@@ -268,6 +310,7 @@ const Cell = ({
 
       ...style,
     }}
+    {...props}
   >
     {children}
   </div>

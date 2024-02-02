@@ -1,20 +1,16 @@
-// const Preview = () => (
-//   <div className="flex flex-col">
-//     <PreviewHeader />
-//     <PreviewImage />
-//   </div>
-// )
-
-import { useContext, useEffect } from 'react'
-import { AppContext, UIContext } from 'context'
+import { useApp } from 'context'
 import { atoms, molecules, organisms, templates } from 'data/components'
 
-const Preview = () => {
-  const { selectedComponent: comp } = useContext(AppContext)
-  const { fullscreen } = useContext(UIContext)
+export const ComponentPreview = () => {
+  const { selectedComponent: comp } = useApp()
 
   return (
-    <div className="flex flex-col justify-center items-center w-full">
+    <div
+      className="flex flex-col justify-center items-center w-full h-full"
+      sx={{
+        background: '#222225',
+      }}
+    >
       {atoms.map(
         (atom) =>
           comp.value === atom.value && <atom.component key={atom.value} />,
@@ -41,4 +37,4 @@ const Preview = () => {
   )
 }
 
-export default Preview
+export default ComponentPreview
