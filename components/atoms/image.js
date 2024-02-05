@@ -21,3 +21,5 @@ export const Image = ({
     />
   )
 }
+
+export default Image

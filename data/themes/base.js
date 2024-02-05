@@ -1,3 +1,13 @@
+// TODO: change with the actual tokens:
+// - spacing
+// - font sizes
+// - font weights
+// - letter spacings
+// - line heights
+// - border
+// - radii
+// - shadows
+
 export const base = {
   label: 'base',
   space: {
@@ -5,7 +15,8 @@ export const base = {
     y: [2, 4, 8, 12, 16, 20, 24, 32, 48, 64, 128, 256, 512, 1024],
   },
   fonts: {
-    body: 'Euclid',
+    body: 'system-ui',
+    // body: "'Play'",
     heading: '"Spotify Circular", sans-serif',
     monospace: 'Menlo, monospace',
   },
@@ -49,6 +60,7 @@ export const base = {
     5: '0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)',
     default: '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)',
   },
+
   atoms: {
     text: {},
     card: {

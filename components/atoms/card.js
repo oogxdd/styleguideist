@@ -16,3 +16,5 @@ export const Card = ({ children, className = '', style = {} }) => {
     </div>
   )
 }
+
+export default Card

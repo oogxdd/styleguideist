@@ -1,5 +1,10 @@
 @import 'https://rsms.me/inter/inter.css';
 
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Workbench&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 @font-face {
   font-family: 'Futura';
   src: url('/fonts/futura/FTN75__W.woff2') format('woff2');
@@ -490,3 +495,74 @@
     format('truetype');
   font-weight: 900;
 }
+
+/* -0 */
+
+/* @font-face { */
+/*   font-family: 'Passenger Sans'; */
+/*   src: url('/fonts/_/PassengerSans-Ultra.ttf'); */
+/*   font-weight: 100; */
+/* } */
+/* @font-face { */
+/*   font-family: 'Passenger Sans'; */
+/*   src: url('/fonts/_/PassengerSans-Thin.ttf'); */
+/*   font-weight: 200; */
+/* } */
+/* @font-face { */
+/*   font-family: 'Passenger Sans'; */
+/*   src: url('/fonts/_/PassengerSans-Light.ttf'); */
+/*   font-weight: 300; */
+/* } */
+/* @font-face { */
+/*   font-family: 'Passenger Sans'; */
+/*   src: url('/fonts/_/PassengerSans-Regular.ttf'); */
+/*   font-weight: 400; */
+/* } */
+/* @font-face { */
+/*   font-family: 'Passenger Sans'; */
+/*   src: url('/fonts/_/PassengerSans-Medium.ttf'); */
+/*   font-weight: 500; */
+/* } */
+/* @font-face { */
+/*   font-family: 'Passenger Sans'; */
+/*   src: url('/fonts/_/PassengerSans-Semibold.ttf'); */
+/*   font-weight: 600; */
+/* } */
+/* @font-face { */
+/*   font-family: 'Passenger Sans'; */
+/*   src: url('/fonts/_/PassengerSans-Bold.ttf'); */
+/*   font-weight: 700; */
+/* } */
+/* @font-face { */
+/*   font-family: 'Passenger Sans'; */
+/*   src: url('/fonts/_/PassengerSans-Black.ttf'); */
+/*   font-weight: 800; */
+/* } */
+/* @font-face { */
+/*   font-family: 'Passenger Sans'; */
+/*   src: url('/fonts/_/PassengerSans-Extrablack.ttf'); */
+/*   font-weight: 900; */
+/* } */
+/* /1* // XXX *1/ */
+/* @font-face { */
+/*   font-family: 'SF Pro'; */
+/*   src: url('/fonts/_/Sf-Pro.ttf'); */
+/*   font-weight: 400; */
+/* } */
+/* @font-face { */
+/*   font-family: 'Suisse Int'; */
+/*   src: url('/fonts/_/SuisseIntl-Regular.ttf'); */
+/*   font-weight: 450; */
+/* } */
+
+/* @font-face { */
+/*   font-family: 'Suisse Int'; */
+/*   src: url("/fonts/_/Suisse Int'l Medium.ttf"); */
+/*   font-weight: 500; */
+/* } */
+
+/* @font-face { */
+/*   font-family: Inter; */
+/*   src: url('/fonts/_/Inter.ttf'); */
+/*   font-weight: bold; */
+/* } */

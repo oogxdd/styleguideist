@@ -17,6 +17,8 @@ export const Button = ({
     {children}
   </ThemeUIButton>
 )
+
+export default Button
 // <ThemeUIButton
 //   className="select-none"
 //   sx={{

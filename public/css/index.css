@@ -1,40 +1,52 @@
-@import './fonts.css';
-
-@import '@radix-ui/colors/blue.css';
+/* @import '@radix-ui/colors/blue.css'; */
 
 /* frontend */
-@import '@radix-ui/colors/jade.css';
-@import '@radix-ui/colors/jade-alpha.css';
-@import '@radix-ui/colors/jade-dark.css';
-@import '@radix-ui/colors/jade-dark-alpha.css';
-@import '@radix-ui/colors/teal.css';
-@import '@radix-ui/colors/teal-alpha.css';
-@import '@radix-ui/colors/teal-dark.css';
-@import '@radix-ui/colors/teal-dark-alpha.css';
-@import '@radix-ui/colors/cyan.css';
-@import '@radix-ui/colors/cyan-alpha.css';
-@import '@radix-ui/colors/cyan-dark.css';
-@import '@radix-ui/colors/cyan-dark-alpha.css';
+/* @import '@radix-ui/colors/jade.css'; */
+/* @import '@radix-ui/colors/jade-alpha.css'; */
+/* @import '@radix-ui/colors/jade-dark.css'; */
+/* @import '@radix-ui/colors/jade-dark-alpha.css'; */
+/* @import '@radix-ui/colors/teal.css'; */
+/* @import '@radix-ui/colors/teal-alpha.css'; */
+/* @import '@radix-ui/colors/teal-dark.css'; */
+/* @import '@radix-ui/colors/teal-dark-alpha.css'; */
+/* @import '@radix-ui/colors/cyan.css'; */
+/* @import '@radix-ui/colors/cyan-alpha.css'; */
+/* @import '@radix-ui/colors/cyan-dark.css'; */
+/* @import '@radix-ui/colors/cyan-dark-alpha.css'; */
 
-@import '@radix-ui/colors/gray.css';
-@import '@radix-ui/colors/green.css';
-@import '@radix-ui/colors/red.css';
-@import '@radix-ui/colors/gray-dark.css';
-@import '@radix-ui/colors/blue-dark.css';
-@import '@radix-ui/colors/green-dark.css';
-@import '@radix-ui/colors/red-dark.css';
+/* @import '@radix-ui/colors/gray.css'; */
+/* @import '@radix-ui/colors/green.css'; */
+/* @import '@radix-ui/colors/red.css'; */
+/* @import '@radix-ui/colors/gray-dark.css'; */
+/* @import '@radix-ui/colors/blue-dark.css'; */
+/* @import '@radix-ui/colors/green-dark.css'; */
+/* @import '@radix-ui/colors/red-dark.css'; */
 
-@import '@radix-ui/colors/plum-alpha.css';
-@import '@radix-ui/colors/plum-dark-alpha.css';
+/* @import '@radix-ui/colors/plum-alpha.css'; */
+/* @import '@radix-ui/colors/plum-dark-alpha.css'; */
 
-@import '@radix-ui/colors/purple-alpha.css';
-@import '@radix-ui/colors/purple-dark-alpha.css';
+/* @import '@radix-ui/colors/purple-alpha.css'; */
+/* @import '@radix-ui/colors/purple-dark-alpha.css'; */
 
-@import '@radix-ui/colors/orange-alpha.css';
-@import '@radix-ui/colors/orange-dark-alpho.css';
+/* @import '@radix-ui/colors/orange-alpha.css'; */
+/* @import '@radix-ui/colors/orange-dark-alpho.css'; */
 
-@import '@radix-ui/colors/amber-alpha.css';
-@import '@radix-ui/colors/amber-dark-alpho.css';
+/* @import '@radix-ui/colors/amber-alpha.css'; */
+/* @import '@radix-ui/colors/amber-dark-alpho.css'; */
+
+@import './fonts.css';
+
+/* TODO: */
+
+/* * { */
+/*   font-family: 'Play' !important; */
+/* } */
+
+/* .my-logo { */
+/*   font-family: 'Unbounded' !important; */
+/* } */
+
+/* ---------------------------------------- */
 
 input:checked + div {
   @apply border-indigo-500;
@@ -95,4 +107,42 @@ button {
 
 /* body { */
 /*   overflow-y: auto !important; */
+/* } */
+
+.my-logo {
+  color: transparent;
+  background: linear-gradient(45deg, #82d0ff, #f4a9ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: hueRotateAnimation 20s ease-in-out infinite;
+  opacity: 0.95;
+}
+
+.my-logo:hover {
+  opacity: 1;
+}
+
+@keyframes hueRotateAnimation {
+  0%,
+  100% {
+    filter: hue-rotate(90deg);
+  }
+
+  50% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+/* @keyframes gradientRotate { */
+/*   0% { */
+/*     transform: rotate(0deg); */
+/*   } */
+/*   100% { */
+/*     transform: rotate(360deg); */
+/*   } */
+/* } */
+
+/* svg { */
+/*   animation: gradientRotate 5s linear infinite; */
+/*   transform-origin: center; */
 /* } */

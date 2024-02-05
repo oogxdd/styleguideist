@@ -1,45 +1,87 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import {
   ChevronUpIcon,
   ChevronDownIcon,
   PaperAirplaneIcon,
   // XMarkIcon,
 } from '@heroicons/react/24/solid'
+import JsxParser from 'react-jsx-parser'
 
 const New = () => {
+  const [Element, setElement] = useState(undefined)
+
+  const displayComponent = async () => {
+    var element = await importJSX('<div>govno</div>')
+    console.log(element)
+    setElement(element)
+  }
+
+  async function importJSX(input) {
+    // Since we'll be dynamically importing this; we'll export it as `default`
+    var moduleInput = '' + input
+    var output = Babel.transform(moduleInput, {
+      presets: [
+        // `modules: false` creates a module that can be imported
+        ['env', { modules: false }],
+        'react',
+      ],
+    }).code
+    console.log(output)
+    // now we'll create a data url of the compiled code to import it
+    var dataUrl = 'data:text/javascript;base64,' + btoa(output)
+
+    // Fetch the script
+    const response = await fetch(dataUrl)
+    const text = await response.text()
+    console.log(text)
+
+    // Define a new Function and execute it
+    const Import = new Function([React], text)
+    const moduleFunction = Import()
+
+    console.log(Import)
+    console.log(moduleFunction)
+    // Return the default export
+    return moduleFunction
+    console.log(check)
+    return check.default
+    // return (await import(dataUrl)).default
+  }
+  const input = '<div>Hello World</div>'
+
   return (
     <div className="w-screen h-screen bg-gray-2 flex flex-col items-center pt-16">
       <div className="relative mb-8 flex flex-col items-center">
+        {Element && <Element />}
         <h1
-          className="mb-4 text-gray-12 text-xl fixed top-3 left-3"
+          className="mb-4 text-lg fixed top-5 left-5 cursor-cell _select-none my-logo"
           style={{
-            '--myColor1': '#82d0ff',
-            '--myColor2': '#f4a9ff',
-            backgroundImage:
-              'linear-gradient(45deg, var(--myColor1), var(--myColor2))',
-            backgroundClip: 'text',
-            webkitBackgroundClip: 'text',
-            color: 'transparent',
-            transition: '--myColor1 0.2s ease-out, --myColor2 0.2s ease-in-out',
-            fontWeight: 600,
-            /* font-family: 'Inter'; */
-            fontFamily: 'system-ui',
-            textTransform: 'lowercase',
+            // '--myColor1': '#82d0ff',
+            // '--myColor2': '#f4a9ff',
+            // backgroundImage:
+            //   'linear-gradient(45deg, var(--myColor1), var(--myColor2))',
+            // backgroundClip: 'text',
+            // webkitBackgroundClip: 'text',
+            // color: 'transparent',
+            // transition: '--myColor1 0.2s ease-out, --myColor2 0.2s ease-in-out',
+            // /* font-family: 'Inter'; */
+
+            // fontWeight: 600,
+
+            // textTransform: 'lowercase',
+
+            // fontFamily: 'system-ui',
+            fontFamily: 'Unbounded',
+            // fontFamily: 'Play',
+            fontWeight: 900,
           }}
         >
           MakeUI.ai
         </h1>
         <div className="flex flex-col mb-4 mt-64">
-          <h1
-            className={`mb-1  text-lg self-start ${
-              false // is input focused?
-                ? 'text-gray-12'
-                : 'text-gray-10'
-            }`}
-          >
+          <h1 className="mb-1 text-gray-12 text-lg self-start">
             What do you want to build?
           </h1>
-          {/*
           <div className="flex gap-x-1">
             <input
               className="bg-gray-3 rounded-md placeholder:text-gray-7 text-gray-12 px-3 py-2 w-80
@@ -50,14 +92,17 @@ const New = () => {
               // placeholder="What do you want to build?"
               placeholder={`eg "Lego toys e-commerce shop"`}
             />
-            <button className="bg-blue-3 p-2 px-3 tex rounded-md font-medium text-blue-10">
+            <button
+              className="bg-blue-3 p-2 px-3 tex rounded-md font-medium text-blue-9"
+              onClick={displayComponent}
+            >
               Generate
             </button>
           </div>
-          */}
-          <div className="flex gap-x-1 bg-gray-3 rounded-lg p-1.5">
+          {/*
+          <div className="flex gap-x-1 bg-gray-3 rounded-lg p-1">
             <input
-              className="bg-transparent placeholder:text-gray-7 font-medium text-lg text-gray-12 px-3 py-1 w-80
+              className="bg-transparent placeholder:text-gray-7 text-gray-12 px-3 py-1 w-80
             focus-visible:outline-gray-3
             focus-visible:outline-none
             focus-visible:outline-2
@@ -65,10 +110,11 @@ const New = () => {
               // placeholder="What do you want to build?"
               placeholder={`eg "Lego toys e-commerce shop"`}
             />
-            <button className="bg-blue-4 p-1.5 px-3 tex rounded-md font-medium text-blue-10">
+            <button className="bg-blue-3 p-1.5 px-3 tex rounded-md font-medium text-blue-10">
               Generate
             </button>
           </div>
+          */}
         </div>
         {/*
         <span className="mt-3 text-gray-8 text-sm">
@@ -76,19 +122,19 @@ const New = () => {
         </span>
         */}
       </div>
+      {/*
       <div className="flex gap-x-5">
-        <PromptWindow label="Components" color="gray" display={false} />
+        <PromptWindow label="Parameters" color="gray" />
         <PromptWindow label="Style reasoning (UI)" color="grass" />
         <PromptWindow label="Layout generation (UX)" color="plum" />
         <PromptWindow label="Content generation (IA)" color="orange" />
-        <PromptWindow label="Parameters" color="gray" display={false} />
+        <PromptWindow label="Components" color="gray" />
       </div>
 
       <div className="mt-12">
         <BuildingWebsite />
       </div>
-      {/*
-       */}
+      */}
       <div
         className={`
           bg-grassA-4 border-grassA-5 border-grassA-6 text-grassA-9 text-grassA-10
@@ -141,10 +187,8 @@ const New = () => {
   )
 }
 
-const PromptWindow = ({ label, color, display = true }) => {
+const PromptWindow = ({ label, color }) => {
   const [collapsed, setCollapsed] = useState(false)
-
-  if (!display) return null
 
   return (
     <Container color={color} collapsed={collapsed}>
