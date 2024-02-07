@@ -11,20 +11,26 @@ const New = () => {
     <div className="w-screen h-screen bg-gray-2 flex flex-col items-center pt-16">
       <div className="relative mb-8 flex flex-col items-center">
         <h1
-          className="mb-4 text-gray-12 text-xl fixed top-3 left-3"
+          className="mb-4 text-lg fixed top-5 left-5 cursor-cell _select-none my-logo"
           style={{
-            '--myColor1': '#82d0ff',
-            '--myColor2': '#f4a9ff',
-            backgroundImage:
-              'linear-gradient(45deg, var(--myColor1), var(--myColor2))',
-            backgroundClip: 'text',
-            webkitBackgroundClip: 'text',
-            color: 'transparent',
-            transition: '--myColor1 0.2s ease-out, --myColor2 0.2s ease-in-out',
-            fontWeight: 600,
-            /* font-family: 'Inter'; */
-            fontFamily: 'system-ui',
-            textTransform: 'lowercase',
+            // '--myColor1': '#82d0ff',
+            // '--myColor2': '#f4a9ff',
+            // backgroundImage:
+            //   'linear-gradient(45deg, var(--myColor1), var(--myColor2))',
+            // backgroundClip: 'text',
+            // webkitBackgroundClip: 'text',
+            // color: 'transparent',
+            // transition: '--myColor1 0.2s ease-out, --myColor2 0.2s ease-in-out',
+            // /* font-family: 'Inter'; */
+
+            // fontWeight: 600,
+
+            // textTransform: 'lowercase',
+
+            // fontFamily: 'system-ui',
+            fontFamily: 'Unbounded',
+            // fontFamily: 'Play',
+            fontWeight: 900,
           }}
         >
           MakeUI.ai
